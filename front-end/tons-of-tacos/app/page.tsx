@@ -1,9 +1,10 @@
+import Image from "next/image";
+import logoImg from "@/public/images/icons/bird-logo.svg";
+import classes from "./page.module.css";
 export default function Home() {
   return (
     <main>
-      <h1>Welcome to Tons Of Tacos! Welcome text placeholder</h1>
-      <div>image place holder</div>
-      <div>footer placeholder</div>
+      {/* <Image src={logoImg} className={classes.img} /> come back to this */}
     </main>
   );
 }

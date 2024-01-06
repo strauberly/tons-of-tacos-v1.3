@@ -2,6 +2,16 @@
 
 ---
 
+--- 6 Jan 2024 ---
+
+- Began work on header and styling.
+  - Header is a central component for navigating menu items and cart.
+- Brought in fonts through use of importation and global css. So far a bigger fan of creating font faces in css. reads cleaner in the main page.
+- Updated icons for cart and menu in order to fit main font theme a little better.
+- Continued build out for main page and menu to be continued next.
+
+---
+
 --- 4 Jan 2024 ---
 
 Started off new year with completion of a quick next.js refresher and beginning work on the front end.

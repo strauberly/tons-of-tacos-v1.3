@@ -1,14 +1,29 @@
-import Image from "next/image"
+import Image from "next/image";
+import menuIcon from "/public/images/icons/menu-icon.svg";
+import cartIcon from "/public/images/icons/cart-icon.svg";
+import classes from "./main-header.module.css";
+import Link from "next/link";
 
-export default function MainHeader(){
-    return (
-        <header className="same background color, border line margin set to 3rem ">
-            Tons Of Tacos
-            <Image>menu icon in svg format</Image>
-            <Image>shopping cart icon in svg format</Image>
-        </header>
-        text 
-        menu icon
-        cart icon
-    )
+export default function MainHeader() {
+  return (
+    <header className={classes.header}>
+      <Link className={classes.home} href="/">
+        Tons Of Tacos
+      </Link>
+      <nav className={classes.nav}>
+        <ul>
+          <li>
+            <Link className={classes.home} href="/">
+              <Image src={menuIcon} alt="menu icon" priority />
+            </Link>
+          </li>
+          <li>
+            <Link className={classes.home} href="/">
+              <Image src={cartIcon} alt="cart icon" priority />
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
 }

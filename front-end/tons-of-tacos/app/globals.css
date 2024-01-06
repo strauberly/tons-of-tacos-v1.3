@@ -1,9 +1,18 @@
+@font-face {
+  font-family: "Quatl";
+  src: url("./fonts/Quatl-3zp26.ttf");
+}
 * {
   box-sizing: border-box;
 }
 
 body {
   background-color: #11072f;
-  color: #c7ebec;
   margin: 0;
+  font-family: "Quatl";
+}
+
+p {
+  font-family: var(--inter-font);
+  color: #c7ebec;
 }
