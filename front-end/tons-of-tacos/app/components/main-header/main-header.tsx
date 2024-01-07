@@ -1,8 +1,8 @@
 import Image from "next/image";
-import menuIcon from "/public/images/icons/menu-icon.svg";
-import cartIcon from "/public/images/icons/cart-icon.svg";
 import classes from "./main-header.module.css";
 import Link from "next/link";
+import CartIcon from "./cart-icon";
+import MenuIcon from "./menu-icon";
 
 export default function MainHeader() {
   return (
@@ -10,20 +10,10 @@ export default function MainHeader() {
       <Link className={classes.home} href="/">
         Tons Of Tacos
       </Link>
-      <nav className={classes.nav}>
-        <ul>
-          <li>
-            <Link className={classes.home} href="/">
-              <Image src={menuIcon} alt="menu icon" priority />
-            </Link>
-          </li>
-          <li>
-            <Link className={classes.home} href="/">
-              <Image src={cartIcon} alt="cart icon" priority />
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <div>
+        <MenuIcon />
+        <CartIcon />
+      </div>
     </header>
   );
 }

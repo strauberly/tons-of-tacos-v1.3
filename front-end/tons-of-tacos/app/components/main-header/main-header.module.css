@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem 1.5rem 1rem;
+  padding: 0rem 2rem 1rem 2rem;
   border-bottom: solid #63b369;
   margin: 2rem;
 }
@@ -10,18 +10,30 @@
 .home {
   text-decoration: none;
   color: #cf3052;
-  text-transform: uppercase;
   font-size: 3rem;
 }
 
-.home img {
-  width: 3rem;
-  height: 3rem;
+.home:hover {
+  color: #ebc83b;
 }
 
+.icon {
+  padding-left: 4rem;
+  height: 3rem;
+  color: #cf3052;
+  gap: 3rem;
+
+  /* color: #63b369; */
+}
+
+.icon:hover {
+  color: #ebc83b;
+}
+/* 
 .nav ul {
+  align-items: top;
   list-style: none;
   margin: 0 1rem;
   display: flex;
   gap: 3rem;
-}
+} */
