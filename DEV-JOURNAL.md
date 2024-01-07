@@ -2,6 +2,17 @@
 
 ---
 
+--- 7 Jan 2024 ---
+
+- Brought in icon images in svg format for manipulation of various properties.
+- Created icon components to bring into main header and styled.
+- Refactored and cleaned up main-header page and css file.
+- Replaced default icon with our fictional companies logo.
+- Will begin work on buttons and nav next.
+- Fixed image links in dev journal.
+
+---
+
 --- 6 Jan 2024 ---
 
 - Began work on header and styling.
@@ -37,15 +48,15 @@ Off to the races!
 ### Sample Mock Ups For Consideration
 
 <p align="center">
-  <img src="./front-end/concept-art/bird-logo/media/main-page-mockup.png"/>
+  <img src="./media/bird-design/main-page-mockup.png"/>
 </p>
 
 <p align="center">
-  <img src="./front-end/concept-art/temple-logo/media/mainpage-mockup1.png"/>
+  <img src="./media/temple-design/mainpage-mockup.png"/>
 </p>
 
 <p align="center">
-  <img src="./front-end/concept-art/ton-logo/media/mainpage-mockup.png"/>
+  <img src="./media/ton-design/mainpage-mockup.png"/>
 </p>
 
 ---
@@ -60,15 +71,15 @@ Next steps to include:
 - gathering and formatting remaining menu item images
 
 <p align="center">
-  <img src="./front-end/concept-art/bird-logo/media/bird-logo-revised-comparison.png"/>
+  <img src="./media/bird-design/bird-logo-revised-comparison.png"/>
 </p>
 
 <p align="center">
-  <img src="./front-end/concept-art/temple-logo/media/temple-logo-comparison.png"/>
+  <img src="./media/temple-design/temple-logo-comparison.png"/>
 </p>
 
 <p align="center">
-  <img src="./front-end/concept-art/ton-logo/media/ton-logo-comparison.png"/>
+  <img src="./media/ton-design/ton-logo-comparison.png"/>
 </p>
 
 ---
@@ -78,7 +89,7 @@ Next steps to include:
 - Created wire frame demonstrating action to add a menu item to cart. More or less created to demonstrate knowledge of design life cycle and demonstrate how I might convey that information to others. I may create more for additional actions as time allows in the future but am chomping at the bit to get moving on development.
 
 <p align="center">
-  <img src="./front-end/concept-art/wire-frames/desktop/actions/add-item-to-cart.png"/>
+  <img src="./media/wireframes/add-item-to-carta.png"/>
 </p>
 
 ---
@@ -88,15 +99,15 @@ Next steps to include:
 - Began creating color templates, logo concept art, and wire frames. Below are a few samples. Will begin work on wire frames for task flows (ie. Selecting menu items and submitting an order, owner login and various tasks.) next.
 
 <p align="center">
-  <img src="./front-end/concept-art/logo-collection.png"/>
+  <img src="./media/logo-collection.png"/>
 </p>
 
 <p align="center">
-  <img src="./front-end/concept-art/theme-layout.png"/>
+  <img src="./media/theme-layout.png"/>
 </p>
 
 <p align="center">
-  <img src="./front-end/concept-art/wire-frames/general-layout.png"/>
+  <img src="./media/wireframes/general-layout.png"/>
 </p>
 
 ---
