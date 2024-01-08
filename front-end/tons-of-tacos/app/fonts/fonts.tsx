@@ -6,4 +6,8 @@ export const quatl = localFont({
   variable: "--quatl",
 });
 
-export const inter = Inter({ subsets: ["latin"], variable: "--inter-font" });
+export const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--inter-font",
+});
