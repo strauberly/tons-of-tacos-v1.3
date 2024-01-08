@@ -4,6 +4,7 @@
 
 --- 8 Jan 2024 ---
 
+- Added to global styling for h1 elements.
 - Created basic files for menu navigation based on menu item category (tacos,drinks,sides,toppings).
 - Created basic pages for menu.
 - Created basic image gallery file for menu items.
