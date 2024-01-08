@@ -2,6 +2,14 @@
 
 ---
 
+--- 8 Jan 2024 ---
+
+- Created basic files for menu navigation based on menu item category (tacos,drinks,sides,toppings).
+- Created basic pages for menu.
+- Created basic image gallery file for menu items.
+
+---
+
 --- 7 Jan 2024 ---
 
 - Brought in icon images in svg format for manipulation of various properties.
