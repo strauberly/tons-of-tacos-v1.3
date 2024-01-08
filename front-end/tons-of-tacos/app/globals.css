@@ -17,3 +17,7 @@ p {
   font-family: var(--inter-font);
   color: #c7ebec;
 }
+
+h1 {
+  color: #cf3052;
+}
