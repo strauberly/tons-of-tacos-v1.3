@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Quatl";
-  src: url("./fonts/Quatl-3zp26.ttf");
+  src: url("../components/fonts/Quatl-3zp26.ttf");
 }
 
 * {
@@ -20,4 +20,9 @@ p {
 
 h1 {
   color: #cf3052;
+}
+
+button {
+  background-color: transparent;
+  border: none;
 }

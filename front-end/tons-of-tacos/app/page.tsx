@@ -4,7 +4,7 @@ import classes from "./page.module.css";
 export default function Home() {
   return (
     <main>
-      <Image src={logoImg} className={classes.img} />
+      <Image src={logoImg} className={classes.img} alt="tons of tacos logo" />
     </main>
   );
 }
