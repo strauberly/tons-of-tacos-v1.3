@@ -7,6 +7,8 @@ node_modules
 .properties
 .config
 
+package-lock.json
+
 
 #IGNORE THE FOLLOWING FILES
 
