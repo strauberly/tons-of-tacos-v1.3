@@ -1,8 +1,10 @@
 import Link from "next/link";
-// style this for nav
+import classes from '@/components/main-header/main-header.module.css'
+
+
 export default function MenuNav() {
   return (
-    <nav>
+    <nav className={classes.menu}>
       <ul>
         <li>
           <Link href="/menu/tacos">Tacos</Link>
