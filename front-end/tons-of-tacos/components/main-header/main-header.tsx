@@ -1,6 +1,5 @@
 "use client";
 
-// import Image from "next/image";
 import classes from "./main-header.module.css";
 import Link from "next/link";
 import CartIcon from "./cart-icon";
@@ -12,20 +11,21 @@ export default function MainHeader() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
+    <>
     <header className={classes.header}>
       <Link className={classes.home} href="/">
         Tons Of Tacos
       </Link>
-
-      <div className={classes.nav}>
+      <nav className={classes.nav}>
         <button onClick={() => setShowMenu(!showMenu)}>
           <MenuIcon />
         </button>
         <button>
           <CartIcon />
         </button>
-        <div>{showMenu && MenuNav()}</div>
-      </div>
+      </nav>
     </header>
+        <div className={classes.menu}>{showMenu && MenuNav()}</div>
+    </>
   );
 }
