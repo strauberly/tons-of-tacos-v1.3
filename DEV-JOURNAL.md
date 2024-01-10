@@ -2,6 +2,13 @@
 
 ---
 
+--- 9 Jan 2024 ---
+
+- Began cleaning up styling and working on styling for menu nav component.
+- Menu nav component initialized and state of its button utilized.
+
+---
+
 --- 8 Jan 2024 ---
 
 - Added to global styling for h1 elements.
