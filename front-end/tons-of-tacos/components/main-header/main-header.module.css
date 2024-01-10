@@ -18,22 +18,19 @@
 }
 
 .icon {
-  padding-left: 4rem;
+  /* padding-left: 0.5rem; */
   height: 3rem;
   color: #cf3052;
-  gap: 3rem;
-
-  /* color: #63b369; */
 }
 
 .icon:hover {
   color: #ebc83b;
 }
-/* 
-.nav ul {
-  align-items: top;
-  list-style: none;
-  margin: 0 1rem;
+
+.nav {
+  /* align-items: top; */
+  /* list-style: none; */
+  /* margin: 0 1rem; */
   display: flex;
-  gap: 3rem;
-} */
+  gap: 4rem;
+}
