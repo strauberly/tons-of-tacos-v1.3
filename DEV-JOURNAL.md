@@ -2,6 +2,10 @@
 
 ---
 
+--- 10 Jan 2024 ---
+
+- Updated styling for food menu nav. Is now aligned with our header border and the colors for link text and hover match the rest of our theme.
+
 --- 9 Jan 2024 ---
 
 - Began cleaning up styling and working on styling for menu nav component.

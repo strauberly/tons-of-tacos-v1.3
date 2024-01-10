@@ -1,11 +1,12 @@
 .img {
+  grid-row: 1;
   position: absolute;
   width: 35rem;
   height: auto;
+  top: 10rem;
   left: 0;
   right: 0;
-  margin-top: 15rem;
+  /* margin-top: 5rem; */
   margin-left: auto;
   margin-right: auto;
-
 }

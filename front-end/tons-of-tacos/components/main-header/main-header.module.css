@@ -3,10 +3,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem 2rem 1rem 2rem;
+  padding: 1rem 2rem 1rem 2rem;
   border-bottom: solid #63b369;
-  
-  margin: 1rem;
+
+  margin: 0rem 1rem;
 }
 
 .home {
@@ -20,9 +20,7 @@
 }
 
 .icon {
-  /* align-items: right; */
   padding-left: 3rem;
-  /* justify-content: center; */
   height: 3rem;
   color: #cf3052;
 }
@@ -31,17 +29,27 @@
   color: #ebc83b;
 }
 
-.nav {
-   /* display: flex;400 */
-   /* height: 20rem; */
-   justify-content: space-between;
-} 
+.menu {
+  display: flex;
+  justify-content: right;
+  margin: 0;
+}
 
-
-
-.menu ul{
-  width: 20rem;
+.menu ul li {
+  display: flexbox;
   font-size: 2rem;
   list-style-type: none;
   background-color: #63b369;
+  padding: 3rem;
+  margin: 0rem 1rem;
+}
+
+.menu a {
+  color: #cf3052;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: #ebc83b;
+  text-decoration: none;
 }

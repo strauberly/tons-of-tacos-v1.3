@@ -5,13 +5,20 @@
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
+
+/* header {
+  font-family: "Quatl";
+} */
 
 body {
   display: grid;
   background-color: #11072f;
-  /* margin: 0; */
+  /* margin: none; */
   font-family: "Quatl";
+
   /* justify-content: center; */
 }
 
