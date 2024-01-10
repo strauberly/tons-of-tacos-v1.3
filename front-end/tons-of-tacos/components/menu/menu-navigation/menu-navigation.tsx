@@ -1,6 +1,6 @@
 import Link from "next/link";
-import classes from '@/components/main-header/main-header.module.css'
-
+import classes from "@/components/main-header/main-header.module.css";
+import { Children } from "react";
 
 export default function MenuNav() {
   return (
