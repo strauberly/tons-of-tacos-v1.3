@@ -5,6 +5,7 @@
 --- 10 Jan 2024 ---
 
 - Updated styling for food menu nav. Is now aligned with our header border and the colors for link text and hover match the rest of our theme.
+- Worked on creating dynamic route for menu items by category. Involves capturing the slug through params and setting that as the menu item category requested. Next steps will include using the aforementioned steps to return desired sample data.
 
 --- 9 Jan 2024 ---
 
