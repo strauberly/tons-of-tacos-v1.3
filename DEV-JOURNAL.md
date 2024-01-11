@@ -2,10 +2,23 @@
 
 ---
 
+--- 11 Jan 2024 ---
+
+- Dynamic route and page basic implementation in place.
+  - Slug is captured and validated. Not found page in place to catch invalid requests. After validation switch is set up to change what dataset is used pertaining to what menu items are displayed.
+  - Component is currently returning placeholder elements that verify dynamic functionality.
+- Noticed places for improvement in backend and will be opening issues in project for addressing.
+
+- Created basic files for creation of a menu item, the card it will go into, and the menu item list all menu items will be fed into.
+
+---
+
 --- 10 Jan 2024 ---
 
 - Updated styling for food menu nav. Is now aligned with our header border and the colors for link text and hover match the rest of our theme.
 - Worked on creating dynamic route for menu items by category. Involves capturing the slug through params and setting that as the menu item category requested. Next steps will include using the aforementioned steps to return desired sample data.
+
+---
 
 --- 9 Jan 2024 ---
 
