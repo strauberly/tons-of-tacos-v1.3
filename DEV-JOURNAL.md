@@ -2,6 +2,23 @@
 
 ---
 
+--- 15 Jan 2024 ---
+
+- Menu items correctly changing dynamically according to slug input provided either through the address bar or our nav menu.
+  - Sample data sets created for each menu item category.
+  - Props passed through from hardcoded sample data to our components making up the display of menu items by category.
+  - Should be ready to swap out sample data for api provided data and styling.
+
+---
+
+--- 12 Jan 2024 ---
+
+- Placeholders for elements on cards and what data to work with for menu items. Think we're about ready to try and start working with data and implementing props. Will start fleshing out sample data sets a little more after the weekend. Planning to do a bit trial and error before firing up the backend and trying to make a connection.
+
+### Cheers and have a great weekend!
+
+---
+
 --- 11 Jan 2024 ---
 
 - Dynamic route and page basic implementation in place.
