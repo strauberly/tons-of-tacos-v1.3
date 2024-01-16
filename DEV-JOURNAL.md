@@ -2,6 +2,48 @@
 
 ---
 
+--- 15 Jan 2024 ---
+
+- Menu items correctly changing dynamically according to slug input provided either through the address bar or our nav menu.
+  - Sample data sets created for each menu item category.
+  - Props passed through from hardcoded sample data to our components making up the display of menu items by category.
+  - Should be ready to swap out sample data for api provided data and styling.
+
+---
+
+--- 12 Jan 2024 ---
+
+- Placeholders for elements on cards and what data to work with for menu items. Think we're about ready to try and start working with data and implementing props. Will start fleshing out sample data sets a little more after the weekend. Planning to do a bit trial and error before firing up the backend and trying to make a connection.
+
+### Cheers and have a great weekend!
+
+---
+
+--- 11 Jan 2024 ---
+
+- Dynamic route and page basic implementation in place.
+  - Slug is captured and validated. Not found page in place to catch invalid requests. After validation switch is set up to change what dataset is used pertaining to what menu items are displayed.
+  - Component is currently returning placeholder elements that verify dynamic functionality.
+- Noticed places for improvement in backend and will be opening issues in project for addressing.
+
+- Created basic files for creation of a menu item, the card it will go into, and the menu item list all menu items will be fed into.
+
+---
+
+--- 10 Jan 2024 ---
+
+- Updated styling for food menu nav. Is now aligned with our header border and the colors for link text and hover match the rest of our theme.
+- Worked on creating dynamic route for menu items by category. Involves capturing the slug through params and setting that as the menu item category requested. Next steps will include using the aforementioned steps to return desired sample data.
+
+---
+
+--- 9 Jan 2024 ---
+
+- Began cleaning up styling and working on styling for menu nav component.
+- Menu nav component initialized and state of its button utilized.
+
+---
+
 --- 8 Jan 2024 ---
 
 - Added to global styling for h1 elements.

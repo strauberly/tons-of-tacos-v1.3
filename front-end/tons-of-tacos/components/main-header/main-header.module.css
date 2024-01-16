@@ -1,16 +1,18 @@
 .header {
+  color: #cf3052;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem 2rem 1rem 2rem;
+  padding: 1rem 2rem 1rem 2rem;
   border-bottom: solid #63b369;
-  margin: 2rem;
+
+  margin: 0rem 1rem;
 }
 
 .home {
   text-decoration: none;
   color: #cf3052;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 .home:hover {
@@ -18,7 +20,7 @@
 }
 
 .icon {
-  /* padding-left: 0.5rem; */
+  padding-left: 3rem;
   height: 3rem;
   color: #cf3052;
 }
@@ -27,10 +29,27 @@
   color: #ebc83b;
 }
 
-.nav {
-  /* align-items: top; */
-  /* list-style: none; */
-  /* margin: 0 1rem; */
+.menu {
   display: flex;
-  gap: 4rem;
+  justify-content: right;
+  margin: 0;
+}
+
+.menu ul li {
+  display: flexbox;
+  font-size: 2rem;
+  list-style-type: none;
+  background-color: #63b369;
+  padding: 3rem;
+  margin: 0rem 1rem;
+}
+
+.menu a {
+  color: #cf3052;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: #ebc83b;
+  text-decoration: none;
 }
