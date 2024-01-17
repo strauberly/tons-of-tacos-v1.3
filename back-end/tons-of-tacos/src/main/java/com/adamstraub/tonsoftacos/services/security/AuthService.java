@@ -49,7 +49,7 @@ public class AuthService {
 //        }catch (Exception e) {
 //                throw new InternalAuthenticationServiceException("Invalid username or password.");
 //
-                throw new BadCredentialsException("Bad credentials.");
+//                throw new BadCredentialsException("Bad credentials.");
 
         }
         return jwtService.generateToken(ownerAuth.getUsername());
