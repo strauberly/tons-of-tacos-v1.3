@@ -1,14 +1,16 @@
 "use client";
 
 import MenuItemList from "@/components/menu/menuItems/menu-item-list";
-
 import { notFound } from "next/navigation";
+import { useEffect, useState } from "react";
 // import classes from "./";
-
 // this will take the slug for menu items category and give the properties needed
 // let TACO_DUMMY_DATA: {keys:types}[] = [];
-// attempt interface in order to validate the object
-// need id as key
+// attempt interface in order to validate the object?
+
+// data call outsourced to library perhaps
+// possibly pre-render api calls so we can still use switch to display data
+
 let TACO_SAMPLE_DATA: {
   category: string;
   description: string;
@@ -112,54 +114,71 @@ let TOPPING_SAMPLE_DATA: {
 ];
 let SAMPLE_DATA: {}[] = [];
 
+// api call
+
+// ----------------------------------------------------
 export default function MenuItemsByCategory({
   params,
 }: {
   params: { menuCategory: string };
 }) {
-  const tacos = "tacos";
-  const sides = "sides";
-  const toppings = "toppings";
-  const drinks = "drinks";
-
+  const [menuItems, setMenuItems] = useState([]);
   let category = params.menuCategory;
   // const categoryToDisplay: string = "";
 
   // console.log(`category: ${category}`);
 
-  if (![tacos, sides, toppings, drinks].includes(category)) {
+  if (!["taco", "side", "topping", "drink"].includes(category)) {
     notFound();
   }
 
-  switch (category) {
-    case (category = "tacos"):
-      SAMPLE_DATA = TACO_SAMPLE_DATA;
-      console.log(`category: ${category}`);
-      break;
-    case (category = "sides"):
-      SAMPLE_DATA = SIDE_SAMPLE_DATA;
-      console.log(`category: ${category}`);
-      break;
-    case (category = "toppings"):
-      SAMPLE_DATA = TOPPING_SAMPLE_DATA;
-      console.log(`category: ${category}`);
-      break;
-    case (category = "drinks"):
-      SAMPLE_DATA = DRINK_SAMPLE_DATA;
-      console.log(`category: ${category}`);
-      break;
-  }
+  useEffect(() => {
+    fetch(`http://localhost:8080/api/menu/category?category=${category}`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => {
+        // console.log(response.json());
+        // setMenuItems(response.json())
+        return response.json();
+      })
+      .then((data) => {
+        setMenuItems(data);
+      });
+    // .then((data) => {
+    //   setMenuItems(data.menuItems);
+    // });
+  }, [category]);
 
-  let categoryToDisplay =
-    category.charAt(0).toLocaleUpperCase() +
-    category.substring(1, category.length);
-  console.log(categoryToDisplay);
+  // switch (category) {
+  //   case (category = "tacos"):
+  //     SAMPLE_DATA = TACO_SAMPLE_DATA;
+  //     console.log(`category: ${category}`);
+  //     break;
+  //   case (category = "sides"):
+  //     SAMPLE_DATA = SIDE_SAMPLE_DATA;
+  //     console.log(`category: ${category}`);
+  //     break;
+  //   case (category = "toppings"):
+  //     SAMPLE_DATA = TOPPING_SAMPLE_DATA;
+  //     console.log(`category: ${category}`);
+  //     break;
+  //   case (category = "drinks"):
+  //     SAMPLE_DATA = DRINK_SAMPLE_DATA;
+  //     console.log(`category: ${category}`);
+  //     break;
+  // }
+
+  // let categoryToDisplay =
+  //   category.charAt(0).toLocaleUpperCase() +
+  //   category.substring(1, category.length);
+  // console.log(categoryToDisplay);
 
   return (
     <main>
-      <h1>{categoryToDisplay}</h1>
+      <h1>{category + "s"}</h1>
       <p>A nice description about this menu category</p>
-      <section>{<MenuItemList menuitems={SAMPLE_DATA} />}</section>
+      <section>{<MenuItemList menuitems={menuItems} />}</section>
     </main>
     // <main>
     //   <h1>{categoryToDisplay}</h1>
