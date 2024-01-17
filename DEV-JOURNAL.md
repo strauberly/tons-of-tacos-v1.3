@@ -2,6 +2,15 @@
 
 ---
 
+--- 16 Jan 2024 ---
+
+- Roughed in making call to receive menu items by category from backend and it is successfully doing so.
+- Files will need to be cleaned up and notes have been made for future improvements.
+- Noticed places for improvement in back-end in order to aide in ease of development by front-end team (me). Have passed along notes to back-end team(also me ^\_^).
+- Will be starting a new branch for further development of this feature.
+
+---
+
 --- 15 Jan 2024 ---
 
 - Menu items correctly changing dynamically according to slug input provided either through the address bar or our nav menu.
