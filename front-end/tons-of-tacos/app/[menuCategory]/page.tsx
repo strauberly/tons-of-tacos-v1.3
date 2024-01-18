@@ -128,7 +128,7 @@ export default function MenuItemsByCategory({
 
   // console.log(`category: ${category}`);
 
-  if (!["taco", "side", "topping", "drink"].includes(category)) {
+  if (!["tacos", "sides", "toppings", "drinks"].includes(category)) {
     notFound();
   }
 
@@ -176,7 +176,7 @@ export default function MenuItemsByCategory({
 
   return (
     <main>
-      <h1>{category + "s"}</h1>
+      <h1>{category}</h1>
       <p>A nice description about this menu category</p>
       <section>{<MenuItemList menuitems={menuItems} />}</section>
     </main>

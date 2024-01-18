@@ -9,16 +9,16 @@ export default function MenuNav() {
     <nav className={classes.menu}>
       <ul>
         <li>
-          <Link href="/taco">Tacos</Link>
+          <Link href="/tacos">Tacos</Link>
         </li>
         <li>
-          <Link href="/topping">Toppings</Link>
+          <Link href="/toppings">Toppings</Link>
         </li>
         <li>
-          <Link href="/side">Sides</Link>
+          <Link href="/sides">Sides</Link>
         </li>
         <li>
-          <Link href="/drink">Drinks</Link>
+          <Link href="/drinks">Drinks</Link>
         </li>
       </ul>
     </nav>
