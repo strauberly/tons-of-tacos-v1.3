@@ -3,8 +3,8 @@ import logoImg from "@/public/images/icons/bird-logo.svg";
 import classes from "./page.module.css";
 export default function Home() {
   return (
-    <main>
-      <Image src={logoImg} className={classes.img} alt="tons of tacos logo" />
+    <main className={classes.page}>
+      <Image src={logoImg} className={classes.image} alt="tons of tacos logo" />
     </main>
   );
 }

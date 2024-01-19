@@ -3,6 +3,7 @@
 import MenuItemList from "@/components/menu/menuItems/menu-item-list";
 import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
+import classes from "./page.module.css";
 // import classes from "./";
 // this will take the slug for menu items category and give the properties needed
 // let TACO_DUMMY_DATA: {keys:types}[] = [];
@@ -124,9 +125,6 @@ export default function MenuItemsByCategory({
 }) {
   const [menuItems, setMenuItems] = useState([]);
   let category = params.menuCategory;
-  // const categoryToDisplay: string = "";
-
-  // console.log(`category: ${category}`);
 
   if (!["tacos", "sides", "toppings", "drinks"].includes(category)) {
     notFound();
@@ -138,52 +136,22 @@ export default function MenuItemsByCategory({
       headers: { "Content-Type": "application/json" },
     })
       .then((response) => {
-        // console.log(response.json());
-        // setMenuItems(response.json())
         return response.json();
       })
       .then((data) => {
         setMenuItems(data);
       });
-    // .then((data) => {
-    //   setMenuItems(data.menuItems);
-    // });
   }, [category]);
-
-  // switch (category) {
-  //   case (category = "tacos"):
-  //     SAMPLE_DATA = TACO_SAMPLE_DATA;
-  //     console.log(`category: ${category}`);
-  //     break;
-  //   case (category = "sides"):
-  //     SAMPLE_DATA = SIDE_SAMPLE_DATA;
-  //     console.log(`category: ${category}`);
-  //     break;
-  //   case (category = "toppings"):
-  //     SAMPLE_DATA = TOPPING_SAMPLE_DATA;
-  //     console.log(`category: ${category}`);
-  //     break;
-  //   case (category = "drinks"):
-  //     SAMPLE_DATA = DRINK_SAMPLE_DATA;
-  //     console.log(`category: ${category}`);
-  //     break;
-  // }
-
-  // let categoryToDisplay =
-  //   category.charAt(0).toLocaleUpperCase() +
-  //   category.substring(1, category.length);
-  // console.log(categoryToDisplay);
 
   return (
     <main>
-      <h1>{category}</h1>
-      <p>A nice description about this menu category</p>
-      <section>{<MenuItemList menuitems={menuItems} />}</section>
+      <div className={classes.category}>
+        <h1>{category + ":"}</h1>
+        <p className={classes.title}>
+          A nice description about this menu category
+        </p>
+      </div>
+      <div>{<MenuItemList menuitems={menuItems} />}</div>
     </main>
-    // <main>
-    //   <h1>{categoryToDisplay}</h1>
-    //   <p>A nice description about this menu category</p>
-    //   <section>{<MenuItemList menuitems={/*Data Set*/} />}</section>
-    // </main>
   );
 }

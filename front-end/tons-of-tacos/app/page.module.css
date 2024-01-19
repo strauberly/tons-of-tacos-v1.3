@@ -1,11 +1,12 @@
-.img {
-  grid-row: 1;
+.image {
   position: absolute;
   width: 35rem;
   height: auto;
-  top: 10rem;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
+  top: 12rem;
+  left: 42rem;
+}
+
+.page {
+  align-items: center;
+  justify-content: center;
 }

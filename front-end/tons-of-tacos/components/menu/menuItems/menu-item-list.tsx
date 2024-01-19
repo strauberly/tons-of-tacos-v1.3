@@ -1,4 +1,5 @@
 import MenuItem from "./menu-item";
+import classes from "./menu-item-list.module.css";
 
 // export default function MenuItemList(props: { menuitems: [] }) {
 
@@ -6,7 +7,7 @@ export default function MenuItemList(props: { menuitems: any[] }) {
   return (
     // apply rules of pricing exceptions here menu item cases
 
-    <ul>
+    <ul className={classes.grid}>
       {props.menuitems.map(
         (menuitem: {
           key: string;
