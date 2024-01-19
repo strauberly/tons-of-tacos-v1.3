@@ -1,0 +1,24 @@
+/* .grid {
+  align-items: center;
+  justify-items: center;
+  width: 100rem;
+  /* max-width: 60; 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, auto));
+  grid-gap: 3rem;
+  margin: 4rem;
+  margin-left: 2rem;
+  list-style: none;
+} */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 3rem;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem;
+  /* max-width: 100rem; */
+}

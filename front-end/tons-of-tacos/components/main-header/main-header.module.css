@@ -1,12 +1,16 @@
 .header {
+  position: relative;
   color: #cf3052;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem 1rem 2rem;
   border-bottom: solid #63b369;
-
   margin: 0rem 1rem;
+  background-color: #11072f;
+  /* font-family: "Quatl"; */
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .home {
@@ -30,9 +34,11 @@
 }
 
 .menu {
+  position: relative;
   display: flex;
   justify-content: right;
-  margin: 0;
+  margin-right: 0.5rem;
+  font-family: "Quatl";
 }
 
 .menu ul li {

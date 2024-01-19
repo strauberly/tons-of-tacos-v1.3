@@ -12,20 +12,20 @@ export default function MainHeader() {
 
   return (
     <>
-    <header className={classes.header}>
-      <Link className={classes.home} href="/">
-        Tons Of Tacos
-      </Link>
-      <nav className={classes.nav}>
-        <button onClick={() => setShowMenu(!showMenu)}>
-          <MenuIcon />
-        </button>
-        <button>
-          <CartIcon />
-        </button>
-      </nav>
-    </header>
-        <div className={classes.menu}>{showMenu && MenuNav()}</div>
+      <header className={classes.header}>
+        <Link className={classes.home} href="/">
+          Tons Of Tacos
+        </Link>
+        <nav className={classes.nav}>
+          <button onClick={() => setShowMenu(!showMenu)}>
+            <MenuIcon />
+          </button>
+          <button>
+            <CartIcon />
+          </button>
+        </nav>
+      </header>
+      <div className={classes.menu}>{showMenu && MenuNav()}</div>
     </>
   );
 }

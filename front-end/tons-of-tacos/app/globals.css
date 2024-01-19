@@ -15,11 +15,16 @@
 
 body {
   display: grid;
+  position: relative;
   background-color: #11072f;
-  /* margin: none; */
   font-family: "Quatl";
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
 
-  /* justify-content: center; */
+body main {
+  justify-content: center;
+  align-items: center;
 }
 
 p {
@@ -34,4 +39,16 @@ h1 {
 button {
   background-color: transparent;
   border: none;
+}
+
+.children {
+  display: flex;
+  position: absolute;
+  padding-top: 10rem;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }

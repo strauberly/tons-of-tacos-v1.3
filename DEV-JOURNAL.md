@@ -2,11 +2,20 @@
 
 ---
 
+--- 19 Jan 2024 ---
+
+- Styled out menu category grid of menu items. Basically a ul of cards nested in a section.
+- Styling places our grid dead center and gives the appearance of growing outward.
+- Implemented means to render menu item name with first letter of each word capitalized.
+- Ready to continue styling with a call to get description of category and complete styling of card for changing quantity of a menu item before adding it to cart.
+
+---
+
 --- 18 Jan 2024 ---
 
 - Back-end team(me) implemented our suggestions and so we have made adjustments by renaming our images to correctly reflect menu item names stored in the backend.
 - Currently receiving menu items via a call to backend each time the category changes and the component loads. Will be implementing a loading state. As well will be looking into pre-fetching and rendering the data so that it can displayed quicker. Backend calls also to be transferred elsewhere than in component.
-- Component ready for styling. Reference wire frame.  
+- Component ready for styling. Reference wire frame.
 
 ---
 
