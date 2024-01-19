@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import MainHeader from "../components/main-header/main-header";
 import { inter } from "../components/fonts/fonts";
+import classes from "../components/main-header/main-header.module.css";
 
 export const metadata: Metadata = {
   title: "Tons Of Tacos",
@@ -16,8 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable}`}>
+        <div className="children">{children}</div>
         <MainHeader />
-        {children}
       </body>
     </html>
   );
