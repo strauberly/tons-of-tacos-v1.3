@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import MainHeader from "../components/main-header/main-header";
 import { inter } from "../components/fonts/fonts";
-import classes from "../components/main-header/main-header.module.css";
 import getCategories from "@/lib/getCategories";
 import { GlobalContextProvider } from "@/context/store";
 
