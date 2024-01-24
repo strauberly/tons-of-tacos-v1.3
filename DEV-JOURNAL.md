@@ -2,6 +2,17 @@
 
 ---
 
+--- 23 Jan 2024 ---
+
+- Implemented calling api route for menu categories from layout and menu categories are dynamically populated.
+
+  - When link is clicked the menu disappears. This is achieved by implementing a global context to be called in other components.
+  - Clicking on a link correctly calls all menu items associated with menu category.
+
+- Push is intentionally a mess so that I can start demonstrating proof of work and conceptualization. Will then clean and pull from main.
+
+---
+
 --- 19 Jan 2024 ---
 
 - Styled out menu category grid of menu items. Basically a ul of cards nested in a section.
