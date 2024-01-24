@@ -24,23 +24,18 @@ export default function MenuItem(props: {
     <Card>
       <li className={classes.container}>
         <p>{itemName}</p>
-        {/* <div className={classes.image}> */}
         <Image
           className={classes.image}
           src={`/images/menu-items/${props.category}/${props.item_name}.jpg`}
-          // src={props.image_url}
           alt={`a picture of ${props.item_name}`}
-          // fill={true}
           width={300}
           height={300}
         />
-        {/* <p>{props.description}</p> */}
         <p>${props.unit_price}</p>
         <p>placeholder for item size selection</p>
         <p>place holder for quantity selector</p>
         <p>... placeholder</p>
         <p>add to cart place holder</p>
-        {/* more info button */}
       </li>
     </Card>
   );
