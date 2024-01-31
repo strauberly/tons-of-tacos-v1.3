@@ -2,6 +2,17 @@
 
 ---
 
+--- 31 Jan 2024 ---
+
+- Successful implementation of global context for menu categories.
+  - Updated context.
+  - Updated api fetch.
+  - Main header is rendered on loading and interactive and already client component for conditionally displaying nav menu. Therefore set global context for menu categories here.
+    - Utilized useEffect() as component can not be async as it is client in order to use global context.
+  - Updated menu category list to use categories from global context instead of passed props. Unnecessary props will be removed shortly.
+
+---
+
 --- 30 Jan 2024 ---
 
 - Created new branch to continue on creating contexts. Application currently delivers content dynamically from our backend and through the use of context, but is also passing information through prop drilling. My next goal will be to fetch data on the server side and essentially set it as a semi global context that I can call into different components. Hopefully this eliminate a number of needless calls or prop spelunking. Wish me luck.
