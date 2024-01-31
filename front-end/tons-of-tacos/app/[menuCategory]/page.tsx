@@ -4,17 +4,44 @@ import MenuItemList from "@/components/menu/menuItems/menu-item-list";
 import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
 import classes from "./page.module.css";
+import { useGlobalContext } from "@/context/store";
+
 export default function MenuItemsByCategory({
   params,
 }: {
   params: { menuCategory: string };
 }) {
+  const { categories } = useGlobalContext();
+
+  console.log(categories.toString());
+
+  const menuOptions: string[] = [];
+
+  categories.map((menucategory: { name: string }) =>
+    menuOptions.push(menucategory.name)
+  );
+
+  console.log(`menu options: ${menuOptions}`);
+
   const [menuItems, setMenuItems] = useState([]);
+
   let category = params.menuCategory;
 
-  if (!["tacos", "sides", "toppings", "drinks"].includes(category)) {
+  console.log(category);
+
+  if (!menuOptions.includes(category)) {
     notFound();
   }
+
+  // if (!["tacos", "sides", "toppings", "drinks"].includes(category)) {
+  //   notFound();
+  // }
+
+  let description: string | undefined = categories
+    .find(function (mc) {
+      return mc.name === `${category}`;
+    })
+    ?.description.toString();
 
   useEffect(() => {
     fetch(`http://localhost:8080/api/menu/category?category=${category}`, {
@@ -33,9 +60,7 @@ export default function MenuItemsByCategory({
     <main>
       <div className={classes.category}>
         <h1>{category + ":"}</h1>
-        <p className={classes.title}>
-          A nice description about this menu category
-        </p>
+        <p className={classes.title}>{description}</p>
       </div>
       <div>{<MenuItemList menuitems={menuItems} />}</div>
     </main>
