@@ -5,11 +5,16 @@
 --- 31 Jan 2024 ---
 
 - Successful implementation of global context for menu categories.
+
   - Updated context.
   - Updated api fetch.
   - Main header is rendered on loading and interactive and already client component for conditionally displaying nav menu. Therefore set global context for menu categories here.
     - Utilized useEffect() as component can not be async as it is client in order to use global context.
   - Updated menu category list to use categories from global context instead of passed props. Unnecessary props will be removed shortly.
+
+- Successful implementation of dynamically returning category descriptions. Issues here are that on refresh we lose it.
+  - Thinking the solution would be to add a menu options to global context and also set in the main header.
+  - Possibly also evaluate condition as an async function.
 
 ---
 
