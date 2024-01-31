@@ -3,7 +3,7 @@ import "./globals.css";
 import MainHeader from "../components/main-header/main-header";
 import { inter } from "../components/fonts/fonts";
 import getCategories from "@/lib/getCategories";
-import { GlobalContextProvider } from "@/context/store";
+import { GlobalContextProvider, useGlobalContext } from "@/context/store";
 
 export const metadata: Metadata = {
   title: "Tons Of Tacos",
