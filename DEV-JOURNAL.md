@@ -2,6 +2,12 @@
 
 ---
 
+--- 30 Jan 2024 ---
+
+- Created new branch to continue on creating contexts. Application currently delivers content dynamically from our backend and through the use of context, but is also passing information through prop drilling. My next goal will be to fetch data on the server side and essentially set it as a semi global context that I can call into different components. Hopefully this eliminate a number of needless calls or prop spelunking. Wish me luck.
+
+---
+
 --- 23 Jan 2024 ---
 
 - Implemented calling api route for menu categories from layout and menu categories are dynamically populated.
