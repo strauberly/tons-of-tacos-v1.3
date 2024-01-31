@@ -47,8 +47,6 @@ export default function MainHeader(props: { menuCategories: Category }) {
     categoryData();
   }, [setCategories]);
 
-  // console.log(categories);
-
   return (
     <>
       {/* <p>{categories[0].description.toString()}</p> */}
