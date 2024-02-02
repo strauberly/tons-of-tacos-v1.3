@@ -2,6 +2,18 @@
 
 ---
 
+--- 1 Feb 2024 ---
+
+- Implemented some persistance through local storage in order to keep moving forward with development. I am earmarking this with a note for a revaluation of obtaining the same desired results through alternative means ie Zustand, perhaps usage of memo or callback other state management libraries.
+
+- In order to achieve persistance for menu categories and category descriptions after a browser refresh, the following was implemented:
+
+  - In the header component we utilize use effect on initialization to call our api and simultaneously set the global context of menu categories and set it in the local storage. By doing this if the browser is refreshed, the header component recalls the api and resets. The context can still be used.
+
+  - If the user is on the menu items pages though and browser is refreshed the required values are not reset before being called and we get a not found page. This is fixed by feeding the required values needed for validation from the values saved to local storage.
+
+---
+
 --- 31 Jan 2024 ---
 
 - Successful implementation of global context for menu categories.
