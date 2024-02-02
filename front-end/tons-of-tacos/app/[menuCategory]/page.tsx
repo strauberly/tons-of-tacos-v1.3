@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
 import classes from "./page.module.css";
 import { useGlobalContext } from "@/context/store";
+import { SourceTextModule } from "vm";
 
 export default function MenuItemsByCategory({
   params,
@@ -15,25 +16,43 @@ export default function MenuItemsByCategory({
 
   console.log(categories.toString());
 
-  const menuOptions: string[] = [];
+  // const menuOptions: string[] = [];
 
-  categories.map((menucategory: { name: string }) =>
-    menuOptions.push(menucategory.name)
-  );
+  // categories.map((menucategory: { name: string }) =>
+  //   menuOptions.push(menucategory.name)
+  // );
+  // if (typeof localStorage !== "undefined") {
+  // }
+  // const cat: Category[] = JSON.parse(localStorage.getItem("categories"));
+  // console.log(`local storage : ${cat}`);
 
-  console.log(`menu options: ${menuOptions}`);
+  // const menuoptions = cat.map((cat: { name: string }) => cat.name);
 
   const [menuItems, setMenuItems] = useState([]);
+
+  // console.log(`menu options: ${menuoptions}`);
 
   let category = params.menuCategory;
 
   console.log(category);
 
-  if (!menuOptions.includes(category)) {
-    notFound();
-  }
+  // if (!menuOptions.includes(category)) {
+  //   notFound();
+  // }
+
+  // const menuOptions = categories.map(
+  //   (category: { name: string }) => category.name
+  // );
+
+  // const options = menuOptions;
+
+  // console.log(`menu options: ${menuOptions}`);
 
   // if (!["tacos", "sides", "toppings", "drinks"].includes(category)) {
+  //   notFound();
+  // }
+
+  // if (!menuoptions.includes(category)) {
   //   notFound();
   // }
 
@@ -44,6 +63,12 @@ export default function MenuItemsByCategory({
     ?.description.toString();
 
   useEffect(() => {
+    const cat: Category[] = JSON.parse(localStorage.getItem("categories"));
+    const menuoptions = cat.map((cat: { name: string }) => cat.name);
+
+    if (!menuoptions.includes(category)) {
+      notFound();
+    }
     fetch(`http://localhost:8080/api/menu/category?category=${category}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },

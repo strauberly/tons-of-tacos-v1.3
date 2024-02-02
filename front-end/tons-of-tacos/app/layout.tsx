@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import MainHeader from "../components/main-header/main-header";
 import { inter } from "../components/fonts/fonts";
-import getCategories from "@/lib/getCategories";
+import useCategoriesSource from "@/lib/getCategories";
 import { GlobalContextProvider, useGlobalContext } from "@/context/store";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Our delicious food brought to you.",
 };
 
-const categoriesData: Promise<Category[]> = await getCategories();
+const categoriesData: Promise<Category[]> = await useCategoriesSource();
 const categories = await categoriesData;
 
 export default function RootLayout({

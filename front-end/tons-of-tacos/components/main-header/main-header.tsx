@@ -6,7 +6,7 @@ import CartIcon from "./cart-icon";
 import MenuIcon from "./menu-icon";
 import MenuNav from "@/components/menu/menu-navigation/menu-navigation";
 import { useGlobalContext } from "@/context/store";
-import getCategories from "@/lib/getCategories";
+import useCategoriesSource from "@/lib/getCategories";
 import { useEffect } from "react";
 
 // const categoriesData: Promise<Category[]> = await getCategories();
@@ -39,7 +39,7 @@ export default function MainHeader(props: { menuCategories: Category }) {
     async function categoryData() {
       // You can await here
       // setCategories([]);
-      const response: Promise<Category[]> = await getCategories();
+      const response: Promise<Category[]> = await useCategoriesSource();
       const returnedCategories = await response;
       setCategories(returnedCategories);
       // ...
