@@ -36,15 +36,14 @@ export default function MainHeader(props: { menuCategories: Category }) {
   // }, [setCategories]);
 
   useEffect(() => {
-    async function categoryData() {
+    async function CategoryData() {
       // You can await here
       // setCategories([]);
       const response: Promise<Category[]> = await useCategoriesSource();
       const returnedCategories = await response;
       setCategories(returnedCategories);
-      // ...
     }
-    categoryData();
+    CategoryData();
   }, [setCategories]);
 
   return (
