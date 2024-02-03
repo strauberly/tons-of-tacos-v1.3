@@ -63,8 +63,10 @@ export default function MenuItemsByCategory({
     ?.description.toString();
 
   useEffect(() => {
-    const cat: Category[] = JSON.parse(localStorage.getItem("categories"));
-    const menuoptions = cat.map((cat: { name: string }) => cat.name);
+    const cat: Category[] = JSON.parse(
+      sessionStorage.getItem("categories") || "{}"
+    );
+    const menuoptions: string[] = cat.map((cat: { name: string }) => cat.name);
 
     if (!menuoptions.includes(category)) {
       notFound();

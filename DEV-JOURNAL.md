@@ -2,6 +2,12 @@
 
 ---
 
+--- 3 Feb 2024 ---
+
+- Supplanted local storage for session storage. Ready for refactor and clean up.
+
+---
+
 --- 1 Feb 2024 ---
 
 - Implemented some persistance through local storage in order to keep moving forward with development. I am earmarking this with a note for a revaluation of obtaining the same desired results through alternative means ie Zustand, perhaps usage of memo or callback other state management libraries.
