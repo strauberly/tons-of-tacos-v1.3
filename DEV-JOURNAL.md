@@ -2,6 +2,18 @@
 
 ---
 
+--- 5 Feb 2024 ---
+
+- Reverted to local storage after remembering that desired experience is for a user to be able to head straight to a menu category without having been to the application before.
+
+- Outsourced call to api for menu items to library.
+
+- Removed extraneous notes.
+
+- Sent request to backend team(me ^\_^) to return menu item price in currency format as well as implement functionality for a adding a size to a menu item if applicable and calculate appropriate price.
+
+---
+
 --- 3 Feb 2024 ---
 
 - Supplanted local storage for session storage. Ready for refactor and clean up.

@@ -1,11 +1,13 @@
 import MenuItem from "./menu-item";
 import classes from "./menu-item-list.module.css";
 
-export default function MenuItemList(props: { menuitems: any[] }) {
+// possibly export to types and create a context for in here
+
+export default function MenuItemList(props: { menuItems: any[] }) {
   return (
     <ul className={classes.grid}>
-      {props.menuitems.map(
-        (menuitem: {
+      {props.menuItems.map(
+        (menuItem: {
           key: string;
           itemName: string;
           category: string;
@@ -15,13 +17,13 @@ export default function MenuItemList(props: { menuitems: any[] }) {
           description: string;
         }) => (
           <MenuItem
-            key={menuitem.itemName}
-            item_name={menuitem.itemName}
-            category={menuitem.category}
-            image_url={menuitem.image_url}
-            item_size={menuitem.itemSize}
-            unit_price={menuitem.unitPrice}
-            description={menuitem.description}
+            key={menuItem.itemName}
+            item_name={menuItem.itemName}
+            category={menuItem.category}
+            image_url={menuItem.image_url}
+            item_size={menuItem.itemSize}
+            unit_price={menuItem.unitPrice}
+            description={menuItem.description}
           />
         )
       )}
