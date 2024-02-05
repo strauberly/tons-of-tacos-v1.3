@@ -1,22 +1,17 @@
 import { useGlobalContext } from "@/context/store";
 import MenuCategory from "./menu-category";
 
-export default function MenuCategories(props: { menuCategories: Category[] }) {
+export default function MenuCategories() {
+  // map each category name to list item for links and dynamic nav
   const { categories } = useGlobalContext();
 
   return (
     <>
       <ul>
-        {categories.map((menucategory: { name: string }) => (
-          <MenuCategory key={menucategory.name} name={menucategory.name} />
+        {categories.map((menuCategory: { name: string }) => (
+          <MenuCategory key={menuCategory.name} name={menuCategory.name} />
         ))}
       </ul>
-
-      {/* <ul>
-      {props.menuCategories.map((menucategory: { name: string }) => (
-        <MenuCategory key={menucategory.name} name={menucategory.name} />
-        ))}
-    </ul> */}
     </>
   );
 }
