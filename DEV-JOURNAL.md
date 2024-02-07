@@ -2,6 +2,12 @@
 
 ---
 
+--- 6 Feb 2024 ---
+
+- Backend team(me ^\_^) finished implementation of adjusting pricing according to size and we should be good to go after looking over documentation. Also altered our code to format pricing correctly.
+
+---
+
 --- 5 Feb 2024 ---
 
 - Reverted to local storage after remembering that desired experience is for a user to be able to head straight to a menu category without having been to the application before.
