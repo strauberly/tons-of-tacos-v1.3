@@ -31,7 +31,7 @@ export default function MenuItem(props: {
           width={300}
           height={300}
         />
-        <p>${props.unit_price}</p>
+        <p>${props.unit_price.toFixed(2)}</p>
         <p>placeholder for item size selection</p>
         <p>place holder for quantity selector</p>
         <p>... placeholder</p>
