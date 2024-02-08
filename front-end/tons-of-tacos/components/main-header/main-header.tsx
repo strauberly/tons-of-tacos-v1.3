@@ -21,7 +21,7 @@ export default function MainHeader() {
   }, [setCategories]);
 
   return (
-    <>
+    <main>
       <header className={classes.header}>
         <Link className={classes.home} href="/">
           Tons Of Tacos
@@ -36,6 +36,6 @@ export default function MainHeader() {
         </nav>
       </header>
       <div className={classes.menu}>{showMenu && <MenuNav />}</div>
-    </>
+    </main>
   );
 }

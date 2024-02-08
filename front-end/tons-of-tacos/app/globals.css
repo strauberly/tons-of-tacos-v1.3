@@ -9,22 +9,9 @@
   margin: 0;
 }
 
-/* header {
-  font-family: "Quatl";
-} */
-
 body {
-  display: grid;
-  position: relative;
   background-color: #11072f;
   font-family: "Quatl";
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
-body main {
-  justify-content: center;
-  align-items: center;
 }
 
 p {
@@ -42,13 +29,16 @@ button {
 }
 
 .children {
-  display: flex;
-  position: absolute;
-  padding-top: 10rem;
+  display: flexbox;
+  z-index: 0;
+  position: relative;
+  padding: 8rem;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
+  /* margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
+  margin-left: 2rem;
+  margin-right: 2rem; */
 }
