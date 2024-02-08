@@ -11,6 +11,7 @@ export default function MenuItem(props: {
   item_size: string;
   unit_price: number;
 }) {
+  //  Capitalize first letter of each word
   const itemName: string[] = props.item_name.split(" ");
 
   for (let i = 0; i < itemName.length; i++) {
@@ -22,7 +23,7 @@ export default function MenuItem(props: {
 
   return (
     <Card>
-      <li className={classes.container}>
+      <li className={classes.card}>
         <p>{itemName}</p>
         <Image
           className={classes.image}
