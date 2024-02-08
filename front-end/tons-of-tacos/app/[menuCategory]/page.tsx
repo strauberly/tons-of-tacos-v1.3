@@ -12,17 +12,11 @@ export default function MenuItemsByCategory({
 }: {
   params: { menuCategory: string };
 }) {
-  // get menu categories
-
   const { categories } = useGlobalContext();
-  // console.log(categories.toString());
-
   const [menuItems, setMenuItems] = useState([]);
 
   // desired category captured from params
-
   let category = params.menuCategory;
-  // console.log(category);
 
   // get and set category description
   let description: string | undefined = categories

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import MainHeader from "../components/main-header/main-header";
-import { inter } from "../components/fonts/fonts";
+import { inter } from "../components/ui/fonts/fonts";
 import { GlobalContextProvider } from "@/context/store";
 
 export const metadata: Metadata = {

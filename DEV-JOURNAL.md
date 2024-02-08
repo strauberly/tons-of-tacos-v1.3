@@ -2,6 +2,12 @@
 
 ---
 
+--- 8 Feb 2024 ---
+
+- Refactored styling modules to eliminate unused code and notes. Moved fonts folder into nested ui folder. Ready for more styling.
+
+---
+
 --- 7 Feb 2024 ---
 
 - Worked on styles for our menu item grid,and main nav header. Noticed where styling could be tightened up and made a bit leaner. Also set items to more dynamically align and center with other elements. Ready for refactor to scrub old solutions.

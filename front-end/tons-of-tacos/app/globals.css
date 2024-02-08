@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Quatl";
-  src: url("../components/fonts/Quatl-3zp26.ttf");
+  src: url("../components/ui/fonts/Quatl-3zp26.ttf");
 }
 
 * {
@@ -35,10 +35,4 @@ button {
   padding: 8rem;
   justify-content: center;
   align-items: center;
-  /* margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  margin-left: 2rem;
-  margin-right: 2rem; */
 }
