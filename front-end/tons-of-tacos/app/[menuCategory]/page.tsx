@@ -52,7 +52,7 @@ export default function MenuItemsByCategory({
   }, [category]);
 
   return (
-    <main>
+    <main className={classes.main}>
       <div className={classes.category}>
         <h1>{category + ":"}</h1>
         <p className={classes.title}>{description}</p>

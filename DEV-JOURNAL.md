@@ -2,6 +2,13 @@
 
 ---
 
+--- 7 Feb 2024 ---
+
+- Worked on styles for our menu item grid,and main nav header. Noticed where styling could be tightened up and made a bit leaner. Also set items to more dynamically align and center with other elements. Ready for refactor to scrub old solutions.
+- Next will come fleshing out the menu item cards a little bit more.
+
+---
+
 --- 6 Feb 2024 ---
 
 - Backend team(me ^\_^) finished implementation of adjusting pricing according to size and we should be good to go after looking over documentation. Also altered our code to format pricing correctly.
