@@ -10,8 +10,12 @@
 }
 
 body {
-  background-color: #11072f;
+  background-color: #0c0424;
   font-family: "Quatl";
+  letter-spacing: 0.5px;
+  height: 100vh;
+  max-width: 98%;
+  overflow-y: scroll;
 }
 
 p {
@@ -31,8 +35,17 @@ button {
 .children {
   display: flexbox;
   z-index: 0;
-  position: relative;
-  padding: 8rem;
+  padding: 2rem;
+  padding-top: 8rem;
   justify-content: center;
   align-items: center;
+}
+
+::-webkit-scrollbar {
+  background-color: #0c0424;
+  width: 1.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cf3052;
 }

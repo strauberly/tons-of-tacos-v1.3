@@ -34,8 +34,8 @@ export default function MainHeader() {
             <CartIcon />
           </button>
         </nav>
+        <div className={classes.menu}>{showMenu && <MenuNav />}</div>
       </header>
-      <div className={classes.menu}>{showMenu && <MenuNav />}</div>
     </main>
   );
 }

@@ -1,4 +1,4 @@
-import classes from "./card.module.css";
+import classes from "@/components/ui/cards/card.module.css";
 
 // just encapsulates the actual meal item details styled as an individual
 export default function Card(props: any) {
