@@ -2,6 +2,12 @@
 
 ---
 
+--- 9 Feb 2024 ---
+
+- Changed menu button from on click to on enter.
+
+---
+
 --- 8 Feb 2024 ---
 
 - Refactored styling modules to eliminate unused code and notes. Moved fonts folder into nested ui folder. Ready for more styling.
