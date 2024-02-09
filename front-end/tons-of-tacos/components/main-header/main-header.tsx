@@ -27,7 +27,7 @@ export default function MainHeader() {
           Tons Of Tacos
         </Link>
         <nav className={classes.nav}>
-          <button onClick={() => setShowMenu(!showMenu)}>
+          <button onMouseEnter={() => setShowMenu(!showMenu)}>
             <MenuIcon />
           </button>
           <button>
