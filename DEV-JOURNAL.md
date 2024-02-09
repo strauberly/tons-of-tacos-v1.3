@@ -5,6 +5,11 @@
 --- 8 Feb 2024 ---
 
 - Refactored styling modules to eliminate unused code and notes. Moved fonts folder into nested ui folder. Ready for more styling.
+- Set main background color to #0c0424. Will need to update the template.
+- Set overflow y to scroll. Prevents content shift for now.
+- Added transition ease onto various interactive elements.
+- Utilized framer motion for loading menu item pages with a smoothed transition.
+- Styled scrollbar to match theme.
 
 ---
 

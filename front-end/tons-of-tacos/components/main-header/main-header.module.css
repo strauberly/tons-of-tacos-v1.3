@@ -8,7 +8,7 @@
   gap: 60rem;
   padding: 1rem;
   color: #cf3052;
-  background-color: hsl(255, 74%, 11%);
+  background-color: #0c0424;
   border-bottom: solid #63b369;
   margin-left: auto;
   margin-right: auto;
@@ -20,28 +20,32 @@
   text-decoration: none;
   font-size: 4rem;
   color: #cf3052;
+  transition: 1s ease;
 }
 
 .home:hover {
   color: #ebc83b;
+  transition: 0.3s ease;
 }
 
 .icon {
   padding-left: 4rem;
   height: 3rem;
   color: #cf3052;
+  transition: 1s ease;
 }
 
 .icon:hover {
   color: #ebc83b;
+  transition: 0.3s ease;
 }
 
 .menu {
   position: fixed;
   z-index: 50;
-  top: 12%;
+  top: 12.25%;
   left: 75%;
-  transform: translate(98%);
+  transform: translate(94%);
   font-family: "Quatl";
 }
 
@@ -55,9 +59,11 @@
 .menu a {
   color: #cf3052;
   text-decoration: none;
+  transition: 1s ease;
 }
 
 .menu a:hover {
   color: #ebc83b;
   text-decoration: none;
+  transition: 0.3s ease;
 }

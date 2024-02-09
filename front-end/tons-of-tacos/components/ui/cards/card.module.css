@@ -1,0 +1,23 @@
+.menucard {
+  border-color: transparent;
+  background: linear-gradient(
+      to bottom,
+      #63b369 0%,
+      #0c0424 30%,
+      #0c0424 90%,
+
+      #63b369 100%
+    )
+    100%;
+  border-radius: 10px;
+
+  border-style: solid;
+
+  padding: 0.1rem;
+  transition: 1s ease;
+}
+
+.menucard:hover {
+  box-shadow: 0px 0px 30px 10px rgba(99, 179, 105, 1);
+  transition: 0.3s ease;
+}

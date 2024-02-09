@@ -1,4 +1,4 @@
-import Card from "@/components/ui/card";
+import Card from "@/components/ui/cards/card";
 import Image from "next/image";
 import classes from "./menu-item.module.css";
 

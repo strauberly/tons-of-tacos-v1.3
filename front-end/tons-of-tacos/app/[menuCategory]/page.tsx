@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import classes from "./page.module.css";
 import { useGlobalContext } from "@/context/store";
 import { useMenuItemsForCategory } from "@/lib/menuItemsByCategory";
+import FadeOnLoad from "@/components/ui/animations/fade-on-load";
 
 export default function MenuItemsByCategory({
   params,
@@ -47,11 +48,13 @@ export default function MenuItemsByCategory({
 
   return (
     <main className={classes.main}>
-      <div className={classes.category}>
-        <h1>{category + ":"}</h1>
-        <p className={classes.title}>{description}</p>
-      </div>
-      <div>{<MenuItemList menuItems={menuItems} />}</div>
+      <FadeOnLoad>
+        <div className={classes.category}>
+          <h1>{category + ":"}</h1>
+          <p className={classes.title}>{description}</p>
+        </div>
+        <div>{<MenuItemList menuItems={menuItems} />}</div>
+      </FadeOnLoad>
     </main>
   );
 }
