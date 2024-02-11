@@ -7,6 +7,7 @@ import classes from "./page.module.css";
 import { useGlobalContext } from "@/context/store";
 import { useMenuItemsForCategory } from "@/lib/menuItemsByCategory";
 import FadeOnLoad from "@/components/ui/animations/fade-on-load";
+import { AnimatePresence } from "framer-motion";
 
 export default function MenuItemsByCategory({
   params,
