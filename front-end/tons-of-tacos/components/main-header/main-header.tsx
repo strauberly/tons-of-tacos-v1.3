@@ -8,6 +8,8 @@ import MenuNav from "@/components/menu/menu-navigation/menu-navigation";
 import { useGlobalContext } from "@/context/store";
 import useCategoriesSource from "@/lib/menuItemsByCategory";
 import { useEffect } from "react";
+import DropDown from "../ui/animations/drop-down";
+import { AnimatePresence } from "framer-motion";
 
 export default function MainHeader() {
   const { showMenu, setShowMenu, setCategories } = useGlobalContext();
@@ -21,12 +23,12 @@ export default function MainHeader() {
   }, [setCategories]);
 
   return (
-    <main>
+    <>
       <header className={classes.header}>
         <Link className={classes.home} href="/">
           Tons Of Tacos
         </Link>
-        <nav className={classes.nav}>
+        <nav className={classes.navButtons}>
           <button onMouseEnter={() => setShowMenu(!showMenu)}>
             <MenuIcon />
           </button>
@@ -34,8 +36,16 @@ export default function MainHeader() {
             <CartIcon />
           </button>
         </nav>
-        <div className={classes.menu}>{showMenu && <MenuNav />}</div>
+        <div className={classes.menu}>
+          <AnimatePresence mode="wait">
+            {showMenu && (
+              <DropDown>
+                <MenuNav />
+              </DropDown>
+            )}
+          </AnimatePresence>
+        </div>
       </header>
-    </main>
+    </>
   );
 }
