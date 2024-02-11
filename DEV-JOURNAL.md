@@ -7,6 +7,8 @@
 - Rectified a few styling oddities and created drop down animation for menu nav.
 - Upgraded NVM to 18.
 
+---
+
 --- 9 Feb 2024 ---
 
 - Changed menu button from on click to on enter.

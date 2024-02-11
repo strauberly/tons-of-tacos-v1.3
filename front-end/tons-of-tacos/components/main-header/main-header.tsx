@@ -28,7 +28,11 @@ export default function MainHeader() {
         <Link className={classes.home} href="/">
           Tons Of Tacos
         </Link>
+<<<<<<< HEAD
         <nav className={classes.navButtons}>
+=======
+        <nav className={classes.nav}>
+>>>>>>> 0582b150e77d132e83d7e84c8139750c81971dba
           <button onMouseEnter={() => setShowMenu(!showMenu)}>
             <MenuIcon />
           </button>
