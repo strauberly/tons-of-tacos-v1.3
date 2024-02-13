@@ -6,7 +6,7 @@ export default function MenuCategories() {
 
   return (
     <>
-      <ul on>
+      <ul>
         {categories.map((menuCategory: { name: string }) => (
           <MenuCategory key={menuCategory.name} name={menuCategory.name} />
         ))}
