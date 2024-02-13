@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logoImg from "@/public/images/icons/bird-logo.svg";
+import logoImg from "@/public/images/logos/bird-logo-rendersa.svg";
 import classes from "./page.module.css";
 export default async function Home() {
   return (
