@@ -2,6 +2,13 @@
 
 ---
 
+-- 13 Feb 2024 ---
+
+- Created assets for loading animation and implemented the animation. Requires a little additional tweaking.
+- Menu item lit currently has a timeout implemented to test loading animation.
+
+---
+
 --- 10 Feb 2024 ---
 
 - Rectified a few styling oddities and created drop down animation for menu nav.
