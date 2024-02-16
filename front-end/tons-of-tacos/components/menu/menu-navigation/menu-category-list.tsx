@@ -1,8 +1,10 @@
 import { useGlobalContext } from "@/context/store";
 import MenuCategory from "./menu-category";
 
+// set categories here?
+
 export default function MenuCategories() {
-  const { categories } = useGlobalContext();
+  const { categories, setShowMenu, showMenu } = useGlobalContext();
 
   return (
     <>
