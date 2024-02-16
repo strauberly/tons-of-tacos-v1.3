@@ -3,16 +3,15 @@ import Image from "next/image";
 import classes from "./menu-item.module.css";
 
 export default function MenuItem(props: {
-  key: string;
-  item_name: string;
+  itemName: string;
   category: string;
-  image_url: string;
+  imageUrl: string;
   description: string;
-  item_size: string;
-  unit_price: number;
+  itemSize: string;
+  unitPrice: number;
 }) {
   //  Capitalize first letter of each word
-  const itemName: string[] = props.item_name.split(" ");
+  const itemName: string[] = props.itemName.split(" ");
 
   for (let i = 0; i < itemName.length; i++) {
     itemName[i] = itemName[i][0].toUpperCase() + itemName[i].substring(1);
@@ -27,12 +26,12 @@ export default function MenuItem(props: {
         <p>{itemName}</p>
         <Image
           className={classes.image}
-          src={`/images/menu-items/${props.category}/${props.item_name}.jpg`}
-          alt={`a picture of ${props.item_name}`}
+          src={`/images/menu-items/${props.category}/${props.itemName}.jpg`}
+          alt={`a picture of ${props.itemName}`}
           width={300}
           height={300}
         />
-        <p>${props.unit_price.toFixed(2)}</p>
+        <p>${props.unitPrice.toFixed(2)}</p>
         <p>placeholder for item size selection</p>
         <p>place holder for quantity selector</p>
         <p>... placeholder</p>

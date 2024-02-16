@@ -3,28 +3,28 @@ import classes from "./menu-item-list.module.css";
 
 // possibly export to types and create a context for in here
 
-export default async function MenuItemList(props: { menuItems: any[] }) {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+export default async function MenuItemList(props: { menuItems: MenuItem[] }) {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
 
+  // console.log(props.menuItems);
   return (
     <ul className={classes.grid}>
       {props.menuItems.map(
         (menuItem: {
-          key: string;
           itemName: string;
           category: string;
-          image_url: string;
+          imageUrl: string;
           itemSize: string;
           unitPrice: number;
           description: string;
         }) => (
           <MenuItem
             key={menuItem.itemName}
-            item_name={menuItem.itemName}
+            itemName={menuItem.itemName}
             category={menuItem.category}
-            image_url={menuItem.image_url}
-            item_size={menuItem.itemSize}
-            unit_price={menuItem.unitPrice}
+            imageUrl={menuItem.imageUrl}
+            itemSize={menuItem.itemSize}
+            unitPrice={menuItem.unitPrice}
             description={menuItem.description}
           />
         )

@@ -12,6 +12,12 @@ import logoImg from "@/public/images/logos/bird-logo-rendersa.svg";
 import logoRender from "@/public/images/logos/bird-logo-rendersb.svg";
 import LoadingAnimation from "@/components/ui/animations/loading-animation";
 
+// params and old params  -> possibly a context selection same menu category => on startup clear local storage for category and right current category right the name of the first item in the array to local storage
+
+// old menu items and new menu items (how to compare value of the object is the same? if name or key in [0] same or not)
+
+// clause for if the params are not the same re render otherwise use the same data
+
 export default function MenuItemsByCategory({
   params,
 }: {
@@ -31,6 +37,7 @@ export default function MenuItemsByCategory({
     ?.description.toString();
 
   // get all the menu items for the provided category if it exists
+  //  categories are stored into local storage on header load and facilitates refresh
   useEffect(() => {
     async function DisplayMenuItems() {
       const cat: Category[] = JSON.parse(

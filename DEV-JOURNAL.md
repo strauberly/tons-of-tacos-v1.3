@@ -2,10 +2,20 @@
 
 ---
 
+-- 16 Feb 2024 ---
+
+- Began refactor process trying to solve for an inconsistency with our food menu items reloading when reselecting the menu button without having selected a new menu category.
+- Traced to components encapsulated in the same context component. Will be breaking this larger context provider into smaller ones more task dedicated.
+  there will be some overlap concerning menu categories but should be minimal.
+- Tracing the issue lead to a much more detailed understanding of Next.js structure.
+- Continued refactor still in progress.
+
+---
+
 -- 13 Feb 2024 ---
 
 - Created assets for loading animation and implemented the animation. Requires a little additional tweaking.
-- Menu item lit currently has a timeout implemented to test loading animation.
+- Menu item list currently has a timeout implemented to test loading animation.
 
 ---
 
