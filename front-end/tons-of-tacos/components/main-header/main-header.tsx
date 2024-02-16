@@ -10,8 +10,15 @@ import useCategoriesSource from "@/lib/menuItemsByCategory";
 import { useEffect } from "react";
 import DropDown from "../ui/animations/drop-down";
 import { AnimatePresence } from "framer-motion";
+import NavButtons from "../nav-buttons/nav-buttons";
+
+//  make data calls here and set the individual contexts in the button component //
 
 export default function MainHeader() {
+  // const categoryList = (await useCategoriesSource()) as Category[];
+
+  // const list = categoryList;
+
   const { showMenu, setShowMenu, setCategories } = useGlobalContext();
 
   // get and set all available menu categories for category name, description, and nav.
@@ -28,23 +35,7 @@ export default function MainHeader() {
         <Link className={classes.home} href="/">
           Tons Of Tacos
         </Link>
-        <nav className={classes.navButtons}>
-          <button onMouseEnter={() => setShowMenu(!showMenu)}>
-            <MenuIcon />
-          </button>
-          <button>
-            <CartIcon />
-          </button>
-        </nav>
-        <div className={classes.menu}>
-          <AnimatePresence mode="wait">
-            {showMenu && (
-              <DropDown>
-                <MenuNav />
-              </DropDown>
-            )}
-          </AnimatePresence>
-        </div>
+        <NavButtons />
       </header>
     </>
   );

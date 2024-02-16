@@ -4,11 +4,10 @@ type Category = {
 };
 
 type MenuItem = {
-  key: string;
-  item_name: string;
+  itemName: string;
   category: string;
-  image_url: string;
+  imageUrl: string;
   description: string;
-  item_size: string;
-  unit_price: number;
+  itemSize: string;
+  unitPrice: number;
 };

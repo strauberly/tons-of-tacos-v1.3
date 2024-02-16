@@ -3,6 +3,7 @@ import "./globals.css";
 import MainHeader from "../components/main-header/main-header";
 import { inter } from "../components/ui/fonts/fonts";
 import { GlobalContextProvider } from "@/context/store";
+import { ChildrenContextProvider } from "@/context/store copy";
 
 export const metadata: Metadata = {
   title: "Tons Of Tacos",
@@ -16,12 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="html">
-      <GlobalContextProvider>
-        <body className={`${inter.variable}`}>
+      <body className={`${inter.variable}`}>
+        <GlobalContextProvider>
           <MainHeader />
-          <div className="children">{children}</div>
-        </body>
-      </GlobalContextProvider>
+        </GlobalContextProvider>
+        <div className="children">{children}</div>
+      </body>
     </html>
   );
 }

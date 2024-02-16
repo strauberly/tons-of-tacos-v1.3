@@ -3,7 +3,7 @@ export default async function useCategoriesSource() {
   const data = await response.json();
   if (!response.ok) throw new Error("failed to get data");
   if (typeof localStorage !== "undefined") {
-    localStorage.clear();
+    // localStorage.clear();
     localStorage.setItem("categories", JSON.stringify(data));
   }
   return data;

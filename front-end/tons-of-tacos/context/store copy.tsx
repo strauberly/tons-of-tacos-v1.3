@@ -20,7 +20,7 @@ interface ContextProps {
   setMenuItems: Dispatch<SetStateAction<MenuItem[]>>;
 }
 
-const GlobalContext = createContext<ContextProps>({
+const ChildrenContext = createContext<ContextProps>({
   showMenu: false,
   setShowMenu: () => {},
   categories: [],
@@ -31,7 +31,7 @@ const GlobalContext = createContext<ContextProps>({
   setMenuItems: (): MenuItem[] => [],
 });
 
-export const GlobalContextProvider = ({
+export const ChildrenContextProvider = ({
   children,
 }: {
   children: ReactNode;
@@ -42,7 +42,7 @@ export const GlobalContextProvider = ({
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <GlobalContext.Provider
+    <ChildrenContext.Provider
       value={{
         showMenu,
         setShowMenu,
@@ -55,8 +55,8 @@ export const GlobalContextProvider = ({
       }}
     >
       {children}
-    </GlobalContext.Provider>
+    </ChildrenContext.Provider>
   );
 };
 
-export const useGlobalContext = () => useContext(GlobalContext);
+export const useChildrenContext = () => useContext(ChildrenContext);
