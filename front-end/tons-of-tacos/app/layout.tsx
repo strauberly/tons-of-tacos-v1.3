@@ -4,6 +4,7 @@ import MainHeader from "../components/main-header/main-header";
 import { inter } from "../components/ui/fonts/fonts";
 import { GlobalContextProvider } from "@/context/store";
 import { ChildrenContextProvider } from "@/context/store copy";
+import { MenuContextProvider } from "@/context/menu-store";
 
 export const metadata: Metadata = {
   title: "Tons Of Tacos",
@@ -21,7 +22,9 @@ export default function RootLayout({
         <GlobalContextProvider>
           <MainHeader />
         </GlobalContextProvider>
-        <div className="children">{children}</div>
+        <MenuContextProvider>
+          <div className="children">{children}</div>
+        </MenuContextProvider>
       </body>
     </html>
   );

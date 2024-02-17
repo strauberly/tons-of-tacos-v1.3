@@ -1,15 +1,17 @@
+import { useMenuItemsForCategory } from "@/lib/menu";
 import MenuItem from "./menu-item";
 import classes from "./menu-item-list.module.css";
 
-// possibly export to types and create a context for in here
-
-export default async function MenuItemList(props: { menuItems: MenuItem[] }) {
+export default async function MenuItemList(category: { category: string }) {
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
-  // console.log(props.menuItems);
+  const items: MenuItem[] = (await useMenuItemsForCategory(
+    category.category
+  )) as MenuItem[];
+
   return (
     <ul className={classes.grid}>
-      {props.menuItems.map(
+      {items.map(
         (menuItem: {
           itemName: string;
           category: string;
