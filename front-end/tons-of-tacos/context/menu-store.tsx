@@ -10,53 +10,35 @@ import {
 } from "react";
 
 interface ContextProps {
-  showMenu: boolean;
-  setShowMenu: Dispatch<SetStateAction<boolean>>;
   categories: Category[];
   setCategories: Dispatch<SetStateAction<Category[]>>;
-  isLoading: boolean;
-  setIsLoading: Dispatch<SetStateAction<boolean>>;
   menuItems: MenuItem[];
   setMenuItems: Dispatch<SetStateAction<MenuItem[]>>;
 }
 
-const ChildrenContext = createContext<ContextProps>({
-  showMenu: false,
-  setShowMenu: () => {},
+const MenuContext = createContext<ContextProps>({
   categories: [],
   setCategories: (): Category[] => [],
-  isLoading: false,
-  setIsLoading: () => {},
   menuItems: [],
   setMenuItems: (): MenuItem[] => [],
 });
 
-export const ChildrenContextProvider = ({
-  children,
-}: {
-  children: ReactNode;
-}) => {
-  const [showMenu, setShowMenu] = useState(false);
+export const MenuContextProvider = ({ children }: { children: ReactNode }) => {
   const [categories, setCategories] = useState<[] | Category[]>([]);
   const [menuItems, setMenuItems] = useState<[] | MenuItem[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <ChildrenContext.Provider
+    <MenuContext.Provider
       value={{
-        showMenu,
-        setShowMenu,
         categories,
         setCategories,
-        isLoading,
-        setIsLoading,
         menuItems,
         setMenuItems,
       }}
     >
       {children}
-    </ChildrenContext.Provider>
+    </MenuContext.Provider>
   );
 };
 
-export const useChildrenContext = () => useContext(ChildrenContext);
+export const useMenuContext = () => useContext(MenuContext);

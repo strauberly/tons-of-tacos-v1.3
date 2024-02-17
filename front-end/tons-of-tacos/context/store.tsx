@@ -12,8 +12,8 @@ import {
 interface ContextProps {
   showMenu: boolean;
   setShowMenu: Dispatch<SetStateAction<boolean>>;
-  categories: Category[];
-  setCategories: Dispatch<SetStateAction<Category[]>>;
+  menuNavCategories: Category[];
+  setMenuNavCategories: Dispatch<SetStateAction<Category[]>>;
   isLoading: boolean;
   setIsLoading: Dispatch<SetStateAction<boolean>>;
   menuItems: MenuItem[];
@@ -23,8 +23,8 @@ interface ContextProps {
 const GlobalContext = createContext<ContextProps>({
   showMenu: false,
   setShowMenu: () => {},
-  categories: [],
-  setCategories: (): Category[] => [],
+  menuNavCategories: [],
+  setMenuNavCategories: (): Category[] => [],
   isLoading: false,
   setIsLoading: () => {},
   menuItems: [],
@@ -37,7 +37,7 @@ export const GlobalContextProvider = ({
   children: ReactNode;
 }) => {
   const [showMenu, setShowMenu] = useState(false);
-  const [categories, setCategories] = useState<[] | Category[]>([]);
+  const [categories, setMenuNavCategories] = useState<[] | Category[]>([]);
   const [menuItems, setMenuItems] = useState<[] | MenuItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -46,8 +46,8 @@ export const GlobalContextProvider = ({
       value={{
         showMenu,
         setShowMenu,
-        categories,
-        setCategories,
+        menuNavCategories: categories,
+        setMenuNavCategories: setMenuNavCategories,
         isLoading,
         setIsLoading,
         menuItems,
