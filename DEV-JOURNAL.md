@@ -2,6 +2,15 @@
 
 ---
 
+-- 17 Feb 2024 ---
+
+- Main header is now a server component and calls our menu categories.
+- Data passed to nav button and set as a context and kept in session storage.
+- Dynamic page now passes slug for desired menu category to the menu item list component and makes item list component where data is mapped for each menu item in the component. This is also a server component.
+- Learned a lot in the refactor that should aid in the next steps.
+
+---
+
 -- 16 Feb 2024 ---
 
 - Began refactor process trying to solve for an inconsistency with our food menu items reloading when reselecting the menu button without having selected a new menu category.

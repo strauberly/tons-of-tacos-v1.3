@@ -3,51 +3,28 @@
 import { useGlobalContext } from "@/context/store";
 import classes from "@/components/main-header/main-header.module.css";
 import MenuIcon from "../main-header/menu-icon";
-import { AnimatePresence } from "framer-motion";
 import DropDown from "../ui/animations/drop-down";
 import MenuNav from "../menu/menu-navigation/menu-navigation";
-import { useCallback, useEffect, useMemo } from "react";
-import useCategoriesSource from "@/lib/menuItemsByCategory";
+import { useEffect } from "react";
 import CartIcon from "../main-header/cart-icon";
 
-export default function NavButtons() {
-  const { showMenu, setShowMenu, setCategories, categories } =
-    useGlobalContext();
+export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
+  const { showMenu, setShowMenu, setMenuNavCategories } = useGlobalContext();
 
-  // const bu;
-  // setCategories(props.categories);
-  // console.log("cats" + categories.toString());
-  // useEffect(() => {
-  //   async function CategoryData() {
-  //     setCategories(props.categories);
-  //     // console.log("cats" + categories.toString());
-  //     console.log(categories);
-  //   }
-  //   CategoryData();
-  // }, [categories, props.categories, setCategories]);
+  // set returned categories to local storage and set context
+  useEffect(() => {
+    if (window)
+      sessionStorage.setItem(
+        "categories",
+        JSON.stringify(menuOptions.menuOptions)
+      );
+    setMenuNavCategories(menuOptions.menuOptions);
+  }, [menuOptions, setMenuNavCategories]);
 
-  let menu = showMenu;
-
-  const menuDisplay = menu;
-
-  // const handleShowMenu = useCallback(
-  //   function menuDisplay() {
-  //     let menuShowing = showMenu;
-
-  //     if ((menuShowing = false)) {
-  //       setShowMenu(!showMenu);
-  //     }
-  //   },
-  //   [setShowMenu, showMenu]
-  // );
-
+  // nav menu opens and stays open until mouse leaves or user selects category
   function handleMenu() {
-    console.log(showMenu);
     setShowMenu(true);
-    console.log(showMenu);
   }
-
-  // function to set and then just reference that function and see what happens
 
   return (
     <>
@@ -58,21 +35,16 @@ export default function NavButtons() {
         >
           <MenuIcon />
         </button>
-        <button
-          onMouseEnter={() => handleMenu()}
-          onMouseLeave={() => handleMenu()}
-        >
+        <button>
           <CartIcon />
         </button>
       </nav>
       <div className={classes.menu}>
-        <AnimatePresence mode="wait">
-          {showMenu && (
-            <DropDown>
-              <MenuNav />
-            </DropDown>
-          )}
-        </AnimatePresence>
+        {showMenu && (
+          <DropDown>
+            <MenuNav />
+          </DropDown>
+        )}
       </div>
     </>
   );

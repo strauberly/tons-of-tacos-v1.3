@@ -11,17 +11,17 @@ const animation = {
 
 const DropDown = ({ children }: { children: ReactNode }) => {
   return (
-    // <AnimatePresence mode="wait">
-    <motion.div
-      variants={animation}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{ duration: 0.25 }}
-    >
-      {children}
-    </motion.div>
-    // </AnimatePresence>
+    <AnimatePresence mode="wait">
+      <motion.div
+        variants={animation}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 0.18 }}
+      >
+        {children}
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
