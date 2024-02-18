@@ -23,7 +23,7 @@ export default function MenuItem(props: {
   return (
     <Card>
       <li className={classes.card}>
-        <p>{itemName}</p>
+        <h2>{itemName}</h2>
         <Image
           className={classes.image}
           src={`/images/menu-items/${props.category}/${props.itemName}.jpg`}
@@ -31,10 +31,17 @@ export default function MenuItem(props: {
           width={300}
           height={300}
         />
+        <Image
+          className={classes.image}
+          src={`/images/icons/more-icon.svg`}
+          alt={`a picture of ${props.itemName}`}
+          width={50}
+          height={50}
+        />
         <p>${props.unitPrice.toFixed(2)}</p>
         <p>placeholder for item size selection</p>
         <p>place holder for quantity selector</p>
-        <p>... placeholder</p>
+        {/* <p>... placeholder</p> */}
         <p>add to cart place holder</p>
       </li>
     </Card>
