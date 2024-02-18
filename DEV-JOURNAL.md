@@ -2,6 +2,18 @@
 
 ---
 
+-- 18 Feb 2024 ---
+
+- Began additional styling of menu items.
+  - Increased gap between items.
+  - Item name is now an h2 element.
+  - h2 styling introduced in global.css.
+    - changed color and front size.
+  - Added icon image for description/expanded view.
+  - Slightly altered timing of loading animation.
+
+---
+
 -- 17 Feb 2024 ---
 
 - Main header is now a server component and calls our menu categories.
