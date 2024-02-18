@@ -17,7 +17,7 @@ const LoadingAnimation = ({ children }: { children: ReactNode }) => {
         initial="initial"
         animate="animate"
         exit="exit"
-        transition={{ repeat: Infinity, duration: 3 }}
+        transition={{ repeat: Infinity, duration: 1 }}
       >
         {children}
       </motion.div>
