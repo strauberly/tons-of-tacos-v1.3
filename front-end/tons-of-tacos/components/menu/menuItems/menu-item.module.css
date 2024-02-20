@@ -4,11 +4,72 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  row-gap: 1rem;
+  row-gap: 0.5rem;
   background-color: #0c0424;
   border-radius: 10px;
 }
 
 .card img {
   border-radius: 10px;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.card p {
+  color: #ebc83b;
+  font-size: 1.25rem;
+}
+
+#size {
+  color: aqua;
+  margin-bottom: 0.5rem;
+}
+
+#add {
+  color: #cf3052;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+
+.quantity {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  margin-bottom: 0.5rem;
+}
+
+.quantity input,
+.quantity textarea {
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: aqua;
+  text-align: center;
+  border: solid;
+  border-color: #63b369;
+  border-radius: 10px;
+}
+
+.decrement {
+  rotate: 90deg;
+}
+
+.increment {
+  rotate: -90deg;
+}
+
+.icon {
+  height: 1.5rem;
+  color: #cf3052;
+  transition: 1s ease;
+}
+
+.icon:hover {
+  color: #ebc83b;
+  transition: 0.3s ease;
 }
