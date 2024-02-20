@@ -23,11 +23,11 @@ p {
 }
 
 h1 {
-  color: #cf3052;
+  color: #ebc83b;
 }
 
 h2 {
-  color: #30b3e4;
+  color: #ebc83b;
   font-size: 1.15rem;
 }
 
@@ -46,10 +46,25 @@ button {
 }
 
 ::-webkit-scrollbar {
-  background-color: #0c0424;
   width: 1.5rem;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #cf3052;
+}
+
+input {
+  background-color: none;
+  border: none;
+}
+
+input textarea {
+  background-color: none;
+  border-color: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
