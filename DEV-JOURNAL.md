@@ -2,6 +2,14 @@
 
 ---
 
+-- 20 Feb 2024 ---
+
+- Altered color scheme slightly for menu items.
+- Created styling for quantity selector.
+- Increased styling to menu item elements.
+
+---
+
 -- 18 Feb 2024 ---
 
 - Began additional styling of menu items.

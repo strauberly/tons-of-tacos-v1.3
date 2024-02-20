@@ -1,6 +1,7 @@
 import Card from "@/components/ui/cards/card";
 import Image from "next/image";
 import classes from "./menu-item.module.css";
+import ArrowIcon from "./arrow-icon";
 
 export default function MenuItem(props: {
   itemName: string;
@@ -25,12 +26,33 @@ export default function MenuItem(props: {
       <li className={classes.card}>
         <h2>{itemName}</h2>
         <Image
-          className={classes.image}
+          id={classes.itemImage}
           src={`/images/menu-items/${props.category}/${props.itemName}.jpg`}
           alt={`a picture of ${props.itemName}`}
           width={300}
           height={300}
         />
+        <p id={classes.size}>placeholder for size</p>
+        <div className={classes.quantity}>
+          <button className={`${classes.decrement}`}>
+            <ArrowIcon />
+          </button>
+          <>
+            <input
+              type="number"
+              defaultValue={1}
+              min="1"
+              max="10"
+              disabled={true}
+            />
+          </>
+          <button className={`${classes.increment}`}>
+            <ArrowIcon />
+          </button>
+        </div>
+
+        <p id={classes.price}>${props.unitPrice.toFixed(2)}</p>
+        <h1 id={classes.add}>Add To Cart Place Holder</h1>
         <Image
           className={classes.image}
           src={`/images/icons/more-icon.svg`}
@@ -38,11 +60,6 @@ export default function MenuItem(props: {
           width={50}
           height={50}
         />
-        <p>${props.unitPrice.toFixed(2)}</p>
-        <p>placeholder for item size selection</p>
-        <p>place holder for quantity selector</p>
-        {/* <p>... placeholder</p> */}
-        <p>add to cart place holder</p>
       </li>
     </Card>
   );
