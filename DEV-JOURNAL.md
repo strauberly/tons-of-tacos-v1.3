@@ -2,6 +2,12 @@
 
 ---
 
+-- 22 Feb 2024 ---
+
+- Quantity selector functioning as desired and updates the displayed price in accordance. Ready for refactor scrub.
+
+---
+
 -- 21 Feb 2024 ---
 
 - Size selector styled and ready to programmed.
