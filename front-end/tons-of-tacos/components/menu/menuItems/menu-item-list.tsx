@@ -3,7 +3,7 @@ import MenuItem from "./menu-item";
 import classes from "./menu-item-list.module.css";
 
 export default async function MenuItemList(category: { category: string }) {
-  await new Promise((resolve) => setTimeout(resolve, 1350));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const items: MenuItem[] = (await useMenuItemsForCategory(
     category.category
