@@ -1,9 +1,9 @@
 import Card from "@/components/ui/cards/card";
 import Image from "next/image";
 import classes from "./menu-item.module.css";
-import ArrowIcon from "./quantity-selector/arrow-icon";
 import SizeSelector from "./size-selector/size-selector";
 import QuantitySelector from "./quantity-selector/quantity-selector";
+import { SetStateAction, useState } from "react";
 
 export default function MenuItem(props: {
   itemName: string;
@@ -13,20 +13,34 @@ export default function MenuItem(props: {
   itemSize: string;
   unitPrice: number;
 }) {
-  //  Capitalize first letter of each word
-  const itemName: string[] = props.itemName.split(" ");
+  const defaultValue: number = 1;
 
-  for (let i = 0; i < itemName.length; i++) {
-    itemName[i] = itemName[i][0].toUpperCase() + itemName[i].substring(1);
-    if (i > 0 && itemName[i][0] !== " ") {
-      itemName[i] = " " + itemName[i];
+  const [quantity, setQuantity] = useState(defaultValue);
+
+  const increment = () => {
+    setQuantity(quantity + 1);
+    if (quantity >= 10) {
+      setQuantity(10);
+      alert(
+        "The limit for this item is 10. If you need more please give us a call so we can try to accommodate your order. Thanks!"
+      );
     }
-  }
+  };
 
+  const decrement = () => {
+    setQuantity(quantity - 1);
+    if (quantity <= 1) {
+      setQuantity(defaultValue);
+    }
+  };
+
+  const total = quantity * props.unitPrice;
+
+  console.log();
   return (
     <Card>
       <li className={classes.card}>
-        <h2>{itemName}</h2>
+        <h2>{props.itemName}</h2>
         <Image
           id={classes.itemImage}
           src={`/images/menu-items/${props.category}/${props.itemName}.jpg`}
@@ -35,8 +49,12 @@ export default function MenuItem(props: {
           height={250}
         />
         <SizeSelector />
-        <QuantitySelector />
-        <p id={classes.price}>${props.unitPrice.toFixed(2)}</p>
+        <QuantitySelector
+          value={quantity}
+          increment={increment}
+          decrement={decrement}
+        />
+        <p id={classes.price}>${total.toFixed(2)}</p>
         <h1 id={classes.add}>Add To Cart Place Holder</h1>
         <Image
           className={classes.image}
