@@ -2,6 +2,16 @@
 
 ---
 
+-- 21 Feb 2024 ---
+
+- Size selector styled and ready to programmed.
+- Selector placeholder removed.
+- Reduced menu item image size.
+- Quantity Selector set into its own component.
+- Styling for quantity selector moved to its own style sheet.
+
+---
+
 -- 20 Feb 2024 ---
 
 - Altered color scheme slightly for menu items.
