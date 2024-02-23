@@ -2,6 +2,18 @@
 
 ---
 
+-- 23 Feb 2024 ---
+
+- Began work on size selector by tinkering with html and css options. Desired result wasn't quite there. Did some reading and research and came to solution that marries some of what I did with html and css along with other reusable components I had created.
+
+As time goes on I think it will be a strong base for developing a modular solution for larger applications where more radio style features might be needed.
+
+Work ready for a refactor and scrub an implementation of factoring in size options to pricing.
+
+Start with creating a context.
+
+---
+
 -- 22 Feb 2024 ---
 
 - Quantity selector functioning as desired and updates the displayed price in accordance. Ready for refactor scrub.
