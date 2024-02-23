@@ -3,7 +3,8 @@ import Image from "next/image";
 import classes from "./menu-item.module.css";
 import SizeSelector from "./size-selector/size-selector";
 import QuantitySelector from "./quantity-selector/quantity-selector";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
+import RadioButton from "@/components/ui/radio-buttons/radio-button";
 
 export default function MenuItem(props: {
   itemName: string;
@@ -13,9 +14,13 @@ export default function MenuItem(props: {
   itemSize: string;
   unitPrice: number;
 }) {
-  const defaultValue: number = 1;
+  const defaultQuantity: number = 1;
+  const itemSizes: string[] = ["small", "medium", "large"];
 
-  const [quantity, setQuantity] = useState(defaultValue);
+  const [quantity, setQuantity] = useState(defaultQuantity);
+  const total = quantity * props.unitPrice;
+
+  const [size, setSize] = useState("");
 
   const increment = () => {
     setQuantity(quantity + 1);
@@ -30,13 +35,17 @@ export default function MenuItem(props: {
   const decrement = () => {
     setQuantity(quantity - 1);
     if (quantity <= 1) {
-      setQuantity(defaultValue);
+      setQuantity(defaultQuantity);
     }
   };
 
-  const total = quantity * props.unitPrice;
+  const selectedSize = (sizePicked: string) => {
+    setSize(sizePicked);
+  };
 
-  console.log();
+  function calcPrice() {}
+
+  console.log(itemSizes);
   return (
     <Card>
       <li className={classes.card}>
@@ -48,7 +57,7 @@ export default function MenuItem(props: {
           width={250}
           height={250}
         />
-        <SizeSelector />
+        <SizeSelector sizes={itemSizes} />
         <QuantitySelector
           value={quantity}
           increment={increment}
