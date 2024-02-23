@@ -7,7 +7,7 @@
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
 }
 
 .quantity input,
@@ -19,7 +19,7 @@
   text-align: center;
   border: solid;
   border-color: #63b369;
-  border-radius: 10px;
+  border-radius: 15%;
   font-weight: 900;
 }
 
