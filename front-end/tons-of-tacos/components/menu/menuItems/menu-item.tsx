@@ -1,6 +1,10 @@
 import Card from "@/components/ui/cards/card";
 import Image from "next/image";
 import classes from "./menu-item.module.css";
+import SizeSelector from "./size-selector/size-selector";
+import QuantitySelector from "./quantity-selector/quantity-selector";
+import { useState } from "react";
+import RadioButton from "@/components/ui/radio-buttons/radio-button";
 
 export default function MenuItem(props: {
   itemName: string;
@@ -10,32 +14,84 @@ export default function MenuItem(props: {
   itemSize: string;
   unitPrice: number;
 }) {
-  //  Capitalize first letter of each word
-  const itemName: string[] = props.itemName.split(" ");
+  const defaultQuantity: number = 1;
+  const itemSizes: string[] = ["small", "medium", "large"];
 
-  for (let i = 0; i < itemName.length; i++) {
-    itemName[i] = itemName[i][0].toUpperCase() + itemName[i].substring(1);
-    if (i > 0 && itemName[i][0] !== " ") {
-      itemName[i] = " " + itemName[i];
+  const [quantity, setQuantity] = useState(defaultQuantity);
+  const [size, setSize] = useState("");
+
+  const total = quantity * props.unitPrice;
+
+  const increment = () => {
+    setQuantity(quantity + 1);
+    if (quantity >= 10) {
+      setQuantity(10);
+      alert(
+        "The limit for this item is 10. If you need more please give us a call so we can try to accommodate your order. Thanks!"
+      );
     }
-  }
+  };
 
+  const decrement = () => {
+    setQuantity(quantity - 1);
+    if (quantity <= 1) {
+      setQuantity(defaultQuantity);
+    }
+  };
+
+  const sizeSetter = (sizePicked: string) => {
+    setSize(sizePicked);
+  };
+
+  function calcPrice() {
+    let adjPrice: number;
+    let sizeSurcharge = 0;
+
+    switch (size) {
+      case "medium":
+        sizeSurcharge = 0.5;
+        break;
+      case "large":
+        sizeSurcharge = 1.0;
+        break;
+    }
+
+    // size === "medium" || size === "large"
+    //   ? (sizeSurcharge = 0.5)
+    //   : (sizeSurcharge = 1);
+
+    adjPrice = (sizeSurcharge + props.unitPrice) * quantity;
+    return adjPrice;
+  }
+  // console.log(itemSizes);
+  console.log("size selected: " + size);
   return (
     <Card>
       <li className={classes.card}>
-        <p>{itemName}</p>
+        <h2>{props.itemName}</h2>
         <Image
-          className={classes.image}
+          id={classes.itemImage}
           src={`/images/menu-items/${props.category}/${props.itemName}.jpg`}
           alt={`a picture of ${props.itemName}`}
-          width={300}
-          height={300}
+          width={250}
+          height={250}
         />
-        <p>${props.unitPrice.toFixed(2)}</p>
-        <p>placeholder for item size selection</p>
-        <p>place holder for quantity selector</p>
-        <p>... placeholder</p>
-        <p>add to cart place holder</p>
+        <SizeSelector sizes={itemSizes} sizeSetter={sizeSetter} />
+        <QuantitySelector
+          value={quantity}
+          increment={increment}
+          decrement={decrement}
+        />
+        <p id={classes.price}>${calcPrice().toFixed(2)}</p>
+        {/* <p id={classes.price}>${total.toFixed(2)}</p> */}
+        <h1 id={classes.add}>Add To Cart Place Holder</h1>
+        <Image
+          className={classes.image}
+          src={`/images/icons/more-icon.svg`}
+          alt={"an interactive icon indicating more content"}
+          width={50}
+          height={50}
+        />
       </li>
     </Card>
   );

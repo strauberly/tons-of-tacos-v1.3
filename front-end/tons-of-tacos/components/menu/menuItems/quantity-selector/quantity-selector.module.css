@@ -1,0 +1,43 @@
+.quantity {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  /* margin-bottom: 0.5rem; */
+}
+
+.quantity input,
+.quantity textarea {
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: aqua;
+  text-align: center;
+  border: solid;
+  border-color: #63b369;
+  border-radius: 15%;
+  font-weight: 900;
+}
+
+.decrement {
+  rotate: 90deg;
+}
+
+.increment {
+  rotate: -90deg;
+}
+
+.icon {
+  height: 2rem;
+  color: #cf3052;
+  transition: 1s ease;
+}
+
+.icon:hover {
+  color: #ebc83b;
+  transition: 0.3s ease;
+}

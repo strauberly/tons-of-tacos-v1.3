@@ -1,0 +1,76 @@
+.selectorGroup {
+  display: inline-flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+/* .buttons {
+  gap: 3rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.button {
+  display: flex;
+  font-weight: 900;
+  font-size: large;
+  width: 3rem;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-color: aqua;
+  transition: 1s ease;
+}
+
+.button:hover {
+  background-color: aquamarine;
+  transform: 0.3s ease;
+}
+
+.radio {
+  /* color: azure; */
+/* opacity: 100; */
+/* background-color: crimson;
+  display: flex;
+  font-weight: 900;
+  font-size: large;
+  width: 3rem;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-color: aqua;
+  transition: 1s ease; */
+/* } */
+
+/* .label {
+  display: flex;
+  color: #cf3052;
+  border-radius: 25%;
+  font-weight: 700;
+  font-size: large;
+  width: 3rem;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-color: aqua;
+  transition: 1s ease;
+  cursor: pointer;
+}
+
+.label:hover {
+  background-color: aquamarine;
+  transform: ease;
+}
+
+.radio__input {
+  display: none;
+}
+
+.radio__input:checked + .label.radio__input:checked {
+  color: aqua;
+  border-color: #63b369;
+} */
