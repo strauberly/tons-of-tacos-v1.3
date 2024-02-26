@@ -2,7 +2,10 @@ import classes from "@/components/ui/radio-buttons/radio-buttons.module.css";
 import { useId } from "react";
 
 // button will end up accepting a size for the value from available sides in menu item
-export default function RadioButton(props: { size: string }) {
+export default function RadioButton(props: {
+  size: string;
+  sizeSetter: (selectedSize: string) => void;
+}) {
   const size = props.size;
   const itemId = useId();
 
@@ -11,7 +14,7 @@ export default function RadioButton(props: { size: string }) {
   // }, [id]);
 
   // console.log(id);
-  console.log("button: " + size);
+  // console.log("button: " + size);
   return (
     <>
       <input
@@ -21,7 +24,11 @@ export default function RadioButton(props: { size: string }) {
         value={size}
         id={itemId}
       />
-      <label htmlFor={`${itemId}`} className={classes.radioButtonLabel}>
+      <label
+        onClick={() => props.sizeSetter(props.size)}
+        htmlFor={`${itemId}`}
+        className={classes.radioButtonLabel}
+      >
         {size.charAt(0)}
       </label>
     </>
