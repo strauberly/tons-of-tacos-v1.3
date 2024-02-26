@@ -2,6 +2,20 @@
 
 ---
 
+-- 26 Feb 2024 ---
+
+- Context not an appropriate means for managing the state of a menu item as it would be wrapped around all menu items and therefore all menu items would be using the same size state.
+
+- Opted to pass setter down from menu item to size selector and send results back for calculating price.
+
+- Another option would be to bring the button component for the size selector into the size selector component if the prop drilling is deemed excessive.
+
+- Another design option might be to bring menu item into the card component one step earlier and surround that with context before bringing up into menu item list.
+
+- Further options to be evaluated at a later date. Component is functioning as desired at the moment and is ready for a refactor scrub.
+
+---
+
 -- 23 Feb 2024 ---
 
 - Began work on size selector by tinkering with html and css options. Desired result wasn't quite there. Did some reading and research and came to solution that marries some of what I did with html and css along with other reusable components I had created.

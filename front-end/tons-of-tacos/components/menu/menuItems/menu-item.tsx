@@ -18,9 +18,9 @@ export default function MenuItem(props: {
   const itemSizes: string[] = ["small", "medium", "large"];
 
   const [quantity, setQuantity] = useState(defaultQuantity);
-  const total = quantity * props.unitPrice;
-
   const [size, setSize] = useState("");
+
+  const total = quantity * props.unitPrice;
 
   const increment = () => {
     setQuantity(quantity + 1);
@@ -39,13 +39,32 @@ export default function MenuItem(props: {
     }
   };
 
-  const selectedSize = (sizePicked: string) => {
+  const sizeSetter = (sizePicked: string) => {
     setSize(sizePicked);
   };
 
-  function calcPrice() {}
+  function calcPrice() {
+    let adjPrice: number;
+    let sizeSurcharge = 0;
 
-  console.log(itemSizes);
+    switch (size) {
+      case "medium":
+        sizeSurcharge = 0.5;
+        break;
+      case "large":
+        sizeSurcharge = 1.0;
+        break;
+    }
+
+    // size === "medium" || size === "large"
+    //   ? (sizeSurcharge = 0.5)
+    //   : (sizeSurcharge = 1);
+
+    adjPrice = (sizeSurcharge + props.unitPrice) * quantity;
+    return adjPrice;
+  }
+  // console.log(itemSizes);
+  console.log("size selected: " + size);
   return (
     <Card>
       <li className={classes.card}>
@@ -57,13 +76,14 @@ export default function MenuItem(props: {
           width={250}
           height={250}
         />
-        <SizeSelector sizes={itemSizes} />
+        <SizeSelector sizes={itemSizes} sizeSetter={sizeSetter} />
         <QuantitySelector
           value={quantity}
           increment={increment}
           decrement={decrement}
         />
-        <p id={classes.price}>${total.toFixed(2)}</p>
+        <p id={classes.price}>${calcPrice().toFixed(2)}</p>
+        {/* <p id={classes.price}>${total.toFixed(2)}</p> */}
         <h1 id={classes.add}>Add To Cart Place Holder</h1>
         <Image
           className={classes.image}
