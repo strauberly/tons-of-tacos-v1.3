@@ -14,6 +14,8 @@
 
 - Further options to be evaluated at a later date. Component is functioning as desired at the moment and is ready for a refactor scrub.
 
+- Refactor scrub complete.
+
 ---
 
 -- 23 Feb 2024 ---
