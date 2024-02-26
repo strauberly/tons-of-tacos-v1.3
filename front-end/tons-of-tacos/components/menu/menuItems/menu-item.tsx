@@ -4,7 +4,6 @@ import classes from "./menu-item.module.css";
 import SizeSelector from "./size-selector/size-selector";
 import QuantitySelector from "./quantity-selector/quantity-selector";
 import { useState } from "react";
-import RadioButton from "@/components/ui/radio-buttons/radio-button";
 
 export default function MenuItem(props: {
   itemName: string;
@@ -19,8 +18,6 @@ export default function MenuItem(props: {
 
   const [quantity, setQuantity] = useState(defaultQuantity);
   const [size, setSize] = useState("");
-
-  const total = quantity * props.unitPrice;
 
   const increment = () => {
     setQuantity(quantity + 1);
@@ -56,15 +53,10 @@ export default function MenuItem(props: {
         break;
     }
 
-    // size === "medium" || size === "large"
-    //   ? (sizeSurcharge = 0.5)
-    //   : (sizeSurcharge = 1);
-
     adjPrice = (sizeSurcharge + props.unitPrice) * quantity;
     return adjPrice;
   }
-  // console.log(itemSizes);
-  console.log("size selected: " + size);
+
   return (
     <Card>
       <li className={classes.card}>
@@ -83,7 +75,6 @@ export default function MenuItem(props: {
           decrement={decrement}
         />
         <p id={classes.price}>${calcPrice().toFixed(2)}</p>
-        {/* <p id={classes.price}>${total.toFixed(2)}</p> */}
         <h1 id={classes.add}>Add To Cart Place Holder</h1>
         <Image
           className={classes.image}
