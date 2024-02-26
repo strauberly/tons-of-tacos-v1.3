@@ -1,15 +1,20 @@
 import RadioButton from "@/components/ui/radio-buttons/radio-button";
 import classes from "@/components/menu/menuItems/size-selector/size-selector.module.css";
 
+// will want to refactor so that available sizes can be passed in dynamically, as well as set pricing parameters (ie a small guacamole will have a different price than small horchata)
+
 //  get list of sizes, map over and create radio button passing it the name of the
 
-export default function SizeSelector(props: { sizes: string[] }) {
-  console.log("size selector: " + props.sizes);
+export default function SizeSelector(props: {
+  sizes: string[];
+  sizeSetter: (selectedSize: string) => void;
+}) {
+  // console.log("size selector: " + props.sizes);
 
   return (
     <section className={classes.selectorGroup}>
       {props.sizes.map((size: string) => (
-        <RadioButton key={size} size={size} />
+        <RadioButton key={size} size={size} sizeSetter={props.sizeSetter} />
       ))}
     </section>
   );
@@ -86,4 +91,4 @@ export default function SizeSelector(props: { sizes: string[] }) {
 //       <button className={classes.button}>l</button> */}
 //     </div>
 //   );
-// }
+//
