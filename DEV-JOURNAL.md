@@ -10,6 +10,8 @@
 
 - Updated styling for pointer cursor opn interactive elements.
 
+- Created conditions for triggering larger card presence. The idea is that instead of being presented as a modal we simply make the card bigger to hold description. Ready for styling.
+
 ---
 
 -- 26 Feb 2024 ---

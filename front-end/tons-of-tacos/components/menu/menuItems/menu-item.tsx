@@ -3,7 +3,7 @@ import Image from "next/image";
 import classes from "./menu-item.module.css";
 import SizeSelector from "./size-selector/size-selector";
 import QuantitySelector from "./quantity-selector/quantity-selector";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import MoreIcon from "@/components/ui/icons/more-icon";
 
 export default function MenuItem(props: {
@@ -15,14 +15,12 @@ export default function MenuItem(props: {
   unitPrice: number;
 }) {
   const defaultQuantity: number = 1;
-
-  let items = useRef<string[]>();
-
   let itemSizes = ["small", "medium", "large"];
 
   const [sizeAvailable, setSizeAvailable] = useState(false);
   const [quantity, setQuantity] = useState(defaultQuantity);
   const [size, setSize] = useState("");
+  const [expand, setExpand] = useState(false);
 
   const increment = () => {
     setQuantity(quantity + 1);
@@ -69,8 +67,15 @@ export default function MenuItem(props: {
   }, [props.itemSize]);
 
   return (
-    <Card>
-      <li className={classes.card}>
+    /* 
+    conditionally style expanded card
+    clicking on more expands >> adds description and close button
+    clicking close button resets expand state to normal
+    */
+    <Card expand={expand} any={undefined}>
+      <li
+        className={`${classes.card} ${expand === true ? classes.expand : " "}`}
+      >
         <h2>{props.itemName}</h2>
         <Image
           id={classes.itemImage}
@@ -91,7 +96,7 @@ export default function MenuItem(props: {
         />
         <p className={classes.price}>${calcPrice().toFixed(2)}</p>
         <button className={classes.add}>Add To Cart</button>
-        <button>
+        <button onClick={() => setExpand(true)}>
           <MoreIcon />
         </button>
       </li>
