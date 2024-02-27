@@ -18,18 +18,21 @@
   font-size: 1.25rem;
 }
 
-#add {
+.add {
+  font-family: "Quatl";
   color: #cf3052;
   font-size: 1.25rem;
+  cursor: pointer;
 }
 
-#price {
+.price {
   font-size: 1.5rem;
   font-weight: 700;
 }
 
-#more {
+.more {
   height: 1rem;
   fill: #cf3052;
   margin-bottom: 0.5rem;
+  cursor: pointer;
 }

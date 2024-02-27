@@ -89,8 +89,8 @@ export default function MenuItem(props: {
           increment={increment}
           decrement={decrement}
         />
-        <p id={classes.price}>${calcPrice().toFixed(2)}</p>
-        <button>Add To Cart</button>
+        <p className={classes.price}>${calcPrice().toFixed(2)}</p>
+        <button className={classes.add}>Add To Cart</button>
         <button>
           <MoreIcon />
         </button>
