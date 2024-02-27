@@ -6,9 +6,14 @@ import classes from "@/components/menu/menuItems/size-selector/size-selector.mod
 export default function SizeSelector(props: {
   sizes: string[];
   sizeSetter: (selectedSize: string) => void;
+  sizeAvailable: boolean;
 }) {
   return (
-    <section className={classes.selectorGroup}>
+    <section
+      className={`${classes.selectorGroup} ${
+        props.sizeAvailable === false ? classes.notShowing : " "
+      }`}
+    >
       {props.sizes.map((size: string) => (
         <RadioButton key={size} size={size} sizeSetter={props.sizeSetter} />
       ))}

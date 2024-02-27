@@ -16,6 +16,10 @@
 
 - Refactor scrub complete.
 
+- Size selector is now only visible if sizes are available. Utilized state passed to size selector and then conditional opacity as a class in css to achieve the desired result.
+
+- Ready start work on detail view of menu item.
+
 ---
 
 -- 23 Feb 2024 ---
