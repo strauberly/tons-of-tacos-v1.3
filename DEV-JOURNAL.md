@@ -2,6 +2,14 @@
 
 ---
 
+-- 27 Feb 2024 ---
+
+- Replaced place holders for more/description button and add to cart with buttons in menu item. They are ready for further styling.
+
+- Created icon folder in ui components. Will migrate others there as well. Also will be moving buttons and update styling at some point for modularity.
+
+---
+
 -- 26 Feb 2024 ---
 
 - Context not an appropriate means for managing the state of a menu item as it would be wrapped around all menu items and therefore all menu items would be using the same size state.

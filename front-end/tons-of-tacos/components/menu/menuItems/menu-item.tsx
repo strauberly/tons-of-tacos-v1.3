@@ -4,6 +4,7 @@ import classes from "./menu-item.module.css";
 import SizeSelector from "./size-selector/size-selector";
 import QuantitySelector from "./quantity-selector/quantity-selector";
 import { useEffect, useRef, useState } from "react";
+import MoreIcon from "@/components/ui/icons/more-icon";
 
 export default function MenuItem(props: {
   itemName: string;
@@ -89,14 +90,10 @@ export default function MenuItem(props: {
           decrement={decrement}
         />
         <p id={classes.price}>${calcPrice().toFixed(2)}</p>
-        <h1 id={classes.add}>Add To Cart Place Holder</h1>
-        <Image
-          className={classes.image}
-          src={`/images/icons/more-icon.svg`}
-          alt={"an interactive icon indicating more content"}
-          width={50}
-          height={50}
-        />
+        <button>Add To Cart</button>
+        <button>
+          <MoreIcon />
+        </button>
       </li>
     </Card>
   );
