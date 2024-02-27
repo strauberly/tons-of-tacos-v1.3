@@ -3,7 +3,7 @@ import Image from "next/image";
 import classes from "./menu-item.module.css";
 import SizeSelector from "./size-selector/size-selector";
 import QuantitySelector from "./quantity-selector/quantity-selector";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function MenuItem(props: {
   itemName: string;
@@ -14,8 +14,12 @@ export default function MenuItem(props: {
   unitPrice: number;
 }) {
   const defaultQuantity: number = 1;
-  const itemSizes: string[] = ["small", "medium", "large"];
 
+  let items = useRef<string[]>();
+
+  let itemSizes = ["small", "medium", "large"];
+
+  const [sizeAvailable, setSizeAvailable] = useState(false);
   const [quantity, setQuantity] = useState(defaultQuantity);
   const [size, setSize] = useState("");
 
@@ -57,6 +61,12 @@ export default function MenuItem(props: {
     return adjPrice;
   }
 
+  useEffect(() => {
+    if (props.itemSize === "a") {
+      setSizeAvailable(true);
+    }
+  }, [props.itemSize]);
+
   return (
     <Card>
       <li className={classes.card}>
@@ -68,7 +78,11 @@ export default function MenuItem(props: {
           width={250}
           height={250}
         />
-        <SizeSelector sizes={itemSizes} sizeSetter={sizeSetter} />
+        <SizeSelector
+          sizes={itemSizes}
+          sizeSetter={sizeSetter}
+          sizeAvailable={sizeAvailable}
+        />
         <QuantitySelector
           value={quantity}
           increment={increment}
