@@ -27,3 +27,9 @@
   font-size: 1.5rem;
   font-weight: 700;
 }
+
+#more {
+  height: 1rem;
+  fill: #cf3052;
+  margin-bottom: 0.5rem;
+}
