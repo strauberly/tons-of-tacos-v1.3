@@ -1,6 +1,20 @@
 import classes from "@/components/ui/cards/card.module.css";
+import { ReactNode } from "react";
 
-// just encapsulates the actual meal item details styled as an individual
-export default function Card(props: any) {
-  return <div className={classes.menucard}>{props.children}</div>;
+// just encapsulates the actual meal item details styled as a li
+export default function Card(props: {
+  children: ReactNode;
+  any: any;
+  expand: boolean;
+}) {
+  console.log(props.expand === true);
+  return (
+    <div
+      className={`${classes.menucard} ${
+        props.expand === true ? classes.expand : " "
+      }`}
+    >
+      {props.children}
+    </div>
+  );
 }
