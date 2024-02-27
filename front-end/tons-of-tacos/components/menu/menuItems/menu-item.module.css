@@ -36,3 +36,32 @@
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
+
+.ghostDiv {
+  height: 2rem;
+}
+
+.expand {
+  position: absolute;
+  margin-top: 1%;
+  align-self: baseline;
+  z-index: 100;
+  width: 98%;
+  height: 98%;
+  margin-right: auto;
+  margin-left: auto;
+  left: 0px;
+  right: 0px;
+  transition: 1s ease;
+  row-gap: none;
+}
+
+.expand h2 {
+  font-size: 2rem;
+  margin-bottom: -2rem;
+}
+
+.expand img {
+  width: 50%;
+  height: auto;
+}
