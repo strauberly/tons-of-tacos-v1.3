@@ -12,6 +12,8 @@
 
 - Created conditions for triggering larger card presence. The idea is that instead of being presented as a modal we simply make the card bigger to hold description. Ready for styling.
 
+- Basic styling in place for expanded card.
+
 ---
 
 -- 26 Feb 2024 ---
