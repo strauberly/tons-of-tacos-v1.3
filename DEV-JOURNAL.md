@@ -8,6 +8,8 @@
 
 - Created icon folder in ui components. Will migrate others there as well. Also will be moving buttons and update styling at some point for modularity.
 
+- Updated styling for pointer cursor opn interactive elements.
+
 ---
 
 -- 26 Feb 2024 ---

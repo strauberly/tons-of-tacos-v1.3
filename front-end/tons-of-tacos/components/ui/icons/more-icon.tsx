@@ -3,7 +3,7 @@ import classes from "@/components/menu/menuItems/menu-item.module.css";
 export default function MoreIcon() {
   return (
     <svg
-      id={classes.more}
+      className={classes.more}
       data-name="more-icon"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 296 60.15"
