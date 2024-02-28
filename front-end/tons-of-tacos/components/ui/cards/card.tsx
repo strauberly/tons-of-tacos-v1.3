@@ -7,7 +7,6 @@ export default function Card(props: {
   any: any;
   expand: boolean;
 }) {
-  console.log(props.expand === true);
   return (
     <div
       className={`${classes.menucard} ${
