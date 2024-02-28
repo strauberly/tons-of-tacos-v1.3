@@ -2,6 +2,12 @@
 
 ---
 
+-- 28 Feb 2024 ---
+
+- Expanded card in place and functioning as desired. Enlarges in order to display a description for the menu item. Expanded version of card dismissed with click of button in upper right hand corner.
+
+---
+
 -- 27 Feb 2024 ---
 
 - Replaced place holders for more/description button and add to cart with buttons in menu item. They are ready for further styling.

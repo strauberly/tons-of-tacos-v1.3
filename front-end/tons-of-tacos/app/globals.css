@@ -18,6 +18,8 @@ body {
 }
 
 p {
+  display: flex;
+  justify-content: center;
   font-family: var(--inter-font);
   color: #c7ebec;
 }
