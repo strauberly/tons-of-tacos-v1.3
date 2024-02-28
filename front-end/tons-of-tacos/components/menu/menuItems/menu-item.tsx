@@ -5,6 +5,7 @@ import SizeSelector from "./size-selector/size-selector";
 import QuantitySelector from "./quantity-selector/quantity-selector";
 import { useEffect, useState } from "react";
 import MoreIcon from "@/components/ui/icons/more-icon";
+import button from "@/components/ui/button/button";
 
 export default function MenuItem(props: {
   itemName: string;
@@ -77,6 +78,14 @@ export default function MenuItem(props: {
         className={`${classes.card} ${expand === true ? classes.expand : " "}`}
       >
         <h2>{props.itemName}</h2>
+        {expand && (
+          <button
+            onClick={() => setExpand(false)}
+            className={classes.closeExpanded}
+          >
+            X
+          </button>
+        )}
         <Image
           id={classes.itemImage}
           src={`/images/menu-items/${props.category}/${props.itemName}.jpg`}
@@ -84,11 +93,16 @@ export default function MenuItem(props: {
           width={250}
           height={250}
         />
-        <SizeSelector
-          sizes={itemSizes}
-          sizeSetter={sizeSetter}
-          sizeAvailable={sizeAvailable}
-        />
+        <div className={classes.ghostDiv}>
+          {expand && <p>{props.description}</p>}
+          {sizeAvailable && (
+            <SizeSelector
+              sizes={itemSizes}
+              sizeSetter={sizeSetter}
+              sizeAvailable={sizeAvailable}
+            />
+          )}
+        </div>
         <QuantitySelector
           value={quantity}
           increment={increment}
@@ -96,9 +110,11 @@ export default function MenuItem(props: {
         />
         <p className={classes.price}>${calcPrice().toFixed(2)}</p>
         <button className={classes.add}>Add To Cart</button>
-        <button onClick={() => setExpand(true)}>
-          <MoreIcon />
-        </button>
+        {!expand && (
+          <button onClick={() => setExpand(true)}>
+            <MoreIcon />
+          </button>
+        )}
       </li>
     </Card>
   );
