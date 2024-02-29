@@ -6,6 +6,8 @@
 
 - Created types for cart item and cart in types.d.ts. Created skelton for cart functions in library. The idea is to separate out from actual component to reduce a sense of clutter. Creating a new branch for overlap work between menu items and cart.
 
+- Filled out function for adding a menu item to the cart and session storage. Ready to implement context for passing between components and along with sessionStorage.
+
 ---
 
 -- 28 Feb 2024 ---

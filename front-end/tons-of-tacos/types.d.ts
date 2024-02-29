@@ -22,7 +22,7 @@ type CartItem = {
   itemName: string;
   quantity: number;
   size: string;
-  price: number;
+  price: string;
 };
 
 type Cart = {
