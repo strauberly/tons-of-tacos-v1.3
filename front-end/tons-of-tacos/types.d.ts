@@ -11,10 +11,3 @@ type MenuItem = {
   itemSize: string;
   unitPrice: number;
 };
-
-type RadioProps = {
-  name: string;
-  labels: { value: string; label: string }[];
-  value: string | null;
-  onChange: (value: string) => void;
-};
