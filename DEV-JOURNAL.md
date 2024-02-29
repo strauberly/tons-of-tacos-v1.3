@@ -2,6 +2,12 @@
 
 ---
 
+-- 29 Feb 2024 ---
+
+- Created types for cart item and cart in types.d.ts. Created skelton for cart functions in library. The idea is to separate out from actual component to reduce a sense of clutter. Creating a new branch for overlap work between menu items and cart.
+
+---
+
 -- 28 Feb 2024 ---
 
 - Expanded card in place and functioning as desired. Enlarges in order to display a description for the menu item. Expanded version of card dismissed with click of button in upper right hand corner.
