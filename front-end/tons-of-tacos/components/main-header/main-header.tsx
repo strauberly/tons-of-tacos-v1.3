@@ -4,10 +4,12 @@ import classes from "./main-header.module.css";
 import Link from "next/link";
 import useCategoriesSource from "@/lib/menu";
 import NavButtons from "../nav-buttons/nav-buttons";
+import { CreateCart } from "@/lib/cartFunctions";
 
 export default async function MainHeader() {
   const categories = await useCategoriesSource();
   const menuOptions = categories;
+  CreateCart();
 
   return (
     <>

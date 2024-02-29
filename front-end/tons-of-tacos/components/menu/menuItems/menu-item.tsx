@@ -5,7 +5,7 @@ import SizeSelector from "./size-selector/size-selector";
 import QuantitySelector from "./quantity-selector/quantity-selector";
 import { useEffect, useState } from "react";
 import MoreIcon from "@/components/ui/icons/more-icon";
-import button from "@/components/ui/button/button";
+import { AddItemToCart } from "@/lib/cartFunctions";
 
 export default function MenuItem(props: {
   itemName: string;
@@ -67,6 +67,8 @@ export default function MenuItem(props: {
     }
   }, [props.itemSize]);
 
+  const price = calcPrice().toFixed(2);
+
   return (
     /* 
     conditionally style expanded card
@@ -108,8 +110,15 @@ export default function MenuItem(props: {
           increment={increment}
           decrement={decrement}
         />
-        <p className={classes.price}>${calcPrice().toFixed(2)}</p>
-        <button className={classes.add}>Add To Cart</button>
+        <p className={classes.price}>${price}</p>
+        {/*  */}
+        <button
+          className={classes.add}
+          onClick={() => AddItemToCart(props.itemName, quantity, size, price)}
+        >
+          Add To Cart
+        </button>
+        {/*  */}
         {!expand && (
           <button onClick={() => setExpand(true)}>
             <MoreIcon />
