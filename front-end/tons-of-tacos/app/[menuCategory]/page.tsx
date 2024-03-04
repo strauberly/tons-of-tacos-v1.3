@@ -7,6 +7,7 @@ import { Suspense, useEffect } from "react";
 import FadeOnLoad from "@/components/ui/animations/fade-on-load";
 import { useMenuContext } from "@/context/menu-store";
 import Loading from "../loading";
+import { CreateCart } from "@/lib/cartFunctions";
 
 export default function MenuItemsByCategory({
   params,
