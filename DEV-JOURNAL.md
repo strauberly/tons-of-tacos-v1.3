@@ -2,6 +2,16 @@
 
 ---
 
+-- 4 Mar 2024 ---
+
+- Session Storage holds a TonsOfTacosCart object created at runtime. The idea is to use session storage in order to preserve high frequency state changes for our customers cart in case of browser refresh. This may change over time and make use of Redux or Zustand.
+
+- Cart and its contents will be destroyed upon checkout. Following a principle of unobtrusive data storage for the customer.
+
+- As time and use case progresses we may see a need for creating a session id and storing it on the backend, in order to facilitate if a customer wishes to create an account to facilitate advanced features dow the road such as repeating an order or creating a reoccurring order, or even sharing a favorite order with others.
+
+---
+
 -- 29 Feb 2024 ---
 
 - Created types for cart item and cart in types.d.ts. Created skelton for cart functions in library. The idea is to separate out from actual component to reduce a sense of clutter. Creating a new branch for overlap work between menu items and cart.

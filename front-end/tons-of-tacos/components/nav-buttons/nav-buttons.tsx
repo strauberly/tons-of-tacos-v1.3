@@ -8,10 +8,10 @@ import MenuNav from "../menu/menu-navigation/menu-navigation";
 import { useEffect } from "react";
 import CartIcon from "../main-header/cart-icon";
 import { useCartContext } from "@/context/cart-context";
+import { CreateCart } from "@/lib/cartFunctions";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { showMenu, setShowMenu, setMenuNavCategories } = useGlobalContext();
-  
 
   // set returned categories to local storage and set context/ use ref? not rerendering may cause issue
   useEffect(() => {
@@ -20,6 +20,8 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
         "categories",
         JSON.stringify(menuOptions.menuOptions)
       );
+
+    CreateCart();
     setMenuNavCategories(menuOptions.menuOptions);
   }, [menuOptions, setMenuNavCategories]);
 
