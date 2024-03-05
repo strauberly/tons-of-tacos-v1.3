@@ -1,4 +1,5 @@
 import { GetCart } from "@/lib/cartFunctions";
+import classes from "@/components/ui/badges/cart-quantity.module.css";
 
 export default function CartQuantity() {
   let cartQuantity: number = 0;
@@ -11,5 +12,5 @@ export default function CartQuantity() {
     cartQuantity += quantity;
   });
 
-  return <button>{cartQuantity}</button>;
+  return <button className={classes.quantityBadge}>{cartQuantity}</button>;
 }

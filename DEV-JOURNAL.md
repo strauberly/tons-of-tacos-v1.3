@@ -5,6 +5,7 @@
 -- 5 Mar 2024 ---
 
 - Cart quantity badge is in place and accurately reflecting quantity of all items in the cart. Ready for styling.
+- Cart quantity badge is styled and ready for further programming.
 
 ---
 
