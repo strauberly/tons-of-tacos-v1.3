@@ -2,6 +2,12 @@
 
 ---
 
+-- 5 Mar 2024 ---
+
+- Cart quantity badge is in place and accurately reflecting quantity of all items in the cart. Ready for styling.
+
+---
+
 -- 4 Mar 2024 ---
 
 - Session Storage holds a TonsOfTacosCart object created at runtime. The idea is to use session storage in order to preserve high frequency state changes for our customers cart in case of browser refresh. This may change over time and make use of Redux or Zustand.
