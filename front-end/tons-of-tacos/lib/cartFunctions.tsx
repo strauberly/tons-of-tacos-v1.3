@@ -11,20 +11,19 @@ export async function AddItemToCart(
     price: price,
   };
   const newCart: CartItem[] = GetCart();
+  console.log(JSON.stringify(newCart));
   newCart.push(cartItem);
+  console.log(JSON.stringify(newCart));
 
   sessionStorage.removeItem("TonsOfTacosCart");
   sessionStorage.setItem("TonsOfTacosCart", JSON.stringify(newCart));
 }
 
 export function GetCart() {
-  const oldCart: CartItem[] = [];
-  if (!sessionStorage.getItem("TonsOfTacosCart")) {
-    return [];
-  } else {
-    oldCart.push(JSON.parse(sessionStorage.getItem("TonsOfTacosCart") || "{}"));
-    return oldCart;
-  }
+  const oldCart: CartItem[] = JSON.parse(
+    sessionStorage.getItem("TonsOfTacosCart") || "{}"
+  );
+  return oldCart;
 }
 
 export function UpdateCartItemQuantity() {}

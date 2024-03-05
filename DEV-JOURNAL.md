@@ -10,6 +10,8 @@
 
 - As time and use case progresses we may see a need for creating a session id and storing it on the backend, in order to facilitate if a customer wishes to create an account to facilitate advanced features dow the road such as repeating an order or creating a reoccurring order, or even sharing a favorite order with others.
 
+- Discovered a couple of errors in code and rectified. GetCart and AddToCart are currently functioning as desired.
+
 ---
 
 -- 29 Feb 2024 ---
