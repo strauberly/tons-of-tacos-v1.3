@@ -1,0 +1,11 @@
+.quantityBadge {
+  position: absolute;
+  translate: 9rem -0.5rem;
+  font-size: 1rem;
+  font-weight: 900;
+  background-color: aquamarine;
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  pointer-events: none;
+}
