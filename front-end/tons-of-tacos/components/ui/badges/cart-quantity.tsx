@@ -1,16 +1,13 @@
+"use client";
+
 import { GetCart } from "@/lib/cartFunctions";
 import classes from "@/components/ui/badges/cart-quantity.module.css";
+import { useEffect, useState } from "react";
+import { useCartContext } from "@/context/cart-context";
 
 export default function CartQuantity() {
-  let cartQuantity: number = 0;
+  const { cartQuantity } = useCartContext();
+  let quantity = cartQuantity;
 
-  const cartQuantities: number[] = GetCart().map(
-    (cartItem) => cartItem.quantity
-  );
-
-  cartQuantities.forEach((quantity) => {
-    cartQuantity += quantity;
-  });
-
-  return <button className={classes.quantityBadge}>{cartQuantity}</button>;
+  return <button className={classes.quantityBadge}>{quantity}</button>;
 }

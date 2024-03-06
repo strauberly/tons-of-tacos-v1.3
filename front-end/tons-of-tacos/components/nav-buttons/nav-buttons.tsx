@@ -5,7 +5,7 @@ import classes from "@/components/main-header/main-header.module.css";
 import MenuIcon from "../main-header/menu-icon";
 import DropDown from "../ui/animations/drop-down";
 import MenuNav from "../menu/menu-navigation/menu-navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CartIcon from "../main-header/cart-icon";
 import { CreateCart } from "@/lib/cartFunctions";
 import CartQuantity from "../ui/badges/cart-quantity";

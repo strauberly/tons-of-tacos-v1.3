@@ -1,6 +1,7 @@
 import { useMenuItemsForCategory } from "@/lib/menu";
 import MenuItem from "./menu-item";
 import classes from "./menu-item-list.module.css";
+import { CartContextProvider } from "@/context/cart-context";
 
 export default async function MenuItemList(category: { category: string }) {
   await new Promise((resolve) => setTimeout(resolve, 1000));

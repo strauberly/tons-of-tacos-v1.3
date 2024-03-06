@@ -1,3 +1,5 @@
+import { useCartContext } from "@/context/cart-context";
+
 export async function AddItemToCart(
   itemName: string,
   quantity: number,
@@ -10,11 +12,14 @@ export async function AddItemToCart(
     size: size,
     price: price,
   };
+
+  const { cartQuantity, setCartQuantity } = useCartContext();
+
   const newCart: CartItem[] = GetCart();
   console.log(JSON.stringify(newCart));
   newCart.push(cartItem);
   console.log(JSON.stringify(newCart));
-
+  setCartQuantity(cartQuantity + quantity);
   sessionStorage.removeItem("TonsOfTacosCart");
   sessionStorage.setItem("TonsOfTacosCart", JSON.stringify(newCart));
 }
