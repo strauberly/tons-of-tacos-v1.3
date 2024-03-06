@@ -6,6 +6,7 @@
 
 - Cart quantity badge is in place and accurately reflecting quantity of all items in the cart. Ready for styling.
 - Cart quantity badge is styled and ready for further programming.
+- Cart quantity badge is now dynamically updating the number of items that should be in the cart based on the users input.
 
 ---
 

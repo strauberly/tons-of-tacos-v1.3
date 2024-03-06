@@ -1,3 +1,4 @@
+"use client";
 import {
   Dispatch,
   ReactNode,
@@ -8,23 +9,30 @@ import {
 } from "react";
 
 interface ContextProps {
-  cart: OrderItem[];
-  setCart: Dispatch<SetStateAction<OrderItem[]>>;
+  cart: CartItem[];
+  setCart: Dispatch<SetStateAction<CartItem[]>>;
+  cartQuantity: number;
+  setCartQuantity: Dispatch<SetStateAction<number>>;
 }
 
 const CartContext = createContext<ContextProps>({
   cart: [],
-  setCart: (): OrderItem[] => [],
+  setCart: (): CartItem[] => [],
+  cartQuantity: 0,
+  setCartQuantity: () => {},
 });
 
 export const CartContextProvider = ({ children }: { children: ReactNode }) => {
-  const [cart, setCart] = useState<[] | OrderItem[]>([]);
+  const [cart, setCart] = useState<[] | CartItem[]>([]);
+  const [cartQuantity, setCartQuantity] = useState(0);
 
   return (
     <CartContext.Provider
       value={{
         cart,
         setCart,
+        cartQuantity,
+        setCartQuantity,
       }}
     >
       {children}
