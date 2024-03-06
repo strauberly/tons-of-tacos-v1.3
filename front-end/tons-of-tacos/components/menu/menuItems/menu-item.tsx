@@ -6,6 +6,8 @@ import QuantitySelector from "./quantity-selector/quantity-selector";
 import { useEffect, useState } from "react";
 import MoreIcon from "@/components/ui/icons/more-icon";
 import { AddItemToCart } from "@/lib/cartFunctions";
+import { CartContextProvider } from "@/context/cart-context";
+import AddToCart from "@/components/ui/buttons/add-to-cart";
 
 export default function MenuItem(props: {
   itemName: string;
@@ -105,20 +107,22 @@ export default function MenuItem(props: {
             />
           )}
         </div>
+
         <QuantitySelector
           value={quantity}
           increment={increment}
           decrement={decrement}
         />
         <p className={classes.price}>${price}</p>
-        {/*  */}
-        <button
+
+        <AddToCart quantity={quantity} />
+
+        {/* <button
           className={classes.add}
           onClick={() => AddItemToCart(props.itemName, quantity, size, price)}
         >
           Add To Cart
-        </button>
-        {/*  */}
+        </button> */}
         {!expand && (
           <button onClick={() => setExpand(true)}>
             <MoreIcon />

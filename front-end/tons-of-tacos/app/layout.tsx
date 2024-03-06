@@ -3,8 +3,8 @@ import "./globals.css";
 import MainHeader from "../components/main-header/main-header";
 import { inter } from "../components/ui/fonts/fonts";
 import { GlobalContextProvider } from "@/context/store";
-import { ChildrenContextProvider } from "@/context/store copy";
 import { MenuContextProvider } from "@/context/menu-store";
+import { CartContextProvider } from "@/context/cart-context";
 
 export const metadata: Metadata = {
   title: "Tons Of Tacos",
@@ -19,12 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="html">
       <body className={`${inter.variable}`}>
-        <GlobalContextProvider>
-          <MainHeader />
-        </GlobalContextProvider>
-        <MenuContextProvider>
-          <div className="children">{children}</div>
-        </MenuContextProvider>
+        <CartContextProvider>
+          <GlobalContextProvider>
+            <MainHeader />
+          </GlobalContextProvider>
+          <MenuContextProvider>
+            <div className="children">{children}</div>
+          </MenuContextProvider>
+        </CartContextProvider>
       </body>
     </html>
   );

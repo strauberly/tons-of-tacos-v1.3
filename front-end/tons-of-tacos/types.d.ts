@@ -12,12 +12,6 @@ type MenuItem = {
   unitPrice: number;
 };
 
-type OrderItem = {
-  itemName: string;
-  quantity: number;
-  size: string;
-};
-
 type CartItem = {
   itemName: string;
   quantity: number;
