@@ -9,9 +9,12 @@ import { useEffect, useState } from "react";
 import CartIcon from "../main-header/cart-icon";
 import { CreateCart } from "@/lib/cartFunctions";
 import CartQuantity from "../ui/badges/cart-quantity";
+import { CartContextProvider, useCartContext } from "@/context/cart-context";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { showMenu, setShowMenu, setMenuNavCategories } = useGlobalContext();
+
+  const { itemsInCart } = useCartContext();
 
   // set returned categories to local storage and set context/ use ref? not rerendering may cause issue
   useEffect(() => {
@@ -40,7 +43,7 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
         >
           <MenuIcon />
         </button>
-        <CartQuantity />
+        {itemsInCart && <CartQuantity />}
         <button>
           <CartIcon />
         </button>

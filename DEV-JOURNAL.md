@@ -2,6 +2,12 @@
 
 ---
 
+-- 6 Mar 2024 ---
+
+- cart quantity badge is now only visible if items determined to be in a cart. Click add to cart button on a menu item sets items in cart to true.
+
+---
+
 -- 5 Mar 2024 ---
 
 - Cart quantity badge is in place and accurately reflecting quantity of all items in the cart. Ready for styling.
