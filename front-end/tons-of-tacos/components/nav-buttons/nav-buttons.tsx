@@ -1,22 +1,21 @@
 "use client";
-
 import { useGlobalContext } from "@/context/store";
 import classes from "@/components/main-header/main-header.module.css";
 import MenuIcon from "../main-header/menu-icon";
 import DropDown from "../ui/animations/drop-down";
 import MenuNav from "../menu/menu-navigation/menu-navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import CartIcon from "../main-header/cart-icon";
 import { CreateCart } from "@/lib/cartFunctions";
 import CartQuantity from "../ui/badges/cart-quantity";
-import { CartContextProvider, useCartContext } from "@/context/cart-context";
+import { useCartContext } from "@/context/cart-context";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { showMenu, setShowMenu, setMenuNavCategories } = useGlobalContext();
 
-  const { itemsInCart } = useCartContext();
+  const { itemsInCart, setItemsInCart, setCartQuantity, cartQuantity } =
+    useCartContext();
 
-  // set returned categories to local storage and set context/ use ref? not rerendering may cause issue
   useEffect(() => {
     if (window)
       sessionStorage.setItem(
@@ -34,6 +33,27 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
     setShowMenu(true);
   }
 
+  if (cartQuantity > 0) {
+    setItemsInCart(true);
+  }
+
+  useEffect(() => {
+    async function CartQuantity() {
+      let quantity: number = 0;
+      const cartItems: CartItem[] = JSON.parse(
+        sessionStorage.getItem("tons-of-tacos-cart") || "{}"
+      );
+
+      const cartQuantity: number[] = cartItems.map(
+        (cartItem) => cartItem.quantity
+      );
+
+      cartQuantity.forEach((num) => (quantity += num));
+      setCartQuantity(quantity);
+    }
+    CartQuantity();
+  }, [setCartQuantity]);
+
   return (
     <>
       <nav className={classes.navButtons}>
@@ -43,7 +63,7 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
         >
           <MenuIcon />
         </button>
-        {itemsInCart && <CartQuantity />}
+        {itemsInCart && <CartQuantity quantity={cartQuantity} />}
         <button>
           <CartIcon />
         </button>

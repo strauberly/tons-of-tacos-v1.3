@@ -4,7 +4,9 @@
 
 -- 6 Mar 2024 ---
 
-- cart quantity badge is now only visible if items determined to be in a cart. Click add to cart button on a menu item sets items in cart to true.
+- Cart quantity badge is now only visible if items determined to be in a cart. Click add to cart button on a menu item sets items in cart to true.
+- Code refactored to reimplement cart as session storage.
+- Cart quantity is now reflective of cart stored in session storage, meaning persistence of value for cart quantity is maintained.
 
 ---
 
