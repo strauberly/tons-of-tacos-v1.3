@@ -2,6 +2,18 @@
 
 ---
 
+-- 7 Mar 2024 ---
+
+- Cart quantity badge styling is updated. Background color matches quantity selected and item size font color when selected. The idea being this color indicating the user did something.
+
+- Updated styling for add to cart button. Active is now set to change color in order to provide feedback to the user that they did add something to the cart.
+
+- Similar styling implemented for quantity selector increment and decrement buttons.
+
+- Animation in place for the cart quantity badge to activate when an item is added to the cart. Still needs to be wired up.
+
+---
+
 -- 6 Mar 2024 ---
 
 - Cart quantity badge is now only visible if items determined to be in a cart. Click add to cart button on a menu item sets items in cart to true.
