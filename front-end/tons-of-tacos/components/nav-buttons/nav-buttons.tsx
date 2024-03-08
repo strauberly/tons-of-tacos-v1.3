@@ -9,6 +9,7 @@ import CartIcon from "../main-header/cart-icon";
 import { CreateCart } from "@/lib/cartFunctions";
 import CartQuantity from "../ui/badges/cart-quantity";
 import { useCartContext } from "@/context/cart-context";
+import CartQuantityChange from "../ui/animations/cart-quantity-change";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { showMenu, setShowMenu, setMenuNavCategories } = useGlobalContext();
@@ -63,7 +64,9 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
         >
           <MenuIcon />
         </button>
+
         {itemsInCart && <CartQuantity quantity={cartQuantity} />}
+
         <button>
           <CartIcon />
         </button>

@@ -1,11 +1,30 @@
+@keyframes change {
+  0% {
+    box-shadow: 0rem 0rem 0rem 0rem transparent;
+  }
+
+  50% {
+    box-shadow: 0rem 0rem 0.5rem 0.25rem #ebc83b;
+  }
+
+  100% {
+    box-shadow: 0rem 0rem 0rem 0rem transparent;
+  }
+}
+
 .quantityBadge {
+  animation: change 0.5s 3;
   position: absolute;
   translate: 9rem -0.5rem;
   font-size: 1rem;
   font-weight: 900;
-  background-color: aquamarine;
+  background-color: aqua;
   border-radius: 50%;
   height: 1.5rem;
   width: 1.5rem;
   pointer-events: none;
+}
+
+.addedToCart {
+  animation: change 0.5s 3;
 }

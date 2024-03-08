@@ -4,3 +4,9 @@
   font-size: 1.25rem;
   cursor: pointer;
 }
+
+.add:active {
+  color: aqua;
+  text-shadow: 0rem 0rem 1rem aquamarine;
+  transition: 0.025s ease;
+}
