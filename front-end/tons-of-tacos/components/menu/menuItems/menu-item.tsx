@@ -115,7 +115,12 @@ export default function MenuItem(props: {
         />
         <p className={classes.price}>${price}</p>
 
-        <AddToCart quantity={quantity} />
+        <AddToCart
+          itemName={props.itemName}
+          quantity={quantity}
+          size={size}
+          price={price}
+        />
 
         {/* <button
           className={classes.add}

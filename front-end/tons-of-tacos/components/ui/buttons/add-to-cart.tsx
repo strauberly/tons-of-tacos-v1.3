@@ -1,8 +1,14 @@
 "use client";
 import classes from "@/components/ui/buttons/add-to-cart.module.css";
 import { useCartContext } from "@/context/cart-context";
+import { AddItemToCart } from "@/lib/cartFunctions";
 
-export default function AddToCart(props: { quantity: number }) {
+export default function AddToCart(props: {
+  itemName: string;
+  quantity: number;
+  size: string;
+  price: string;
+}) {
   const { cartQuantity, setCartQuantity, setItemsInCart } = useCartContext();
 
   const quantity = () => {
@@ -12,7 +18,11 @@ export default function AddToCart(props: { quantity: number }) {
   return (
     <button
       className={classes.add}
-      onClick={() => [quantity(), setItemsInCart(true)]}
+      onClick={() => [
+        quantity(),
+        setItemsInCart(true),
+        AddItemToCart(props.itemName, props.quantity, props.size, props.price),
+      ]}
     >
       Add To Cart
     </button>
