@@ -1,5 +1,3 @@
-import { useCartContext } from "@/context/cart-context";
-
 export async function AddItemToCart(
   itemName: string,
   quantity: number,
@@ -13,22 +11,28 @@ export async function AddItemToCart(
     price: price,
   };
 
-  const { cartQuantity, setCartQuantity } = useCartContext();
-
-  const newCart: CartItem[] = GetCart();
-  console.log(JSON.stringify(newCart));
+  let newCart: CartItem[] = [];
+  newCart = await GetCart();
   newCart.push(cartItem);
-  console.log(JSON.stringify(newCart));
-  setCartQuantity(cartQuantity + quantity);
-  sessionStorage.removeItem("TonsOfTacosCart");
-  sessionStorage.setItem("TonsOfTacosCart", JSON.stringify(newCart));
+  sessionStorage.removeItem("tons-of-tacos-cart");
+  sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(newCart));
 }
 
-export function GetCart() {
-  const oldCart: CartItem[] = JSON.parse(
-    sessionStorage.getItem("TonsOfTacosCart") || "{}"
-  );
+export default async function GetCart() {
+  let oldCart: CartItem[] = [];
+  if (typeof window !== "undefined") {
+    oldCart = JSON.parse(sessionStorage.getItem("tons-of-tacos-cart") || "{}");
+  }
   return oldCart;
+}
+
+export async function GetCartQuantity() {
+  const cart: CartItem[] = await GetCart();
+  let cartQuantity: number[] = [];
+  let quantity: number = 0;
+  cartQuantity = cart.map((cartItem) => cartItem.quantity);
+  cartQuantity.forEach((num) => (quantity += num));
+  return quantity;
 }
 
 export function UpdateCartItemQuantity() {}
@@ -39,8 +43,8 @@ export function CreateCart() {
   const cart: CartItem[] = [];
   if (
     typeof window !== "undefined" &&
-    !sessionStorage.getItem("TonsOfTacosCart")
+    !sessionStorage.getItem("tons-of-tacos-cart")
   ) {
-    sessionStorage.setItem("TonsOfTacosCart", JSON.stringify(cart));
+    sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(cart));
   }
 }
