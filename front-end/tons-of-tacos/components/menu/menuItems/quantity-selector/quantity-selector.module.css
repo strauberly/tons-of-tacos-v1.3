@@ -41,3 +41,8 @@
   color: #ebc83b;
   transition: 0.3s ease;
 }
+
+.icon:active {
+  color: aqua;
+  transition: 0.025s ease;
+}
