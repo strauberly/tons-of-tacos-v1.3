@@ -14,8 +14,7 @@ import CartQuantityChange from "../ui/animations/cart-quantity-change";
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { showMenu, setShowMenu, setMenuNavCategories } = useGlobalContext();
 
-  const { itemsInCart, setItemsInCart, setCartQuantity, cartQuantity } =
-    useCartContext();
+  const { itemsInCart } = useCartContext();
 
   useEffect(() => {
     if (window)
@@ -24,7 +23,7 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
         JSON.stringify(menuOptions.menuOptions)
       );
 
-    CreateCart();
+    // CreateCart();
     setMenuNavCategories(menuOptions.menuOptions);
   }, [menuOptions, setMenuNavCategories]);
 
@@ -33,27 +32,6 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   function handleMenu() {
     setShowMenu(true);
   }
-
-  if (cartQuantity > 0) {
-    setItemsInCart(true);
-  }
-
-  useEffect(() => {
-    async function CartQuantity() {
-      let quantity: number = 0;
-      const cartItems: CartItem[] = JSON.parse(
-        sessionStorage.getItem("tons-of-tacos-cart") || "{}"
-      );
-
-      const cartQuantity: number[] = cartItems.map(
-        (cartItem) => cartItem.quantity
-      );
-
-      cartQuantity.forEach((num) => (quantity += num));
-      setCartQuantity(quantity);
-    }
-    CartQuantity();
-  }, [setCartQuantity]);
 
   return (
     <>
@@ -64,9 +42,7 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
         >
           <MenuIcon />
         </button>
-
-        {itemsInCart && <CartQuantity quantity={cartQuantity} />}
-
+        {itemsInCart && <CartQuantity />}
         <button>
           <CartIcon />
         </button>
