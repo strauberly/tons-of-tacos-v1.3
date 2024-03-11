@@ -2,6 +2,15 @@
 
 ---
 
+-- 11 Mar 2024 ---
+
+- Was able to move logic for cart quantity out of nav button inside of its own component.
+
+- Discovered rendering issues were arising as result of where and when call to create cart was currently located and so transported it in to use effect for cart quantity badge. May also move it into main header so that all items dealing with session storage are dealt with at once.
+-
+
+---
+
 -- 7 Mar 2024 ---
 
 - Cart quantity badge styling is updated. Background color matches quantity selected and item size font color when selected. The idea being this color indicating the user did something.
