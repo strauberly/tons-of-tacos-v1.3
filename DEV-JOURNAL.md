@@ -2,12 +2,19 @@
 
 ---
 
+-- 12 Mar 2024 ---
+
+- Revised styling on menu item expanded view. Still have a few elements running rogue when dev tools brought up but overall experience and aesthetics improved.
+- Corrected issues derived from menu item list being brought in as an async function.
+- Successfully migrated cart quantity logic into library improving readability of cart quantity component.
+
+---
+
 -- 11 Mar 2024 ---
 
 - Was able to move logic for cart quantity out of nav button inside of its own component.
 
 - Discovered rendering issues were arising as result of where and when call to create cart was currently located and so transported it in to use effect for cart quantity badge. May also move it into main header so that all items dealing with session storage are dealt with at once.
--
 
 ---
 
