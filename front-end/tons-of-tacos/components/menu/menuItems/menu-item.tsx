@@ -90,6 +90,7 @@ export default function MenuItem(props: {
             X
           </button>
         )}
+
         <Image
           id={classes.itemImage}
           src={`/images/menu-items/${props.category}/${props.itemName}.jpg`}
@@ -122,12 +123,6 @@ export default function MenuItem(props: {
           price={price}
         />
 
-        {/* <button
-          className={classes.add}
-          onClick={() => AddItemToCart(props.itemName, quantity, size, price)}
-        >
-          Add To Cart
-        </button> */}
         {!expand && (
           <button onClick={() => setExpand(true)}>
             <MoreIcon />
