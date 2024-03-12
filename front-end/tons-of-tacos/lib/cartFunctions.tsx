@@ -18,7 +18,7 @@ export async function AddItemToCart(
   sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(newCart));
 }
 
-export default async function GetCart() {
+export function GetCart() {
   let oldCart: CartItem[] = [];
   if (typeof window !== "undefined") {
     oldCart = JSON.parse(sessionStorage.getItem("tons-of-tacos-cart") || "{}");
@@ -26,8 +26,8 @@ export default async function GetCart() {
   return oldCart;
 }
 
-export async function GetCartQuantity() {
-  const cart: CartItem[] = await GetCart();
+export function GetCartQuantity() {
+  const cart: CartItem[] = GetCart();
   let cartQuantity: number[] = [];
   let quantity: number = 0;
   cartQuantity = cart.map((cartItem) => cartItem.quantity);
