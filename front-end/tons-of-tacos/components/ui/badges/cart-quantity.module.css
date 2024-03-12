@@ -24,7 +24,3 @@
   width: 1.5rem;
   pointer-events: none;
 }
-
-.addedToCart {
-  animation: change 0.5s 3;
-}

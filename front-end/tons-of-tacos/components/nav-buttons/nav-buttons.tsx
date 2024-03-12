@@ -42,7 +42,7 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
         >
           <MenuIcon />
         </button>
-        {itemsInCart && <CartQuantity />}
+        <CartQuantity />
         <button>
           <CartIcon />
         </button>
