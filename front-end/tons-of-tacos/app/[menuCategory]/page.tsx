@@ -3,11 +3,13 @@
 import classes from "./page.module.css";
 import MenuItemList from "@/components/menu/menuItems/menu-item-list";
 import { notFound } from "next/navigation";
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import FadeOnLoad from "@/components/ui/animations/fade-on-load";
 import { useMenuContext } from "@/context/menu-store";
 import Loading from "../loading";
+import { useMenuItemsForCategory } from "@/lib/menu";
 
+// const menuItems = await useMenuItemsForCategory();
 export default function MenuItemsByCategory({
   params,
 }: {
@@ -15,15 +17,8 @@ export default function MenuItemsByCategory({
 }) {
   const { categories, setCategories, setMenuItems } = useMenuContext();
 
-  // desired category captured from params
   let category = params.menuCategory;
-
-  // set menu category description
-  let description: string | undefined = categories
-    .find(function (mc) {
-      return mc.name === `${category}`;
-    })
-    ?.description.toString();
+  const menuItems = useRef<MenuItem[]>([]);
 
   useEffect(() => {
     async function DisplayMenuItems() {
@@ -39,10 +34,20 @@ export default function MenuItemsByCategory({
         notFound();
       }
 
+      menuItems.current = await useMenuItemsForCategory(category);
+      console.log(menuItems.current);
       setCategories(categories);
+      setMenuItems(menuItems.current);
     }
     DisplayMenuItems();
   }, [category, setCategories, setMenuItems]);
+
+  // set menu category description
+  let description: string | undefined = categories
+    .find(function (mc) {
+      return mc.name === `${category}`;
+    })
+    ?.description.toString();
 
   return (
     <main className={classes.main}>
@@ -52,7 +57,7 @@ export default function MenuItemsByCategory({
             <h1>{category + ":"}</h1>
             <p className={classes.title}>{description}</p>
           </div>
-          <div>{<MenuItemList category={category} />}</div>
+          <div>{<MenuItemList menuItems={menuItems.current} />}</div>
         </FadeOnLoad>
       </Suspense>
     </main>
