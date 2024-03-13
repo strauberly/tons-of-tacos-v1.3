@@ -4,10 +4,14 @@ import MenuCategories from "./menu-category-list";
 import { useGlobalContext } from "@/context/store";
 
 export default function MenuNav() {
-  const { setShowMenu, showMenu } = useGlobalContext();
+  const { setShowMenu } = useGlobalContext();
 
   return (
-    <nav className={classes.menu} onMouseLeave={() => setShowMenu(!showMenu)}>
+    <nav
+      className={classes.menu}
+      onMouseEnter={() => setShowMenu(true)}
+      onMouseLeave={() => setShowMenu(false)}
+    >
       <MenuCategories />
     </nav>
   );

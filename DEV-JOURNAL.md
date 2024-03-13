@@ -6,6 +6,8 @@
 
 - Discovered duplicate menu items folder, it has been removed and references updated.
 - Moved button type components to buttons folder in ui component folder.
+- Menu icon now has desired behavior of show menu on entry and hiding when use moves cursor somewhere besides menu. Also hides menu when user enters the menu and move off of it with out making a selection.
+- Changed expanded view close icon to use standard app font. User feedback indicated the before used custom font was harder to determine what the intended purpose was.
 
 ---
 
