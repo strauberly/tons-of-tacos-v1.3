@@ -9,7 +9,13 @@ import CartIcon from "./cart-icon";
 import CartQuantity from "../../badges/cart-quantity";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
-  const { showMenu, setShowMenu, setMenuNavCategories } = useGlobalContext();
+  const {
+    showMenu,
+    setShowMenu,
+    setMenuNavCategories,
+    menuEntered,
+    setMenuEntered,
+  } = useGlobalContext();
 
   useEffect(() => {
     if (window)
@@ -21,21 +27,18 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
     setMenuNavCategories(menuOptions.menuOptions);
   }, [menuOptions, setMenuNavCategories]);
 
-  function handleMenu() {
-    setShowMenu(true);
-  }
-
   return (
     <>
+      <CartQuantity />
       <nav className={classes.navButtons}>
         <button
-          onMouseEnter={() => handleMenu()}
-          onMouseLeave={() => handleMenu()}
+          className={classes.menuButton}
+          onMouseEnter={() => setShowMenu(true)}
+          onMouseLeave={() => setShowMenu(false)}
         >
           <MenuIcon />
         </button>
-        <CartQuantity />
-        <button>
+        <button className={classes.cartButton}>
           <CartIcon />
         </button>
       </nav>

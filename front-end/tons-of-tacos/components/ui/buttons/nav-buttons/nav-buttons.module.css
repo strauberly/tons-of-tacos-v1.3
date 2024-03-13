@@ -3,6 +3,7 @@
   color: #cf3052;
   transition: 1s ease;
   cursor: pointer;
+  margin-bottom: 1.8rem;
 }
 
 .icon:hover {
