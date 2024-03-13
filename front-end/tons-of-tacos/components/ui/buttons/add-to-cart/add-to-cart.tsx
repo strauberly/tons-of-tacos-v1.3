@@ -1,5 +1,5 @@
 "use client";
-import classes from "@/components/ui/buttons/add-to-cart.module.css";
+import classes from "./add-to-cart.module.css";
 import { useCartContext } from "@/context/cart-context";
 import { AddItemToCart } from "@/lib/cartFunctions";
 

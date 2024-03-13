@@ -1,4 +1,4 @@
-import RadioButton from "@/components/ui/radio-buttons/radio-button";
+import RadioButton from "@/components/ui/buttons/radio-buttons/radio-button";
 import classes from "@/components/menu/menu-items/size-selector/size-selector.module.css";
 
 export default function SizeSelector(props: {
