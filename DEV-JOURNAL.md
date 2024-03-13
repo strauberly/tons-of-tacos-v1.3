@@ -2,6 +2,12 @@
 
 ---
 
+-- 13 Mar 2024 ---
+
+- Discovered duplicate menu items folder, it has been removed and references updated.
+
+---
+
 -- 12 Mar 2024 ---
 
 - Revised styling on menu item expanded view. Still have a few elements running rogue when dev tools brought up but overall experience and aesthetics improved.

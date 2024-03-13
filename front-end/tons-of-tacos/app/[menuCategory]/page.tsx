@@ -1,7 +1,7 @@
 "use client";
 
 import classes from "./page.module.css";
-import MenuItemList from "@/components/menu/menuItems/menu-item-list";
+import MenuItemList from "@/components/menu/menu-items/menu-item-list";
 import { notFound } from "next/navigation";
 import { Suspense, useEffect, useRef } from "react";
 import FadeOnLoad from "@/components/ui/animations/fade-on-load";
