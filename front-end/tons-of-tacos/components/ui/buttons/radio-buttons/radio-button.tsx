@@ -1,4 +1,4 @@
-import classes from "@/components/ui/radio-buttons/radio-buttons.module.css";
+import classes from "./radio-buttons.module.css";
 import { useId } from "react";
 
 export default function RadioButton(props: {

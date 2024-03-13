@@ -5,6 +5,7 @@
 -- 13 Mar 2024 ---
 
 - Discovered duplicate menu items folder, it has been removed and references updated.
+- Moved button type components to buttons folder in ui component folder.
 
 ---
 

@@ -5,7 +5,7 @@ import SizeSelector from "./size-selector/size-selector";
 import QuantitySelector from "./quantity-selector/quantity-selector";
 import { useEffect, useState } from "react";
 import MoreIcon from "@/components/ui/icons/more-icon";
-import AddToCart from "@/components/ui/buttons/add-to-cart";
+import AddToCart from "../../ui/buttons/add-to-cart/add-to-cart";
 
 export default function MenuItem(props: {
   itemName: string;
