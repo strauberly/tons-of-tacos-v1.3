@@ -12,6 +12,10 @@ import {
 interface ContextProps {
   showMenu: boolean;
   setShowMenu: Dispatch<SetStateAction<boolean>>;
+  menuEntered: boolean;
+  setMenuEntered: Dispatch<SetStateAction<boolean>>;
+  menuIconEntered: boolean;
+  setMenuIconEntered: Dispatch<SetStateAction<boolean>>;
   menuNavCategories: Category[];
   setMenuNavCategories: Dispatch<SetStateAction<Category[]>>;
   isLoading: boolean;
@@ -23,6 +27,10 @@ interface ContextProps {
 const GlobalContext = createContext<ContextProps>({
   showMenu: false,
   setShowMenu: () => {},
+  menuEntered: false,
+  setMenuEntered: () => {},
+  menuIconEntered: false,
+  setMenuIconEntered: () => {},
   menuNavCategories: [],
   setMenuNavCategories: (): Category[] => [],
   isLoading: false,
@@ -40,12 +48,18 @@ export const GlobalContextProvider = ({
   const [categories, setMenuNavCategories] = useState<[] | Category[]>([]);
   const [menuItems, setMenuItems] = useState<[] | MenuItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [menuEntered, setMenuEntered] = useState(false);
+  const [menuIconEntered, setMenuIconEntered] = useState(false);
 
   return (
     <GlobalContext.Provider
       value={{
         showMenu,
         setShowMenu,
+        menuEntered,
+        setMenuEntered,
+        menuIconEntered,
+        setMenuIconEntered,
         menuNavCategories: categories,
         setMenuNavCategories: setMenuNavCategories,
         isLoading,

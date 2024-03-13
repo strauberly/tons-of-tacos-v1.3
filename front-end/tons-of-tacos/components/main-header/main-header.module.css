@@ -5,7 +5,7 @@
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 65.5rem;
+  gap: 67.6%;
   padding: 1rem;
   color: #cf3052;
   background-color: #0c0424;
@@ -63,4 +63,18 @@
 .navButtons {
   display: flex;
   gap: 4rem;
+}
+
+.menuButton {
+  position: absolute;
+  margin-bottom: 1rem;
+  margin-top: -3rem;
+  right: 8%;
+}
+
+.cartButton {
+  position: absolute;
+  margin-bottom: 4rem;
+  margin-top: -3rem;
+  right: 0.5%;
 }
