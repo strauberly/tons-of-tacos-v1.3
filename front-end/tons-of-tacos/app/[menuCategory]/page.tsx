@@ -9,7 +9,6 @@ import { useMenuContext } from "@/context/menu-store";
 import Loading from "../loading";
 import { useMenuItemsForCategory } from "@/lib/menu";
 
-// const menuItems = await useMenuItemsForCategory();
 export default function MenuItemsByCategory({
   params,
 }: {
@@ -33,9 +32,7 @@ export default function MenuItemsByCategory({
       if (!menuOptions.includes(category)) {
         notFound();
       }
-
       menuItems.current = await useMenuItemsForCategory(category);
-      console.log(menuItems.current);
       setCategories(categories);
       setMenuItems(menuItems.current);
     }
