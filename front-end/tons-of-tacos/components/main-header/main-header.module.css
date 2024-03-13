@@ -28,18 +28,6 @@
   transition: 0.3s ease;
 }
 
-.icon {
-  height: 3rem;
-  color: #cf3052;
-  transition: 1s ease;
-  cursor: pointer;
-}
-
-.icon:hover {
-  color: #ebc83b;
-  transition: 0.3s ease;
-}
-
 .menu {
   display: flex;
   justify-content: center;
