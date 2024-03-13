@@ -5,7 +5,7 @@ import SizeSelector from "./size-selector/size-selector";
 import QuantitySelector from "./quantity-selector/quantity-selector";
 import { useEffect, useState } from "react";
 import MoreIcon from "@/components/ui/icons/more-icon";
-import { AddItemToCart } from "@/lib/cartFunctions";
+import AddToCart from "@/components/ui/buttons/add-to-cart";
 
 export default function MenuItem(props: {
   itemName: string;
@@ -88,6 +88,7 @@ export default function MenuItem(props: {
             X
           </button>
         )}
+
         <Image
           id={classes.itemImage}
           src={`/images/menu-items/${props.category}/${props.itemName}.jpg`}
@@ -105,20 +106,21 @@ export default function MenuItem(props: {
             />
           )}
         </div>
+
         <QuantitySelector
           value={quantity}
           increment={increment}
           decrement={decrement}
         />
         <p className={classes.price}>${price}</p>
-        {/*  */}
-        <button
-          className={classes.add}
-          onClick={() => AddItemToCart(props.itemName, quantity, size, price)}
-        >
-          Add To Cart
-        </button>
-        {/*  */}
+
+        <AddToCart
+          itemName={props.itemName}
+          quantity={quantity}
+          size={size}
+          price={price}
+        />
+
         {!expand && (
           <button onClick={() => setExpand(true)}>
             <MoreIcon />
