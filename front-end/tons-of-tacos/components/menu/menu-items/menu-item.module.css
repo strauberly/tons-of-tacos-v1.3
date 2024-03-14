@@ -58,10 +58,10 @@
 }
 
 .expand {
-  display: flex;
   position: fixed;
+  min-height: 765px;
+  display: flex;
   justify-content: center;
-  z-index: 100;
   width: 29%;
   height: 79%;
   margin-right: auto;
