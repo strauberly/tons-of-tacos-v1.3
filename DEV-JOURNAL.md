@@ -2,6 +2,12 @@
 
 ---
 
+-- 14 Mar 2024 ---
+
+- Restyled expanded view of menu item in order to prevent shift when dev tools are up in browser.
+
+---
+
 -- 13 Mar 2024 ---
 
 - Discovered duplicate menu items folder, it has been removed and references updated.
@@ -9,6 +15,7 @@
 - Menu icon now has desired behavior of show menu on entry and hiding when use moves cursor somewhere besides menu. Also hides menu when user enters the menu and move off of it with out making a selection.
 - Changed expanded view close icon to use standard app font. User feedback indicated the before used custom font was harder to determine what the intended purpose was.
 - Reinstated loading animation for menu items.
+- Removed unnecessary context items.
 
 ---
 
