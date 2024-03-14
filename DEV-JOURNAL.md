@@ -5,6 +5,7 @@
 -- 14 Mar 2024 ---
 
 - Restyled expanded view of menu item in order to prevent shift when dev tools are up in browser.
+- Restyled cart quantity badge for similar reasons and it will remain locked in place until I begin addressing responsive design for the application.
 
 ---
 
