@@ -2,6 +2,12 @@
 
 ---
 
+-- 14 Mar 2024 ---
+
+- Restyled expanded view of menu item in order to prevent shift when dev tools are up in browser.
+
+---
+
 -- 13 Mar 2024 ---
 
 - Discovered duplicate menu items folder, it has been removed and references updated.
