@@ -9,13 +9,7 @@ import CartIcon from "./cart-icon";
 import CartQuantity from "../../badges/cart-quantity";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
-  const {
-    showMenu,
-    setShowMenu,
-    setMenuNavCategories,
-    menuEntered,
-    setMenuEntered,
-  } = useGlobalContext();
+  const { showMenu, setShowMenu, setMenuNavCategories } = useGlobalContext();
 
   useEffect(() => {
     if (window)
