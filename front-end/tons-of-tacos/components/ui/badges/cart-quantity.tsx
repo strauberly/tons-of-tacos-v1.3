@@ -4,7 +4,8 @@ import { CreateCart, GetCartQuantity } from "@/lib/cartFunctions";
 import { useEffect } from "react";
 
 export default function CartQuantity() {
-  const { setItemsInCart, setCartQuantity, cartQuantity } = useCartContext();
+  const { setItemsInCart, setCartQuantity, cartQuantity, itemsInCart } =
+    useCartContext();
 
   useEffect(() => {
     async function SetCart() {
@@ -17,5 +18,11 @@ export default function CartQuantity() {
     SetCart();
   }, [cartQuantity, setCartQuantity, setItemsInCart]);
 
-  return <button className={classes.quantityBadge}>{cartQuantity}</button>;
+  return (
+    <>
+      {itemsInCart && (
+        <button className={classes.quantityBadge}>{cartQuantity}</button>
+      )}
+    </>
+  );
 }

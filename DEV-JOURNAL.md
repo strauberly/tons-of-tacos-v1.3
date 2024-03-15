@@ -2,6 +2,10 @@
 
 ---
 
+-- 15 Mar 2024 ---
+
+- Reimplemented cart quantity badge not being displayed until items are actually in cart.
+
 -- 14 Mar 2024 ---
 
 - Restyled expanded view of menu item in order to prevent shift when dev tools are up in browser.
