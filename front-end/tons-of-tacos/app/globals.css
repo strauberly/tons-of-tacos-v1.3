@@ -17,6 +17,10 @@ body {
   overflow-y: scroll;
 }
 
+.div {
+  display: flex;
+}
+
 p {
   display: flex;
   justify-content: center;
