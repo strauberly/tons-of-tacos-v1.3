@@ -2,10 +2,19 @@
 
 ---
 
+-- 19 Mar 2024 ---
+
+- Initiated work on responsive design.
+- Gap between header elements now responsive down to a width of 640. Removed fixed position and overwrote div in global.
+
+---
+
 -- 15 Mar 2024 ---
 
 - Reimplemented cart quantity badge not being displayed until items are actually in cart.
 - Implemented cart quantity limiter with alert message. The idea being to limit opportunities for runaway or mischief order as our owners are currently a cash business. A user is currently limited to 15 items in their order and if more items desired, encouraged to contact the business.
+
+---
 
 -- 14 Mar 2024 ---
 
