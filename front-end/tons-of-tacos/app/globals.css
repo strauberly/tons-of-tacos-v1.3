@@ -18,7 +18,9 @@ body {
 }
 
 header {
-  display: flex;
+  display: none;
+  padding: none;
+  margin: none;
 }
 
 p {
