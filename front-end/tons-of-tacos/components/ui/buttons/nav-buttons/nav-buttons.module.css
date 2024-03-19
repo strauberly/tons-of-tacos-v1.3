@@ -3,8 +3,8 @@
   color: #cf3052;
   transition: 1s ease;
   cursor: pointer;
-  margin-top: -1.3rem;
-  margin-bottom: 1.8rem;
+  /* margin-top: -1.3rem;
+  margin-bottom: 1.8rem; */
 }
 
 .icon:hover {

@@ -1,6 +1,7 @@
 .header {
-  width: 98%;
-  z-index: 100;
+  display: flex;
+  align-items: center;
+  z-index: 50;
   padding: 1rem;
   color: #cf3052;
   background-color: #0c0424;
@@ -9,10 +10,42 @@
   margin-right: auto;
   left: 0rem;
   right: 0rem;
+  width: 98vw;
+  /* gap: 80%; */
 }
 
 .headerDiv {
   display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  gap: 80%;
+  /* column-gap: 50%; */
+  /* justify-content: right; */
+}
+
+.navButtons {
+  z-index: 100;
+  display: flex;
+  position: fixed;
+  /* align-items: baseline; */
+  gap: 4rem;
+  left: 85%;
+  margin-right: 2rem;
+  /* margin-bottom: 1rem; */
+  /* margin-top: -3rem; */
+  /* padding: 1rem; */
+  width: 100%;
+}
+
+.menuButton {
+  position: relative;
+}
+
+.cartButton {
+  /* position: relative; */
+  /* margin-bottom: 4rem;
+  margin-top: -3rem; */
+  /* right: 0.5%; */
 }
 
 .home {
@@ -59,12 +92,7 @@
   transition: 0.3s ease;
 }
 
-.navButtons {
-  display: flex;
-  gap: 4rem;
-}
-
-.menuButton {
+/* .menuButton {
   position: absolute;
   margin-bottom: 1rem;
   margin-top: -3rem;
@@ -76,4 +104,4 @@
   margin-bottom: 4rem;
   margin-top: -3rem;
   right: 0.5%;
-}
+} */
