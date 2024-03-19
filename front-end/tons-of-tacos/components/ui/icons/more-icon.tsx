@@ -1,4 +1,4 @@
-import classes from "@/components/menu/menuItems/menu-item.module.css";
+import classes from "@/components/menu/menu-items/menu-item.module.css";
 
 export default function MoreIcon() {
   return (

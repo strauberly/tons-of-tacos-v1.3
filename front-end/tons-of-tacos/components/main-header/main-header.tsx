@@ -1,10 +1,7 @@
-// "use client";
-
 import classes from "./main-header.module.css";
 import Link from "next/link";
 import useCategoriesSource from "@/lib/menu";
-import NavButtons from "../nav-buttons/nav-buttons";
-import CartQuantity from "../ui/badges/cart-quantity";
+import NavButtons from "@/components/ui/buttons/nav-buttons/nav-buttons";
 
 export default async function MainHeader() {
   const categories = await useCategoriesSource();
@@ -16,7 +13,6 @@ export default async function MainHeader() {
         <Link className={classes.home} href="/">
           Tons Of Tacos
         </Link>
-        {/* <CartQuantity /> */}
         <NavButtons menuOptions={menuOptions} />
       </header>
     </>

@@ -1,4 +1,4 @@
-import classes from "./main-header.module.css";
+import classes from "./nav-buttons.module.css";
 
 export default function CartIcon() {
   return (

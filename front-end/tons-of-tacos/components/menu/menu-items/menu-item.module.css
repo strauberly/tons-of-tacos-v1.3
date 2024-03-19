@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Quatl";
-  src: url("/components/ui/fonts/Quatl-3zp26.ttf");
-}
-
 .card {
   display: flex;
   flex-direction: column;
@@ -64,16 +59,17 @@
 
 .expand {
   position: fixed;
-  justify-self: center;
-  align-self: baseline;
-  z-index: 100;
+  min-height: 765px;
+  display: flex;
+  justify-content: center;
   width: 29%;
   height: 79%;
   margin-right: auto;
   margin-left: auto;
   left: 0px;
   right: 0px;
-  padding: 2rem;
+  padding: 1rem;
+  row-gap: 2rem;
 }
 
 .expand::backdrop {
@@ -82,25 +78,27 @@
 }
 
 .expand h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .expand img {
-  width: 50%;
-  height: auto;
+  width: 300px;
+  height: 300px;
+}
+
+.expand p {
+  width: 100%;
 }
 
 .closeExpanded {
-  font-family: "Quatl";
-  font-size: 2rem;
-  position: absolute;
-  margin-top: -1rem;
-  margin-left: 28rem;
+  font-size: 2.5rem;
+  position: fixed;
+  margin-top: -44rem;
+  margin-left: 30rem;
   cursor: pointer;
 }
 
 .expandedTitle {
-  display: flex;
   margin-left: 8rem;
   align-items: center;
   gap: 5rem;

@@ -1,12 +1,12 @@
 "use client";
 import { useGlobalContext } from "@/context/store";
 import classes from "@/components/main-header/main-header.module.css";
-import MenuIcon from "../main-header/menu-icon";
-import DropDown from "../ui/animations/drop-down";
-import MenuNav from "../menu/menu-navigation/menu-navigation";
+import MenuIcon from "./menu-icon";
+import DropDown from "../../animations/drop-down";
+import MenuNav from "../../../menu/menu-navigation/menu-navigation";
 import { useEffect } from "react";
-import CartIcon from "../main-header/cart-icon";
-import CartQuantity from "../ui/badges/cart-quantity";
+import CartIcon from "./cart-icon";
+import CartQuantity from "../../badges/cart-quantity";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { showMenu, setShowMenu, setMenuNavCategories } = useGlobalContext();
@@ -21,21 +21,18 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
     setMenuNavCategories(menuOptions.menuOptions);
   }, [menuOptions, setMenuNavCategories]);
 
-  function handleMenu() {
-    setShowMenu(true);
-  }
-
   return (
     <>
+      <CartQuantity />
       <nav className={classes.navButtons}>
         <button
-          onMouseEnter={() => handleMenu()}
-          onMouseLeave={() => handleMenu()}
+          className={classes.menuButton}
+          onMouseEnter={() => setShowMenu(true)}
+          onMouseLeave={() => setShowMenu(false)}
         >
           <MenuIcon />
         </button>
-        <CartQuantity />
-        <button>
+        <button className={classes.cartButton}>
           <CartIcon />
         </button>
       </nav>

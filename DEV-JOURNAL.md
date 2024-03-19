@@ -2,12 +2,42 @@
 
 ---
 
+-- 15 Mar 2024 ---
+
+- Reimplemented cart quantity badge not being displayed until items are actually in cart.
+- Implemented cart quantity limiter with alert message. The idea being to limit opportunities for runaway or mischief order as our owners are currently a cash business. A user is currently limited to 15 items in their order and if more items desired, encouraged to contact the business.
+
+-- 14 Mar 2024 ---
+
+- Restyled expanded view of menu item in order to prevent shift when dev tools are up in browser.
+- Restyled cart quantity badge for similar reasons and it will remain locked in place until I begin addressing responsive design for the application.
+
+---
+
+-- 13 Mar 2024 ---
+
+- Discovered duplicate menu items folder, it has been removed and references updated.
+- Moved button type components to buttons folder in ui component folder.
+- Menu icon now has desired behavior of show menu on entry and hiding when use moves cursor somewhere besides menu. Also hides menu when user enters the menu and move off of it with out making a selection.
+- Changed expanded view close icon to use standard app font. User feedback indicated the before used custom font was harder to determine what the intended purpose was.
+- Reinstated loading animation for menu items.
+- Removed unnecessary context items.
+
+---
+
+-- 12 Mar 2024 ---
+
+- Revised styling on menu item expanded view. Still have a few elements running rogue when dev tools brought up but overall experience and aesthetics improved.
+- Corrected issues derived from menu item list being brought in as an async function.
+- Successfully migrated cart quantity logic into library improving readability of cart quantity component.
+
+---
+
 -- 11 Mar 2024 ---
 
 - Was able to move logic for cart quantity out of nav button inside of its own component.
 
 - Discovered rendering issues were arising as result of where and when call to create cart was currently located and so transported it in to use effect for cart quantity badge. May also move it into main header so that all items dealing with session storage are dealt with at once.
--
 
 ---
 
