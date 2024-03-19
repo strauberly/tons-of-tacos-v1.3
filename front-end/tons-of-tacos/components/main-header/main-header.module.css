@@ -16,17 +16,15 @@
 .headerDiv {
   display: flex;
   align-items: center;
-  gap: 80%;
-  padding: 1rem;
 }
 
 .navButtons {
   z-index: 100;
   display: flex;
   position: fixed;
+  justify-content: right;
   gap: 4rem;
-  left: 86%;
-  width: 100%;
+  width: 96vw;
 }
 
 .home {
@@ -34,6 +32,7 @@
   font-size: 4rem;
   color: #cf3052;
   transition: 1s ease;
+  margin-left: 2%;
 }
 
 .home:hover {
