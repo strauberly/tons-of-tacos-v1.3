@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   z-index: 50;
-  /* padding: 1rem; */
+  /* padding: 1%; */
   color: #cf3052;
   background-color: #0c0424;
   border-bottom: solid #63b369;
@@ -24,7 +24,7 @@
   position: fixed;
   justify-content: right;
   gap: 4rem;
-  width: 96vw;
+  width: 98vw;
 }
 
 .home {
@@ -32,7 +32,6 @@
   font-size: 4rem;
   color: #cf3052;
   transition: 1s ease;
-  margin-left: 2%;
 }
 
 .home:hover {
@@ -42,12 +41,11 @@
 
 .menu {
   display: flex;
+  position: absolute;
   justify-content: center;
-  position: fixed;
-  z-index: 50;
-  margin-top: 5.5%;
-  left: 75%;
-  transform: translate(94%);
+  z-index: 75;
+  margin-top: 2.75vh;
+  right: 1vw;
   font-family: "Quatl";
   background-color: #63b369;
 }
