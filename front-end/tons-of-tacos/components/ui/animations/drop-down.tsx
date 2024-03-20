@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { ReactNode } from "react";
 
 const animation = {
@@ -11,15 +11,17 @@ const animation = {
 
 const DropDown = ({ children }: { children: ReactNode }) => {
   return (
-    <motion.div
-      variants={animation}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{ duration: 0.18 }}
-    >
-      {children}
-    </motion.div>
+    <AnimatePresence mode="wait">
+      <motion.div
+        variants={animation}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
+        {children}
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
