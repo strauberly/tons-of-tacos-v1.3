@@ -2,13 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50vw;
-  margin-top: 3rem;
+  gap: 50rem;
+  margin-top: 2vw;
 }
 
 .header {
   position: fixed;
-  width: 98%;
+  width: 96%;
   z-index: 100;
   display: flex;
   align-items: baseline;
@@ -27,10 +27,10 @@
 .navButtons {
   position: fixed;
   display: flex;
-  gap: 3rem;
-  right: 3rem;
+  gap: 3vw;
+  right: 3vw;
   align-items: baseline;
-  margin-top: 1.5rem;
+  margin-top: 1vh;
 }
 
 /* .menuButton { */
@@ -49,7 +49,7 @@
 
 .home {
   text-decoration: none;
-  font-size: 4rem;
+  font-size: 2vw;
   color: #cf3052;
   transition: 1s ease;
 }

@@ -36,13 +36,13 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
           <CartIcon />
         </button>
       </nav>
-      {/* <div className={classes.menu}>
+      <div className={classes.menu}>
         {!showMenu && (
           <DropDown>
             <MenuNav />
           </DropDown>
         )}
-      </div> */}
+      </div>
     </>
   );
 }
