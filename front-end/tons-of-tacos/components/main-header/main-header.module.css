@@ -1,11 +1,19 @@
+.headerAlignment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50vw;
+  margin-top: 3rem;
+}
+
 .header {
   position: fixed;
   width: 98%;
   z-index: 100;
   display: flex;
   align-items: baseline;
-  justify-content: center;
-  gap: 67.6%;
+  /* justify-content: center; */
+  /* gap: 67.6%; */
   padding: 1rem;
   color: #cf3052;
   background-color: #0c0424;
@@ -15,6 +23,29 @@
   left: 0rem;
   right: 0rem;
 }
+
+.navButtons {
+  position: fixed;
+  display: flex;
+  gap: 3rem;
+  right: 3rem;
+  align-items: baseline;
+  margin-top: 1.5rem;
+}
+
+/* .menuButton { */
+/* position: absolute; */
+/* margin-bottom: 1rem; */
+/* margin-top: 2vh; */
+/* left: 94vw; */
+/* } */
+
+/* .cartButton { */
+/* position: absolute; */
+/* margin-bottom: 4rem; */
+/* margin-top: 2vh; */
+/* left: 94vw; */
+/* } */
 
 .home {
   text-decoration: none;
@@ -58,23 +89,4 @@
   color: #ebc83b;
   text-decoration: none;
   transition: 0.3s ease;
-}
-
-.navButtons {
-  display: flex;
-  gap: 4rem;
-}
-
-.menuButton {
-  position: absolute;
-  margin-bottom: 1rem;
-  margin-top: -3rem;
-  right: 8%;
-}
-
-.cartButton {
-  position: absolute;
-  margin-bottom: 4rem;
-  margin-top: -3rem;
-  right: 0.5%;
 }
