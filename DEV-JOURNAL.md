@@ -7,7 +7,7 @@
 - Initiated work on responsive design.
 - Gap between header elements now responsive down to a width of 640. Removed fixed position and overwrote div in global.
 
----
+- Project rebase before continuing styling
 
 -- 15 Mar 2024 ---
 
