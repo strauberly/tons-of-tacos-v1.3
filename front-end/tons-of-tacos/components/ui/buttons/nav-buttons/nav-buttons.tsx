@@ -23,7 +23,7 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
 
   return (
     <>
-      <CartQuantity />
+      {/* <CartQuantity /> */}
       <nav className={classes.navButtons}>
         <button
           className={classes.menuButton}
@@ -37,7 +37,7 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
         </button>
       </nav>
       <div className={classes.menu}>
-        {showMenu && (
+        {!showMenu && (
           <DropDown>
             <MenuNav />
           </DropDown>
