@@ -17,6 +17,12 @@ body {
   overflow-y: scroll;
 }
 
+header {
+  display: none;
+  padding: none;
+  margin: none;
+}
+
 p {
   display: flex;
   justify-content: center;

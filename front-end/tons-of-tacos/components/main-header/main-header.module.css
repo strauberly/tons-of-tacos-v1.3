@@ -61,12 +61,11 @@
 
 .menu {
   display: flex;
+  position: absolute;
   justify-content: center;
-  position: fixed;
-  z-index: 50;
-  margin-top: 5.5%;
-  left: 75%;
-  transform: translate(94%);
+  z-index: 75;
+  margin-top: 2.75vh;
+  right: 1vw;
   font-family: "Quatl";
   background-color: #63b369;
 }
