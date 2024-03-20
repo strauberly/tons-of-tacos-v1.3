@@ -2,6 +2,12 @@
 
 ---
 
+-- 20 Mar 2024 ---
+
+- Responsive design implemented for header and logo.
+
+---
+
 -- 19 Mar 2024 ---
 
 - Initiated work on responsive design.

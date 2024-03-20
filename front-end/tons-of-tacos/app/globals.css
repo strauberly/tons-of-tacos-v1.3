@@ -30,6 +30,12 @@ p {
   color: #c7ebec;
 }
 
+header {
+  display: none;
+  margin: none;
+  padding: none;
+}
+
 h1 {
   color: #ebc83b;
 }
