@@ -1,9 +1,12 @@
 .image {
-  position: absolute;
-  width: 35rem;
-  height: auto;
-  top: 12rem;
-  left: 42rem;
+  position: fixed;
+  width: auto;
+  height: 35vw;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0rem;
+  right: 0rem;
+  top: 9rem;
 }
 
 .page {
