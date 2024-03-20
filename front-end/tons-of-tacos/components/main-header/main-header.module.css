@@ -1,12 +1,8 @@
 .header {
-  position: fixed;
-  width: 98%;
-  z-index: 100;
   display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 67.6%;
-  padding: 1rem;
+  align-items: center;
+  z-index: 50;
+  /* padding: 1%; */
   color: #cf3052;
   background-color: #0c0424;
   border-bottom: solid #63b369;
@@ -14,6 +10,21 @@
   margin-right: auto;
   left: 0rem;
   right: 0rem;
+  width: 96vw;
+}
+
+.headerDiv {
+  display: flex;
+  align-items: center;
+}
+
+.navButtons {
+  z-index: 100;
+  display: flex;
+  position: fixed;
+  justify-content: right;
+  gap: 4rem;
+  width: 98vw;
 }
 
 .home {
@@ -30,12 +41,11 @@
 
 .menu {
   display: flex;
+  position: absolute;
   justify-content: center;
-  position: fixed;
-  z-index: 50;
-  margin-top: 5.5%;
-  left: 75%;
-  transform: translate(94%);
+  z-index: 75;
+  margin-top: 2.75vh;
+  right: 1vw;
   font-family: "Quatl";
   background-color: #63b369;
 }
@@ -58,23 +68,4 @@
   color: #ebc83b;
   text-decoration: none;
   transition: 0.3s ease;
-}
-
-.navButtons {
-  display: flex;
-  gap: 4rem;
-}
-
-.menuButton {
-  position: absolute;
-  margin-bottom: 1rem;
-  margin-top: -3rem;
-  right: 8%;
-}
-
-.cartButton {
-  position: absolute;
-  margin-bottom: 4rem;
-  margin-top: -3rem;
-  right: 0.5%;
 }

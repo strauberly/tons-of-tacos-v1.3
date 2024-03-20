@@ -8,13 +8,13 @@ export default async function MainHeader() {
   const menuOptions = categories;
 
   return (
-    <>
+    <div className={classes.headerDiv}>
+      <NavButtons menuOptions={menuOptions} />
       <header className={classes.header}>
         <Link className={classes.home} href="/">
           Tons Of Tacos
         </Link>
-        <NavButtons menuOptions={menuOptions} />
       </header>
-    </>
+    </div>
   );
 }

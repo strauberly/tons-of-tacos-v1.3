@@ -1,9 +1,10 @@
 .icon {
-  height: 3rem;
+  height: 3.5rem;
   color: #cf3052;
   transition: 1s ease;
   cursor: pointer;
-  margin-bottom: 1.8rem;
+  /* margin-top: -1.3rem;
+  margin-bottom: 1.8rem; */
 }
 
 .icon:hover {
