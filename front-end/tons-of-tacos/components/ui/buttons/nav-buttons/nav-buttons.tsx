@@ -7,6 +7,7 @@ import MenuNav from "../../../menu/menu-navigation/menu-navigation";
 import { useEffect } from "react";
 import CartIcon from "./cart-icon";
 import CartQuantity from "../../badges/cart-quantity";
+import { AnimatePresence } from "framer-motion";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { showMenu, setShowMenu, setMenuNavCategories } = useGlobalContext();
@@ -37,10 +38,12 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
         </button>
       </nav>
       <div className={classes.menu}>
-        {!showMenu && (
-          <DropDown>
-            <MenuNav />
-          </DropDown>
+        {showMenu && (
+          <AnimatePresence mode="popLayout">
+            <DropDown>
+              <MenuNav />
+            </DropDown>
+          </AnimatePresence>
         )}
       </div>
     </>

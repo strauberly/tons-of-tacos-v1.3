@@ -5,6 +5,7 @@
 -- 20 Mar 2024 ---
 
 - Responsive design implemented for header and logo.
+- Responsive design implemented for menu.
 
 ---
 
