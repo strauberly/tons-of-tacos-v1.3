@@ -7,6 +7,7 @@
 - Improved on responsive menu design and restored functionality.
 - Improved on menu animation.
 - Landing page logo position enhanced.
+- Loading animation position moved to match.
 
 ---
 
