@@ -2,6 +2,12 @@
 
 ---
 
+-- 21 Mar 2024 ---
+
+- Improved on responsive menu design and restored functionality.
+
+---
+
 -- 20 Mar 2024 ---
 
 - Responsive design implemented for header and logo.
