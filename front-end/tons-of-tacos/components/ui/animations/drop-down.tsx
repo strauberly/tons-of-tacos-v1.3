@@ -4,8 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import React, { ReactNode } from "react";
 
 const animation = {
-  initial: { scaleY: 0 },
-  animate: { scaleY: 1 },
+  initial: { scaleY: 0, translateY: "2.3vw" },
+  animate: { scaleY: 1, translateY: 0 },
   exit: { scaleY: 0 },
 };
 
@@ -17,7 +17,7 @@ const DropDown = ({ children }: { children: ReactNode }) => {
         initial="initial"
         animate="animate"
         exit="exit"
-        transition={{ duration: 0.3, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       >
         {children}
       </motion.div>
