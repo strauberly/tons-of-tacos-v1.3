@@ -8,6 +8,7 @@
 - Improved on menu animation.
 - Landing page logo position enhanced.
 - Loading animation position moved to match.
+- Responsive design implemented for menu items category and category description.
 
 ---
 

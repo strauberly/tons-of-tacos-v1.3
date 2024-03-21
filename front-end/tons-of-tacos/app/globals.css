@@ -13,7 +13,7 @@ body {
   background-color: #0c0424;
   font-family: "Quatl";
   letter-spacing: 0.5px;
-  height: 100vh;
+  height: 100vw;
   overflow-y: scroll;
 }
 
@@ -28,12 +28,6 @@ p {
   justify-content: center;
   font-family: var(--inter-font);
   color: #c7ebec;
-}
-
-header {
-  display: none;
-  margin: none;
-  padding: none;
 }
 
 h1 {
@@ -61,7 +55,7 @@ button:hover {
   display: flexbox;
   z-index: 0;
   padding: 2rem;
-  padding-top: 8rem;
+  padding-top: 6vw;
   justify-content: center;
   align-items: center;
 }
