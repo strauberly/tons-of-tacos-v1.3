@@ -17,7 +17,7 @@ const DropDown = ({ children }: { children: ReactNode }) => {
         initial="initial"
         animate="animate"
         exit="exit"
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.3, delay: 0.2 }}
       >
         {children}
       </motion.div>
