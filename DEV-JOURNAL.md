@@ -5,6 +5,7 @@
 -- 21 Mar 2024 ---
 
 - Improved on responsive menu design and restored functionality.
+- Improved on menu animation.
 
 ---
 
