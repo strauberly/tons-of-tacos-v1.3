@@ -16,13 +16,13 @@
   animation: change 0.5s 3;
   position: absolute;
   z-index: 100;
-  font-size: 1rem;
+  font-size: 0.75vw;
   font-weight: 900;
   background-color: aqua;
   border-radius: 50%;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1vw;
+  width: 1vw;
   pointer-events: none;
-  left: 97%;
-  top: 30%;
+  right: 2.9vw;
+  top: 1.25vw;
 }
