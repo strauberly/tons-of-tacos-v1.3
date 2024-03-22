@@ -24,17 +24,20 @@
 
 .expand {
   position: fixed;
-  min-height: 750px;
+  min-height: 49rem;
+  min-width: 25rem;
+  max-width: 41rem;
   margin-top: -6%;
   align-self: baseline;
   z-index: 100;
-  width: 30%;
+  width: 40vw;
   height: 80%;
   margin-right: auto;
   margin-left: auto;
   left: 0px;
   right: 0px;
-  transition: 1s ease;
+  /* margin-bottom: 3rem; */
+  /* transition: 1s ease; */
 }
 
 .expand:hover {

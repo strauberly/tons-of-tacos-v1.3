@@ -3,10 +3,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  /* padding: 1rem; */
   row-gap: 1.5rem;
   background-color: #0c0424;
   border-radius: 10px;
+  /* padding-bottom: 2rem; */
 }
 
 .card img {
@@ -59,10 +60,12 @@
 
 .expand {
   position: fixed;
-  min-height: 765px;
+  min-height: 48.5rem;
+  min-width: 24rem;
+  max-width: 40rem;
   display: flex;
   justify-content: center;
-  width: 29%;
+  width: 38vw;
   height: 79%;
   margin-right: auto;
   margin-left: auto;
@@ -79,22 +82,27 @@
 
 .expand h2 {
   font-size: 1.5rem;
+  /* margin-top: -5rem; */
 }
 
 .expand img {
   width: 300px;
   height: 300px;
+  position: relative;
+  top: -5rem;
+  margin-bottom: -5rem;
 }
 
 .expand p {
-  width: 100%;
+  width: 300px;
 }
 
 .closeExpanded {
+  position: relative;
   font-size: 2.5rem;
-  position: fixed;
-  margin-top: -44rem;
-  margin-left: 30rem;
+  bottom: 4.5rem;
+  /* margin-top: -5rem; */
+  left: 46%;
   cursor: pointer;
 }
 
