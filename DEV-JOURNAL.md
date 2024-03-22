@@ -2,6 +2,12 @@
 
 ---
 
+-- 22 Mar 2024 ---
+
+- Continuing responsive design for detailed view.
+
+---
+
 -- 21 Mar 2024 ---
 
 - Improved on responsive menu design and restored functionality.
