@@ -9,7 +9,8 @@
 - Landing page logo position enhanced.
 - Loading animation position moved to match.
 - Responsive design implemented for menu items category and category description.
-- responsive design implemented for cart quantity badge.
+- Responsive design implemented for cart quantity badge.
+- Responsive design in place for horizontal challenges. Work will continue with vertical.
 
 ---
 
