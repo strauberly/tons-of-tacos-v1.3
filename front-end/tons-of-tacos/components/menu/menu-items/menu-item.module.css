@@ -7,7 +7,6 @@
   row-gap: 1.5rem;
   background-color: #0c0424;
   border-radius: 10px;
-  /* padding-bottom: 2rem; */
 }
 
 .card img {
@@ -82,7 +81,6 @@
 
 .expand h2 {
   font-size: 1.5rem;
-  /* margin-top: -5rem; */
 }
 
 .expand img {
@@ -94,7 +92,6 @@
 }
 
 .expand p {
-  /* width: 300px; */
   font-size: 1rem;
 }
 
@@ -102,7 +99,6 @@
   position: relative;
   font-size: 2.5rem;
   bottom: 4.5rem;
-  /* margin-top: -5rem; */
   left: 46%;
   cursor: pointer;
 }

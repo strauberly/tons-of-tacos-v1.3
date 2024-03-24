@@ -2,8 +2,6 @@
   display: flex;
   justify-content: center;
   gap: 50rem;
-
-  /* margin-top: 0.5vh; */
 }
 
 .header {
@@ -11,9 +9,6 @@
   width: 96%;
   z-index: 100;
   display: flex;
-  /* align-items: last baseline; */
-  /* justify-content: center; */
-  /* gap: 67.6%; */
   color: #cf3052;
   background-color: #0c0424;
   padding: 1vw 2vw 1vw;
@@ -26,25 +21,18 @@
 
 .navButtons {
   position: fixed;
-  /* display: flex; */
   gap: 3vw;
   right: 5vw;
-  /* align-items: baseline; */
-  /* transition: none; */
   top: 1.5vw;
 }
 
 .menuButton {
   position: fixed;
-  /* margin-bottom: 1rem; */
-  /* margin-top: 2vh; */
   right: 11vw;
 }
 
 .cartButton {
   position: fixed;
-  /* margin-bottom: 4rem; */
-  /* margin-top: 2vh; */
   right: 4vw;
 }
 
@@ -61,19 +49,15 @@
 }
 
 .menu {
-  /* display: flex; */
   position: absolute;
   justify-content: center;
-  /* z-index: 75; */
   top: 2.4vw;
-  /* margin-top: 1.9vw; */
   right: 0.005vw;
   font-family: "Quatl";
   background-color: #63b369;
 }
 
 .menu ul li {
-  /* font-size: 2vh; */
   list-style-type: none;
   padding: 2vw;
 }
