@@ -2,6 +2,13 @@
 
 ---
 
+-- 22 Mar 2024 ---
+
+- Continuing responsive design for detailed view.
+- Have determined responsive design has hit its limit as is and it is time to start utilizing media requests.
+
+---
+
 -- 21 Mar 2024 ---
 
 - Improved on responsive menu design and restored functionality.
