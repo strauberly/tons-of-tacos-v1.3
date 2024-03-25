@@ -46,8 +46,8 @@
 .menu {
   position: absolute;
   justify-content: center;
-  top: 2.4vw;
-  right: 0.005vw;
+  top: 100%;
+  right: 0vw;
   font-family: "Quatl";
   background-color: #63b369;
 }
@@ -81,5 +81,9 @@
   .navButtons {
     margin-top: 0.8%;
     gap: 8vw;
+  }
+
+  .menu a {
+    font-size: 4vw;
   }
 }
