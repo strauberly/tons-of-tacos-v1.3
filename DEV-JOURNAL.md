@@ -2,6 +2,12 @@
 
 ---
 
+-- 25 Mar 2024 ---
+
+- Initialization of work on a 1300px breakpoint. Seeing what breaks and altering.
+
+---
+
 -- 22 Mar 2024 ---
 
 - Continuing responsive design for detailed view.
