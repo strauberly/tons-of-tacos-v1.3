@@ -5,6 +5,7 @@
 -- 25 Mar 2024 ---
 
 - Initialization of work on a 1300px breakpoint. Seeing what breaks and altering.
+- Menu sizing medium devices and general responsiveness.
 
 ---
 
