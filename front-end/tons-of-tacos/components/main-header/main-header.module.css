@@ -45,11 +45,13 @@
 
 .menu {
   position: absolute;
+  display: flex;
   justify-content: center;
   top: 100%;
   right: 0vw;
   font-family: "Quatl";
   background-color: #63b369;
+  /* overflow-y: scroll; */
 }
 
 .menu ul li {
@@ -85,5 +87,71 @@
 
   .menu a {
     font-size: 4vw;
+  }
+
+  .menu ul li {
+    padding: 4vw;
+  }
+}
+
+/* small devices */
+@media (max-width: 800px) {
+  .home {
+    font-size: 6vw;
+  }
+
+  .navButtons {
+    margin-top: 2%;
+    gap: 8vw;
+  }
+
+  .menu a {
+    font-size: 6vw;
+  }
+
+  .menu ul li {
+    padding: 6vw;
+  }
+}
+
+/* xsmall devices */
+@media (max-width: 500px) {
+  .home {
+    font-size: 6vw;
+  }
+
+  .navButtons {
+    margin-top: 2%;
+    gap: 8vw;
+  }
+
+  .menu {
+    /* display: flex; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* left: -50%; */
+
+    right: 50%;
+    /* padding: 50%; */
+  }
+
+  .menu a {
+    font-size: 8.9vw;
+    /* background-color: #63b369; */
+    /* background-size: 200%; */
+    /* padding: 100%; */
+    /* left: 30%; */
+  }
+
+  .menu ul li {
+    /* display: flex; */
+    /* padding: auto; */
+    /* background-size: 200%; */
+    background-color: #63b369;
+    padding: 4vw 100%;
+    /* padding-left: 98%; */
+    /* padding-right: 98%; */
+    /* margin-left: 30%; */
+    /* margin-right: 30%; */
   }
 }

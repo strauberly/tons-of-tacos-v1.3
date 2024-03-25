@@ -4,8 +4,11 @@
 
 -- 25 Mar 2024 ---
 
+- Responsive design work for main header.
 - Initialization of work on a 1300px breakpoint. Seeing what breaks and altering.
-- Menu sizing medium devices and general responsiveness.
+- Menu sizing for medium devices (< 1300) and general responsiveness.
+- Responsive sizing for small devices ( < 800)
+- Responsive sizing for xs devices (< 500)
 
 ---
 
