@@ -1,17 +1,10 @@
-.headerAlignment {
-  display: flex;
-  justify-content: center;
-  gap: 50rem;
-}
-
 .header {
   position: fixed;
-  width: 96%;
-  z-index: 100;
   display: flex;
-  color: #cf3052;
+  z-index: 75;
+  width: 96%;
   background-color: #0c0424;
-  padding: 1vw 2vw 1vw;
+  padding: 1%;
   border-bottom: solid #63b369 2px;
   margin-left: auto;
   margin-right: auto;
@@ -21,22 +14,24 @@
 
 .navButtons {
   position: fixed;
-  gap: 3vw;
-  right: 5vw;
-  top: 1.5vw;
+  display: flex;
+  gap: 4vw;
+  right: 5%;
+  margin-top: 0.5%;
 }
 
 .menuButton {
-  position: fixed;
-  right: 11vw;
+  /* position: fixed; */
+  /* right: 11vw; */
 }
 
 .cartButton {
-  position: fixed;
-  right: 4vw;
+  /* position: fixed; */
+  /* right: 4vw; */
 }
 
 .home {
+  padding-left: 2%;
   text-decoration: none;
   font-size: 2vw;
   color: #cf3052;
@@ -75,4 +70,16 @@
   color: #ebc83b;
   text-decoration: none;
   transition: 0.3s ease;
+}
+
+/* medium devices */
+@media (max-width: 1300px) {
+  .home {
+    font-size: 4vw;
+  }
+
+  .navButtons {
+    margin-top: 0.8%;
+    gap: 8vw;
+  }
 }

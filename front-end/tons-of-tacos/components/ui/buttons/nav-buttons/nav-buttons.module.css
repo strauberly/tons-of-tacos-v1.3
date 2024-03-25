@@ -3,10 +3,17 @@
   color: #cf3052;
   transition: 1s ease;
   cursor: pointer;
-  margin-bottom: 1.1vw;
+  /* margin-bottom: 1.1vw; */
 }
 
 .icon:hover {
   color: #ebc83b;
   transition: 0.3s ease;
+}
+
+/* medium devices */
+@media (max-width: 1300px) {
+  .icon {
+    height: 4vw;
+  }
 }
