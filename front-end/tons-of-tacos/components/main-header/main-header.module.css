@@ -75,7 +75,7 @@
 }
 
 /* medium devices */
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
   .home {
     font-size: 4vw;
   }
