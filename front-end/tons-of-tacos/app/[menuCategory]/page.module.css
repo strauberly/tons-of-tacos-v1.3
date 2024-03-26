@@ -2,14 +2,14 @@
   display: flex;
   font-size: 1vw;
   gap: 1vw;
-  align-items: baseline;
+  align-items: first baseline;
   justify-content: center;
-  /* padding-top: 1vw; */
-  margin-top: 1vw;
+  padding-top: clamp(1.5rem + 1.5vw, 1vw, 1vw);
 }
 
 .title {
   font-size: 2vw;
+  /* padding-top: ; */
 }
 
 .loadImage {
@@ -22,4 +22,15 @@
   left: 0rem;
   right: 0rem;
   align-content: center;
+}
+
+/* small devices */
+@media (max-width: 800px) {
+  .title {
+    font-size: 3vw;
+  }
+
+  .category {
+    font-size: 1.5vw;
+  }
 }

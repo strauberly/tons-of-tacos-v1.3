@@ -5,6 +5,7 @@
 -- 26 Mar 2024 ---
 
 - Responsive implementation for logo and loading animation.
+- Improvements to responsiveness of menu category descriptions.
 
 ---
 
