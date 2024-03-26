@@ -31,12 +31,13 @@ p {
 }
 
 h1 {
+  font-size: 2vw;
   color: #ebc83b;
 }
 
 h2 {
   color: #ebc83b;
-  font-size: 1.15rem;
+  font-size: clamp(0.8rem, 1vw, 1vw);
 }
 
 button {
