@@ -3,7 +3,7 @@
   color: #cf3052;
   transition: 1s ease;
   cursor: pointer;
-  /* margin-bottom: 1.1vw; */
+  margin-bottom: 1.1vw;
 }
 
 .icon:hover {
@@ -15,5 +15,14 @@
 @media (max-width: 1300px) {
   .icon {
     height: 4vw;
+    margin-bottom: 1.5vw;
+  }
+}
+
+/* small devices */
+@media (max-width: 800px) {
+  .icon {
+    height: 5vw;
+    margin-bottom: 2vw;
   }
 }
