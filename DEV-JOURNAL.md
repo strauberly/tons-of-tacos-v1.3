@@ -2,6 +2,12 @@
 
 ---
 
+-- 26 Mar 2024 ---
+
+- Responsive implementation for logo and loading animation.
+
+---
+
 -- 25 Mar 2024 ---
 
 - Responsive design work for main header.
