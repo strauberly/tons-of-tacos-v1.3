@@ -5,6 +5,9 @@
 -- 27 Mar 2024 ---
 
 - Improvements to responsiveness of cart quantity badge.
+- Improvements to detailed view.
+  - Close button fixed in relation to card size.
+  - Card min and max sizes established.
 
 ---
 
