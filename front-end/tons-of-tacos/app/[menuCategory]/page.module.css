@@ -9,7 +9,6 @@
 
 .title {
   font-size: 2vw;
-  /* padding-top: ; */
 }
 
 .loadImage {
@@ -25,7 +24,17 @@
 }
 
 /* small devices */
-@media (max-width: 800px) {
+@media (max-width: 815px) {
+  .title {
+    font-size: min(1rem);
+  }
+
+  .category {
+    font-size: 1.5vw;
+  }
+}
+/* x small devices */
+@media (max-width: 500px) {
   .title {
     font-size: 3vw;
   }
