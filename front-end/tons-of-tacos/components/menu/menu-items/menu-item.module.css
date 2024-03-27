@@ -57,14 +57,19 @@
 }
 
 .expand {
+  z-index: 100;
   position: relative;
-  min-height: 48.5rem;
-  min-width: 24rem;
-  max-width: 40rem;
-  display: flex;
+  background-color: #0c0424;
+  /* display: flex; */
+  /* min-height: 48.5rem; */
+  /* min-width: 24rem; */
+  /* max-width: 40rem; */
   justify-content: center;
   width: 100%;
-  height: 79%;
+  /* top: 0%; */
+  /* height: 100%; */
+  /* width: clamp(24rem, 14vw, 14vw); */
+  height: clamp(34rem, 100%, 100%);
   margin-right: auto;
   margin-left: auto;
   left: 0px;
@@ -95,10 +100,10 @@
 }
 
 .closeExpanded {
-  position: relative;
+  position: sticky;
   font-size: 2.5rem;
-  bottom: 4.5rem;
-  left: 46%;
+  bottom: 100%;
+  margin-left: 85%;
   cursor: pointer;
 }
 
