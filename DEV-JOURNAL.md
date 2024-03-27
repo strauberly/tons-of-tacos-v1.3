@@ -2,6 +2,12 @@
 
 ---
 
+-- 27 Mar 2024 ---
+
+- Improvements to responsiveness of cart quantity badge.
+
+---
+
 -- 26 Mar 2024 ---
 
 - Responsive implementation for logo and loading animation.
