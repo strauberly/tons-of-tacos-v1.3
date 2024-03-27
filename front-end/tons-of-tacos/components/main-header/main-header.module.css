@@ -51,7 +51,6 @@
   right: 0vw;
   font-family: "Quatl";
   background-color: #63b369;
-  /* overflow-y: scroll; */
 }
 
 .menu ul li {
@@ -110,7 +109,7 @@
   }
 
   .menu ul li {
-    padding: 6vw;
+    padding: 6.5vw;
   }
 }
 
