@@ -25,14 +25,16 @@
 
 .expand {
   position: fixed;
-  min-height: 49rem;
-  min-width: 25rem;
-  max-width: 41rem;
-  margin-top: -6%;
+  /* min-height: 49rem; */
+  /* min-width: 25rem; */
+  /* max-width: 41rem; */
+  /* width: clamp(24rem, 12vw, 12vw); */
+  margin-top: -8%;
   align-self: baseline;
   z-index: 100;
-  width: 30%;
-  height: 80%;
+  width: clamp(22rem, 100%, 30%);
+  /* height: 80%; */
+  height: clamp(35rem, 80%, 60rem);
   margin-right: auto;
   margin-left: auto;
   left: 0px;
@@ -45,4 +47,5 @@
 
 .expand::backdrop {
   fill: #0c0424;
+  /* width: 34rem; */
 }
