@@ -6,6 +6,7 @@
 
 - Responsive implementation for logo and loading animation.
 - Improvements to responsiveness of menu category descriptions.
+- Updated responsive grid styling. Previous implementation was causing menu item names to wrap in an undesirable fashion.
 
 ---
 
