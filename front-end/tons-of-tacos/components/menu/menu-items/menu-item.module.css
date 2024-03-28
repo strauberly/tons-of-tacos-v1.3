@@ -13,14 +13,14 @@
 }
 
 .card p {
-  color: #ebc83b;
+  color: var(--attention-color);
   font-size: 1.25rem;
   width: 80%;
 }
 
 .add {
   font-family: "Quatl";
-  color: #cf3052;
+  color: var(--interactive-color);
   font-size: 1.25rem;
   cursor: pointer;
 }
@@ -32,7 +32,7 @@
 
 .more {
   height: 0.75rem;
-  fill: #cf3052;
+  fill: var(--interactive-color);
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
@@ -59,16 +59,9 @@
 .expand {
   z-index: 100;
   position: relative;
-  background-color: #0c0424;
-  /* display: flex; */
-  /* min-height: 48.5rem; */
-  /* min-width: 24rem; */
-  /* max-width: 40rem; */
+  background-color: var(--background-color);
   justify-content: center;
   width: 100%;
-  /* top: 0%; */
-  /* height: 100%; */
-  /* width: clamp(24rem, 14vw, 14vw); */
   height: clamp(34rem, 100%, 100%);
   margin-right: auto;
   margin-left: auto;
@@ -79,7 +72,7 @@
 }
 
 .expand::backdrop {
-  fill: #0c0424;
+  fill: var(--background-color);
   width: 160%;
 }
 

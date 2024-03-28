@@ -4,7 +4,7 @@
   }
 
   50% {
-    box-shadow: 0rem 0rem 0.5rem 0.25rem #ebc83b;
+    box-shadow: 0rem 0rem 0.5rem 0.25rem var(--attention-color);
   }
 
   100% {
@@ -18,7 +18,7 @@
   z-index: 100;
   font-size: clamp(0.5rem, 0.75vw, 1vw);
   font-weight: 900;
-  background-color: aqua;
+  background-color: var(--user-selected-color);
   border-radius: 50%;
   height: clamp(1rem, 1vw, 1vw);
   width: clamp(1rem, 1vw, 1vw);

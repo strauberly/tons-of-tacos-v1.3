@@ -1,11 +1,11 @@
 .header {
+  border-bottom: solid var(--border-color) 2px;
   position: fixed;
   display: flex;
   z-index: 75;
   width: 96%;
-  background-color: #0c0424;
+  background-color: var(--background-color);
   padding: 1%;
-  border-bottom: solid #63b369 2px;
   margin-left: auto;
   margin-right: auto;
   left: 0rem;
@@ -20,37 +20,27 @@
   margin-top: 0.5%;
 }
 
-.menuButton {
-  /* position: fixed; */
-  /* right: 11vw; */
-}
-
-.cartButton {
-  /* position: fixed; */
-  /* right: 4vw; */
-}
-
 .home {
+  color: var(--interactive-color);
   padding-left: 2%;
   text-decoration: none;
   font-size: 2vw;
-  color: #cf3052;
   transition: 1s ease;
 }
 
 .home:hover {
-  color: #ebc83b;
+  color: var(--attention-color);
   transition: 0.3s ease;
 }
 
 .menu {
+  background-color: var(--border-color);
   position: absolute;
   display: flex;
   justify-content: center;
   top: 100%;
   right: 0vw;
   font-family: "Quatl";
-  background-color: #63b369;
 }
 
 .menu ul li {
@@ -62,13 +52,13 @@
   font-size: 2vw;
   display: flex;
   justify-content: center;
-  color: #cf3052;
+  color: var(--interactive-color);
   text-decoration: none;
   transition: 1s ease;
 }
 
 .menu a:hover {
-  color: #ebc83b;
+  color: var(--attention-color);
   text-decoration: none;
   transition: 0.3s ease;
 }
@@ -133,7 +123,7 @@
   }
 
   .menu ul li {
-    background-color: #63b369;
+    background-color: var(--border-color);
     padding: 4vw 100%;
   }
 }

@@ -10,13 +10,18 @@
 }
 
 body {
-  background-color: #0c0424;
+  background-color: var(--background-color);
   font-family: "Quatl";
   letter-spacing: 0.5px;
   height: 100vh;
-  /* width: 100vw; */
   overflow-y: scroll;
   overflow-x: hidden;
+  --background-color: #0c0424;
+  --interactive-color: #cf3052;
+  --attention-color: #ebc83b;
+  --paragraph-color: #c7ebec;
+  --border-color: #63b369;
+  --user-selected-color: aqua;
 }
 
 header {
@@ -29,28 +34,28 @@ p {
   display: flex;
   justify-content: center;
   font-family: var(--inter-font);
-  color: #c7ebec;
+  color: var(--paragraph-color);
 }
 
 h1 {
+  color: var(--attention-color);
   font-size: clamp(1rem, 2vw, 2vw);
-  color: #ebc83b;
 }
 
 h2 {
-  color: #ebc83b;
+  color: var(--attention-color);
   font-size: clamp(0.8rem, 1vw, 1vw);
 }
 
 button {
+  color: var(--interactive-color);
   background-color: transparent;
   border: none;
-  color: #cf3052;
   transition: 1s ease;
 }
 
 button:hover {
-  color: #ebc83b;
+  color: var(--attention-color);
   transition: 0.3s ease;
 }
 
@@ -68,7 +73,7 @@ button:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #cf3052;
+  background-color: var(--interactive-color);
 }
 
 input {

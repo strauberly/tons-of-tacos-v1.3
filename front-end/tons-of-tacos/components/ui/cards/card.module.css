@@ -1,13 +1,11 @@
-.menucard {
-  /* min-width: 26rem; */
+.menuCard {
   border-color: transparent;
   background: linear-gradient(
       to bottom,
-      #63b369 0%,
-      #0c0424 30%,
-      #0c0424 90%,
-
-      #63b369 100%
+      var(--border-color) 0%,
+      var(--background-color) 30%,
+      var(--background-color) 90%,
+      var(--border-color) 100%
     )
     100%;
   border-radius: 10px;
@@ -18,34 +16,29 @@
   transition: 2.5s ease;
 }
 
-.menucard:hover {
+.menuCard:hover {
   box-shadow: 0px 0px 30px 10px rgba(99, 179, 105, 1);
   transition: 0.3s ease;
 }
 
 .expand {
   position: fixed;
-  /* min-height: 49rem; */
-  /* min-width: 25rem; */
-  /* max-width: 41rem; */
-  /* width: clamp(24rem, 12vw, 12vw); */
   margin-top: -8%;
   align-self: baseline;
   z-index: 100;
   width: clamp(22rem, 100%, 30%);
-  /* height: 80%; */
   height: clamp(35rem, 80%, 60rem);
   margin-right: auto;
   margin-left: auto;
   left: 0px;
   right: 0px;
+  box-shadow: 0px 0px 100px 40px var(--attention-color);
 }
 
 .expand:hover {
-  box-shadow: 0px 0px 100px 40px #ebc83b;
+  box-shadow: 0px 0px 100px 40px var(--attention-color);
 }
 
 .expand::backdrop {
-  fill: #0c0424;
-  /* width: 34rem; */
+  box-shadow: 0px 0px 100px 40px var(--attention-color);
 }
