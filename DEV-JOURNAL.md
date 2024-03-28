@@ -8,6 +8,7 @@
 - Improvements to detailed view.
   - Close button fixed in relation to card size.
   - Card min and max sizes established.
+- Improvements to 'p' font size for expanded view and category title spacing.
 
 ---
 
