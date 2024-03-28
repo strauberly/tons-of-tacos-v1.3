@@ -7,7 +7,7 @@
 - Scrubbed styling of superfluous code and comments.
 - Established site color in the body as a variable allowing for easier reusability and maintenance.
 - Removed unused modal folder and component.
--
+- Detailed view of menu item card now closes when the add to cart button is clicked.
 
 ---
 
