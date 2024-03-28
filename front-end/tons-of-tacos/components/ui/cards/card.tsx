@@ -9,7 +9,7 @@ export default function Card(props: {
 }) {
   return (
     <div
-      className={`${classes.menucard} ${
+      className={`${classes.menuCard} ${
         props.expand === true ? classes.expand : " "
       }`}
     >

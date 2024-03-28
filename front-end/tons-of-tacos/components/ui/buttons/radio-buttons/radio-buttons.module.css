@@ -4,7 +4,7 @@
 
 .radioButtonLabel {
   display: flex;
-  color: #cf3052;
+  color: var(--interactive-color);
   border-radius: 25%;
   font-weight: 700;
   font-size: large;
@@ -12,7 +12,7 @@
   padding: 0.5rem;
   justify-content: center;
   border: solid;
-  border-color: aqua;
+  border-color: var(--user-selected-color);
   transition: 0.5s ease;
   cursor: pointer;
 }
@@ -23,7 +23,7 @@
 }
 
 .radioButton:checked + .radioButtonLabel {
-  color: aqua;
-  border-color: #63b369;
+  color: var(--user-selected-color);
+  border-color: var(--border-color);
   background-color: transparent;
 }

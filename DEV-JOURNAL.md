@@ -2,6 +2,15 @@
 
 ---
 
+-- 28 Mar 2024 ---
+
+- Scrubbed styling of superfluous code and comments.
+- Established site color in the body as a variable allowing for easier reusability and maintenance.
+- Removed unused modal folder and component.
+-
+
+---
+
 -- 27 Mar 2024 ---
 
 - Improvements to responsiveness of cart quantity badge.

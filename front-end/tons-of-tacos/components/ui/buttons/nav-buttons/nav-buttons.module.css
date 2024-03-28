@@ -1,13 +1,13 @@
 .icon {
   height: 2vw;
-  color: #cf3052;
+  color: var(--interactive-color);
   transition: 1s ease;
   cursor: pointer;
   margin-bottom: 1.1vw;
 }
 
 .icon:hover {
-  color: #ebc83b;
+  color: var(--attention-color);
   transition: 0.3s ease;
 }
 
