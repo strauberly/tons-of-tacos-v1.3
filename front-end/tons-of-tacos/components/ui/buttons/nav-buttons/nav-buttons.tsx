@@ -1,5 +1,5 @@
 "use client";
-import { useGlobalContext } from "@/context/store";
+import { useNavContext } from "@/context/nav-context";
 import classes from "@/components/main-header/main-header.module.css";
 import MenuIcon from "./menu-icon";
 import DropDown from "../../animations/drop-down";
@@ -10,7 +10,7 @@ import CartQuantity from "../../badges/cart-quantity";
 import { AnimatePresence } from "framer-motion";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
-  const { showMenu, setShowMenu, setMenuNavCategories } = useGlobalContext();
+  const { showMenu, setShowMenu, setMenuNavCategories } = useNavContext();
 
   useEffect(() => {
     if (window)
