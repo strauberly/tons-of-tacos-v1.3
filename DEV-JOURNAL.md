@@ -5,6 +5,7 @@
 -- 1 Apr 2024 ---
 
 - Refactored context to utilize a consistent naming schema.
+- Add to cart resets menu item quantity to default quantity.
 
 ---
 
