@@ -6,6 +6,7 @@
 
 - Refactored context to utilize a consistent naming schema.
 - Add to cart resets menu item quantity to default quantity.
+- Responsive design improved for menu item expanded view. Now takes into account when ghost div is rendered with size selector.
 
 ---
 
