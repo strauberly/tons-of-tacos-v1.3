@@ -1,8 +1,8 @@
-import { useGlobalContext } from "@/context/store";
+import { useNavContext } from "@/context/nav-context";
 import MenuCategory from "./menu-category";
 
 export default function MenuCategories() {
-  const { menuNavCategories } = useGlobalContext();
+  const { menuNavCategories } = useNavContext();
 
   return (
     <>

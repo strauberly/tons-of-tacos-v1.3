@@ -2,6 +2,12 @@
 
 ---
 
+-- 1 Apr 2024 ---
+
+- Refactored context to utilize a consistent naming schema.
+
+---
+
 -- 28 Mar 2024 ---
 
 - Scrubbed styling of superfluous code and comments.

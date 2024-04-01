@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import MainHeader from "../components/main-header/main-header";
 import { inter } from "../components/ui/fonts/fonts";
-import { GlobalContextProvider } from "@/context/store";
-import { MenuContextProvider } from "@/context/menu-store";
+import { NavContextProvider } from "@/context/nav-context";
+import { MenuContextProvider } from "@/context/menu-context";
 import { CartContextProvider } from "@/context/cart-context";
 
 export const metadata: Metadata = {
@@ -20,9 +20,9 @@ export default function RootLayout({
     <html lang="en" className="html">
       <body className={`${inter.variable}`}>
         <CartContextProvider>
-          <GlobalContextProvider>
+          <NavContextProvider>
             <MainHeader />
-          </GlobalContextProvider>
+          </NavContextProvider>
           <MenuContextProvider>
             <div className="children">{children}</div>
           </MenuContextProvider>
