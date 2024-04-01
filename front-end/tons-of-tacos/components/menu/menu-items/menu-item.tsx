@@ -17,7 +17,6 @@ export default function MenuItem(props: {
 }) {
   const defaultQuantity: number = 1;
   let itemSizes = ["small", "medium", "large"];
-
   const [sizeAvailable, setSizeAvailable] = useState(false);
   const [quantity, setQuantity] = useState(defaultQuantity);
   const [size, setSize] = useState("");
@@ -113,7 +112,9 @@ export default function MenuItem(props: {
           decrement={decrement}
         />
         <p className={classes.price}>${price}</p>
-        <button onClick={() => setExpand(false)}>
+        <button
+          onClick={() => [setExpand(false), setQuantity(defaultQuantity)]}
+        >
           <AddToCart
             itemName={props.itemName}
             quantity={quantity}
