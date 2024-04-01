@@ -1,10 +1,10 @@
 "use client";
 import classes from "@/components/main-header/main-header.module.css";
 import MenuCategories from "./menu-category-list";
-import { useGlobalContext } from "@/context/store";
+import { useNavContext } from "@/context/nav-context";
 
 export default function MenuNav() {
-  const { setShowMenu } = useGlobalContext();
+  const { setShowMenu } = useNavContext();
 
   return (
     <nav

@@ -1,8 +1,8 @@
-import { useGlobalContext } from "@/context/store";
+import { useNavContext } from "@/context/nav-context";
 import Link from "next/link";
 
 export default function MenuCategory(props: { name: string }) {
-  const { showMenu, setShowMenu } = useGlobalContext();
+  const { showMenu, setShowMenu } = useNavContext();
 
   // close menu nav on selecting a menu category
   // use category name for a dynamic nav link

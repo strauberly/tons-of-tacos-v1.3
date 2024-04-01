@@ -5,7 +5,7 @@ import MenuItemList from "@/components/menu/menu-items/menu-item-list";
 import { notFound } from "next/navigation";
 import { Suspense, useEffect, useRef } from "react";
 import FadeOnLoad from "@/components/ui/animations/fade-on-load";
-import { useMenuContext } from "@/context/menu-store";
+import { useMenuContext } from "@/context/menu-context";
 import Loading from "../loading";
 import { useMenuItemsForCategory } from "@/lib/menu";
 
