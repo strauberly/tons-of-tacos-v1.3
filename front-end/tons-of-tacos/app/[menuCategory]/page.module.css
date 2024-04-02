@@ -1,14 +1,13 @@
 .category {
   display: flex;
-  font-size: 1vw;
   gap: 1vw;
   align-items: first baseline;
   justify-content: center;
   padding-top: clamp(2rem + 1vw, 1vw, 2rem);
 }
 
-.title {
-  font-size: 2vw;
+.description {
+  font-size: clamp(1rem, 2vw, 3rem);
 }
 
 .loadImage {
@@ -21,25 +20,4 @@
   left: 0rem;
   right: 0rem;
   align-content: center;
-}
-
-/* small devices */
-@media (max-width: 815px) {
-  .title {
-    font-size: min(1rem);
-  }
-
-  .category {
-    font-size: 1.5vw;
-  }
-}
-/* x small devices */
-@media (max-width: 500px) {
-  .title {
-    font-size: 3vw;
-  }
-
-  .category {
-    font-size: 1.5vw;
-  }
 }

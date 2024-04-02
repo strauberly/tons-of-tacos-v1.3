@@ -62,12 +62,13 @@
   background-color: var(--background-color);
   justify-content: center;
   width: 100%;
-  height: clamp(34rem, 100%, 100%);
+  height: clamp(600px, 80%, 100%);
   margin-right: auto;
   margin-left: auto;
   left: 0px;
   right: 0px;
   padding: 1rem;
+  padding-bottom: 2rem;
   row-gap: 2rem;
 }
 
@@ -77,6 +78,7 @@
 }
 
 .expand h2 {
+  margin-top: 0.5rem;
   font-size: 1.5rem;
 }
 
@@ -89,8 +91,8 @@
 }
 
 .expand p {
-  font-size: 1.5rem;
-  width: 100%;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  width: 80%;
 }
 
 .closeExpanded {
