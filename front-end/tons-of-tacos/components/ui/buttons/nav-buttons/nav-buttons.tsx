@@ -8,9 +8,11 @@ import { useEffect } from "react";
 import CartIcon from "./cart-icon";
 import CartQuantity from "../../badges/cart-quantity";
 import { AnimatePresence } from "framer-motion";
+import { useDisplayContext } from "@/context/display-context";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
-  const { showMenu, setShowMenu, setMenuNavCategories } = useNavContext();
+  const { setMenuNavCategories } = useNavContext();
+  const { showMenu, setShowMenu } = useDisplayContext();
 
   useEffect(() => {
     if (window)
@@ -39,7 +41,7 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
       </nav>
       <div className={classes.menu}>
         {showMenu && (
-          <AnimatePresence mode="popLayout">
+          <AnimatePresence>
             <DropDown>
               <MenuNav />
             </DropDown>

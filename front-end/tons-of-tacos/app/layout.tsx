@@ -5,6 +5,7 @@ import { inter } from "../components/ui/fonts/fonts";
 import { NavContextProvider } from "@/context/nav-context";
 import { MenuContextProvider } from "@/context/menu-context";
 import { CartContextProvider } from "@/context/cart-context";
+import { Providers } from "@/context/providers";
 
 export const metadata: Metadata = {
   title: "Tons Of Tacos",
@@ -20,12 +21,14 @@ export default function RootLayout({
     <html lang="en" className="html">
       <body className={`${inter.variable}`}>
         <CartContextProvider>
-          <NavContextProvider>
+          <Providers>
+            {/* <NavContextProvider> */}
             <MainHeader />
-          </NavContextProvider>
-          <MenuContextProvider>
-            <div className="children">{children}</div>
-          </MenuContextProvider>
+            {/* </NavContextProvider> */}
+            <MenuContextProvider>
+              <div className="children">{children}</div>
+            </MenuContextProvider>
+          </Providers>
         </CartContextProvider>
       </body>
     </html>
