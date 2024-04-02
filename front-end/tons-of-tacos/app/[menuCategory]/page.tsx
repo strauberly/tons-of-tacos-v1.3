@@ -8,49 +8,35 @@ import FadeOnLoad from "@/components/ui/animations/fade-on-load";
 import { useMenuContext } from "@/context/menu-context";
 import Loading from "../loading";
 import { useMenuItemsForCategory } from "@/lib/menu";
-import { useNavContext } from "@/context/nav-context";
+import { useMenuCategoryContext } from "@/context/menu-category-context";
 
 export default function MenuItemsByCategory({
   params,
 }: {
   params: { menuCategory: string };
 }) {
-  const { categories, setCategories, setMenuItems } = useMenuContext();
-  const { menuNavCategories } = useNavContext();
-
-  let category = params.menuCategory;
+  const { setMenuItems } = useMenuContext();
+  const { menuCategories } = useMenuCategoryContext();
   const menuItems = useRef<MenuItem[]>([]);
-
-  const options: string[] = menuNavCategories.map(
+  const menuOptions: string[] = menuCategories.map(
     (cate: { name: string }) => cate.name
   );
+  let category = params.menuCategory;
 
-  if (!options.includes(category)) {
+  if (!menuOptions.includes(category)) {
     notFound();
   }
 
   useEffect(() => {
     async function DisplayMenuItems() {
-      const categories: Category[] = JSON.parse(
-        sessionStorage.getItem("categories") || "{}"
-      );
-
-      const menuOptions: string[] = categories.map(
-        (cat: { name: string }) => cat.name
-      );
-      // pseudo validation
-      if (!menuOptions.includes(category)) {
-        notFound();
-      }
       menuItems.current = await useMenuItemsForCategory(category);
-      setCategories(categories);
       setMenuItems(menuItems.current);
     }
     DisplayMenuItems();
-  }, [category, setCategories, setMenuItems]);
+  }, [category, menuCategories, setMenuItems]);
 
   // set menu category description
-  let description: string | undefined = categories
+  let description: string | undefined = menuCategories
     .find(function (mc) {
       return mc.name === `${category}`;
     })
