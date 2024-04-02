@@ -52,7 +52,7 @@ export default function MenuItemsByCategory({
         <FadeOnLoad>
           <div className={classes.category}>
             <h1>{category + ":"}</h1>
-            <p className={classes.title}>{description}</p>
+            <p className={classes.description}>{description}</p>
           </div>
           <div>{<MenuItemList menuItems={menuItems.current} />}</div>
         </FadeOnLoad>
