@@ -7,6 +7,8 @@
 - While working to have not found function correctly with elements of the header I realized my context was not as I wished.
   Getting convoluted and repeating some functionality unnecessarily. Made notes and decided to go back and readdress. Wish me luck.
 
+- Context refactored to encapsulate children in a a providers component. This allows for for more organized components I believe and reduces repeated functionality. Also allows for the elimination of writing the menu categories into session storage.
+
 ---
 
 -- 1 Apr 2024 ---
