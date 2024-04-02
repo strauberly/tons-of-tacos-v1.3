@@ -2,6 +2,13 @@
 
 ---
 
+-- 2 Apr 2024 ---
+
+- While working to have not found function correctly with elements of the header I realized my context was not as I wished.
+  Getting convoluted and repeating some functionality unnecessarily. Made notes and decided to go back and readdress. Wish me luck.
+
+---
+
 -- 1 Apr 2024 ---
 
 - Refactored context to utilize a consistent naming schema.

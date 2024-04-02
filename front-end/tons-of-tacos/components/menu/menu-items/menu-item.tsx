@@ -112,16 +112,16 @@ export default function MenuItem(props: {
           decrement={decrement}
         />
         <p className={classes.price}>${price}</p>
-        <button
+        {/* <button
           onClick={() => [setExpand(false), setQuantity(defaultQuantity)]}
-        >
-          <AddToCart
-            itemName={props.itemName}
-            quantity={quantity}
-            size={size}
-            price={price}
-          />
-        </button>
+        > */}
+        <AddToCart
+          itemName={props.itemName}
+          quantity={quantity}
+          size={size}
+          price={price}
+        />
+        {/* </button> */}
 
         {!expand && (
           <button onClick={() => setExpand(true)}>
