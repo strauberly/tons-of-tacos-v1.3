@@ -10,8 +10,6 @@ import {
 } from "react";
 
 interface ContextProps {
-  showMenu: boolean;
-  setShowMenu: Dispatch<SetStateAction<boolean>>;
   menuNavCategories: Category[];
   setMenuNavCategories: Dispatch<SetStateAction<Category[]>>;
   isLoading: boolean;
@@ -21,8 +19,6 @@ interface ContextProps {
 }
 
 const NavContext = createContext<ContextProps>({
-  showMenu: false,
-  setShowMenu: () => {},
   menuNavCategories: [],
   setMenuNavCategories: (): Category[] => [],
   isLoading: false,
@@ -32,7 +28,6 @@ const NavContext = createContext<ContextProps>({
 });
 
 export const NavContextProvider = ({ children }: { children: ReactNode }) => {
-  const [showMenu, setShowMenu] = useState(false);
   const [categories, setMenuNavCategories] = useState<[] | Category[]>([]);
   const [menuItems, setMenuItems] = useState<[] | MenuItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -40,8 +35,6 @@ export const NavContextProvider = ({ children }: { children: ReactNode }) => {
   return (
     <NavContext.Provider
       value={{
-        showMenu,
-        setShowMenu,
         menuNavCategories: categories,
         setMenuNavCategories: setMenuNavCategories,
         isLoading,

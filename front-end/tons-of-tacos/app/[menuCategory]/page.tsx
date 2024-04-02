@@ -8,6 +8,7 @@ import FadeOnLoad from "@/components/ui/animations/fade-on-load";
 import { useMenuContext } from "@/context/menu-context";
 import Loading from "../loading";
 import { useMenuItemsForCategory } from "@/lib/menu";
+import { useNavContext } from "@/context/nav-context";
 
 export default function MenuItemsByCategory({
   params,
@@ -15,9 +16,18 @@ export default function MenuItemsByCategory({
   params: { menuCategory: string };
 }) {
   const { categories, setCategories, setMenuItems } = useMenuContext();
+  const { menuNavCategories } = useNavContext();
 
   let category = params.menuCategory;
   const menuItems = useRef<MenuItem[]>([]);
+
+  const options: string[] = menuNavCategories.map(
+    (cate: { name: string }) => cate.name
+  );
+
+  if (!options.includes(category)) {
+    notFound();
+  }
 
   useEffect(() => {
     async function DisplayMenuItems() {
