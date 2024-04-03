@@ -13,6 +13,8 @@
 
 - Styling was not quite what was needed and so updated.
 
+- Menu context provider removed from layout. Is already in providers component.
+
 ---
 
 -- 2 Apr 2024 ---
