@@ -43,6 +43,14 @@ export default function MenuItem(props: {
     setSize(sizePicked);
   };
 
+  const quantitySelector = () => {
+    setQuantity(defaultQuantity);
+  };
+
+  const expander = () => {
+    setExpand(false);
+  };
+
   function calcPrice() {
     let adjPrice: number;
     let sizeSurcharge = 0;
@@ -112,16 +120,15 @@ export default function MenuItem(props: {
           decrement={decrement}
         />
         <p className={classes.price}>${price}</p>
-        {/* <button
-          onClick={() => [setExpand(false), setQuantity(defaultQuantity)]}
-        > */}
+
         <AddToCart
           itemName={props.itemName}
           quantity={quantity}
           size={size}
           price={price}
+          quantitySelector={quantitySelector}
+          expander={expander}
         />
-        {/* </button> */}
 
         {!expand && (
           <button onClick={() => setExpand(true)}>
