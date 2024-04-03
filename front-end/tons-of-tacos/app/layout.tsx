@@ -3,7 +3,6 @@ import "./globals.css";
 import MainHeader from "../components/main-header/main-header";
 import { inter } from "../components/ui/fonts/fonts";
 import { MenuContextProvider } from "@/context/menu-context";
-import { CartContextProvider } from "@/context/cart-context";
 import { Providers } from "@/context/providers";
 
 export const metadata: Metadata = {

@@ -4,6 +4,14 @@
 
 -- 2 Apr 2024 ---
 
+- Styling enhancements for expanded view of menu item.
+  - Greater separation between item name and close expanded view button.
+  - Enhancement for expanded view font size and spacing for description and title.
+
+---
+
+-- 2 Apr 2024 ---
+
 - While working to have not found function correctly with elements of the header I realized my context was not as I wished.
   Getting convoluted and repeating some functionality unnecessarily. Made notes and decided to go back and readdress. Wish me luck.
 
