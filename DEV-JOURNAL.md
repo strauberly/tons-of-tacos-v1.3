@@ -2,11 +2,14 @@
 
 ---
 
--- 2 Apr 2024 ---
+-- 3 Apr 2024 ---
 
 - Styling enhancements for expanded view of menu item.
+
   - Greater separation between item name and close expanded view button.
   - Enhancement for expanded view font size and spacing for description and title.
+
+- Reimplemented functionality for add to cart button to both close the expanded view and return quantity to default by passing functions as props.
 
 ---
 

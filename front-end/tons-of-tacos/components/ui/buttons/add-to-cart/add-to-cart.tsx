@@ -9,6 +9,8 @@ export default function AddToCart(props: {
   quantity: number;
   size: string;
   price: string;
+  quantitySelector: () => void;
+  expander: () => void;
 }) {
   const [largeOrder, setLargeOrder] = useState(false);
 
@@ -20,7 +22,7 @@ export default function AddToCart(props: {
     newQuantity = cartQuantity + props.quantity;
     if (newQuantity > 15) {
       alert(
-        "Your order has grown to a fair size. Please contact us before adding anything else to your order to ensure we can make that happen today or remove items from your cart. Thank you."
+        "Your order has grown to a fair size the current maximum is 15 items. Please contact us before adding anything else to your order to ensure we can make that happen today or remove items from your cart. Thank you."
       );
       setLargeOrder(true);
     } else {
@@ -33,7 +35,13 @@ export default function AddToCart(props: {
     <button
       disabled={largeOrder === true ? true : false}
       className={classes.add}
-      onClick={() => [quantity(), setItemsInCart(true), setLargeOrder(false)]}
+      onClick={() => [
+        quantity(),
+        setItemsInCart(true),
+        setLargeOrder(false),
+        props.quantitySelector(),
+        props.expander(),
+      ]}
     >
       Add To Cart
     </button>
