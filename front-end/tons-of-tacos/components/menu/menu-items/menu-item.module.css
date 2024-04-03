@@ -92,7 +92,7 @@
 
 .expand p {
   font-size: clamp(1rem, 1.5vw, 1.5rem);
-  width: 90%;
+  width: 100%;
 }
 
 .closeExpanded {

@@ -11,6 +11,8 @@
 
 - Reimplemented functionality for add to cart button to both close the expanded view and return quantity to default by passing functions as props.
 
+- Styling was not quite what was needed and so updated.
+
 ---
 
 -- 2 Apr 2024 ---
