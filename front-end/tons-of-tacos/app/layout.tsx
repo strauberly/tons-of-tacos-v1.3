@@ -20,9 +20,7 @@ export default function RootLayout({
       <body className={`${inter.variable}`}>
         <Providers>
           <MainHeader />
-          <MenuContextProvider>
-            <div className="children">{children}</div>
-          </MenuContextProvider>
+          <div className="children">{children}</div>
         </Providers>
       </body>
     </html>
