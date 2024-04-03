@@ -78,8 +78,8 @@
 }
 
 .expand h2 {
-  margin-top: 0.5rem;
-  font-size: 1.5rem;
+  margin-top: 3rem;
+  font-size: clamp(0.9rem, 1vw, 1vw);
 }
 
 .expand img {
@@ -92,12 +92,12 @@
 
 .expand p {
   font-size: clamp(1rem, 1.5vw, 1.5rem);
-  width: 80%;
+  width: 90%;
 }
 
 .closeExpanded {
   position: sticky;
-  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 1vw, 1vw);
   bottom: 100%;
   margin-left: 85%;
   cursor: pointer;
@@ -108,3 +108,9 @@
   align-items: center;
   gap: 5rem;
 }
+
+/* @media (max-width: 400px) {
+  .expand h2 {
+    margin-top: -6rem;
+  }
+} */
