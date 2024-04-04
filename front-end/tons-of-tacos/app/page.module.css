@@ -26,3 +26,8 @@
   margin-top: 2rem;
   font-size: clamp(1rem, 2vw, 2vw);
 }
+
+.errorContact {
+  color: var(--interactive-color);
+  font-size: clamp(1rem, 2vw, 2vw);
+}

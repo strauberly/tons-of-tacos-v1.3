@@ -4,7 +4,13 @@ import useCategoriesSource from "@/lib/menu";
 import NavButtons from "@/components/ui/buttons/nav-buttons/nav-buttons";
 
 export default async function MainHeader() {
-  const categories = await useCategoriesSource();
+  let categories;
+
+  try {
+    categories = await useCategoriesSource();
+  } catch (error) {
+    throw new Error("huh...");
+  }
   const menuOptions = categories;
 
   return (
