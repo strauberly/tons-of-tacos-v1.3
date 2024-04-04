@@ -8,12 +8,14 @@ import CartIcon from "./cart-icon";
 import CartQuantity from "../../badges/cart-quantity";
 import { AnimatePresence } from "framer-motion";
 import { useDisplayContext } from "@/context/display-context";
+import { useEffect } from "react";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { setMenuCategories } = useMenuCategoryContext();
   const { showMenu, setShowMenu } = useDisplayContext();
-
-  setMenuCategories(menuOptions.menuOptions);
+  useEffect(() => {
+    setMenuCategories(menuOptions.menuOptions);
+  }, [menuOptions.menuOptions, setMenuCategories]);
 
   return (
     <>

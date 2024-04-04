@@ -2,6 +2,12 @@
 
 ---
 
+-- 4 Apr 2024 ---
+
+- Basic implementation for error handling in place with styling.
+
+---
+
 -- 3 Apr 2024 ---
 
 - Styling enhancements for expanded view of menu item.
