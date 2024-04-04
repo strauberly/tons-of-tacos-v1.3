@@ -3,12 +3,13 @@
 import classes from "./page.module.css";
 import MenuItemList from "@/components/menu/menu-items/menu-item-list";
 import { notFound } from "next/navigation";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import FadeOnLoad from "@/components/ui/animations/fade-on-load";
 import { useMenuContext } from "@/context/menu-context";
 import Loading from "../loading";
 import { useMenuItemsForCategory } from "@/lib/menu";
 import { useMenuCategoryContext } from "@/context/menu-category-context";
+import Error from "next/error";
 
 export default function MenuItemsByCategory({
   params,
@@ -27,9 +28,17 @@ export default function MenuItemsByCategory({
     notFound();
   }
 
+  const [, setError] = useState();
+
   useEffect(() => {
     async function DisplayMenuItems() {
-      menuItems.current = await useMenuItemsForCategory(category);
+      try {
+        menuItems.current = await useMenuItemsForCategory(category);
+      } catch (error) {
+        setError(() => {
+          throw error;
+        });
+      }
       setMenuItems(menuItems.current);
     }
     DisplayMenuItems();
