@@ -97,9 +97,9 @@
 
 .closeExpanded {
   position: sticky;
-  font-size: clamp(2.5rem, 1vw, 1vw);
+  font-size: clamp(2rem, 1vw, 1vw);
   bottom: 100%;
-  margin-left: 85%;
+  margin-left: 90%;
   cursor: pointer;
 }
 
@@ -108,9 +108,3 @@
   align-items: center;
   gap: 5rem;
 }
-
-/* @media (max-width: 400px) {
-  .expand h2 {
-    margin-top: -6rem;
-  }
-} */
