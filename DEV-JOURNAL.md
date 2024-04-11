@@ -2,6 +2,13 @@
 
 ---
 
+-- 11 Apr 2024 ---
+
+- Enjoyed a little break after completing sprint and have started looking at implementation of cart for customer view to then be followed up by order submission.
+- Also starting back at seasonal day job today. Thankful to have it while making career transition but it should be expected for development to slow a bit.
+
+---
+
 -- 4 Apr 2024 ---
 
 - Basic implementation for error handling in place with styling.
