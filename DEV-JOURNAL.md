@@ -2,6 +2,16 @@
 
 ---
 
+-- 13 Apr 2024 --
+
+- Wireframe for cart display and checkout functions.
+
+<p align="center">
+  <img src="./media/wireframes/view-cart-and-checkout.png"/>
+</p>
+
+---
+
 -- 11 Apr 2024 ---
 
 - Enjoyed a little break after completing sprint and have started looking at implementation of cart for customer view to then be followed up by order submission.
