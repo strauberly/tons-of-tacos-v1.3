@@ -9,7 +9,6 @@ import { useMenuContext } from "@/context/menu-context";
 import Loading from "../loading";
 import { useMenuItemsForCategory } from "@/lib/menu";
 import { useMenuCategoryContext } from "@/context/menu-category-context";
-import Error from "next/error";
 
 export default function MenuItemsByCategory({
   params,
@@ -20,7 +19,7 @@ export default function MenuItemsByCategory({
   const { menuCategories } = useMenuCategoryContext();
   const menuItems = useRef<MenuItem[]>([]);
   const menuOptions: string[] = menuCategories.map(
-    (cate: { name: string }) => cate.name
+    (category: { name: string }) => category.name
   );
   let category = params.menuCategory;
 
