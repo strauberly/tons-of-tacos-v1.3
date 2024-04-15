@@ -2,6 +2,12 @@
 
 ---
 
+-- 15 Apr 2024 --
+
+- Project updated in github with actions to be taken to facilitate cart functionality.
+
+---
+
 -- 13 Apr 2024 --
 
 - Wireframe for cart display and checkout functions.
