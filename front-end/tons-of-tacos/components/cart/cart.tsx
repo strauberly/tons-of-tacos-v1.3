@@ -1,11 +1,5 @@
 import { GetCart } from "@/lib/cartFunctions";
 
-export default async function Cart() {
-
-
-
-
-
-  return (
-  )
+export default function Cart() {
+  return <p>Cart placeholder</p>;
 }

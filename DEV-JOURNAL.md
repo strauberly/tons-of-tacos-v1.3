@@ -5,6 +5,10 @@
 -- 15 Apr 2024 --
 
 - Project updated in github with actions to be taken to facilitate cart functionality.
+- Additions to display context for displaying cart.
+- Generic placeholder for cart implemented.
+- Additions to nav buttons concerning logic for displaying cart.
+- Generic cart item component created and ready to be fleshed out.
 
 ---
 

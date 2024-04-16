@@ -9,10 +9,12 @@ import CartQuantity from "../../badges/cart-quantity";
 import { AnimatePresence } from "framer-motion";
 import { useDisplayContext } from "@/context/display-context";
 import { useEffect } from "react";
+import Cart from "@/components/cart/cart";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { setMenuCategories } = useMenuCategoryContext();
-  const { showMenu, setShowMenu } = useDisplayContext();
+  const { showMenu, setShowMenu, showCart, setShowCart } = useDisplayContext();
+
   useEffect(() => {
     setMenuCategories(menuOptions.menuOptions);
   }, [menuOptions.menuOptions, setMenuCategories]);
@@ -28,7 +30,11 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
         >
           <MenuIcon />
         </button>
-        <button className={classes.cartButton}>
+        <button
+          className={classes.cartButton}
+          onMouseEnter={() => setShowCart(true)}
+          onMouseLeave={() => setShowCart(false)}
+        >
           <CartIcon />
         </button>
       </nav>
@@ -37,6 +43,15 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
           <AnimatePresence>
             <DropDown>
               <MenuNav />
+            </DropDown>
+          </AnimatePresence>
+        )}
+      </div>
+      <div>
+        {showCart && (
+          <AnimatePresence>
+            <DropDown>
+              <Cart />
             </DropDown>
           </AnimatePresence>
         )}
