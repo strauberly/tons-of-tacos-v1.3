@@ -2,6 +2,12 @@
 
 ---
 
+-- 16 Apr 2024 --
+
+- Began fleshing out cart item.
+
+---
+
 -- 15 Apr 2024 --
 
 - Project updated in github with actions to be taken to facilitate cart functionality.
