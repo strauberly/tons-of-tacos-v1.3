@@ -7,7 +7,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import FadeOnLoad from "@/components/ui/animations/fade-on-load";
 import { useMenuContext } from "@/context/menu-context";
 import Loading from "../loading";
-import { useMenuItemsForCategory } from "@/lib/menu";
+import { MenuItems, useMenuItemsForCategory } from "@/lib/menu";
 import { useMenuCategoryContext } from "@/context/menu-category-context";
 
 export default function MenuItemsByCategory({
@@ -32,7 +32,7 @@ export default function MenuItemsByCategory({
   useEffect(() => {
     async function DisplayMenuItems() {
       try {
-        menuItems.current = await useMenuItemsForCategory(category);
+        menuItems.current = await MenuItems(category);
       } catch (error) {
         setError(() => {
           throw error;
