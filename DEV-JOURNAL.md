@@ -2,6 +2,14 @@
 
 ---
 
+-- 18 Apr 2024 --
+
+- Continuation of fleshing out cart item and cart component.
+- Altered get cart function from async to synchronous function.
+- Cart components should be ready styling initialization.
+
+---
+
 -- 17 Apr 2024 --
 
 - While working on cart item component I discovered code was not happy as custom hook was being called conditionally in a try catch black. Wrote a new function returns the custom hook and makes everything happy while still handling the error.

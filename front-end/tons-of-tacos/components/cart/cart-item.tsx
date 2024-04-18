@@ -2,10 +2,10 @@ import { useState } from "react";
 import QuantitySelector from "../menu/menu-items/quantity-selector/quantity-selector";
 
 export default function CartItem(props: {
-  itemQuantity: number;
   itemName: string;
-  itemPrice: number;
+  itemQuantity: number;
   size: string;
+  itemPrice: string;
 }) {
   const [quantity, setQuantity] = useState(props.itemQuantity);
   // this will be changed to get quantity from item stowed in cart
@@ -20,10 +20,11 @@ export default function CartItem(props: {
   };
 
   const adjPrice: number =
-    props.itemPrice - (props.itemPrice / props.itemQuantity) * quantity;
+    parseInt(props.itemPrice) -
+    (parseInt(props.itemPrice) / props.itemQuantity) * quantity;
 
   return (
-    <div>
+    <li>
       <>{props.itemName}</>
       <p>item name placeholder</p>
       <QuantitySelector
@@ -36,6 +37,6 @@ export default function CartItem(props: {
       <>size if it exists placeholder</>
       <>{adjPrice}</>
       <>item price place holder</>
-    </div>
+    </li>
   );
 }
