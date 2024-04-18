@@ -13,3 +13,7 @@ export async function useMenuItemsForCategory(category: string) {
   const data = await response.json();
   return data;
 }
+
+export const MenuItems = (category: string) => {
+  return useMenuItemsForCategory(category);
+};

@@ -2,6 +2,12 @@
 
 ---
 
+-- 17 Apr 2024 --
+
+- While working on cart item component I discovered code was not happy as custom hook was being called conditionally in a try catch black. Wrote a new function returns the custom hook and makes everything happy while still handling the error.
+
+---
+
 -- 16 Apr 2024 --
 
 - Began fleshing out cart item.
