@@ -15,6 +15,7 @@ export default function Cart() {
             size: string;
             price: string;
           }) => (
+            // make this be cart item name + a random
             <CartItem
               key={cartItem.itemName}
               itemName={cartItem.itemName}
