@@ -23,19 +23,21 @@ export default function CartItem(props: {
     parseInt(props.itemPrice) -
     (parseInt(props.itemPrice) / props.itemQuantity) * quantity;
 
+  console.log(props.itemPrice);
+
   return (
     <li>
       <>{props.itemName}</>
       <p>item name placeholder</p>
       <QuantitySelector
-        value={quantity}
+        value={props.itemQuantity}
         increment={increment}
         decrement={decrement}
       />
       <>quantity selector placeholder</>
-      <>{props.size}</>
+      <p>{props.size}</p>
       <>size if it exists placeholder</>
-      <>{adjPrice}</>
+      <p>{adjPrice}</p>
       <>item price place holder</>
     </li>
   );
