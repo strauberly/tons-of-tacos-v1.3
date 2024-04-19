@@ -2,6 +2,53 @@
 
 ---
 
+-- 18 Apr 2024 --
+
+- Continuation of fleshing out cart item and cart component.
+- Altered get cart function from async to synchronous function.
+- Cart components should be ready styling initialization.
+
+---
+
+-- 17 Apr 2024 --
+
+- While working on cart item component I discovered code was not happy as custom hook was being called conditionally in a try catch black. Wrote a new function returns the custom hook and makes everything happy while still handling the error.
+
+---
+
+-- 16 Apr 2024 --
+
+- Began fleshing out cart item.
+
+---
+
+-- 15 Apr 2024 --
+
+- Project updated in github with actions to be taken to facilitate cart functionality.
+- Additions to display context for displaying cart.
+- Generic placeholder for cart implemented.
+- Additions to nav buttons concerning logic for displaying cart.
+- Generic cart item component created and ready to be fleshed out.
+
+---
+
+-- 13 Apr 2024 --
+
+- Wireframe for cart display and checkout functions.
+
+<p align="center">
+  <img src="./media/wireframes/view-cart-and-checkout.png"/>
+</p>
+
+---
+
+-- 11 Apr 2024 ---
+
+- Enjoyed a little break after completing sprint and have started looking at implementation of cart for customer view to then be followed up by order submission.
+- Also starting back at seasonal day job today. Thankful to have it while making career transition but it should be expected for development to slow a bit.
+
+---
+
 -- 4 Apr 2024 ---
 
 - Basic implementation for error handling in place with styling.

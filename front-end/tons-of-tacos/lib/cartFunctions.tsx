@@ -18,7 +18,7 @@ export async function AddItemToCart(
   sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(newCart));
 }
 
-export async function GetCart() {
+export function GetCart() {
   let oldCart: CartItem[] = [];
   if (typeof window !== "undefined") {
     oldCart = JSON.parse(sessionStorage.getItem("tons-of-tacos-cart") || "{}");

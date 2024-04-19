@@ -1,7 +1,6 @@
 "use client";
 import classes from "@/components/main-header/main-header.module.css";
 import MenuCategories from "./menu-category-list";
-import { useNavContext } from "@/context/nav-context";
 import { useDisplayContext } from "@/context/display-context";
 
 export default function MenuNav() {
