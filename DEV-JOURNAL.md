@@ -2,6 +2,12 @@
 
 ---
 
+-- 22 Apr 2024 --
+
+- Initialized styling of cart component.
+
+---
+
 -- 18 Apr 2024 --
 
 - Continuation of fleshing out cart item and cart component.
