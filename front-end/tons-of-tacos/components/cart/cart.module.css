@@ -1,0 +1,27 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  /* justify-content: center; */
+  background-color: var(--background-color);
+  border: var(--border-color) solid 2px;
+  width: fit-content;
+  /* top: 100%; */
+  /* right: 0vw; */
+  /* font-family: "Quatl"; */
+  /* padding: 1rem; */
+}
+
+.cart ul li {
+  list-style-type: none;
+  /* display: flex; */
+  /* flex-direction: column; */
+  display: grid;
+  gap: 1vw;
+  grid-template-columns: repeat(4, minmax(12rem, 50%));
+  /* justify-content: center; */
+  /* justify-content: space-around; */
+  align-items: center;
+  margin: 2rem;
+  padding-left: 3rem;
+}

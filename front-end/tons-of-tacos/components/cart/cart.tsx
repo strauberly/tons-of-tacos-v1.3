@@ -1,3 +1,4 @@
+import classes from "./cart.module.css";
 import { GetCart } from "@/lib/cartFunctions";
 import CartItem from "./cart-item";
 
@@ -5,8 +6,7 @@ export default function Cart() {
   const cartItems = GetCart();
 
   return (
-    <>
-      <p>Cart placeholder</p>
+    <div className={classes.cart}>
       <ul>
         {cartItems.map(
           (cartItem: {
@@ -26,6 +26,8 @@ export default function Cart() {
           )
         )}
       </ul>
-    </>
+      <p>Total: ${}</p>
+      <p>Submit order placeholder</p>
+    </div>
   );
 }

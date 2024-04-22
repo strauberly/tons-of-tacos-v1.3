@@ -1,6 +1,8 @@
 import { useState } from "react";
 import QuantitySelector from "../menu/menu-items/quantity-selector/quantity-selector";
 
+import classes from "./cart-item.module.css";
+
 export default function CartItem(props: {
   itemName: string;
   itemQuantity: number;
@@ -27,18 +29,14 @@ export default function CartItem(props: {
 
   return (
     <li>
-      <>{props.itemName}</>
-      <p>item name placeholder</p>
+      <p className={classes.itemName}>{props.itemName}</p>
+      <p> {props.size}</p>
       <QuantitySelector
         value={props.itemQuantity}
         increment={increment}
         decrement={decrement}
       />
-      <>quantity selector placeholder</>
-      <p>{props.size}</p>
-      <>size if it exists placeholder</>
-      <p>{adjPrice}</p>
-      <>item price place holder</>
+      <p> ${adjPrice}</p>
     </li>
   );
 }

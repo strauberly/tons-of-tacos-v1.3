@@ -22,7 +22,7 @@ export default function AddToCart(props: {
     newQuantity = cartQuantity + props.quantity;
     if (newQuantity > 15) {
       alert(
-        "Your order has grown to a fair size the current maximum is 15 items. Please contact us before adding anything else to your order to ensure we can make that happen today or remove items from your cart. Thank you."
+        "Your order has grown to a fair size. The current maximum is 15 items. Please contact us before adding anything else. This will ensure we can make your order happen today. You can also remove items from your cart. Thank you!"
       );
       setLargeOrder(true);
     } else {

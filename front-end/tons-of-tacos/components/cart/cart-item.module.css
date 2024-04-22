@@ -1,0 +1,9 @@
+.itemName {
+  /* min-width: 0; */
+  /* min-height: 0; */
+  /* color: gold; */
+  /* word-wrap: none; */
+  /* word-break: none; */
+  white-space: nowrap;
+  max-width: 100%;
+}

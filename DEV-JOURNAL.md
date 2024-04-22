@@ -2,6 +2,12 @@
 
 ---
 
+-- 22 Apr 2024 --
+
+- Initialized styling of cart component.
+
+---
+
 -- 18 Apr 2024 --
 
 - Continuation of fleshing out cart item and cart component.
@@ -52,6 +58,10 @@
 -- 4 Apr 2024 ---
 
 - Basic implementation for error handling in place with styling.
+
+- Improved on styling for expanded view close button and type copy when user tries to add more than 15 items to their cart.
+
+- Added a touch more drop shadow to menu items hover state.
 
 ---
 
