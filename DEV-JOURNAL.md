@@ -2,6 +2,12 @@
 
 ---
 
+-- 24 Apr 2024 --
+
+- Improved on styling with focus on responsiveness.
+
+---
+
 -- 22 Apr 2024 --
 
 - Initialized styling of cart component.
