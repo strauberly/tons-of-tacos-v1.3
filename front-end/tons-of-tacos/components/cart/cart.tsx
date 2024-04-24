@@ -26,7 +26,7 @@ export default function Cart() {
           )
         )}
       </ul>
-      <p>Total: ${}</p>
+      <p className={classes.total}>Total: ${}</p>
       <p>Submit order placeholder</p>
     </div>
   );
