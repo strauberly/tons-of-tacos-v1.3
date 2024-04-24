@@ -28,8 +28,8 @@ export default function CartItem(props: {
   console.log(props.itemPrice);
 
   return (
-    <li>
-      <p className={classes.itemName}>{props.itemName}</p>
+    <li className={classes.item}>
+      <p>{props.itemName}</p>
       <p> {props.size}</p>
       <QuantitySelector
         value={props.itemQuantity}
