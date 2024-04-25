@@ -1,0 +1,4 @@
+.remove {
+  color: var(--interactive-color);
+  font-size: clamp(0.9rem, 0.9vw, 0.9vw);
+}

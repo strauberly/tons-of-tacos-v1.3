@@ -3,3 +3,11 @@
   white-space: nowrap;
   max-width: 100%;
 }
+
+.size {
+  color: var(--user-selected-color);
+}
+
+.price {
+  justify-content: center;
+}

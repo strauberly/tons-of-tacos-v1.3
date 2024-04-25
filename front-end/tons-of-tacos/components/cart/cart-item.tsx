@@ -2,6 +2,7 @@ import { useState } from "react";
 import QuantitySelector from "../menu/menu-items/quantity-selector/quantity-selector";
 
 import classes from "./cart-item.module.css";
+import RemoveFromCart from "../ui/buttons/remove-from-cart/remove-from-cart";
 
 export default function CartItem(props: {
   itemName: string;
@@ -30,13 +31,14 @@ export default function CartItem(props: {
   return (
     <li className={classes.item}>
       <p>{props.itemName}</p>
-      <p> {props.size}</p>
+      <p className={classes.size}> {props.size}</p>
       <QuantitySelector
         value={props.itemQuantity}
         increment={increment}
         decrement={decrement}
       />
-      <p> ${adjPrice}</p>
+      <p className={classes.price}> ${adjPrice}</p>
+      <RemoveFromCart />
     </li>
   );
 }
