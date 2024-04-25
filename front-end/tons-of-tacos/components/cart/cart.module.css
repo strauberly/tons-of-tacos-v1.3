@@ -14,7 +14,7 @@
   list-style-type: none;
   display: grid;
   gap: 1vw;
-  grid-template-columns: repeat(4, minmax(12rem, 50%));
+  grid-template-columns: repeat(5, minmax(12rem, 50%));
   align-items: center;
   margin: 1vw;
   padding-left: 2vw;
@@ -26,4 +26,8 @@
   color: var(--attention-color);
   font-size: clamp(1rem, 1vw, 1vw);
   margin-bottom: 1rem;
+}
+
+.size {
+  color: var(--user-selected-color);
 }

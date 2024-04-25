@@ -2,6 +2,13 @@
 
 ---
 
+-- 25 Apr 2024 --
+
+- Remove from cart button component added to ui library and integrated into cart component.
+- Still need to update styling and program for functionality.
+
+---
+
 -- 24 Apr 2024 --
 
 - Improved on styling with focus on responsiveness.
