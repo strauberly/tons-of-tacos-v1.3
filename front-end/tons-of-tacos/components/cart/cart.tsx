@@ -1,12 +1,18 @@
 import classes from "./cart.module.css";
 import { GetCart } from "@/lib/cartFunctions";
 import CartItem from "./cart-item";
+import { useDisplayContext } from "@/context/display-context";
 
 export default function Cart() {
   const cartItems = GetCart();
+  const { setShowCart } = useDisplayContext();
 
   return (
-    <div className={classes.cart}>
+    <div
+      className={classes.cart}
+      onMouseEnter={() => setShowCart(true)}
+      onMouseLeave={() => setShowCart(false)}
+    >
       <ul>
         {cartItems.map(
           (cartItem: {

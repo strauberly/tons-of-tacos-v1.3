@@ -14,6 +14,10 @@ export default function CartItem(props: {
   // this will be changed to get quantity from item stowed in cart
   // const itemQuantity: number = 1;
 
+  // const [price, setPrice] = useState(parseInt(props.itemPrice));
+
+  // let price = props.itemPrice;
+
   const increment = () => {
     setQuantity(quantity + 1);
   };
@@ -22,9 +26,18 @@ export default function CartItem(props: {
     setQuantity(quantity - 1);
   };
 
-  const adjPrice: number =
-    parseInt(props.itemPrice) -
-    (parseInt(props.itemPrice) / props.itemQuantity) * quantity;
+  function calcPrice() {
+    let adjPrice: number;
+
+    adjPrice = (parseInt(props.itemPrice) / props.itemQuantity) * quantity;
+    return adjPrice;
+  }
+
+  const price = calcPrice().toFixed(2);
+
+  // const price: number =
+  //   parseInt(props.itemPrice) -
+  //   (parseInt(props.itemPrice) / props.itemQuantity) * quantity;
 
   console.log(props.itemPrice);
 
@@ -33,11 +46,11 @@ export default function CartItem(props: {
       <p>{props.itemName}</p>
       <p className={classes.size}> {props.size}</p>
       <QuantitySelector
-        value={props.itemQuantity}
+        value={quantity}
         increment={increment}
         decrement={decrement}
       />
-      <p className={classes.price}> ${adjPrice}</p>
+      <p className={classes.price}> ${price}</p>
       <RemoveFromCart />
     </li>
   );
