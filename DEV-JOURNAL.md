@@ -6,6 +6,10 @@
 
 - Slight adjustment to cart styling in order to aid in development of cart functionality. Will finalize styling once functionality is in place.
 
+- Cart component now has similar display functionality as menu category nav menu. Hove displays the cart, entering component continues to display and mouse leaving component causes component to vanish.
+
+- Cart items now correctly adjust quantity and price when altered in the cart.
+
 ---
 
 -- 25 Apr 2024 --
