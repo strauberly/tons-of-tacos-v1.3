@@ -3,8 +3,8 @@
   flex-direction: column;
   position: fixed;
   justify-self: right;
-  top: 3.8vw;
-  left: 25vw;
+  top: 3.75vw;
+  left: 19.25vw;
   width: fit-content;
   background-color: var(--background-color);
   border: var(--border-color) solid 2px;
