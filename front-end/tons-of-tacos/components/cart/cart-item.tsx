@@ -51,7 +51,7 @@ export default function CartItem(props: {
         decrement={decrement}
       />
       <p className={classes.price}> ${price}</p>
-      <RemoveFromCart />
+      <RemoveFromCart cartItem={props.itemName} />
     </li>
   );
 }
