@@ -7,7 +7,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import FadeOnLoad from "@/components/ui/animations/fade-on-load";
 import { useMenuContext } from "@/context/menu-context";
 import Loading from "../loading";
-import { MenuItems, useMenuItemsForCategory } from "@/lib/menu";
+import { MenuItems } from "@/lib/menu";
 import { useMenuCategoryContext } from "@/context/menu-category-context";
 
 export default function MenuItemsByCategory({
