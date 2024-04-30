@@ -37,7 +37,15 @@ export async function GetCartQuantity() {
 
 export function UpdateCartItemQuantity() {}
 
-export function RemoveCartItem() {}
+export function RemoveCartItem(itemName: string) {
+  const upDatedCart = GetCart().filter(
+    (cartItem) => cartItem.itemName != itemName
+  );
+  sessionStorage.removeItem("tons-of-tacos-cart");
+  sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(upDatedCart));
+  // console.log(cart.toString());
+  // return upDatedCart;
+}
 
 export function CreateCart() {
   const cart: CartItem[] = [];

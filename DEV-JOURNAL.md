@@ -2,6 +2,14 @@
 
 ---
 
+-- 29 Apr 2024 --
+
+- Continuing to build out cart component.
+  - Progress made on removing an item from the cart. Needs to rerender in order to update cart state. Looking into utilizing context.
+    -Forwarded ideas to ux and and design team (both are me ^\_^) in regards to improving on cart styling.
+
+---
+
 -- 27 Apr 2024 --
 
 - Slight adjustment to cart styling in order to aid in development of cart functionality. Will finalize styling once functionality is in place.
