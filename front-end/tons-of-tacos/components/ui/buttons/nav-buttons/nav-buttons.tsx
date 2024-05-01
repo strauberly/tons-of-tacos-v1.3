@@ -10,14 +10,19 @@ import { AnimatePresence } from "framer-motion";
 import { useDisplayContext } from "@/context/display-context";
 import { useEffect } from "react";
 import Cart from "@/components/cart/cart";
+import { useCartContext } from "@/context/cart-context";
+import { GetCart } from "@/lib/cartFunctions";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { setMenuCategories } = useMenuCategoryContext();
   const { showMenu, setShowMenu, showCart, setShowCart } = useDisplayContext();
 
+  const { cart, setCart } = useCartContext();
+
   useEffect(() => {
     setMenuCategories(menuOptions.menuOptions);
-  }, [menuOptions.menuOptions, setMenuCategories]);
+    setCart(GetCart());
+  }, [menuOptions.menuOptions, setCart, setMenuCategories]);
 
   return (
     <>

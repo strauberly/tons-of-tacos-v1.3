@@ -2,10 +2,22 @@ import classes from "./cart.module.css";
 import { GetCart } from "@/lib/cartFunctions";
 import CartItem from "./cart-item";
 import { useDisplayContext } from "@/context/display-context";
+import { useCartContext } from "@/context/cart-context";
+import { SetStateAction, useEffect, useRef, useState } from "react";
 
 export default function Cart() {
-  const cartItems = GetCart();
   const { setShowCart } = useDisplayContext();
+  const { cart, setCart } = useCartContext();
+
+  // setCart(GetCart());
+  // const [newCart, setNewCart] = useState<CartItem[]>([]);
+
+  useEffect(() => {
+    // cart.current = GetCart();
+    setCart(GetCart());
+  }, [setCart]);
+
+  // setCart(GetCart());
 
   return (
     <div
@@ -14,7 +26,7 @@ export default function Cart() {
       onMouseLeave={() => setShowCart(false)}
     >
       <ul>
-        {cartItems.map(
+        {cart.map(
           (cartItem: {
             itemName: string;
             quantity: number;
