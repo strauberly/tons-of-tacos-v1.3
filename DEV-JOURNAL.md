@@ -2,6 +2,13 @@
 
 ---
 
+-- 30 Apr 2024 --
+
+- Cart correctly displays an updated cart for the user when an item is added and when an item is removed.
+- Cart quantity badge is correctly tracking and updating as the contents of the cart change.
+
+---
+
 -- 29 Apr 2024 --
 
 - Continuing to build out cart component.

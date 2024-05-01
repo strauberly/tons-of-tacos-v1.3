@@ -12,6 +12,8 @@ export default function CartQuantity() {
       CreateCart();
       if (cartQuantity > 0) {
         setItemsInCart(true);
+      } else {
+        setItemsInCart(false);
       }
       setCartQuantity(await GetCartQuantity());
     }

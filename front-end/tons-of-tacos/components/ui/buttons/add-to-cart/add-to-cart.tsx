@@ -1,8 +1,8 @@
 "use client";
 import classes from "./add-to-cart.module.css";
 import { useCartContext } from "@/context/cart-context";
-import { AddItemToCart } from "@/lib/cartFunctions";
-import { useState } from "react";
+import { AddItemToCart, GetCart } from "@/lib/cartFunctions";
+import { useEffect, useState } from "react";
 
 export default function AddToCart(props: {
   itemName: string;
@@ -27,10 +27,12 @@ export default function AddToCart(props: {
       setLargeOrder(true);
     } else {
       setCartQuantity(cartQuantity + props.quantity);
-      AddItemToCart(props.itemName, props.quantity, props.size, props.price);
+      // AddItemToCart(props.itemName, props.quantity, props.size, props.price);
     }
   };
-
+  // useEffect(() => {
+  //   setCart(GetCart())
+  // })
   return (
     <button
       disabled={largeOrder === true ? true : false}
@@ -41,6 +43,9 @@ export default function AddToCart(props: {
         setLargeOrder(false),
         props.quantitySelector(),
         props.expander(),
+        AddItemToCart(props.itemName, props.quantity, props.size, props.price),
+        // setCart(GetCart()),
+        // alert(cart.toString()),
       ]}
     >
       Add To Cart
