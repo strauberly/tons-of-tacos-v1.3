@@ -17,12 +17,22 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { setMenuCategories } = useMenuCategoryContext();
   const { showMenu, setShowMenu, showCart, setShowCart } = useDisplayContext();
 
-  const { cart, setCart } = useCartContext();
+  const { setCart, cartQuantity } = useCartContext();
+
+  function conditionalCart() {
+    cartQuantity < 1 ? setShowCart(false) : setShowCart(true);
+  }
 
   useEffect(() => {
     setMenuCategories(menuOptions.menuOptions);
     setCart(GetCart());
-  }, [menuOptions.menuOptions, setCart, setMenuCategories]);
+  }, [
+    cartQuantity,
+    menuOptions.menuOptions,
+    setCart,
+    setMenuCategories,
+    setShowCart,
+  ]);
 
   return (
     <>
@@ -55,9 +65,7 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
       <div>
         {showCart && (
           <AnimatePresence>
-            <DropDown>
-              <Cart />
-            </DropDown>
+            <DropDown>{cartQuantity > 0 && <Cart />}</DropDown>
           </AnimatePresence>
         )}
       </div>
