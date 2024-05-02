@@ -27,9 +27,9 @@ export default function CartItem(props: {
   };
 
   function calcPrice() {
-    let adjPrice: number;
+    let adjPrice;
 
-    adjPrice = (parseInt(props.itemPrice) / props.itemQuantity) * quantity;
+    adjPrice = (parseFloat(props.itemPrice) / props.itemQuantity) * quantity;
     return adjPrice;
   }
 

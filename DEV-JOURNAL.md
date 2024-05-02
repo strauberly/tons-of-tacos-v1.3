@@ -2,6 +2,12 @@
 
 ---
 
+-- 1 May 2024 --
+
+- Cart now displays conditionally according to if there is anything in the cart or not.
+
+---
+
 -- 30 Apr 2024 --
 
 - Cart correctly displays an updated cart for the user when an item is added and when an item is removed.

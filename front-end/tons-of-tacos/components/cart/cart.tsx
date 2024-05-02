@@ -7,7 +7,9 @@ import { SetStateAction, useEffect, useRef, useState } from "react";
 
 export default function Cart() {
   const { setShowCart } = useDisplayContext();
-  const { cart, setCart } = useCartContext();
+  const { cart, setCart, cartQuantity } = useCartContext();
+
+  let total = 0;
 
   // setCart(GetCart());
   // const [newCart, setNewCart] = useState<CartItem[]>([]);
@@ -44,7 +46,8 @@ export default function Cart() {
           )
         )}
       </ul>
-      <p className={classes.total}>Total: ${}</p>
+
+      <p className={classes.total}>Total: ${total}</p>
       <p>Submit order placeholder</p>
     </div>
   );
