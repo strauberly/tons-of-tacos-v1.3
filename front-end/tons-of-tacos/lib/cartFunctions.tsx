@@ -35,7 +35,20 @@ export async function GetCartQuantity() {
   return quantity;
 }
 
-export function UpdateCartItemQuantity() {}
+export function UpdateCartItemQuantity(
+  itemName: string,
+  newQuantity: number,
+  newPrice: string
+) {
+  const updatedCart = GetCart();
+  let cartItemIndex = updatedCart.findIndex(
+    (cartItem) => (cartItem.itemName = itemName)
+  );
+  updatedCart[cartItemIndex].quantity = newQuantity;
+  updatedCart[cartItemIndex].price = newPrice;
+  sessionStorage.removeItem("tons-of-tacos-cart");
+  sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(updatedCart));
+}
 
 export function RemoveCartItem(itemName: string) {
   const upDatedCart = GetCart().filter(
