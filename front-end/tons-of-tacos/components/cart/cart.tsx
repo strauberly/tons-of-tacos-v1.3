@@ -11,6 +11,14 @@ export default function Cart() {
 
   let total = 0;
 
+  function calcTotal() {
+    let i;
+    for (i = 0; i < cart.length; i++) {
+      total += parseFloat(cart[i].price);
+    }
+    return total;
+  }
+
   // setCart(GetCart());
   // const [newCart, setNewCart] = useState<CartItem[]>([]);
 
@@ -24,7 +32,7 @@ export default function Cart() {
   return (
     <div
       className={classes.cart}
-      onMouseEnter={() => setShowCart(true)}
+      onMouseEnter={() => [setShowCart(true)]}
       onMouseLeave={() => setShowCart(false)}
     >
       <ul>
@@ -47,7 +55,7 @@ export default function Cart() {
         )}
       </ul>
 
-      <p className={classes.total}>Total: ${total}</p>
+      <p className={classes.total}>Total: $ {calcTotal().toFixed(2)}</p>
       <p>Submit order placeholder</p>
     </div>
   );
