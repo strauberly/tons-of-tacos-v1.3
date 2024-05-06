@@ -2,6 +2,14 @@
 
 ---
 
+-- 5 May 2024 --
+
+- Cart total placeholder replaced and cart appears to be correctly tallying the total for items in cart.
+- Adjusting a cart items quantity displays a button for updating the cart, which updates the total.
+  - Continuing on with bug hunting in cart component logic that may prevent cart from accurately being portrayed.
+
+---
+
 -- 1 May 2024 --
 
 - Cart now displays conditionally according to if there is anything in the cart or not.

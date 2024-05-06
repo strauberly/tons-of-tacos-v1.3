@@ -4,7 +4,7 @@
   position: fixed;
   justify-self: right;
   top: 3.75vw;
-  left: 19.25vw;
+  left: 5.25vw;
   width: fit-content;
   background-color: var(--background-color);
   border: var(--border-color) solid 2px;
@@ -14,7 +14,7 @@
   list-style-type: none;
   display: grid;
   gap: 1vw;
-  grid-template-columns: repeat(5, minmax(12rem, 50%));
+  grid-template-columns: repeat(6, minmax(12rem, 50%));
   align-items: center;
   margin: 1vw;
   padding-left: 2vw;
