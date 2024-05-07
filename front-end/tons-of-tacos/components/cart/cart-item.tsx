@@ -65,6 +65,7 @@ export default function CartItem(props: {
             cartItem={props.itemName}
             updatedItemQuantity={quantity}
             updatedItemPrice={price}
+            oldQuantity={props.itemQuantity}
           />
         )}
       </div>
