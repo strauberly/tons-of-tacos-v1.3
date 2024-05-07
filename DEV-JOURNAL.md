@@ -2,6 +2,16 @@
 
 ---
 
+-- 7 May 2024 --
+
+- Cart badge now reflects updated cart quantity when updating a cart item quantity.
+  - Still need:
+    - install quantity checks and alerts.
+    - check if item already in cart when clicking add to cart and if so display alert to click cart icon and alter quantities there.
+    - remove item from cart if quantity zero.
+
+---
+
 -- 5 May 2024 --
 
 - Cart total placeholder replaced and cart appears to be correctly tallying the total for items in cart.
