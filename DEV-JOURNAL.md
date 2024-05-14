@@ -2,6 +2,13 @@
 
 ---
 
+-- 9 May 2024 --
+
+- Continuing bug hunt in cart update functions.
+  - Appears part of what is happening is quantity selector is not fully recognizing itself as a separate instance (similar to early issues discovered with our radio buttons for size selector; each item in the list holding same place in memory). Will research solution used in radio component and analyze if help with current issues.
+
+---
+
 -- 7 May 2024 --
 
 - Cart badge now reflects updated cart quantity when updating a cart item quantity.

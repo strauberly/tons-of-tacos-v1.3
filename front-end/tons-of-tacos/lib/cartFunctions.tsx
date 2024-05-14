@@ -1,3 +1,15 @@
+import cartItem from "@/components/cart/cart-item";
+
+export function CreateCart() {
+  const cart: CartItem[] = [];
+  if (
+    typeof window !== "undefined" &&
+    !sessionStorage.getItem("tons-of-tacos-cart")
+  ) {
+    sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(cart));
+  }
+}
+
 export async function AddItemToCart(
   itemName: string,
   quantity: number,
@@ -18,6 +30,16 @@ export async function AddItemToCart(
   sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(newCart));
 }
 
+export function RemoveCartItem(itemName: string) {
+  const updatedCart = GetCart().filter(
+    (cartItem) => cartItem.itemName != itemName
+  );
+  sessionStorage.removeItem("tons-of-tacos-cart");
+  sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(updatedCart));
+  // console.log(cart.toString());
+  // return upDatedCart;
+}
+
 export function GetCart() {
   let oldCart: CartItem[] = [];
   if (typeof window !== "undefined") {
@@ -35,37 +57,20 @@ export async function GetCartQuantity() {
   return quantity;
 }
 
-export function UpdateCartItemQuantity(
+// update cart
+//  takes an array of cart items and rewrite session storage
+//  then get cart quantity and set context back in component
+export function UpdateCartItem(
   itemName: string,
   newQuantity: number,
   newPrice: string
 ) {
   const updatedCart = GetCart();
-  let cartItemIndex = updatedCart.findIndex(
-    (cartItem) => (cartItem.itemName = itemName)
-  );
+  let cartItemIndex = updatedCart.findIndex((cartItem) => {
+    return (cartItem.itemName = itemName);
+  });
   updatedCart[cartItemIndex].quantity = newQuantity;
   updatedCart[cartItemIndex].price = newPrice;
   sessionStorage.removeItem("tons-of-tacos-cart");
   sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(updatedCart));
-}
-
-export function RemoveCartItem(itemName: string) {
-  const upDatedCart = GetCart().filter(
-    (cartItem) => cartItem.itemName != itemName
-  );
-  sessionStorage.removeItem("tons-of-tacos-cart");
-  sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(upDatedCart));
-  // console.log(cart.toString());
-  // return upDatedCart;
-}
-
-export function CreateCart() {
-  const cart: CartItem[] = [];
-  if (
-    typeof window !== "undefined" &&
-    !sessionStorage.getItem("tons-of-tacos-cart")
-  ) {
-    sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(cart));
-  }
 }
