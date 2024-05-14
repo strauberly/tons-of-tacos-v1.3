@@ -1,7 +1,9 @@
 "use client";
 
 import { useCartContext } from "@/context/cart-context";
+
 import { GetCart, GetCartQuantity, UpdateCart } from "@/lib/cartFunctions";
+
 import { useEffect } from "react";
 
 export default function Update(props: {
@@ -29,6 +31,12 @@ export default function Update(props: {
   // set cart with new cart
   // update cart function, wipe old cart write new cart >> pass cart context
 
+  // let cartItemIndex = newCart.findIndex((cartItem) => {
+  //   return (cartItem.itemName = props.cartItem);
+  // });
+
+  // newCart[cartItemIndex].quantity = props.updatedItemQuantity;
+
   // useEffect(() => {
   //   async function updateQuantity() {
   //     setCartQuantity(await GetCartQuantity());
@@ -50,16 +58,12 @@ export default function Update(props: {
     setCartQuantity(newQuantity);
   };
 
-  return (
-    <button
-      onClick={() => [
-        updateCartItem(),
-        updateQuantity(),
+  // useEffect(() => {
+  //   setCart(newCart);
+  //   setCartQuantity(GetCart().length);
+  // }, [newCart, setCart, setCartQuantity]);
 
-        // setCartQuantity(GetCart().length),
-      ]}
-    >
-      Update
-    </button>
+  return (
+    <button onClick={() => [updateCartItem(), updateQuantity()]}>Update</button>
   );
 }
