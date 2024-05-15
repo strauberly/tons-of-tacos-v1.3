@@ -4,6 +4,7 @@ import CartItem from "./cart-item";
 import { useDisplayContext } from "@/context/display-context";
 import { useCartContext } from "@/context/cart-context";
 import { SetStateAction, useEffect, useRef, useState } from "react";
+import { json } from "stream/consumers";
 
 export default function Cart() {
   const { setShowCart } = useDisplayContext();
@@ -56,6 +57,7 @@ export default function Cart() {
       </ul>
 
       <p className={classes.total}>Total: $ {calcTotal().toFixed(2)}</p>
+      <p>{JSON.stringify(cart)}</p>
       <p>Submit order placeholder</p>
     </div>
   );

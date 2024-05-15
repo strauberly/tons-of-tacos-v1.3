@@ -1,3 +1,15 @@
+import cartItem from "@/components/cart/cart-item";
+
+export function CreateCart() {
+  const cart: CartItem[] = [];
+  if (
+    typeof window !== "undefined" &&
+    !sessionStorage.getItem("tons-of-tacos-cart")
+  ) {
+    sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(cart));
+  }
+}
+
 export async function AddItemToCart(
   itemName: string,
   quantity: number,
@@ -16,6 +28,16 @@ export async function AddItemToCart(
   newCart.push(cartItem);
   sessionStorage.removeItem("tons-of-tacos-cart");
   sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(newCart));
+}
+
+export function RemoveCartItem(itemName: string) {
+  const updatedCart = GetCart().filter(
+    (cartItem) => cartItem.itemName != itemName
+  );
+  sessionStorage.removeItem("tons-of-tacos-cart");
+  sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(updatedCart));
+  // console.log(cart.toString());
+  // return upDatedCart;
 }
 
 export function GetCart() {
@@ -38,24 +60,4 @@ export async function GetCartQuantity() {
 export function UpdateCart(cart: CartItem[]) {
   sessionStorage.removeItem("tons-of-tacos-cart");
   sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(cart));
-}
-
-export function RemoveCartItem(itemName: string) {
-  const upDatedCart = GetCart().filter(
-    (cartItem) => cartItem.itemName != itemName
-  );
-  sessionStorage.removeItem("tons-of-tacos-cart");
-  sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(upDatedCart));
-  // console.log(cart.toString());
-  // return upDatedCart;
-}
-
-export function CreateCart() {
-  const cart: CartItem[] = [];
-  if (
-    typeof window !== "undefined" &&
-    !sessionStorage.getItem("tons-of-tacos-cart")
-  ) {
-    sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(cart));
-  }
 }
