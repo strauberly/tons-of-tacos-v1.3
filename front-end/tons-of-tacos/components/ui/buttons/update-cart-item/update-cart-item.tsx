@@ -5,6 +5,7 @@ import { useCartContext } from "@/context/cart-context";
 import { GetCart, GetCartQuantity, UpdateCart } from "@/lib/cartFunctions";
 
 import { useEffect } from "react";
+import CartQuantityChange from "../../animations/cart-quantity-change";
 
 export default function Update(props: {
   cartItem: string;
@@ -12,7 +13,14 @@ export default function Update(props: {
   updatedItemPrice: string;
   oldQuantity: number;
 }) {
-  const { cart, setCart, setCartQuantity, cartQuantity } = useCartContext();
+  const {
+    cart,
+    setCart,
+    setCartQuantity,
+    cartQuantity,
+    setItemQuantityChanged,
+    itemQuantityChanged,
+  } = useCartContext();
 
   const newCart = cart;
 
@@ -63,7 +71,25 @@ export default function Update(props: {
   //   setCartQuantity(GetCart().length);
   // }, [newCart, setCart, setCartQuantity]);
 
+  useEffect(() => {
+    if (props.oldQuantity != props.updatedItemQuantity) {
+      setItemQuantityChanged(true);
+    }
+  }, [props.oldQuantity, props.updatedItemQuantity, setItemQuantityChanged]);
+
   return (
-    <button onClick={() => [updateCartItem(), updateQuantity()]}>Update</button>
+    <div>
+      {itemQuantityChanged && (
+        <button
+          onClick={() => [
+            updateCartItem(),
+            updateQuantity(),
+            setItemQuantityChanged(false),
+          ]}
+        >
+          Update
+        </button>
+      )}
+    </div>
   );
 }

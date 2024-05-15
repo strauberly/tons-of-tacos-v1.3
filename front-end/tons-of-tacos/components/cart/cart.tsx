@@ -57,7 +57,6 @@ export default function Cart() {
       </ul>
 
       <p className={classes.total}>Total: $ {calcTotal().toFixed(2)}</p>
-      <p>{JSON.stringify(cart)}</p>
       <p>Submit order placeholder</p>
     </div>
   );
