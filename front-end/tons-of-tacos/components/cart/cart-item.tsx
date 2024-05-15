@@ -4,6 +4,7 @@ import QuantitySelector from "../menu/menu-items/quantity-selector/quantity-sele
 import classes from "./cart-item.module.css";
 import RemoveFromCart from "../ui/buttons/remove-from-cart/remove-from-cart";
 import Update from "../ui/buttons/update-cart-item/update-cart-item";
+import { useCartContext } from "@/context/cart-context";
 
 export default function CartItem(props: {
   itemName: string;
@@ -12,7 +13,8 @@ export default function CartItem(props: {
   itemPrice: string;
 }) {
   const [quantity, setQuantity] = useState(props.itemQuantity);
-  const [quantityChanged, setQuantityChanged] = useState(false);
+  // const [quantityChanged, setQuantityChanged] = useState(false);
+  const { itemQuantityChanged, setItemQuantityChanged } = useCartContext();
   // this will be changed to get quantity from item stowed in cart
   // const itemQuantity: number = 1;
 
@@ -43,11 +45,11 @@ export default function CartItem(props: {
 
   console.log(props.itemPrice);
 
-  useEffect(() => {
-    if (quantity != props.itemQuantity) {
-      setQuantityChanged(true);
-    }
-  }, [props.itemQuantity, quantity]);
+  // useEffect(() => {
+  //   if (quantity != props.itemQuantity) {
+  //     setItemQuantityChanged(true);
+  //   }
+  // }, [props.itemQuantity, quantity, setItemQuantityChanged]);
 
   return (
     <li className={classes.item}>
@@ -59,16 +61,14 @@ export default function CartItem(props: {
         decrement={decrement}
       />
       <p className={classes.price}> ${price}</p>
-      <div>
-        {quantityChanged && (
-          <Update
-            cartItem={props.itemName}
-            updatedItemQuantity={quantity}
-            updatedItemPrice={price}
-            oldQuantity={props.itemQuantity}
-          />
-        )}
-      </div>
+
+      <Update
+        cartItem={props.itemName}
+        updatedItemQuantity={quantity}
+        updatedItemPrice={price}
+        oldQuantity={props.itemQuantity}
+      />
+
       <RemoveFromCart
         cartItem={props.itemName}
         cartItemQuantity={props.itemQuantity}

@@ -2,11 +2,13 @@
 
 ---
 
+-- 15 May 2024 --
+
+- Logic in place for displaying update button only if a cart items quantity has been changed. Working towards ensuring update button is only displayed for item that has changed and not every item.
+
 -- 13 May 2024 --
 
 - Located bug that was consistently overwriting the first item in the cart with the updated cart item and preserving the old details of the altered cart item. This has been rectified and cart is now correctly allowing for cart items to have their quantity altered and the prices and cart quantity badge are reflective of those changes.
-
-- Re-implemented quantity limiters.
 
 ---
 
