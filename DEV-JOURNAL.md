@@ -2,6 +2,10 @@
 
 ---
 
+-- 16 May 2024 --
+
+- Cart now correctly only displays update button only when the quantity for a cart item has been changed and only for that cart item.
+
 -- 15 May 2024 --
 
 - Logic in place for displaying update button only if a cart items quantity has been changed. Working towards ensuring update button is only displayed for item that has changed and not every item.
