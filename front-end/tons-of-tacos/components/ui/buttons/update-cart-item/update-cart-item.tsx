@@ -4,7 +4,7 @@ import { useCartContext } from "@/context/cart-context";
 
 import { GetCart, GetCartQuantity, UpdateCart } from "@/lib/cartFunctions";
 
-import { useEffect } from "react";
+import { useEffect, useId, useState } from "react";
 import CartQuantityChange from "../../animations/cart-quantity-change";
 
 export default function Update(props: {
@@ -18,11 +18,13 @@ export default function Update(props: {
     setCart,
     setCartQuantity,
     cartQuantity,
-    setItemQuantityChanged,
-    itemQuantityChanged,
+    // setItemQuantityChanged,
+    // itemQuantityChanged,
   } = useCartContext();
 
   const newCart = cart;
+
+  const [itemQuantityChanged, setItemQuantityChanged] = useState(false);
 
   const updateCartItem = () => {
     let cartItemIndex = newCart.findIndex(
@@ -71,11 +73,20 @@ export default function Update(props: {
   //   setCartQuantity(GetCart().length);
   // }, [newCart, setCart, setCartQuantity]);
 
+  // useEffect(() => {
+  //   if (props.oldQuantity != props.updatedItemQuantity) {
+  //     setItemQuantityChanged(true);
+  //   }
+  // }, [props.oldQuantity, props.updatedItemQuantity, setItemQuantityChanged]);
+
+  //   if (props.oldQuantity != props.updatedItemQuantity) {
+  //     setItemQuantityChanged(true);
+
   useEffect(() => {
     if (props.oldQuantity != props.updatedItemQuantity) {
       setItemQuantityChanged(true);
     }
-  }, [props.oldQuantity, props.updatedItemQuantity, setItemQuantityChanged]);
+  }, [props.oldQuantity, props.updatedItemQuantity]);
 
   return (
     <div>
