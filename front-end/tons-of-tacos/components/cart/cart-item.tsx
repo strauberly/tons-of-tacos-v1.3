@@ -14,7 +14,7 @@ export default function CartItem(props: {
 }) {
   const [quantity, setQuantity] = useState(props.itemQuantity);
   // const [quantityChanged, setQuantityChanged] = useState(false);
-  const { itemQuantityChanged, setItemQuantityChanged } = useCartContext();
+  // const { itemQuantityChanged, setItemQuantityChanged } = useCartContext();
   // this will be changed to get quantity from item stowed in cart
   // const itemQuantity: number = 1;
 
@@ -24,6 +24,12 @@ export default function CartItem(props: {
 
   const increment = () => {
     setQuantity(quantity + 1);
+    if (quantity >= 10) {
+      setQuantity(10);
+      alert(
+        "The limit for this item is 10. If you need more please give us a call so we can try to accommodate your order. Thanks!"
+      );
+    }
   };
 
   const decrement = () => {

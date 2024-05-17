@@ -2,6 +2,10 @@
 
 ---
 
+-- 17 May 2024 --
+
+- Quantity of any cart item is now correctly limited to 10.
+
 -- 16 May 2024 --
 
 - Cart now correctly only displays update button only when the quantity for a cart item has been changed and only for that cart item.
