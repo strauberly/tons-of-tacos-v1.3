@@ -9,6 +9,7 @@
 - Cart quantity badge updates accordingly.
 - Improved on cart display logic.
 - Cart component ready for refactor.
+- Cart components and functions scrubbed for outdated code and comments.
 
 ---
 

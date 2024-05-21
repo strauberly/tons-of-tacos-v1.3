@@ -19,15 +19,10 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
 
   const { setCart, cartQuantity } = useCartContext();
 
-  // function conditionalCart() {
-  //   cartQuantity < 1 ? setShowCart(false) : setShowCart(true);
-  // }
-
   useEffect(() => {
     setMenuCategories(menuOptions.menuOptions);
     setCart(GetCart());
-    // cartQuantity < 1 ? setShowCart(false) : setShowCart(true);
-    // conditionalCart()
+
     if (cartQuantity <= 0) {
       setShowCart(false);
     }
@@ -73,7 +68,6 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
       <div>
         {showCart && (
           <AnimatePresence>
-            {/* <DropDown>{cartQuantity > 0 && <Cart />}</DropDown> */}
             <DropDown>
               <Cart />
             </DropDown>

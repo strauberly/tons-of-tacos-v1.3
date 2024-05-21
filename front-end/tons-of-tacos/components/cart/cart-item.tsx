@@ -14,31 +14,16 @@ export default function CartItem(props: {
   itemPrice: string;
 }) {
   const [quantity, setQuantity] = useState(props.itemQuantity);
-  const { setCart, cart, cartQuantity, setCartQuantity } = useCartContext();
-  // const [quantityChanged, setQuantityChanged] = useState(false);
-  // const { itemQuantityChanged, setItemQuantityChanged } = useCartContext();
-  // this will be changed to get quantity from item stowed in cart
-  // const itemQuantity: number = 1;
-
-  // const [price, setPrice] = useState(parseInt(props.itemPrice));
-
-  // let price = props.itemPrice;
+  const { setCart, cartQuantity, setCartQuantity } = useCartContext();
 
   const increment = () => {
     if (quantity >= 10) {
-      // setQuantity(10);
       alert(
         "The limit for this item is 10. If you need more please give us a call so we can try to accommodate your order. Thanks!"
       );
     } else {
       setQuantity(quantity + 1);
     }
-    // if (cart.length >= 20) {
-    //   alert(
-    //     "Your order has grown to a fair size. The current maximum is 20 items. Please contact us before adding anything else. This will ensure we can make your order happen today. You can also remove items from your cart. Thank you!"
-    //   );
-    // } else {
-    // }
   };
 
   const decrement = () => {
@@ -59,18 +44,6 @@ export default function CartItem(props: {
   }
 
   const price = calcPrice().toFixed(2);
-
-  // const price: number =
-  //   parseInt(props.itemPrice) -
-  //   (parseInt(props.itemPrice) / props.itemQuantity) * quantity;
-
-  console.log(props.itemPrice);
-
-  // useEffect(() => {
-  //   if (quantity != props.itemQuantity) {
-  //     setItemQuantityChanged(true);
-  //   }
-  // }, [props.itemQuantity, quantity, setItemQuantityChanged]);
 
   return (
     <li className={classes.item}>
@@ -96,7 +69,4 @@ export default function CartItem(props: {
       />
     </li>
   );
-}
-function setCart(arg0: any) {
-  throw new Error("Function not implemented.");
 }

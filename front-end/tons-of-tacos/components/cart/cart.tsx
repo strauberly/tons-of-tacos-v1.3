@@ -20,15 +20,9 @@ export default function Cart() {
     return total;
   }
 
-  // setCart(GetCart());
-  // const [newCart, setNewCart] = useState<CartItem[]>([]);
-
   useEffect(() => {
-    // cart.current = GetCart();
     setCart(GetCart());
   }, [setCart]);
-
-  // setCart(GetCart());
 
   return (
     <div
