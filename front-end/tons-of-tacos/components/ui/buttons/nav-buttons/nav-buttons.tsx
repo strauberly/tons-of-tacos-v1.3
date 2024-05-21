@@ -19,13 +19,18 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
 
   const { setCart, cartQuantity } = useCartContext();
 
-  function conditionalCart() {
-    cartQuantity < 1 ? setShowCart(false) : setShowCart(true);
-  }
+  // function conditionalCart() {
+  //   cartQuantity < 1 ? setShowCart(false) : setShowCart(true);
+  // }
 
   useEffect(() => {
     setMenuCategories(menuOptions.menuOptions);
     setCart(GetCart());
+    // cartQuantity < 1 ? setShowCart(false) : setShowCart(true);
+    // conditionalCart()
+    if (cartQuantity <= 0) {
+      setShowCart(false);
+    }
   }, [
     cartQuantity,
     menuOptions.menuOptions,
@@ -45,9 +50,12 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
         >
           <MenuIcon />
         </button>
+
         <button
           className={classes.cartButton}
-          onMouseEnter={() => setShowCart(true)}
+          onMouseEnter={() => {
+            if (cartQuantity > 0) setShowCart(true);
+          }}
           onMouseLeave={() => setShowCart(false)}
         >
           <CartIcon />
@@ -65,7 +73,10 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
       <div>
         {showCart && (
           <AnimatePresence>
-            <DropDown>{cartQuantity > 0 && <Cart />}</DropDown>
+            {/* <DropDown>{cartQuantity > 0 && <Cart />}</DropDown> */}
+            <DropDown>
+              <Cart />
+            </DropDown>
           </AnimatePresence>
         )}
       </div>

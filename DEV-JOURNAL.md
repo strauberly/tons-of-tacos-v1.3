@@ -2,6 +2,16 @@
 
 ---
 
+-- 20 May 2024 --
+
+- Cart items now display an alert when their quantity would exceed the current limit of 10 or if their new quantity would exceed the cart limit of 20 total items.
+- Cart item now removed from cart if quantity selected is 0.
+- Cart quantity badge updates accordingly.
+- Improved on cart display logic.
+- Cart component ready for refactor.
+
+---
+
 -- 17 May 2024 --
 
 - Quantity of any cart item is now correctly limited to 10.
@@ -10,9 +20,13 @@
 
 - Cart now correctly only displays update button only when the quantity for a cart item has been changed and only for that cart item.
 
+---
+
 -- 15 May 2024 --
 
 - Logic in place for displaying update button only if a cart items quantity has been changed. Working towards ensuring update button is only displayed for item that has changed and not every item.
+
+---
 
 -- 13 May 2024 --
 

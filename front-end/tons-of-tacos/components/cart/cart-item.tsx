@@ -5,6 +5,7 @@ import classes from "./cart-item.module.css";
 import RemoveFromCart from "../ui/buttons/remove-from-cart/remove-from-cart";
 import Update from "../ui/buttons/update-cart-item/update-cart-item";
 import { useCartContext } from "@/context/cart-context";
+import { GetCart, RemoveCartItem } from "@/lib/cartFunctions";
 
 export default function CartItem(props: {
   itemName: string;
@@ -13,6 +14,7 @@ export default function CartItem(props: {
   itemPrice: string;
 }) {
   const [quantity, setQuantity] = useState(props.itemQuantity);
+  const { setCart, cart, cartQuantity, setCartQuantity } = useCartContext();
   // const [quantityChanged, setQuantityChanged] = useState(false);
   // const { itemQuantityChanged, setItemQuantityChanged } = useCartContext();
   // this will be changed to get quantity from item stowed in cart
@@ -23,17 +25,30 @@ export default function CartItem(props: {
   // let price = props.itemPrice;
 
   const increment = () => {
-    setQuantity(quantity + 1);
     if (quantity >= 10) {
-      setQuantity(10);
+      // setQuantity(10);
       alert(
         "The limit for this item is 10. If you need more please give us a call so we can try to accommodate your order. Thanks!"
       );
+    } else {
+      setQuantity(quantity + 1);
     }
+    // if (cart.length >= 20) {
+    //   alert(
+    //     "Your order has grown to a fair size. The current maximum is 20 items. Please contact us before adding anything else. This will ensure we can make your order happen today. You can also remove items from your cart. Thank you!"
+    //   );
+    // } else {
+    // }
   };
 
   const decrement = () => {
     setQuantity(quantity - 1);
+    if (quantity <= 1) {
+      RemoveCartItem(props.itemName);
+      setCart(GetCart());
+      setCartQuantity(cartQuantity - props.itemQuantity);
+    } else {
+    }
   };
 
   function calcPrice() {
@@ -81,4 +96,7 @@ export default function CartItem(props: {
       />
     </li>
   );
+}
+function setCart(arg0: any) {
+  throw new Error("Function not implemented.");
 }

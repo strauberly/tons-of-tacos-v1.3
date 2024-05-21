@@ -59,15 +59,15 @@ export default function Update(props: {
   const updateQuantity = () => {
     newQuantity = cartQuantity - props.oldQuantity;
     newQuantity += props.updatedItemQuantity;
-    // if (newQuantity > 15) {
-    //   alert(
-    //     "Your order has grown to a fair size. The current maximum is 15 items. Please contact us before adding anything else. This will ensure we can make your order happen today. You can also remove items from your cart. Thank you!"
-    //   );
-    //   setLargeOrder(true);
-    // } else {
-    setCartQuantity(newQuantity);
+    if (newQuantity > 20) {
+      alert(
+        "Your order has grown to a fair size. The current maximum is 20 items. Please contact us before adding anything else. This will ensure we can make your order happen today. You can also remove items from your cart. Thank you!"
+      );
+      // setLargeOrder(true);
+    } else {
+      setCartQuantity(newQuantity);
+    }
   };
-
   // useEffect(() => {
   //   setCart(newCart);
   //   setCartQuantity(GetCart().length);
