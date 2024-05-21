@@ -1,8 +1,8 @@
 "use client";
 import classes from "./add-to-cart.module.css";
 import { useCartContext } from "@/context/cart-context";
-import { AddItemToCart, GetCart } from "@/lib/cartFunctions";
-import { useState } from "react";
+import { AddItemToCart } from "@/lib/cartFunctions";
+import { useEffect, useState } from "react";
 
 export default function AddToCart(props: {
   itemName: string;
@@ -13,8 +13,10 @@ export default function AddToCart(props: {
   expander: () => void;
 }) {
   const [largeOrder, setLargeOrder] = useState(false);
+  const [itemInCart, setItemInCart] = useState(false);
 
-  const { cartQuantity, setCartQuantity, setItemsInCart } = useCartContext();
+  const { cartQuantity, setCartQuantity, setItemsInCart, cart } =
+    useCartContext();
 
   let newQuantity = 0;
 
@@ -30,18 +32,39 @@ export default function AddToCart(props: {
     }
   };
 
+  useEffect(() => {
+    cart.forEach((cartItem) => {
+      props.itemName === cartItem.itemName && props.size === cartItem.size
+        ? setItemInCart(true)
+        : setItemInCart(false);
+    });
+  }, [cart, itemInCart, props.itemName, props.size]);
+
   return (
     <button
       disabled={largeOrder === true ? true : false}
       className={classes.add}
-      onClick={() => [
-        quantity(),
-        setItemsInCart(true),
-        setLargeOrder(false),
-        props.quantitySelector(),
-        props.expander(),
-        AddItemToCart(props.itemName, props.quantity, props.size, props.price),
-      ]}
+      onClick={() => {
+        if (!itemInCart) {
+          [
+            quantity(),
+            setItemsInCart(true),
+            setLargeOrder(false),
+            props.quantitySelector(),
+            props.expander(),
+            AddItemToCart(
+              props.itemName,
+              props.quantity,
+              props.size,
+              props.price
+            ),
+          ];
+        } else {
+          alert(
+            `${props.itemName} is already in your cart. Select the cart icon to view your order and change quantities.`
+          );
+        }
+      }}
     >
       Add To Cart
     </button>
