@@ -2,6 +2,13 @@
 
 ---
 
+-- 21 May 2024 --
+
+- Application now checks if a menu item is already a cart item and if so, alerts the user to the status and recommends action through an alert.
+-
+
+---
+
 -- 20 May 2024 --
 
 - Cart items now display an alert when their quantity would exceed the current limit of 10 or if their new quantity would exceed the cart limit of 20 total items.
