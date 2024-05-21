@@ -36,8 +36,6 @@ export function RemoveCartItem(itemName: string) {
   );
   sessionStorage.removeItem("tons-of-tacos-cart");
   sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(updatedCart));
-  // console.log(cart.toString());
-  // return upDatedCart;
 }
 
 export function GetCart() {

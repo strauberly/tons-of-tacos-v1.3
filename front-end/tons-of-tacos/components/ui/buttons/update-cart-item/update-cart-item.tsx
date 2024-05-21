@@ -2,10 +2,9 @@
 
 import { useCartContext } from "@/context/cart-context";
 
-import { GetCart, GetCartQuantity, UpdateCart } from "@/lib/cartFunctions";
+import { UpdateCart } from "@/lib/cartFunctions";
 
-import { useEffect, useId, useState } from "react";
-import CartQuantityChange from "../../animations/cart-quantity-change";
+import { useEffect, useState } from "react";
 
 export default function Update(props: {
   cartItem: string;
@@ -13,14 +12,7 @@ export default function Update(props: {
   updatedItemPrice: string;
   oldQuantity: number;
 }) {
-  const {
-    cart,
-    setCart,
-    setCartQuantity,
-    cartQuantity,
-    // setItemQuantityChanged,
-    // itemQuantityChanged,
-  } = useCartContext();
+  const { cart, setCart, setCartQuantity, cartQuantity } = useCartContext();
 
   const newCart = cart;
 
@@ -38,22 +30,6 @@ export default function Update(props: {
     UpdateCart(newCart);
   };
 
-  // set cart with new cart
-  // update cart function, wipe old cart write new cart >> pass cart context
-
-  // let cartItemIndex = newCart.findIndex((cartItem) => {
-  //   return (cartItem.itemName = props.cartItem);
-  // });
-
-  // newCart[cartItemIndex].quantity = props.updatedItemQuantity;
-
-  // useEffect(() => {
-  //   async function updateQuantity() {
-  //     setCartQuantity(await GetCartQuantity());
-  //   }
-  //   updateQuantity();
-  // }, [setCartQuantity]);
-
   let newQuantity = 0;
 
   const updateQuantity = () => {
@@ -63,24 +39,10 @@ export default function Update(props: {
       alert(
         "Your order has grown to a fair size. The current maximum is 20 items. Please contact us before adding anything else. This will ensure we can make your order happen today. You can also remove items from your cart. Thank you!"
       );
-      // setLargeOrder(true);
     } else {
       setCartQuantity(newQuantity);
     }
   };
-  // useEffect(() => {
-  //   setCart(newCart);
-  //   setCartQuantity(GetCart().length);
-  // }, [newCart, setCart, setCartQuantity]);
-
-  // useEffect(() => {
-  //   if (props.oldQuantity != props.updatedItemQuantity) {
-  //     setItemQuantityChanged(true);
-  //   }
-  // }, [props.oldQuantity, props.updatedItemQuantity, setItemQuantityChanged]);
-
-  //   if (props.oldQuantity != props.updatedItemQuantity) {
-  //     setItemQuantityChanged(true);
 
   useEffect(() => {
     if (props.oldQuantity != props.updatedItemQuantity) {
