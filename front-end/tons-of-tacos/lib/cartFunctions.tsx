@@ -11,12 +11,14 @@ export function CreateCart() {
 }
 
 export async function AddItemToCart(
+  id: string,
   itemName: string,
   quantity: number,
   size: string,
   price: string
 ) {
   const cartItem: CartItem = {
+    id: id,
     itemName: itemName,
     quantity: quantity,
     size: size,
@@ -30,10 +32,8 @@ export async function AddItemToCart(
   sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(newCart));
 }
 
-export function RemoveCartItem(itemName: string) {
-  const updatedCart = GetCart().filter(
-    (cartItem) => cartItem.itemName != itemName
-  );
+export function RemoveCartItem(id: string) {
+  const updatedCart = GetCart().filter((cartItem) => cartItem.id != id);
   sessionStorage.removeItem("tons-of-tacos-cart");
   sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(updatedCart));
 }

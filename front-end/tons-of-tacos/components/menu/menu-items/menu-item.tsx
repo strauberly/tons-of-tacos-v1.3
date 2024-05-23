@@ -8,6 +8,7 @@ import MoreIcon from "@/components/ui/icons/more-icon";
 import AddToCart from "../../ui/buttons/add-to-cart/add-to-cart";
 
 export default function MenuItem(props: {
+  id: string;
   itemName: string;
   category: string;
   imageUrl: string;
@@ -122,6 +123,7 @@ export default function MenuItem(props: {
         <p className={classes.price}>${price}</p>
 
         <AddToCart
+          id={`${props.itemName}_${size}`}
           itemName={props.itemName}
           quantity={quantity}
           size={size}

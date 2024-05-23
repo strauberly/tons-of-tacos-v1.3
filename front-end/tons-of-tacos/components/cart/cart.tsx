@@ -40,7 +40,8 @@ export default function Cart() {
           }) => (
             // make this be cart item name + a random
             <CartItem
-              key={cartItem.itemName}
+              key={`${cartItem.itemName}_${cartItem.size}`}
+              id={`${cartItem.itemName}_${cartItem.size}`}
               itemName={cartItem.itemName}
               itemQuantity={cartItem.quantity}
               size={cartItem.size}
