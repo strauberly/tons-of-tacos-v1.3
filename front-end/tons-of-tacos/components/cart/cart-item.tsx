@@ -8,6 +8,7 @@ import { useCartContext } from "@/context/cart-context";
 import { GetCart, RemoveCartItem } from "@/lib/cartFunctions";
 
 export default function CartItem(props: {
+  id: string;
   itemName: string;
   itemQuantity: number;
   size: string;
@@ -64,7 +65,8 @@ export default function CartItem(props: {
       />
 
       <RemoveFromCart
-        cartItem={props.itemName}
+        id={props.id}
+        // cartItem={props.itemName}
         cartItemQuantity={props.itemQuantity}
       />
     </li>

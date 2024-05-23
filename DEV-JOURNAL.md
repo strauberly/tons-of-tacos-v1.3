@@ -2,14 +2,19 @@
 
 ---
 
--- 21 May 2024 --
+-- 23 May 2024 --
 
-- Application now checks if a menu item is already a cart item and if so, alerts the user to the status and recommends action through an alert.
--
+- Application now correctly using a unique key for menu and cart items and only the cart item selected is removed when clicking the remove button.
+- Working out a bug where item already in cart alert is being triggered when adding an item to cart after all cart items have been removed.
 
 ---
 
--- 20 May 2024 --
+-- 21 May 2024 --
+
+- Application now checks if a menu item is already a cart item and if so, alerts the user to the status and recommends action through an alert.
+- ***
+
+  -- 20 May 2024 --
 
 - Cart items now display an alert when their quantity would exceed the current limit of 10 or if their new quantity would exceed the cart limit of 20 total items.
 - Cart item now removed from cart if quantity selected is 0.

@@ -13,6 +13,7 @@ type MenuItem = {
 };
 
 type CartItem = {
+  id: string;
   itemName: string;
   quantity: number;
   size: string;

@@ -5,6 +5,7 @@ import { AddItemToCart } from "@/lib/cartFunctions";
 import { useEffect, useState } from "react";
 
 export default function AddToCart(props: {
+  id: string;
   itemName: string;
   quantity: number;
   size: string;
@@ -53,6 +54,7 @@ export default function AddToCart(props: {
             props.quantitySelector(),
             props.expander(),
             AddItemToCart(
+              props.id,
               props.itemName,
               props.quantity,
               props.size,

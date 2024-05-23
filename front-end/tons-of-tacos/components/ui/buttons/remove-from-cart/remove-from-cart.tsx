@@ -2,20 +2,25 @@
 import { GetCart, RemoveCartItem } from "@/lib/cartFunctions";
 import classes from "./remove-from-cart.module.css";
 import { useCartContext } from "@/context/cart-context";
+import { useEffect } from "react";
 
 export default function Remove(props: {
-  cartItem: string;
+  id: string;
+  // cartItem: string;
   cartItemQuantity: number;
 }) {
   const { setCart, cartQuantity, setCartQuantity } = useCartContext();
-  const cartItem = props.cartItem;
+  // const cartItem = props.cartItem;
+  useEffect(() => {
+    setCart(GetCart());
+  });
 
   return (
     <button
       className={classes.remove}
       onClick={() => [
-        RemoveCartItem(cartItem),
-        setCart(GetCart()),
+        RemoveCartItem(props.id),
+        // setCart(GetCart()),
         setCartQuantity(cartQuantity - props.cartItemQuantity),
       ]}
     >
