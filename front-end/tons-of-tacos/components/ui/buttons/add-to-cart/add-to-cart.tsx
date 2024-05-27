@@ -41,7 +41,6 @@ export default function AddToCart(props: {
   };
 
   useEffect(() => {
-    // setCart(GetCart());
     cart.forEach((cartItem) => {
       props.id === cartItem.id ? setItemInCart(true) : setItemInCart(false);
     });
