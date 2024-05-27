@@ -1,7 +1,7 @@
 "use client";
 import classes from "./add-to-cart.module.css";
 import { useCartContext } from "@/context/cart-context";
-import { AddItemToCart } from "@/lib/cartFunctions";
+import { AddItemToCart, GetCart } from "@/lib/cartFunctions";
 import { useEffect, useState } from "react";
 
 export default function AddToCart(props: {
@@ -16,16 +16,16 @@ export default function AddToCart(props: {
   const [largeOrder, setLargeOrder] = useState(false);
   const [itemInCart, setItemInCart] = useState(false);
 
-  const { cartQuantity, setCartQuantity, setItemsInCart, cart } =
+  const { cartQuantity, setCartQuantity, setItemsInCart, cart, setCart } =
     useCartContext();
 
   let newQuantity = 0;
 
   const quantity = () => {
     newQuantity = cartQuantity + props.quantity;
-    if (newQuantity > 20) {
+    if (newQuantity > 30) {
       alert(
-        "Your order has grown to a fair size. The current maximum is 20 items. Please contact us before adding anything else. This will ensure we can make your order happen today. You can also remove items from your cart. Thank you!"
+        "Your order has grown to a fair size. The current maximum is 30 items. Please contact us before adding anything else. This will ensure we can make your order happen today. You can also remove items from your cart. Thank you!"
       );
       setLargeOrder(true);
     } else {
@@ -33,20 +33,27 @@ export default function AddToCart(props: {
     }
   };
 
-  useEffect(() => {
+  const checkCartItem = () => {
+    setCart(GetCart());
     cart.forEach((cartItem) => {
-      props.itemName === cartItem.itemName && props.size === cartItem.size
-        ? setItemInCart(true)
-        : setItemInCart(false);
+      props.id === cartItem.id ? setItemInCart(true) : setItemInCart(false);
     });
-  }, [cart, itemInCart, props.itemName, props.size]);
+  };
+
+  useEffect(() => {
+    // setCart(GetCart());
+    cart.forEach((cartItem) => {
+      props.id === cartItem.id ? setItemInCart(true) : setItemInCart(false);
+    });
+  }, [cart, props.id, setCart]);
 
   return (
     <button
       disabled={largeOrder === true ? true : false}
       className={classes.add}
       onClick={() => {
-        if (!itemInCart) {
+        checkCartItem();
+        if (itemInCart === false) {
           [
             quantity(),
             setItemsInCart(true),

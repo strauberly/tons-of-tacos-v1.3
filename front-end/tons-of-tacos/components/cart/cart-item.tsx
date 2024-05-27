@@ -30,7 +30,7 @@ export default function CartItem(props: {
   const decrement = () => {
     setQuantity(quantity - 1);
     if (quantity <= 1) {
-      RemoveCartItem(props.itemName);
+      RemoveCartItem(props.id);
       setCart(GetCart());
       setCartQuantity(cartQuantity - props.itemQuantity);
     } else {
