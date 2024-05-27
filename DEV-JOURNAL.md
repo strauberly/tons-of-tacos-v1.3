@@ -2,6 +2,13 @@
 
 ---
 
+-- 27 May 2024 --
+
+- File cleanup.
+- Update quantity selector styling to be more responsive.
+
+---
+
 -- 24 May 2024 --
 
 - Logic for determining if a menu item is already in the cart moved from use effect loop to a separate function executed on click of add to cart button.
