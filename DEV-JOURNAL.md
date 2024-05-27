@@ -2,6 +2,13 @@
 
 ---
 
+-- 24 May 2024 --
+
+- Logic for determining if a menu item is already in the cart moved from use effect loop to a separate function executed on click of add to cart button.
+- Already in cart alert bug resolved.
+
+---
+
 -- 23 May 2024 --
 
 - Application now correctly using a unique key for menu and cart items and only the cart item selected is removed when clicking the remove button.
