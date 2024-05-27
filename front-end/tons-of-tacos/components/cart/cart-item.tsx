@@ -64,11 +64,7 @@ export default function CartItem(props: {
         oldQuantity={props.itemQuantity}
       />
 
-      <RemoveFromCart
-        id={props.id}
-        // cartItem={props.itemName}
-        cartItemQuantity={props.itemQuantity}
-      />
+      <RemoveFromCart id={props.id} cartItemQuantity={props.itemQuantity} />
     </li>
   );
 }
