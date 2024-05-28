@@ -48,7 +48,7 @@ export default function CartItem(props: {
 
   return (
     <li className={classes.item}>
-      <p>{props.itemName}</p>
+      <p className={classes.itemName}>{props.itemName}</p>
       <p className={classes.size}> {props.size}</p>
       <QuantitySelector
         value={quantity}

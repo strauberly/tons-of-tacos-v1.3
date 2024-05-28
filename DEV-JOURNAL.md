@@ -6,6 +6,7 @@
 
 - File cleanup.
 - Update quantity selector styling to be more responsive.
+- Beginning to update the styling for the cart.
 
 ---
 
