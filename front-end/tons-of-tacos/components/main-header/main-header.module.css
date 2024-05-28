@@ -63,6 +63,18 @@
   transition: 0.3s ease;
 }
 
+.cart {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  border: var(--border-color) solid 2px;
+  width: fit-content;
+  top: 100%;
+  right: 0vw;
+  justify-content: center;
+}
+
 /* medium devices */
 @media (max-width: 1400px) {
   .home {
@@ -125,5 +137,12 @@
   .menu ul li {
     background-color: var(--border-color);
     padding: 4vw 100%;
+  }
+}
+
+/*cart resize*/
+@media (max-width: 815px) {
+  .cart {
+    width: 100%;
   }
 }

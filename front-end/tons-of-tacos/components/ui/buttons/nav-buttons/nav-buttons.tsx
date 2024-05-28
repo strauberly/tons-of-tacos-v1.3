@@ -65,7 +65,7 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
           </AnimatePresence>
         )}
       </div>
-      <div>
+      <div className={classes.cart}>
         {showCart && (
           <AnimatePresence>
             <DropDown>

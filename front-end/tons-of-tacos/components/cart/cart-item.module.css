@@ -2,6 +2,7 @@
   font-size: clamp(0.9rem, 0.9vw, 0.9vw);
   white-space: nowrap;
   max-width: 100%;
+  justify-content: left;
 }
 
 .size {
@@ -10,4 +11,8 @@
 
 .price {
   justify-content: center;
+}
+
+.itemName {
+  margin-left: 3vw;
 }
