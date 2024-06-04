@@ -2,6 +2,12 @@
 
 ---
 
+-- 4 Jun 2024 --
+
+- Cart padding and positioning improvements.
+
+---
+
 -- 3 Jun 2024 --
 
 - Improvements in cart styling. Components of cart item arranged in grid.

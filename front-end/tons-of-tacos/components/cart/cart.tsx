@@ -30,7 +30,7 @@ export default function Cart() {
       onMouseEnter={() => [setShowCart(true)]}
       onMouseLeave={() => setShowCart(false)}
     >
-      <ul>
+      <ul className={classes.cart}>
         {cart.map(
           (cartItem: {
             itemName: string;
