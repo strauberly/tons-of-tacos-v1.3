@@ -73,6 +73,7 @@
   top: 100%;
   right: 0vw;
   justify-content: center;
+  justify-items: center;
 }
 
 /* medium devices */

@@ -2,6 +2,13 @@
 
 ---
 
+-- 3 Jun 2024 --
+
+- Improvements in cart styling. Components of cart item arranged in grid.
+- Improved spacing of elements in quantity selector.
+
+---
+
 -- 27 May 2024 --
 
 - File cleanup.

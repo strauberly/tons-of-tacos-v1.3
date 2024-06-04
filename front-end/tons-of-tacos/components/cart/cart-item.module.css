@@ -2,7 +2,9 @@
   font-size: clamp(0.9rem, 0.9vw, 0.9vw);
   white-space: nowrap;
   max-width: 100%;
-  justify-content: left;
+  justify-content: center;
+  border-bottom: solid var(--border-color);
+  padding-bottom: 1vw;
 }
 
 .size {
@@ -13,6 +15,6 @@
   justify-content: center;
 }
 
-.itemName {
+/* .itemName {
   margin-left: 3vw;
-}
+} */

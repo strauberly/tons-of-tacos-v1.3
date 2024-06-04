@@ -6,6 +6,8 @@ import { UpdateCart } from "@/lib/cartFunctions";
 
 import { useEffect, useState } from "react";
 
+import classes from "./update-cart-item.module.css";
+
 export default function Update(props: {
   cartItem: string;
   updatedItemQuantity: number;
@@ -54,6 +56,7 @@ export default function Update(props: {
     <div>
       {itemQuantityChanged && (
         <button
+          className={classes.update}
           onClick={() => [
             updateCartItem(),
             updateQuantity(),
