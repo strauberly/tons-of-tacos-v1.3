@@ -5,6 +5,7 @@
 -- 4 Jun 2024 --
 
 - Cart padding and positioning improvements.
+- General layout of cart as imagined.
 
 ---
 

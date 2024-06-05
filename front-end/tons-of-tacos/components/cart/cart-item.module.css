@@ -3,7 +3,7 @@
   /* white-space: nowrap; */
   max-width: 100%;
   /* justify-content: left; */
-  border-bottom: solid var(--border-color);
+  border-bottom: solid var(--border-color) 1px;
   padding-bottom: 1vw;
 }
 
