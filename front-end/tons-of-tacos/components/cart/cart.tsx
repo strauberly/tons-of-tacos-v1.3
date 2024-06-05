@@ -52,7 +52,7 @@ export default function Cart() {
       </ul>
 
       <p className={classes.total}>Total: $ {calcTotal().toFixed(2)}</p>
-      <p>Submit order placeholder</p>
+      <p className={classes.checkout}>Submit order placeholder</p>
     </div>
   );
 }

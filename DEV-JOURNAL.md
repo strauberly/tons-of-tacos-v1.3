@@ -2,6 +2,12 @@
 
 ---
 
+-- 5 Jun 2024 --
+
+- Implemented y overflow for cart.
+
+---
+
 -- 4 Jun 2024 --
 
 - Cart padding and positioning improvements.

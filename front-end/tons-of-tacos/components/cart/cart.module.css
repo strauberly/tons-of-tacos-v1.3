@@ -9,6 +9,9 @@
   width: fit-content;
   background-color: var(--background-color); */
   border: var(--border-color) solid 2px;
+  height: 90vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 /* .cart ul { */
@@ -44,3 +47,7 @@
 /* .size {
   color: var(--user-selected-color);
 } */
+
+.checkout {
+  margin-bottom: 3vw;
+}
