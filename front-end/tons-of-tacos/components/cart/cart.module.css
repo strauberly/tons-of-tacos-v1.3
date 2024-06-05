@@ -1,5 +1,5 @@
-/* .cart {
-  display: flex;
+.cart {
+  /* display: flex;
   flex-direction: column;
   position: fixed;
   align-content: right;
@@ -7,16 +7,17 @@
   left: 53vw;
   right: 5%;
   width: fit-content;
-  background-color: var(--background-color);
+  background-color: var(--background-color); */
   border: var(--border-color) solid 2px;
-} */
-
-.cart ul {
-  justify-content: left;
-  /* padding: 1rem; */
 }
 
+/* .cart ul { */
+/* justify-content: left; */
+/* padding: 1rem; */
+/* } */
+
 .cart ul li {
+  /* border: var(--border-color) solid 1px; */
   list-style-type: none;
   display: grid;
   /* gap: 1vw; */
