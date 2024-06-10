@@ -1,8 +1,6 @@
 .item {
   font-size: clamp(0.9rem, 0.9vw, 0.9vw);
-  /* white-space: nowrap; */
   max-width: 100%;
-  /* justify-content: left; */
   border-bottom: solid var(--border-color) 1px;
   padding-bottom: 1vw;
 }
@@ -10,11 +8,3 @@
 .size {
   color: var(--user-selected-color);
 }
-
-/* .price {
-  justify-content: right;
-} */
-
-/* .itemName {
-  margin-left: 3vw;
-} */
