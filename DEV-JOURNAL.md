@@ -2,6 +2,12 @@
 
 ---
 
+-- 10 Jun 2024 --
+
+- Removal of unused css.
+
+---
+
 -- 5 Jun 2024 --
 
 - Implemented y overflow for cart.
