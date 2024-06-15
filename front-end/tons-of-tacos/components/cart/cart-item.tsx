@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import QuantitySelector from "../menu/menu-items/quantity-selector/quantity-selector";
 
 import classes from "./cart-item.module.css";

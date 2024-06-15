@@ -3,12 +3,11 @@ import { GetCart } from "@/lib/cartFunctions";
 import CartItem from "./cart-item";
 import { useDisplayContext } from "@/context/display-context";
 import { useCartContext } from "@/context/cart-context";
-import { SetStateAction, useEffect, useRef, useState } from "react";
-import { json } from "stream/consumers";
+import { useEffect } from "react";
 
 export default function Cart() {
   const { setShowCart } = useDisplayContext();
-  const { cart, setCart, cartQuantity } = useCartContext();
+  const { cart, setCart } = useCartContext();
 
   let total = 0;
 

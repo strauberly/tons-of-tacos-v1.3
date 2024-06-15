@@ -37,9 +37,9 @@ export default function Update(props: {
   const updateQuantity = () => {
     newQuantity = cartQuantity - props.oldQuantity;
     newQuantity += props.updatedItemQuantity;
-    if (newQuantity > 20) {
+    if (newQuantity > 30) {
       alert(
-        "Your order has grown to a fair size. The current maximum is 20 items. Please contact us before adding anything else. This will ensure we can make your order happen today. You can also remove items from your cart. Thank you!"
+        "Your order has grown to a fair size. The current maximum is 30 items. Please contact us before adding anything else. This will ensure we can make your order happen today. You can also remove items from your cart. Thank you!"
       );
     } else {
       setCartQuantity(newQuantity);

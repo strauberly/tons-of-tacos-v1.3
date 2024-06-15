@@ -48,7 +48,7 @@ export default function AddToCart(props: {
     });
   }, [cart, props.id]);
 
-  const checkCartItem = () => {
+  const addCartItem = () => {
     checkItem();
     if (itemInCart === false) {
       quantity();
@@ -81,13 +81,11 @@ export default function AddToCart(props: {
 
   return (
     <>
-      <p>{`${itemRemoved}`}</p>
-      <p>{`${itemInCart}`}</p>
       <button
         disabled={largeOrder === true ? true : false}
         className={classes.add}
         onClick={() => {
-          checkCartItem();
+          addCartItem();
         }}
       >
         Add To Cart
