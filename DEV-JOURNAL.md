@@ -2,6 +2,15 @@
 
 ---
 
+-- 15 Jun 2024 --
+
+- Cart now correctly checks if menu item has already been added to the cart and if so instructs user to use the cart in order to adjust quantities and remove items first. Functionality achieved through creation of additional parameter to be checked in cart context.
+  - item in cart ? if not add to cart, if so alert user.
+  - item removed from cart ? then item not in cart.
+- Set Item Removed also implemented in cart quantity selector allowing for correct flow of functionality if cart item is removed due to setting the cart item quantity to zero.
+
+---
+
 -- 10 Jun 2024 --
 
 - Removal of unused css.

@@ -15,6 +15,8 @@ interface ContextProps {
   setCartQuantity: Dispatch<SetStateAction<number>>;
   itemsInCart: boolean;
   setItemsInCart: Dispatch<SetStateAction<boolean>>;
+  itemRemoved: boolean;
+  setItemRemoved: Dispatch<SetStateAction<boolean>>;
 }
 
 const CartContext = createContext<ContextProps>({
@@ -24,12 +26,15 @@ const CartContext = createContext<ContextProps>({
   setCartQuantity: () => {},
   itemsInCart: false,
   setItemsInCart: () => {},
+  itemRemoved: false,
+  setItemRemoved: () => {},
 });
 
 export const CartContextProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<[] | CartItem[]>([]);
   const [cartQuantity, setCartQuantity] = useState(0);
   const [itemsInCart, setItemsInCart] = useState(false);
+  const [itemRemoved, setItemRemoved] = useState(false);
 
   return (
     <CartContext.Provider
@@ -40,6 +45,8 @@ export const CartContextProvider = ({ children }: { children: ReactNode }) => {
         setCartQuantity,
         itemsInCart,
         setItemsInCart,
+        itemRemoved,
+        setItemRemoved,
       }}
     >
       {children}

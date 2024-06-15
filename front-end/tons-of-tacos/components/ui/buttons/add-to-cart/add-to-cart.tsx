@@ -2,7 +2,7 @@
 import classes from "./add-to-cart.module.css";
 import { useCartContext } from "@/context/cart-context";
 import { AddItemToCart, GetCart } from "@/lib/cartFunctions";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function AddToCart(props: {
   id: string;
@@ -16,8 +16,15 @@ export default function AddToCart(props: {
   const [largeOrder, setLargeOrder] = useState(false);
   const [itemInCart, setItemInCart] = useState(false);
 
-  const { cartQuantity, setCartQuantity, setItemsInCart, cart, setCart } =
-    useCartContext();
+  const {
+    cartQuantity,
+    setCartQuantity,
+    setItemsInCart,
+    cart,
+    setCart,
+    itemRemoved,
+    setItemRemoved,
+  } = useCartContext();
 
   let newQuantity = 0;
 
@@ -33,48 +40,58 @@ export default function AddToCart(props: {
     }
   };
 
-  const checkCartItem = () => {
-    setCart(GetCart());
+  const checkItem = useCallback(() => {
     cart.forEach((cartItem) => {
-      props.id === cartItem.id ? setItemInCart(true) : setItemInCart(false);
+      if (props.id == cartItem.id) {
+        setItemInCart(true);
+      }
     });
+  }, [cart, props.id]);
+
+  const checkCartItem = () => {
+    checkItem();
+    if (itemInCart === false) {
+      quantity();
+      setItemsInCart(true);
+      setLargeOrder(false);
+      props.quantitySelector();
+      props.expander();
+      AddItemToCart(
+        props.id,
+        props.itemName,
+        props.quantity,
+        props.size,
+        props.price
+      );
+      setCart(GetCart());
+    } else {
+      alert(
+        `${props.itemName} is already in your cart. Select the cart icon to view your order and change quantities.`
+      );
+    }
   };
 
   useEffect(() => {
-    cart.forEach((cartItem) => {
-      props.id === cartItem.id ? setItemInCart(true) : setItemInCart(false);
-    });
-  }, [cart, props.id, setCart]);
+    checkItem();
+    if (itemRemoved && itemInCart === true) {
+      setItemInCart(false);
+      setItemRemoved(false);
+    }
+  }, [checkItem, itemInCart, itemRemoved, setItemRemoved]);
 
   return (
-    <button
-      disabled={largeOrder === true ? true : false}
-      className={classes.add}
-      onClick={() => {
-        checkCartItem();
-        if (itemInCart === false) {
-          [
-            quantity(),
-            setItemsInCart(true),
-            setLargeOrder(false),
-            props.quantitySelector(),
-            props.expander(),
-            AddItemToCart(
-              props.id,
-              props.itemName,
-              props.quantity,
-              props.size,
-              props.price
-            ),
-          ];
-        } else {
-          alert(
-            `${props.itemName} is already in your cart. Select the cart icon to view your order and change quantities.`
-          );
-        }
-      }}
-    >
-      Add To Cart
-    </button>
+    <>
+      <p>{`${itemRemoved}`}</p>
+      <p>{`${itemInCart}`}</p>
+      <button
+        disabled={largeOrder === true ? true : false}
+        className={classes.add}
+        onClick={() => {
+          checkCartItem();
+        }}
+      >
+        Add To Cart
+      </button>
+    </>
   );
 }

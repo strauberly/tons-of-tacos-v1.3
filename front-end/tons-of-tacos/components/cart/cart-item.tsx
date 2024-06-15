@@ -15,7 +15,8 @@ export default function CartItem(props: {
   itemPrice: string;
 }) {
   const [quantity, setQuantity] = useState(props.itemQuantity);
-  const { setCart, cartQuantity, setCartQuantity } = useCartContext();
+  const { setCart, cartQuantity, setCartQuantity, setItemRemoved } =
+    useCartContext();
 
   const increment = () => {
     if (quantity >= 10) {
@@ -31,6 +32,7 @@ export default function CartItem(props: {
     setQuantity(quantity - 1);
     if (quantity <= 1) {
       RemoveCartItem(props.id);
+      setItemRemoved(true);
       setCart(GetCart());
       setCartQuantity(cartQuantity - props.itemQuantity);
     } else {
