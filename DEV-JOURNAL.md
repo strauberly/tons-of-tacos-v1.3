@@ -9,6 +9,8 @@
   - item removed from cart ? then item not in cart.
 - Set Item Removed also implemented in cart quantity selector allowing for correct flow of functionality if cart item is removed due to setting the cart item quantity to zero.
 
+- Refactored for elimination of unnecessary code.
+
 ---
 
 -- 10 Jun 2024 --
