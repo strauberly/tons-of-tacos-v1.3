@@ -4,6 +4,7 @@ import CartItem from "./cart-item";
 import { useDisplayContext } from "@/context/display-context";
 import { useCartContext } from "@/context/cart-context";
 import { useEffect } from "react";
+import Checkout from "../ui/buttons/checkout/checkout-button";
 
 export default function Cart() {
   const { setShowCart } = useDisplayContext();
@@ -51,7 +52,7 @@ export default function Cart() {
       </ul>
 
       <p className={classes.total}>Total: $ {calcTotal().toFixed(2)}</p>
-      <p className={classes.checkout}>Submit order placeholder</p>
+      <Checkout />
     </div>
   );
 }

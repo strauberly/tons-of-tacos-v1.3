@@ -22,9 +22,5 @@
   font-family: "Quatl";
   color: var(--attention-color);
   font-size: clamp(1rem, 1vw, 1vw);
-  margin-bottom: 1rem;
-}
-
-.checkout {
-  margin-bottom: 3vw;
+  margin-top: 3vw;
 }

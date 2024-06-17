@@ -2,6 +2,13 @@
 
 ---
 
+-- 17 Jun 2024 --
+
+- Created files for checkout component and implemented styling. Still needs to programmed for functionality.
+- Project updated on github.
+
+---
+
 -- 15 Jun 2024 --
 
 - Cart now correctly checks if menu item has already been added to the cart and if so instructs user to use the cart in order to adjust quantities and remove items first. Functionality achieved through creation of additional parameter to be checked in cart context.
