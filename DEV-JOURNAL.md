@@ -2,6 +2,12 @@
 
 ---
 
+-- 19 Jun 2024 --
+
+- Customer info form linked to checkout button in cart component to render conditionally. Next steps will include fleshing out and styling form.
+
+---
+
 -- 17 Jun 2024 --
 
 - Created files for checkout component and implemented styling. Still needs to programmed for functionality.

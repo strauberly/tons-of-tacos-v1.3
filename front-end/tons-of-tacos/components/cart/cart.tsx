@@ -5,9 +5,10 @@ import { useDisplayContext } from "@/context/display-context";
 import { useCartContext } from "@/context/cart-context";
 import { useEffect } from "react";
 import Checkout from "../ui/buttons/checkout/checkout-button";
+import CustomerInfoForm from "../ui/forms/customer-info-form";
 
 export default function Cart() {
-  const { setShowCart } = useDisplayContext();
+  const { setShowCart, showCustomerInfoForm } = useDisplayContext();
   const { cart, setCart } = useCartContext();
 
   let total = 0;
@@ -25,34 +26,36 @@ export default function Cart() {
   }, [setCart]);
 
   return (
-    <div
-      className={classes.cart}
-      onMouseEnter={() => [setShowCart(true)]}
-      onMouseLeave={() => setShowCart(false)}
-    >
-      <ul>
-        {cart.map(
-          (cartItem: {
-            itemName: string;
-            quantity: number;
-            size: string;
-            price: string;
-          }) => (
-            // make this be cart item name + a random
-            <CartItem
-              key={`${cartItem.itemName}_${cartItem.size}`}
-              id={`${cartItem.itemName}_${cartItem.size}`}
-              itemName={cartItem.itemName}
-              itemQuantity={cartItem.quantity}
-              size={cartItem.size}
-              itemPrice={cartItem.price}
-            />
-          )
-        )}
-      </ul>
+    <>
+      {showCustomerInfoForm && <CustomerInfoForm />}
+      <div
+        className={classes.cart}
+        onMouseEnter={() => [setShowCart(true)]}
+        onMouseLeave={() => setShowCart(false)}
+      >
+        <ul>
+          {cart.map(
+            (cartItem: {
+              itemName: string;
+              quantity: number;
+              size: string;
+              price: string;
+            }) => (
+              <CartItem
+                key={`${cartItem.itemName}_${cartItem.size}`}
+                id={`${cartItem.itemName}_${cartItem.size}`}
+                itemName={cartItem.itemName}
+                itemQuantity={cartItem.quantity}
+                size={cartItem.size}
+                itemPrice={cartItem.price}
+              />
+            )
+          )}
+        </ul>
 
-      <p className={classes.total}>Total: $ {calcTotal().toFixed(2)}</p>
-      <Checkout />
-    </div>
+        <p className={classes.total}>Total: $ {calcTotal().toFixed(2)}</p>
+        <Checkout />
+      </div>
+    </>
   );
 }

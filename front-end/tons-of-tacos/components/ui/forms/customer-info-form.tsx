@@ -1,13 +1,13 @@
-import Card from "../cards/card";
+import { useDisplayContext } from "@/context/display-context";
 
 export default function CustomerInfoForm() {
   return (
-    <>
-      <p>instructions placeholder</p>
-      <p>first name place holder</p>
-      <p>email placeholder</p>
+    <div>
+      <p>first name placeholder</p>
+      <p>last name placeholder</p>
       <p>phone placeholder</p>
-      <p> submit placeholder</p>
-    </>
+      <p>email placeholder</p>
+      <p>submit info button placeholder</p>
+    </div>
   );
 }

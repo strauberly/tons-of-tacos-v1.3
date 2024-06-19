@@ -14,6 +14,8 @@ interface ContextProps {
   setShowMenu: Dispatch<SetStateAction<boolean>>;
   showCart: boolean;
   setShowCart: Dispatch<SetStateAction<boolean>>;
+  showCustomerInfoForm: boolean;
+  setShowCustomerInfoForm: Dispatch<SetStateAction<boolean>>;
 }
 
 const DisplayContext = createContext<ContextProps>({
@@ -21,6 +23,8 @@ const DisplayContext = createContext<ContextProps>({
   setShowMenu: () => {},
   showCart: false,
   setShowCart: () => {},
+  showCustomerInfoForm: false,
+  setShowCustomerInfoForm: () => {},
 });
 
 export const DisplayContextProvider = ({
@@ -30,6 +34,7 @@ export const DisplayContextProvider = ({
 }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const [showCustomerInfoForm, setShowCustomerInfoForm] = useState(false);
 
   return (
     <DisplayContext.Provider
@@ -38,6 +43,8 @@ export const DisplayContextProvider = ({
         setShowMenu,
         showCart,
         setShowCart,
+        showCustomerInfoForm,
+        setShowCustomerInfoForm,
       }}
     >
       {children}
