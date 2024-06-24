@@ -25,34 +25,35 @@ export default function Cart() {
   }, [setCart]);
 
   return (
-    <div
-      className={classes.cart}
-      onMouseEnter={() => [setShowCart(true)]}
-      onMouseLeave={() => setShowCart(false)}
-    >
-      <ul>
-        {cart.map(
-          (cartItem: {
-            itemName: string;
-            quantity: number;
-            size: string;
-            price: string;
-          }) => (
-            // make this be cart item name + a random
-            <CartItem
-              key={`${cartItem.itemName}_${cartItem.size}`}
-              id={`${cartItem.itemName}_${cartItem.size}`}
-              itemName={cartItem.itemName}
-              itemQuantity={cartItem.quantity}
-              size={cartItem.size}
-              itemPrice={cartItem.price}
-            />
-          )
-        )}
-      </ul>
+    <>
+      <div
+        className={classes.cart}
+        onMouseEnter={() => [setShowCart(true)]}
+        onMouseLeave={() => setShowCart(false)}
+      >
+        <ul>
+          {cart.map(
+            (cartItem: {
+              itemName: string;
+              quantity: number;
+              size: string;
+              price: string;
+            }) => (
+              <CartItem
+                key={`${cartItem.itemName}_${cartItem.size}`}
+                id={`${cartItem.itemName}_${cartItem.size}`}
+                itemName={cartItem.itemName}
+                itemQuantity={cartItem.quantity}
+                size={cartItem.size}
+                itemPrice={cartItem.price}
+              />
+            )
+          )}
+        </ul>
 
-      <p className={classes.total}>Total: $ {calcTotal().toFixed(2)}</p>
-      <Checkout />
-    </div>
+        <p className={classes.total}>Total: $ {calcTotal().toFixed(2)}</p>
+        <Checkout />
+      </div>
+    </>
   );
 }

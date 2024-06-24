@@ -12,10 +12,12 @@ import { useEffect } from "react";
 import Cart from "@/components/cart/cart";
 import { useCartContext } from "@/context/cart-context";
 import { GetCart } from "@/lib/cartFunctions";
+import CustomerInfoForm from "../../forms/customer-info-form";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { setMenuCategories } = useMenuCategoryContext();
-  const { showMenu, setShowMenu, showCart, setShowCart } = useDisplayContext();
+  const { showMenu, setShowMenu, showCart, setShowCart, showCustomerInfoForm } =
+    useDisplayContext();
 
   const { setCart, cartQuantity } = useCartContext();
 
@@ -74,6 +76,7 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
           </AnimatePresence>
         )}
       </div>
+      {showCustomerInfoForm && <CustomerInfoForm />}
     </>
   );
 }
