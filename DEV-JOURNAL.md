@@ -2,6 +2,14 @@
 
 ---
 
+-- 24 Jun 2024 --
+
+- Customer info form moved from cart component to nav button component to aid in styling.
+
+- Began fleshing out form and removing placeholders.
+
+---
+
 -- 19 Jun 2024 --
 
 - Customer info form linked to checkout button in cart component to render conditionally. Next steps will include fleshing out and styling form.

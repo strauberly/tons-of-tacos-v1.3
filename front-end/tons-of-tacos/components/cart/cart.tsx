@@ -5,10 +5,9 @@ import { useDisplayContext } from "@/context/display-context";
 import { useCartContext } from "@/context/cart-context";
 import { useEffect } from "react";
 import Checkout from "../ui/buttons/checkout/checkout-button";
-import CustomerInfoForm from "../ui/forms/customer-info-form";
 
 export default function Cart() {
-  const { setShowCart, showCustomerInfoForm } = useDisplayContext();
+  const { setShowCart } = useDisplayContext();
   const { cart, setCart } = useCartContext();
 
   let total = 0;
@@ -27,7 +26,6 @@ export default function Cart() {
 
   return (
     <>
-      {showCustomerInfoForm && <CustomerInfoForm />}
       <div
         className={classes.cart}
         onMouseEnter={() => [setShowCart(true)]}
