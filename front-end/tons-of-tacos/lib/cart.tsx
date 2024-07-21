@@ -59,3 +59,9 @@ export function UpdateCart(cart: CartItem[]) {
   sessionStorage.removeItem("tons-of-tacos-cart");
   sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(cart));
 }
+
+export function SendOrder(formData: any) {
+  // get customer info and food order and combine into required object for backend
+  let firstName = formData.firstName;
+  alert({ firstName });
+}

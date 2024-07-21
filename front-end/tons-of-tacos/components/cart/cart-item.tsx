@@ -5,7 +5,7 @@ import classes from "./cart-item.module.css";
 import RemoveFromCart from "../ui/buttons/remove-from-cart/remove-from-cart";
 import Update from "../ui/buttons/update-cart-item/update-cart-item";
 import { useCartContext } from "@/context/cart-context";
-import { GetCart, RemoveCartItem } from "@/lib/cartFunctions";
+import { GetCart, RemoveCartItem } from "@/lib/cart";
 
 export default function CartItem(props: {
   id: string;

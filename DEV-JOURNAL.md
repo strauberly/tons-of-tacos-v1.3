@@ -2,6 +2,21 @@
 
 ---
 
+-- 21 Jul 2024 --
+
+- Finally getting back to work on project by capturing form data.
+- Day job has been insane past month. So many boats and so many crew to train! Anyways, feels good to get back into it.
+
+---
+
+-- 26 Jun 2024 --
+
+- Began work on actions file. Plan is as follows:
+  - Create build order function in cart library. This will combine customer info obtained from check out form with the items stored in our cart in order to build the required order object to be submitted to api in order to place an order.
+  - Work on form validation, possibly with Zod.
+
+---
+
 -- 24 Jun 2024 --
 
 - Customer info form moved from cart component to nav button component to aid in styling.

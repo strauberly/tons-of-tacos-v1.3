@@ -1,5 +1,5 @@
 "use client";
-import { GetCart, RemoveCartItem } from "@/lib/cartFunctions";
+import { GetCart, RemoveCartItem } from "@/lib/cart";
 import classes from "./remove-from-cart.module.css";
 import { useCartContext } from "@/context/cart-context";
 import { useEffect } from "react";

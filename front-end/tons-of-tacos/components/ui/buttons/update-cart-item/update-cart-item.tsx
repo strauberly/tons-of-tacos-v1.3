@@ -2,7 +2,7 @@
 
 import { useCartContext } from "@/context/cart-context";
 
-import { UpdateCart } from "@/lib/cartFunctions";
+import { UpdateCart } from "@/lib/cart";
 
 import { useEffect, useState } from "react";
 

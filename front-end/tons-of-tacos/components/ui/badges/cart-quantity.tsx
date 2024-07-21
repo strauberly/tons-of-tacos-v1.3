@@ -1,6 +1,6 @@
 import classes from "@/components/ui/badges/cart-quantity.module.css";
 import { useCartContext } from "@/context/cart-context";
-import { CreateCart, GetCartQuantity } from "@/lib/cartFunctions";
+import { CreateCart, GetCartQuantity } from "@/lib/cart";
 import { useEffect } from "react";
 
 export default function CartQuantity() {
