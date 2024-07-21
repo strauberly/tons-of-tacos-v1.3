@@ -1,5 +1,5 @@
 import classes from "./cart.module.css";
-import { GetCart } from "@/lib/cartFunctions";
+import { GetCart } from "@/lib/cart";
 import CartItem from "./cart-item";
 import { useDisplayContext } from "@/context/display-context";
 import { useCartContext } from "@/context/cart-context";

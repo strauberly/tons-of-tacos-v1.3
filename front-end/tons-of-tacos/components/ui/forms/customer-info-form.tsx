@@ -1,25 +1,61 @@
-import { useDisplayContext } from "@/context/display-context";
+"use client";
+
+import { getCustomerInfo } from "@/lib/actions";
+import { SendOrder } from "@/lib/cart";
+import { useFormStatus, useFormState } from "react-dom";
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <button type="submit" aria-disabled={pending}>
+      Submit
+    </button>
+  );
+}
 
 export default function CustomerInfoForm() {
   // styling should be conditional, at x media query change from slide out to drop down
+
+  const initialState = { message: "" };
+
+  const [state, formAction] = useFormState(getCustomerInfo, initialState);
+
   return (
     <>
-      <form>
+      <form action={formAction}>
         <label>name</label>
-        <input type="text" name="first name" placeholder="Enter First Name" />
-        <input type="text" name="last name" placeholder="Enter Last Name" />
+        <input
+          type="text"
+          id="first_name"
+          name="first_name"
+          placeholder="Enter First Name"
+          required
+        />
+        <input
+          type="text"
+          id="last_name"
+          name="last_name"
+          placeholder="Enter Last Name"
+          required
+        />
         <label>phone</label>
-        <input type="text" name="phone" placeholder="Enter Phone Number" />
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          placeholder="Enter Phone Number"
+          required
+        />
         <label>email</label>
-        <input type="text" name="e-mail" placeholder="Enter E-Mail Address" />
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Enter E-Mail Address"
+          required
+        />
+        <SubmitButton />
       </form>
-      {/* <div>
-        <p>first name placeholder</p>
-        <p>last name placeholder</p>
-        <p>phone placeholder</p>
-        <p>email placeholder</p>
-        <p>submit info button placeholder</p>
-      </div> */}
     </>
   );
 }

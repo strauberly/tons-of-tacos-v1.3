@@ -1,7 +1,7 @@
 "use client";
 import classes from "./add-to-cart.module.css";
 import { useCartContext } from "@/context/cart-context";
-import { AddItemToCart, GetCart } from "@/lib/cartFunctions";
+import { AddItemToCart, GetCart } from "@/lib/cart";
 import { useCallback, useEffect, useState } from "react";
 
 export default function AddToCart(props: {
