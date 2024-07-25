@@ -43,7 +43,7 @@ export default function CustomerInfoForm() {
           type="text"
           id="phone"
           name="phone"
-          placeholder="Enter Phone Number"
+          placeholder="Enter Phone Number (ie 555.555.5555)"
           required
         />
         <label>email</label>

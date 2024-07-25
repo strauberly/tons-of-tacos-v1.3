@@ -2,6 +2,13 @@
 
 ---
 
+-- 24 Jul 2024 --
+
+- Research continues into building forms in Next.js and form validation.
+  Believe I have found a pattern I appreciate with Zod and have begun implementation.
+
+---
+
 -- 21 Jul 2024 --
 
 - Finally getting back to work on project by capturing form data.
