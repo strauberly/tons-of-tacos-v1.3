@@ -11,9 +11,9 @@ export default function Remove(props: {
   const { cartQuantity, setCartQuantity, setCart, setItemRemoved } =
     useCartContext();
 
-  useEffect(() => {
-    setCart(GetCart());
-  });
+  // useEffect(() => {
+  //   setCart(GetCart());
+  // });
 
   return (
     <button
