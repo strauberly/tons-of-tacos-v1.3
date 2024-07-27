@@ -62,6 +62,6 @@ export function UpdateCart(cart: CartItem[]) {
 
 export function SendOrder(formData: any) {
   // get customer info and food order and combine into required object for backend
-  let firstName = formData.firstName;
+  let firstName = formData.get("first_name");
   alert({ firstName });
 }

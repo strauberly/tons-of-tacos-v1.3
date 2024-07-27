@@ -2,6 +2,13 @@
 
 ---
 
+-- 27 Jul 2024 --
+
+- Getting much closer.
+  - Difficulties were arising from determining a type from the filter for items in the error messages. Appears to be resolved. Callback statement is creating issues currently. The dependency array is based on errors being returned, if there are no errors this result in a state undefined that can not be read. Will be diving into this at a later time.
+
+---
+
 -- 24 Jul 2024 --
 
 - Research continues into building forms in Next.js and form validation.
