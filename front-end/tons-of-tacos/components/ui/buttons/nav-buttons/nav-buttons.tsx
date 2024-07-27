@@ -13,10 +13,7 @@ import Cart from "@/components/cart/cart";
 import { useCartContext } from "@/context/cart-context";
 import { GetCart } from "@/lib/cart";
 import CustomerInfoForm from "../../forms/customer-info-form";
-import getCustomerAction from "@/lib/actions";
-import GetCustomerInfoAction from "@/lib/actions";
 import CustomerInfoValidation from "@/lib/actions";
-import customerInfoValidation from "@/lib/actions";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { setMenuCategories } = useMenuCategoryContext();
