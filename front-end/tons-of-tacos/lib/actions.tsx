@@ -1,15 +1,6 @@
 import { z } from "zod";
 import { SendOrder } from "./cart";
 
-// export async function getCustomerInfo(prevState: any, formData: FormData) {
-//   console.log(`Server says hello: ${formData.get("first_name")}`);
-//   return {
-//     // let firstName = formData.get("firstName");
-//     message: `Server says hello: ${formData.get("first_name")}`,
-//     alert(${message})
-//   };
-// }
-
 export const customerInfoSchema = z.object({
   first_name: z.string().min(2, "Please enter first name."),
   last_name: z.string().min(2, "Please enter last name"),
