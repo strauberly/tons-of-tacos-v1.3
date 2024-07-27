@@ -74,14 +74,14 @@ export default function CustomerInfoForm({ action }: Props) {
 
   const findErrors = useCallback(
     (fieldName: string) => {
-      return state.errors
+      return state?.errors
         .filter((item: { path: string | string[] }) => {
           return item.path.includes(fieldName);
         })
 
         .map((item: { message: any }) => item.message);
     },
-    [state.errors]
+    [state?.errors]
   );
 
   const firstNameErrors = findErrors("first_name");
@@ -148,9 +148,9 @@ export default function CustomerInfoForm({ action }: Props) {
   // };
 
   const ErrorMessages = ({ errors }: { errors: string[] }) => {
-    if (errors.length === 0) return null;
+    if (errors?.length === 0) return null;
 
-    const text = errors.join(", ");
+    const text = errors?.join(", ");
     return <div>{text}</div>;
   };
 
