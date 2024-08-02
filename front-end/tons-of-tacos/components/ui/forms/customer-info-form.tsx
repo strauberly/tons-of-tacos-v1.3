@@ -5,6 +5,8 @@ import { useFormState, useFormStatus } from "react-dom";
 
 import type { ZodIssue } from "zod";
 
+import classes from "./customer-info-form.module.css";
+
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
@@ -50,43 +52,57 @@ export default function CustomerInfoForm({ action }: Props) {
 
   return (
     <>
-      <form action={formAction}>
-        <label>name</label>
-        <input
-          type="text"
-          id="first_name"
-          name="first_name"
-          placeholder="Enter First Name"
-          required
-        />
-        <ErrorMessages errors={firstNameErrors} />
-        <input
-          type="text"
-          id="last_name"
-          name="last_name"
-          placeholder="Enter Last Name"
-          required
-        />
-        <ErrorMessages errors={lastNameErrors} />
-        <label>phone</label>
-        <input
-          type="text"
-          id="phone"
-          name="phone"
-          placeholder="Enter Phone Number (ie 555.555.5555)"
-          required
-        />
-        <ErrorMessages errors={phoneErrors} />
-        <label>email</label>
-        <input
-          type="text"
-          id="email"
-          name="email"
-          placeholder="Enter E-Mail Address"
-          required
-        />
-        <ErrorMessages errors={emailErrors} />
-        <SubmitButton />
+      <form className={classes.form} action={formAction}>
+        {/* <p>
+          Please enter your information so that we can finalize your order and
+          let you know when it is ready.
+        </p> */}
+        <div>
+          <label className={classes.name}>Name</label>
+          <input
+            className={classes.firstName}
+            type="text"
+            id="first_name"
+            name="first_name"
+            placeholder="Enter First Name"
+            required
+          />
+          <ErrorMessages errors={firstNameErrors} />
+          <input
+            className={classes.lastName}
+            type="text"
+            id="last_name"
+            name="last_name"
+            placeholder="Enter Last Name"
+            required
+          />
+          <ErrorMessages errors={lastNameErrors} />
+        </div>
+        <div>
+          <label>Phone</label>
+          <input
+            className={classes.phone}
+            type="text"
+            id="phone"
+            name="phone"
+            placeholder="Enter Phone Number (ie 555.555.5555)"
+            required
+          />
+          <ErrorMessages errors={phoneErrors} />
+        </div>
+        <div>
+          <label>E-mail</label>
+          <input
+            className={classes.email}
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Enter E-Mail Address"
+            required
+          />
+          <ErrorMessages errors={emailErrors} />
+        </div>
+        {/* <SubmitButton /> */}
       </form>
     </>
   );

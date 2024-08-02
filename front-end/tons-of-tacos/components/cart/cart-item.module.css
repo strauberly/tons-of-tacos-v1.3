@@ -1,6 +1,6 @@
 .item {
   font-size: clamp(0.9rem, 0.9vw, 0.9vw);
-  max-width: 100%;
+  /* max-width: 100%; */
   border-bottom: solid var(--border-color) 1px;
   padding-bottom: 1vw;
 }

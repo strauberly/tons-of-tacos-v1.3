@@ -77,9 +77,9 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
           </AnimatePresence>
         )}
       </div>
-      {showCustomerInfoForm && (
+      {/* {showCustomerInfoForm && (
         <CustomerInfoForm action={CustomerInfoValidation} />
-      )}
+      )} */}
     </>
   );
 }

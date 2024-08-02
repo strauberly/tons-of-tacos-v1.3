@@ -5,6 +5,8 @@ import { useDisplayContext } from "@/context/display-context";
 import { useCartContext } from "@/context/cart-context";
 import { useEffect } from "react";
 import Checkout from "../ui/buttons/checkout/checkout-button";
+import CustomerInfoForm from "../ui/forms/customer-info-form";
+import customerInfoValidation from "@/lib/actions";
 
 export default function Cart() {
   const { setShowCart } = useDisplayContext();
@@ -52,6 +54,7 @@ export default function Cart() {
         </ul>
 
         <p className={classes.total}>Total: $ {calcTotal().toFixed(2)}</p>
+        <CustomerInfoForm action={customerInfoValidation} />
         <Checkout />
       </div>
     </>
