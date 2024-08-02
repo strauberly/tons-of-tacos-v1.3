@@ -1,6 +1,9 @@
 import { z } from "zod";
 import { SendOrder } from "./cart";
 
+function isNameValid(name: string) {}
+function isPhoneValid(phone: string) {}
+function isEmailValid(email: string) {}
 
 export const customerInfoSchema = z.object({
   first_name: z.string().min(2, "Please enter first name."),

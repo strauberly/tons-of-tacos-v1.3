@@ -7,6 +7,8 @@
 - Initial styling in place for customer info form.
 - Moved form into cart in order to enhance customer experience. Customer no longer has to click a button in order to bring up the form and enter their data separately.
 
+- Beginning work on writing my own validation for customer info form based on work done on backend for validation. While I appreciate what Zod provides, I feel like I'll have more control if I try to implement my own solution. Wish me luck!
+
 ---
 
 -- 27 Jul 2024 --
