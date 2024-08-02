@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { SendOrder } from "./cart";
 
+
 export const customerInfoSchema = z.object({
   first_name: z.string().min(2, "Please enter first name."),
   last_name: z.string().min(2, "Please enter last name"),

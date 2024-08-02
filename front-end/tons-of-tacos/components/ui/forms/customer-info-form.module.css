@@ -1,0 +1,75 @@
+/* form as grid */
+
+.form {
+  /* position: absolute; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  right: 50%;
+  left: 50%;
+  justify-content: center;
+  /* padding: 1vw; */
+  /* border: solid 2px;
+  border-color: var(--border-color); */
+  /* background-color: var(--background-color); */
+  gap: 1vw;
+  font-size: 1.25vw;
+  justify-content: center;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  /* align-items: center; */
+}
+
+.grid {
+  justify-content: center;
+  align-items: center;
+}
+
+.form div {
+  display: flex;
+  gap: 1%;
+  justify-content: center;
+  /* width: 100%; */
+  /* flex-grow: 1vw; */
+}
+.form label {
+  color: var(--interactive-color);
+  width: 4vw;
+  /* margin-right: 1vw; */
+  justify-content: left;
+}
+
+.form input {
+  font-size: 1vw;
+  text-align: center;
+  /* width: 81%; */
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+  border: 1px solid var(--border-color);
+}
+
+.form p {
+  width: max-content;
+  font-size: 0.8vw;
+}
+
+.name {
+  /* margin-right: 1.5vw; */
+}
+
+.firstName {
+  width: 40%;
+  /* margin-left: 0.6vw; */
+}
+
+.lastName {
+  width: 40%;
+}
+
+.phone {
+  width: 81%;
+}
+
+.email {
+  width: 81%;
+}

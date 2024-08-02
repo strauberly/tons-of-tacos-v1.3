@@ -2,10 +2,22 @@
 
 ---
 
+-- 2 Aug 2024 --
+
+- Initial styling in place for customer info form.
+- Moved form into cart in order to enhance customer experience. Customer no longer has to click a button in order to bring up the form and enter their data separately.
+
+---
+
 -- 27 Jul 2024 --
 
 - Getting much closer.
+
   - Difficulties were arising from determining a type from the filter for items in the error messages. Appears to be resolved. Callback statement is creating issues currently. The dependency array is based on errors being returned, if there are no errors this result in a state undefined that can not be read. Will be diving into this at a later time.
+
+  - Solved with check. Will refine down the road.
+  - Refactored to eliminate notes and irrelevant code.
+  - Beginning work on styling form.
 
 ---
 

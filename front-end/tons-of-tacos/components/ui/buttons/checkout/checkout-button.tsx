@@ -8,7 +8,7 @@ export default function Checkout() {
     <div className={classes.checkout}>
       <button
         className={classes.checkout_button}
-        onClick={() => setShowCustomerInfoForm(true)}
+        // onClick={() => setShowCustomerInfoForm(true)}
       >
         Checkout
       </button>
