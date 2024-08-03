@@ -10,8 +10,12 @@ import classes from "./customer-info-form.module.css";
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <button type="submit" aria-disabled={pending}>
-      Submit
+    <button
+      className={classes.checkoutButton}
+      type="submit"
+      aria-disabled={pending}
+    >
+      Place Order
     </button>
   );
 }
@@ -26,28 +30,40 @@ type Props = {
 export default function CustomerInfoForm({ action }: Props) {
   const [state, formAction] = useFormState(action, { errors: [] });
 
+  // const findErrors = (fieldName: string, errors: ZodIssue[]) => {
+  //   return errors
+  //     .filter((item) => {
+  //       return item.path.includes(fieldName);
+  //     })
+  //     .map((item) => item.message);
+  // };
+
   const findErrors = useCallback(
     (fieldName: string) => {
-      return state?.errors
+      return state.errors
         .filter((item: { path: string | string[] }) => {
           return item.path.includes(fieldName);
         })
 
         .map((item: { message: any }) => item.message);
     },
-    [state?.errors]
+    [state.errors]
   );
 
   const firstNameErrors = findErrors("first_name");
+  // const firstNameErrors = findErrors("first_name", state.errors);
+  // const lastNameErrors = findErrors("last_name", state.errors);
   const lastNameErrors = findErrors("last_name");
   const phoneErrors = findErrors("phone");
+  // const phoneErrors = findErrors("phone", state.errors);
   const emailErrors = findErrors("email");
+  // const emailErrors = findErrors("email", state.errors);
 
   const ErrorMessages = ({ errors }: { errors: string[] }) => {
     if (errors?.length === 0) return null;
 
-    const text = errors?.join(", ");
-    return <div>{text}</div>;
+    const text = errors.join(", ");
+    return <div className={classes.errorMessages}>{text}</div>;
   };
 
   return (
@@ -67,7 +83,6 @@ export default function CustomerInfoForm({ action }: Props) {
             placeholder="Enter First Name"
             required
           />
-          <ErrorMessages errors={firstNameErrors} />
           <input
             className={classes.lastName}
             type="text"
@@ -76,8 +91,9 @@ export default function CustomerInfoForm({ action }: Props) {
             placeholder="Enter Last Name"
             required
           />
-          <ErrorMessages errors={lastNameErrors} />
         </div>
+        <ErrorMessages errors={firstNameErrors} />
+        <ErrorMessages errors={lastNameErrors} />
         <div>
           <label>Phone</label>
           <input
@@ -88,8 +104,8 @@ export default function CustomerInfoForm({ action }: Props) {
             placeholder="Enter Phone Number (ie 555.555.5555)"
             required
           />
-          <ErrorMessages errors={phoneErrors} />
         </div>
+        <ErrorMessages errors={phoneErrors} />
         <div>
           <label>E-mail</label>
           <input
@@ -100,9 +116,9 @@ export default function CustomerInfoForm({ action }: Props) {
             placeholder="Enter E-Mail Address"
             required
           />
-          <ErrorMessages errors={emailErrors} />
         </div>
-        {/* <SubmitButton /> */}
+        <ErrorMessages errors={emailErrors} />
+        <SubmitButton />
       </form>
     </>
   );

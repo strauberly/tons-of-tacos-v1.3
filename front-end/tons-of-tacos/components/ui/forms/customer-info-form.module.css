@@ -29,6 +29,7 @@
   display: flex;
   gap: 1%;
   justify-content: center;
+  /* padding-bottom: 10vw; */
   /* width: 100%; */
   /* flex-grow: 1vw; */
 }
@@ -44,8 +45,9 @@
   text-align: center;
   /* width: 81%; */
   background-color: var(--background-color);
-  border-color: var(--border-color);
-  border: 1px solid var(--border-color);
+  /* border-color: var(--border-color); */
+  border: 1px solid var(--attention-color);
+  color: var(--user-selected-color);
 }
 
 .form p {
@@ -72,4 +74,37 @@
 
 .email {
   width: 81%;
+}
+
+/* .checkoutButton {
+  .checkout {
+    display: flex;
+    justify-content: center;
+    margin-top: 1vw;
+    margin-bottom: 3vw;
+  } */
+.checkoutButton {
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  font-family: "Quatl";
+  color: var(--interactive-color);
+  font-size: 1.75rem;
+  cursor: pointer;
+
+  justify-content: center;
+}
+
+.checkoutButton:active {
+  color: var(--user-selected-color);
+  text-shadow: 0rem 0rem 1rem aquamarine;
+  transition: 0.025s ease;
+}
+/* } */
+
+.errorMessages {
+  color: var(--attention-color);
+  font-family: var(--inter-font);
+  font-size: 1vw;
+  /* max-width: 80%; */
+  justify-content: center;
 }
