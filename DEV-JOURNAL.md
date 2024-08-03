@@ -2,6 +2,15 @@
 
 ---
 
+-- 3 Aug 2024 --
+
+- Zod is in place with the functionality desired and providing correct validation and error messages.
+- It works but only shows the error messages AFTER the form is submitted.
+- My ux goal is to have more immediate feedback for the customer if the data entered into the field isn't acceptable.
+- Going to begin working on my own solution next.
+
+---
+
 -- 2 Aug 2024 --
 
 - Initial styling in place for customer info form.
