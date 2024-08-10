@@ -2,6 +2,12 @@
 
 ---
 
+-- 10 Aug 2024 --
+
+- Refactored styling and validation for a more granular approach and elimination of zod dependency. Not dead set on this solution as it does increase the individual file sizes a bit but may break them down into smaller components and then reincorporate into the form at a later time.
+
+---
+
 -- 3 Aug 2024 --
 
 - Zod is in place with the functionality desired and providing correct validation and error messages.

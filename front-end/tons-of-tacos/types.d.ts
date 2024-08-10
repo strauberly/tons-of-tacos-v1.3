@@ -24,3 +24,7 @@ type Cart = {
   cartItems: CartItem[];
   total: number;
 };
+
+type CustomerInfoForm = {
+  name: string;
+};

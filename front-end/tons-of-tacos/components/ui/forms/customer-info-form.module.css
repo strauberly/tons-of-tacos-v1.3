@@ -1,23 +1,14 @@
-/* form as grid */
-
 .form {
-  /* position: absolute; */
   display: flex;
   flex-direction: column;
   width: 100%;
   right: 50%;
   left: 50%;
-  justify-content: center;
-  /* padding: 1vw; */
-  /* border: solid 2px;
-  border-color: var(--border-color); */
-  /* background-color: var(--background-color); */
   gap: 1vw;
   font-size: 1.25vw;
   justify-content: center;
   margin-top: 1vw;
   margin-bottom: 1vw;
-  /* align-items: center; */
 }
 
 .grid {
@@ -29,25 +20,28 @@
   display: flex;
   gap: 1%;
   justify-content: center;
-  /* padding-bottom: 10vw; */
-  /* width: 100%; */
-  /* flex-grow: 1vw; */
 }
 .form label {
   color: var(--interactive-color);
   width: 4vw;
-  /* margin-right: 1vw; */
+
   justify-content: left;
 }
 
-.form input {
+.form input,
+.form textarea {
   font-size: 1vw;
-  text-align: center;
-  /* width: 81%; */
+  text-align: left;
+
   background-color: var(--background-color);
-  /* border-color: var(--border-color); */
-  border: 1px solid var(--attention-color);
+
   color: var(--user-selected-color);
+  padding-left: 1vw;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
 }
 
 .form p {
@@ -59,9 +53,16 @@
   /* margin-right: 1.5vw; */
 }
 
-.firstName {
+.invalid {
   width: 40%;
-  /* margin-left: 0.6vw; */
+  border: 2px solid var(--attention-color);
+  border-radius: 3px;
+}
+
+.valid {
+  width: 40%;
+  border: 2px solid var(--border-color);
+  border-radius: 3px;
 }
 
 .lastName {
@@ -76,13 +77,6 @@
   width: 81%;
 }
 
-/* .checkoutButton {
-  .checkout {
-    display: flex;
-    justify-content: center;
-    margin-top: 1vw;
-    margin-bottom: 3vw;
-  } */
 .checkoutButton {
   margin-top: 1vw;
   margin-bottom: 1vw;
@@ -99,12 +93,19 @@
   text-shadow: 0rem 0rem 1rem aquamarine;
   transition: 0.025s ease;
 }
-/* } */
 
 .errorMessages {
   color: var(--attention-color);
   font-family: var(--inter-font);
   font-size: 1vw;
-  /* max-width: 80%; */
   justify-content: center;
+  margin-bottom: 0.5vw;
+  align-items: center;
+}
+
+.nameErrors {
+  flex-direction: column;
+  flex: 1vw;
+  justify-content: space-around;
+  align-items: center;
 }
