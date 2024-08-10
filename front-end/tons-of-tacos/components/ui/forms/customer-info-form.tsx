@@ -1,11 +1,12 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 
 import type { ZodIssue } from "zod";
 
 import classes from "./customer-info-form.module.css";
+import { checkName } from "@/lib/customer-form";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -29,6 +30,8 @@ type Props = {
 
 export default function CustomerInfoForm({ action }: Props) {
   const [state, formAction] = useFormState(action, { errors: [] });
+  // export default function CustomerInfoForm({ action }: Props) {
+  //   const [state, formAction] = useFormState(action, { errors: [] });
 
   // const findErrors = (fieldName: string, errors: ZodIssue[]) => {
   //   return errors
@@ -66,6 +69,10 @@ export default function CustomerInfoForm({ action }: Props) {
     return <div className={classes.errorMessages}>{text}</div>;
   };
 
+  const [firstName, setFirstName] = useState<boolean>();
+
+  setFirstName(checkName("first_name"));
+
   return (
     <>
       <form className={classes.form} action={formAction}>
@@ -76,7 +83,9 @@ export default function CustomerInfoForm({ action }: Props) {
         <div>
           <label className={classes.name}>Name</label>
           <input
-            className={classes.firstName}
+            className={`
+            ${classes.firstName} ${firstName === true ? classes.valid : " "}
+              `}
             type="text"
             id="first_name"
             name="first_name"
