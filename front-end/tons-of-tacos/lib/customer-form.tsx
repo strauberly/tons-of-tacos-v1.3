@@ -4,18 +4,10 @@ export function checkName(name: string) {
   return /^[a-z]{2,15}$/.test(name.toLowerCase().trim());
 }
 
-export async function checkPhone(phone: string) {
-  // if(){
-  //     return false;
-  // }else{
-  // return true;
-  // }
+export function checkPhone(phone: string) {
+  return /^[0-9.]{12}$/.test(phone);
 }
 
-export async function checkEmail(email: string) {
-  // if(){
-  //     return false;
-  // }else{
-  // return true;
-  // }
+export function checkEmail(email: string) {
+  return /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/.test(email);
 }
