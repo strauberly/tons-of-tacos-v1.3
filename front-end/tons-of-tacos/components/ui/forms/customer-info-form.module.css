@@ -4,7 +4,7 @@
   width: 100%;
   right: 50%;
   left: 50%;
-  gap: 1vw;
+  gap: 0.5vw;
   font-size: 1.25vw;
   justify-content: center;
   margin-top: 1vw;
@@ -20,11 +20,11 @@
   display: flex;
   gap: 1%;
   justify-content: center;
+  align-items: center;
 }
 .form label {
   color: var(--interactive-color);
   width: 4vw;
-
   justify-content: left;
 }
 
@@ -37,6 +37,8 @@
 
   color: var(--user-selected-color);
   padding-left: 1vw;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
 }
 
 .form input:focus,
@@ -78,8 +80,8 @@
 }
 
 .checkoutButton {
-  margin-top: 1vw;
-  margin-bottom: 1vw;
+  /* margin-top: .5vw; */
+  margin-bottom: 2vw;
   font-family: "Quatl";
   color: var(--interactive-color);
   font-size: 1.75rem;
@@ -103,7 +105,7 @@
   align-items: center;
 }
 
-.nameErrors {
+.errors {
   flex-direction: column;
   flex: 1vw;
   justify-content: space-around;

@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 
 import classes from "./customer-info-form.module.css";
-import { checkName } from "@/lib/customer-form";
+import { checkEmail, checkName, checkPhone } from "@/lib/customer-form";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -22,14 +22,24 @@ function SubmitButton() {
 export default function CustomerInfoForm() {
   const [firstNameValid, setFirstNameValid] = useState<boolean>();
   const [lastNameValid, setLastNameValid] = useState<boolean>();
-  let firstNameCorrect = useRef<boolean>();
-  let lastNameCorrect = useRef<boolean>();
+  const [phoneValid, setPhoneValid] = useState<boolean>();
+  const [emailValid, setEmailValid] = useState<boolean>();
+
+  let firstNameReady = useRef<boolean>();
+  let lastNameReady = useRef<boolean>();
+  let phoneReady = useRef<boolean>();
+  let emailReady = useRef<boolean>();
+
   let firstName = useRef("");
   let lastName = useRef("");
+  let phoneNumber = useRef("");
+  let email = useRef("");
 
   const Errors = {
     firstNameError: "First Name must not be blank",
     lastNameError: "Last Name must not be blank",
+    phoneError: "Phone Number must not be blank",
+    emailError: "Email must not be blank",
   };
 
   let errorsMessages = useRef(Errors);
@@ -39,17 +49,17 @@ export default function CustomerInfoForm() {
     firstName.current = formFirstName;
     const fieldValid = checkName(formFirstName);
     setFirstNameValid(fieldValid);
-    firstNameCorrect.current = fieldValid;
+    firstNameReady.current = fieldValid;
 
     if (firstName.current.length < 2 || formFirstName.length > 15) {
-      firstNameCorrect.current = false;
+      firstNameReady.current = false;
       errorsMessages.current.firstNameError =
         "Name must be more than 1 and less than 16";
     } else if (!fieldValid) {
-      firstNameCorrect.current = false;
+      firstNameReady.current = false;
       errorsMessages.current.firstNameError = "Please only use letters";
     } else {
-      firstNameCorrect.current = true;
+      firstNameReady.current = true;
     }
   }
 
@@ -58,55 +68,58 @@ export default function CustomerInfoForm() {
     lastName.current = formLastName;
     const fieldValid = checkName(formLastName);
     setLastNameValid(fieldValid);
-    lastNameCorrect.current = fieldValid;
+    lastNameReady.current = fieldValid;
 
     if (lastName.current.length < 2 || formLastName.length > 15) {
-      lastNameCorrect.current = false;
+      lastNameReady.current = false;
       errorsMessages.current.lastNameError =
         "Name must be more than 1 and less than 16";
     } else if (!fieldValid) {
-      lastNameCorrect.current = false;
+      lastNameReady.current = false;
       errorsMessages.current.lastNameError = "Please only use letters";
     } else {
-      lastNameCorrect.current = true;
+      lastNameReady.current = true;
     }
-
-    console.log(
-      `${formLastName}` +
-        ": " +
-        `${fieldValid}` +
-        // `${nameValid.current}` +
-        ": " +
-        Errors.lastNameError
-    );
   }
-  // if (!firstName) {
-  //   Errors.firstNameError = "Please enter first name";
-  // } else if (!/^[a-z]{2,15}$/.test(firstName.toLowerCase().trim())) {
-  //   Errors.firstNameError =
-  //     "First name must be 2 characters or greater, less 15 characters and only characters";
-  // } else {
-  //   setFirstNameValid(true);
-  // }
+
+  function validatePhoneNumber(event: React.ChangeEvent<HTMLInputElement>) {
+    const formPhoneNumber = event.target.value;
+    phoneNumber.current = formPhoneNumber;
+    const fieldValue = checkPhone(phoneNumber.current);
+    setPhoneValid(fieldValue);
+    phoneReady.current = fieldValue;
+
+    console.log();
+
+    if (phoneNumber.current.length < 12 || phoneNumber.current.length > 12) {
+      errorsMessages.current.phoneError =
+        "Please ensure entered phone number matches the example 555.555.5555";
+    }
+  }
+
+  function validateEmail(event: React.ChangeEvent<HTMLInputElement>) {
+    const formEmail = event.target.value;
+    email.current = formEmail;
+    const fieldValue = checkEmail(email.current);
+    setEmailValid(fieldValue);
+    emailReady.current = fieldValue;
+
+    console.log(`${email.current} ": " + ${emailValid}`);
+
+    if (!emailValid) {
+      errorsMessages.current.emailError =
+        "Please ensure e-mail is valid ex(johndoe@doe.doe)";
+    }
+  }
 
   return (
     <>
       <form className={classes.form}>
-        {/* <form className={classes.form} action={formAction}> */}
-        {/* <p>
-          Please enter your information so that we can finalize your order and
-          let you know when it is ready.
-        </p> */}
         <div>
           <label className={classes.name}>Name</label>
-          {/* <input
-            className={` 
-            ${formFirstName1 ? classes.firstName : classes.firstNameValid}
-              `} */}
-
           <input
             className={` 
-            ${firstNameCorrect.current ? classes.valid : classes.invalid}
+            ${firstNameReady.current ? classes.valid : classes.invalid}
               `}
             type="text"
             id="first_name"
@@ -118,7 +131,7 @@ export default function CustomerInfoForm() {
           />
           <input
             className={` 
-                ${lastNameCorrect.current ? classes.valid : classes.invalid}
+                ${lastNameReady.current ? classes.valid : classes.invalid}
                   `}
             type="text"
             id="last_name"
@@ -128,7 +141,7 @@ export default function CustomerInfoForm() {
             onChange={validateLastName}
           />
         </div>
-        <div className={classes.nameErrors}>
+        <div className={classes.errors}>
           {!firstNameValid && (
             <p className={classes.errorMessages}>
               {errorsMessages.current.firstNameError}
@@ -143,25 +156,45 @@ export default function CustomerInfoForm() {
         <div>
           <label>Phone</label>
           <input
-            className={classes.phone}
+            className={`${classes.phone} ${
+              phoneReady.current ? classes.valid : classes.invalid
+            }`}
             type="text"
             id="phone"
             name="phone"
             placeholder="Enter Phone Number (ie 555.555.5555)"
             required
+            onChange={validatePhoneNumber}
           />
         </div>
-        {/* <ErrorMessages errors={phoneErrors} /> */}
+        <div className={classes.errors}>
+          {!phoneValid && (
+            <p className={classes.errorMessages}>
+              {errorsMessages.current.phoneError}
+            </p>
+          )}
+          {/* <ErrorMessages errors={phoneErrors} /> */}
+        </div>
         <div>
           <label>E-mail</label>
           <input
-            className={classes.email}
+            className={`${classes.email}
+            ${emailReady.current ? classes.valid : classes.invalid}
+              `}
             type="text"
             id="email"
             name="email"
             placeholder="Enter E-Mail Address"
             required
+            onChange={validateEmail}
           />
+        </div>
+        <div className={classes.errors}>
+          {!emailValid && (
+            <p className={classes.errorMessages}>
+              {errorsMessages.current.emailError}
+            </p>
+          )}
         </div>
         {/* <ErrorMessages errors={emailErrors} /> */}
         <SubmitButton />
