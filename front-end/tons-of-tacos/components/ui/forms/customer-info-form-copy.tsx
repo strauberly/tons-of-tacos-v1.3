@@ -6,13 +6,24 @@ import { useFormState, useFormStatus } from "react-dom";
 import classes from "./customer-info-form.module.css";
 import { checkEmail, checkName, checkPhone } from "@/lib/customer-form";
 
-function SubmitButton() {
+function SubmitButton(validation: {
+  firstName: boolean | undefined;
+  lastName: boolean | undefined;
+  phone: boolean | undefined;
+  email: boolean | undefined;
+}) {
   const { pending } = useFormStatus();
   return (
     <button
       className={classes.checkoutButton}
       type="submit"
       aria-disabled={pending}
+      disabled={
+        !validation.firstName ||
+        !validation.lastName ||
+        !validation.phone ||
+        !validation.email
+      }
     >
       Place Order
     </button>
@@ -24,6 +35,7 @@ export default function CustomerInfoForm() {
   const [lastNameValid, setLastNameValid] = useState<boolean>();
   const [phoneValid, setPhoneValid] = useState<boolean>();
   const [emailValid, setEmailValid] = useState<boolean>();
+  // const [formValid, setFormValid] = useState<boolean>();
 
   let firstNameReady = useRef<boolean>();
   let lastNameReady = useRef<boolean>();
@@ -125,7 +137,6 @@ export default function CustomerInfoForm() {
             id="first_name"
             name="first_name"
             placeholder="Enter First Name"
-            // value={firstName}
             required
             onChange={validateFirstName}
           />
@@ -197,7 +208,12 @@ export default function CustomerInfoForm() {
           )}
         </div>
         {/* <ErrorMessages errors={emailErrors} /> */}
-        <SubmitButton />
+        <SubmitButton
+          firstName={firstNameValid}
+          lastName={lastNameValid}
+          phone={phoneValid}
+          email={emailValid}
+        />
       </form>
     </>
   );
