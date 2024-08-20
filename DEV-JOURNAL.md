@@ -2,6 +2,24 @@
 
 ---
 
+-- 20 Aug 2024 --
+
+- Responsive design in place. Ready for refactor.
+
+---
+
+-- 14 Aug 2024 --
+
+- Cart font sizes and margins adjusted for responsive design.
+
+---
+
+-- 13 Aug 2024 --
+
+- Began work on responsive design for cart.
+
+---
+
 -- 10 Aug 2024 --
 
 - Refactored styling and validation for a more granular approach and elimination of zod dependency. Not dead set on this solution as it does increase the individual file sizes a bit but may break them down into smaller components and then reincorporate into the form at a later time.

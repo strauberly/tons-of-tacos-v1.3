@@ -3,6 +3,7 @@
   flex-direction: column;
   border: var(--border-color) solid 2px;
   height: 90vh;
+  /* width: 150%; */
   overflow-y: scroll;
   overflow-x: hidden;
   /* justify-content: center; */
@@ -12,21 +13,26 @@
 .cart ul li {
   list-style-type: none;
   display: grid;
-  row-gap: 1vw;
-  column-gap: 4vw;
+  row-gap: 2vw;
   grid-template-columns: repeat(2, minmax(12rem, 50%));
   align-items: baseline;
   margin: 1vw;
   margin-left: 1vw;
   width: 95%;
-  /* padding-right: 1vw; */
+  padding-right: 1vw;
   padding-left: 2vw;
 }
 
 .total {
   font-family: "Quatl";
   color: var(--attention-color);
-  font-size: clamp(1rem, 1vw, 1vw);
+  font-size: clamp(1.25rem, 2vw, 1.5vw);
   margin-top: 0.5vw;
-  margin-bottom: 0.5vw;
+  margin-bottom: 1.25vw;
+}
+
+@media (max-width: 1000px) {
+  .total {
+    margin-top: 3vw;
+  }
 }

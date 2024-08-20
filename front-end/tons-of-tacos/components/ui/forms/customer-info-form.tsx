@@ -79,12 +79,13 @@ export default function CustomerInfoForm({ action }: Props) {
         {/* <p>
           Please enter your information so that we can finalize your order and
           let you know when it is ready.
-        </p> */}
+          </p> */}
+
         <div>
-          <label className={classes.name}>Name</label>
+          <label>Name</label>
           <input
             className={`
-            ${classes.firstName} ${firstName === true ? classes.valid : " "}
+              ${classes.firstName} ${firstName === true ? classes.valid : " "}
               `}
             type="text"
             id="first_name"
@@ -101,10 +102,11 @@ export default function CustomerInfoForm({ action }: Props) {
             required
           />
         </div>
+
         <ErrorMessages errors={firstNameErrors} />
         <ErrorMessages errors={lastNameErrors} />
+        <label>Phone</label>
         <div>
-          <label>Phone</label>
           <input
             className={classes.phone}
             type="text"

@@ -1,11 +1,10 @@
 .form {
   display: flex;
   flex-direction: column;
-  width: 100%;
   right: 50%;
   left: 50%;
-  gap: 0.5vw;
-  font-size: 1.25vw;
+  gap: 1vw;
+  font-size: clamp(1.25rem, 2vw, 1.5vw);
   justify-content: center;
   margin-top: 1vw;
   margin-bottom: 1vw;
@@ -18,19 +17,26 @@
 
 .form div {
   display: flex;
-  gap: 1%;
+  gap: 2%;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1vw;
 }
 .form label {
   color: var(--interactive-color);
-  width: 4vw;
+  /* width: 4vw; */
   justify-content: left;
+  padding-right: 1vw;
+  padding-left: 0.5vw;
 }
+
+/* .form input {
+  padding-left: 1vw;
+} */
 
 .form input,
 .form textarea {
-  font-size: 1vw;
+  font-size: clamp(1.25rem, 2vw, 1.5vw);
   text-align: left;
 
   background-color: var(--background-color);
@@ -48,11 +54,12 @@
 
 .form p {
   width: max-content;
-  font-size: 0.8vw;
+  font-size: clamp(1rem, 1.5vw, 1.25vw);
 }
 
 .name {
-  /* margin-right: 1.5vw; */
+  /* margin-right: 1vw; */
+  /* justify-content: left; */
 }
 
 .invalid {
@@ -68,7 +75,7 @@
 }
 
 .lastName {
-  width: 40%;
+  /* width: 30%; */
 }
 
 .phone {
@@ -80,7 +87,7 @@
 }
 
 .checkoutButton {
-  /* margin-top: .5vw; */
+  margin-top: clamp(2rem, 1vw, 1.5vw);
   margin-bottom: 2vw;
   font-family: "Quatl";
   color: var(--interactive-color);
@@ -101,7 +108,7 @@
   font-family: var(--inter-font);
   font-size: 1vw;
   justify-content: center;
-  margin-bottom: 0.5vw;
+  margin-bottom: 1vw;
   align-items: center;
 }
 
@@ -111,3 +118,47 @@
   justify-content: space-around;
   align-items: center;
 }
+
+@media (max-width: 1000px) {
+  .form {
+    /* gap: 2vw; */
+    justify-content: space-between;
+  }
+
+  .form div {
+    flex-direction: column;
+    width: 100%;
+    /* margin-bottom: 0.5vw; */
+    margin-top: 3vw;
+  }
+
+  .form input {
+    width: 90%;
+    margin-left: 3vw;
+    margin-bottom: 5vw;
+  }
+
+  .form label {
+    margin-bottom: 4vw;
+  }
+
+  .form p {
+    font-size: 3.5vw;
+  }
+
+  .errorMessages {
+    margin-bottom: 3vw;
+  }
+
+  .total {
+    margin-top: 8vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .form input,
+  .form textarea {
+    font-size: clamp(1.15rem, 2vw, 1.5vw);
+  }
+}
+
