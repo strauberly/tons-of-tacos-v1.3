@@ -1,12 +1,12 @@
-//  write validation for each field case and use state, if field is valid use that as the css class
+//  validation for customer form input fields
 
 export function checkName(name: string) {
-  const nameValid: NameValid = {
+  const nameValid: Valid = {
     valid: false,
     message: "",
   };
 
-  if (name.trim().length === 0) {
+  if (name.length === 0) {
     nameValid.message = "Name must not be blank";
   } else if (!/^S*[a-z]+$/.test(name.toLowerCase())) {
     nameValid.message = "Check for only valid characters and no spaces";
@@ -22,7 +22,20 @@ export function checkName(name: string) {
 }
 
 export function checkPhone(phone: string) {
-  return /^[0-9.]{12}$/.test(phone);
+  const phoneValid: Valid = {
+    valid: false,
+    message: "",
+  };
+
+  if (phone.length === 0) {
+    phoneValid.message = "Phone Number must not be blank";
+  } else if (!/^[0-9.]{12}$/.test(phone)) {
+    phoneValid.message =
+      "Ensure entered phone number matches the example: 555.555.5555";
+  } else {
+    phoneValid.valid = true;
+  }
+  return phoneValid;
 }
 
 export function checkEmail(email: string) {
