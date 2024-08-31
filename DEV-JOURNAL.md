@@ -8,6 +8,8 @@
 
 - checkName in customer form library regex modified to look for spaces. Error message modified.
 
+- Exported logic for name validation to customer form library.
+
 ---
 
 -- 20 Aug 2024 --
