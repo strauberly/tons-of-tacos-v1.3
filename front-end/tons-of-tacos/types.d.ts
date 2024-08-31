@@ -29,7 +29,7 @@ type CustomerInfoForm = {
   name: string;
 };
 
-type NameValid = {
+type Valid = {
   valid: boolean;
   message: string;
 };

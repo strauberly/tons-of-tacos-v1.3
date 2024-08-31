@@ -12,6 +12,8 @@
 
 - Last name validation now makes use of checkName from the customer for library.
 
+- Exported phone validation logic to customer form library. Enhanced copy for warning message.
+
 ---
 
 -- 20 Aug 2024 --

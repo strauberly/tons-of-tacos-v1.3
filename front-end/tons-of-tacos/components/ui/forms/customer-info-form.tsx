@@ -69,20 +69,14 @@ export default function CustomerInfoForm() {
     });
   }
 
-  // function validatePhoneNumber(event: React.ChangeEvent<HTMLInputElement>) {
-  //   const formPhoneNumber = event.target.value;
-  //   phoneNumber.current = formPhoneNumber;
-  //   const fieldValue = checkPhone(phoneNumber.current);
-  //   setPhoneValid(fieldValue);
-  //   phoneReady.current = fieldValue;
-
-  //   console.log();
-
-  //   if (phoneNumber.current.length < 12 || phoneNumber.current.length > 12) {
-  //     errorsMessages.current.phoneError =
-  //       "Please ensure entered phone number matches the example 555.555.5555";
-  //   }
-  // }
+  function validatePhoneNumber(event: React.ChangeEvent<HTMLInputElement>) {
+    phoneNumber.current = event.target.value;
+    setPhoneValid(checkPhone(phoneNumber.current).valid);
+    setErrors({
+      ...errors,
+      phoneError: checkPhone(phoneNumber.current).message,
+    });
+  }
 
   // function validateEmail(event: React.ChangeEvent<HTMLInputElement>) {
   //   const formEmail = event.target.value;
@@ -141,24 +135,21 @@ export default function CustomerInfoForm() {
         <div>
           <label>Phone</label>
           <input
-            // className={`${classes.phone} ${
-            //   phoneReady.current ? classes.valid : classes.invalid
-            // }`}
+            className={`${classes.phone} ${
+              phoneValid ? classes.valid : classes.invalid
+            }`}
             type="text"
             id="phone"
             name="phone"
             placeholder="Enter Phone Number (ie 555.555.5555)"
             required
-            // onChange={validatePhoneNumber}
+            onChange={validatePhoneNumber}
           />
         </div>
         <div className={classes.errors}>
           {!phoneValid && (
-            <p className={classes.errorMessages}>
-              {/* {errorsMessages.current.phoneError} */}
-            </p>
+            <p className={classes.errorMessages}>{errors.phoneError}</p>
           )}
-          {/* <ErrorMessages errors={phoneErrors} /> */}
         </div>
         <div>
           <label>E-mail</label>
