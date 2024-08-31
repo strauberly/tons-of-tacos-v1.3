@@ -39,5 +39,17 @@ export function checkPhone(phone: string) {
 }
 
 export function checkEmail(email: string) {
-  return /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/.test(email);
+  const emailValid: Valid = {
+    valid: false,
+    message: "",
+  };
+
+  if (email.length === 0) {
+    emailValid.message = "Email must not be blank";
+  } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/.test(email)) {
+    emailValid.message = "Please ensure e-mail is valid ex(johndoe@doe.com)";
+  } else {
+    emailValid.valid = true;
+  }
+  return emailValid;
 }

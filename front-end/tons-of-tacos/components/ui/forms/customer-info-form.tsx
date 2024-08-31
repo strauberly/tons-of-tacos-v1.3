@@ -1,7 +1,7 @@
 "use client";
 
-import React, { use, useCallback, useEffect, useRef, useState } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import React, { useRef, useState } from "react";
+import { useFormStatus } from "react-dom";
 
 import classes from "./customer-info-form.module.css";
 import { checkEmail, checkName, checkPhone } from "@/lib/customer-form";
@@ -78,20 +78,15 @@ export default function CustomerInfoForm() {
     });
   }
 
-  // function validateEmail(event: React.ChangeEvent<HTMLInputElement>) {
-  //   const formEmail = event.target.value;
-  //   email.current = formEmail;
-  //   const fieldValue = checkEmail(email.current);
-  //   setEmailValid(fieldValue);
-  //   emailReady.current = fieldValue;
+  function validateEmail(event: React.ChangeEvent<HTMLInputElement>) {
+    email.current = event.target.value;
 
-  //   console.log(`${email.current} ": " + ${emailValid}`);
-
-  //   if (!emailValid) {
-  //     // errorsMessages.current.emailError =
-  //     //   "Please ensure e-mail is valid ex(johndoe@doe.doe)";
-  //   }
-  // }
+    setEmailValid(checkEmail(email.current).valid);
+    setErrors({
+      ...errors,
+      emailError: checkEmail(email.current).message,
+    });
+  }
 
   return (
     <>
@@ -154,25 +149,22 @@ export default function CustomerInfoForm() {
         <div>
           <label>E-mail</label>
           <input
-            // className={`${classes.email}
-            // ${emailReady.current ? classes.valid : classes.invalid}
-            //   `}
+            className={`${classes.email}
+            ${emailValid ? classes.valid : classes.invalid}
+              `}
             type="text"
             id="email"
             name="email"
             placeholder="Enter E-Mail Address"
             required
-            // onChange={validateEmail}
+            onChange={validateEmail}
           />
         </div>
         <div className={classes.errors}>
           {!emailValid && (
-            <p className={classes.errorMessages}>
-              {/* {errorsMessages.current.emailError} */}
-            </p>
+            <p className={classes.errorMessages}>{errors.emailError}</p>
           )}
         </div>
-        {/* <ErrorMessages errors={emailErrors} /> */}
         <SubmitButton
           firstName={firstNameValid}
           lastName={lastNameValid}

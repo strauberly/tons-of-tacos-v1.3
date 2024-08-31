@@ -14,6 +14,8 @@
 
 - Exported phone validation logic to customer form library. Enhanced copy for warning message.
 
+- Exported email validation logic to customer form library.
+
 ---
 
 -- 20 Aug 2024 --
