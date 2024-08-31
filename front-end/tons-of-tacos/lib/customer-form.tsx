@@ -1,16 +1,13 @@
 //  write validation for each field case and use state, if field is valid use that as the css class
 
-// import { useRef } from "react";
-
-// let firstNameReady = useRef<boolean>();
-export function useCheckName(name: string) {
+export function checkName(name: string) {
   const nameValid: NameValid = {
     valid: false,
     message: "",
   };
 
   if (name.trim().length === 0) {
-    nameValid.message = "First Name must not be blank";
+    nameValid.message = "Name must not be blank";
   } else if (!/^S*[a-z]+$/.test(name.toLowerCase())) {
     nameValid.message = "Check for only valid characters and no spaces";
   } else if (
@@ -22,10 +19,6 @@ export function useCheckName(name: string) {
     nameValid.valid = true;
   }
   return nameValid;
-}
-
-export function checkName(name: string) {
-  return /^\S*[a-z]+$/.test(name.toLowerCase());
 }
 
 export function checkPhone(phone: string) {
