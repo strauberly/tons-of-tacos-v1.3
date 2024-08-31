@@ -4,7 +4,9 @@
 
 -- 31 Aug 2024 --
 
-- Have begun refactor of files and validation of customer form fields. Current code should serve as a template for further work.
+- Have begun refactor of files and validation of customer form fields. Current code in validateName should serve as a template for further work.
+
+- checkName in customer form library regex modified to look for spaces. Error message modified.
 
 ---
 

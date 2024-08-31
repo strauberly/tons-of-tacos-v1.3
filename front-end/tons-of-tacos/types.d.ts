@@ -28,3 +28,8 @@ type Cart = {
 type CustomerInfoForm = {
   name: string;
 };
+
+type NameValid = {
+  valid: boolean;
+  message: string;
+};

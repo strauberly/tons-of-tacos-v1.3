@@ -4,7 +4,13 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 
 import classes from "./customer-info-form.module.css";
-import { checkEmail, checkName, checkPhone } from "@/lib/customer-form";
+import {
+  checkEmail,
+  checkName,
+  checkPhone,
+  useCheckName,
+  // useCheckName,
+} from "@/lib/customer-form";
 
 function SubmitButton(validation: {
   firstName: boolean | undefined;
@@ -38,6 +44,8 @@ export default function CustomerInfoForm() {
   const [lastNameValid, setLastNameValid] = useState<boolean>();
   const [phoneValid, setPhoneValid] = useState<boolean>();
   const [emailValid, setEmailValid] = useState<boolean>();
+  // const [checkName, setCheckName] = useState<NameValid>();
+
   // const [formValid, setFormValid] = useState<boolean>();
   // const [firstNameError, setFirstNameError] = useState(
   //   "First Name must not be blank"
@@ -60,23 +68,20 @@ export default function CustomerInfoForm() {
   let phoneNumber = useRef("");
   let email = useRef("");
 
-  // const Errors = {
-  //   firstNameError: "First Name must not be blank",
-  //   lastNameError: "Last Name must not be blank",
-  //   phoneError: "Phone Number must not be blank",
-  //   emailError: "Email must not be blank",
-  // };
+  const Errors = {
+    firstNameError: "First Name must not be blank",
+    lastNameError: "Last Name must not be blank",
+    phoneError: "Phone Number must not be blank",
+    emailError: "Email must not be blank",
+  };
 
-  // let errorsMessages = useRef(Errors);
+  let errorsMessages = useRef(Errors);
 
-  //  set example for handle first name and then out source
-  function validateFirstName(event: React.ChangeEvent<HTMLInputElement>) {
+  //  set example for handle name and then look to place logic in library
+  function validateName(event: React.ChangeEvent<HTMLInputElement>) {
     firstName.current = event.target.value;
 
-    // if (event.target.value.trim().length === 0) {
-    //   setFirstNameError("hi");
-    //   console.log("hi");
-    // }
+    // setCheckName(useCheckName(firstName.current))
 
     if (
       checkName(firstName.current) &&
@@ -89,18 +94,12 @@ export default function CustomerInfoForm() {
     }
 
     if (event.target.value.trim().length === 0) {
-      // setFirstNameError("First Name must not be blank");
-      setErrors({
-        ...errors,
-        firstNameError: "First Name must not be blank",
-      });
-      // console.log("hi");
+      setErrors({ ...errors, firstNameError: "First Name must not be blank" });
     } else if (!checkName(firstName.current)) {
       setErrors({
         ...errors,
-        firstNameError: "Please use valid characters only",
+        firstNameError: "Check for only valid characters and no spaces",
       });
-      // setFirstNameError("Please use valid characters only");
     } else if (
       (checkName(firstName.current) && firstName.current.length == 1) ||
       (checkName(firstName.current) && firstName.current.length > 16)
@@ -109,77 +108,9 @@ export default function CustomerInfoForm() {
         ...errors,
         firstNameError: "Name must be more than 1 and less than 16 characters",
       });
-      // setFirstNameError("Name must be more than 1 and less than 16 characters");
     }
-    // if (!checkName(firstName.current)) {
-    //   errorsMessages.current.firstNameError =
-    //     "Please use valid characters only";
-    // } else if (
-    //   (checkName(firstName.current) && firstName.current.length == 1) ||
-    //   (checkName(firstName.current) && firstName.current.length > 16)
-    // ) {
-    //   errorsMessages.current.firstNameError =
-    //     "Name must be more than 1 and less than 16 characters";
-    // }
-
     // console.log(firstName.current.length);
     // console.log(firstName.current);
-    // if (firstName.current.length == 0) {
-    //   errorsMessages.current.firstNameError = "First Name must not be blank";
-    // } else if (!checkName(firstName.current)) {
-    //   errorsMessages.current.firstNameError =
-    //     "Please use valid characters only";
-    // } else if (
-    //   (checkName(firstName.current) && firstName.current.length < 2) ||
-    //   (checkName(firstName.current) && firstName.current.length > 16)
-    // ) {
-    //   errorsMessages.current.firstNameError =
-    //     "Name must be more than 1 and less than 16 characters";
-    // }
-
-    // firstNameReady.current =
-    //   firstName.current.length >= 2 &&
-    //   firstName.current.length <= 16 &&
-    //   checkName(firstName.current);
-    // setFirstNameValid(firstNameReady.current);
-    // console.log(firstName.current);
-    // console.log(firstNameReady.current);
-    // console.log(firstNameValid);
-
-    // if (
-    //   !firstNameValid &&
-    //   firstName.current.length >= 2 &&
-    //   firstName.current.length <= 16
-    // ) {
-    //   errorsMessages.current.firstNameError = "Please use valid letters only";
-    // } else if (
-    //   (!firstNameValid && firstName.current.length < 2) ||
-    //   firstName.current.length > 16
-    // ) {
-    //   errorsMessages.current.firstNameError =
-    //     "Name must be more than 1 and less than 16 characters";
-    // }
-
-    // if (firstName.current.length < 2 || firstName.current.length < 16) {
-    //   errorsMessages.current.firstNameError = " test";
-    // }
-
-    // const formFirstName = event.target.value;
-    // firstName.current = formFirstName;
-    // const fieldValid = checkName(formFirstName);
-    // setFirstNameValid(fieldValid);
-    // firstNameReady.current = fieldValid;
-
-    // if (firstName.current.length < 2 || firstName.current.length > 15) {
-    //   // firstNameReady.current = false;
-    //   errorsMessages.current.firstNameError =
-    //     "Name must be more than 1 and less than 16";
-    // } else if (fieldValid === false) {
-    //   // firstNameReady.current = false;
-    //   errorsMessages.current.firstNameError = "Please only use letters";
-    // } else {
-    //   firstNameReady.current = true;
-    // }
   }
 
   function validateLastName(event: React.ChangeEvent<HTMLInputElement>) {
@@ -246,7 +177,7 @@ export default function CustomerInfoForm() {
             name="first_name"
             placeholder="Enter First Name"
             // required
-            onChange={validateFirstName}
+            onChange={validateName}
           />
           <input
             className={` 
@@ -263,6 +194,7 @@ export default function CustomerInfoForm() {
         <div className={classes.errors}>
           {!firstNameValid && (
             <p className={classes.errorMessages}>{errors.firstNameError}</p>
+            // <p className={classes.errorMessages}>{}</p>
           )}
           {!lastNameValid && (
             <p className={classes.errorMessages}>
@@ -270,16 +202,6 @@ export default function CustomerInfoForm() {
             </p>
           )}
         </div>
-        {/* <div className={classes.errors}>
-          {!firstNameValid && (
-            <p className={classes.errorMessages}>{firstNameError}</p>
-          )}
-          {!lastNameValid && (
-            <p className={classes.errorMessages}>
-              {errorsMessages.current.lastNameError}
-            </p>
-          )}
-        </div> */}
         <div>
           <label>Phone</label>
           <input
