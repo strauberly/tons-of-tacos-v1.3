@@ -1,136 +1,339 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 
-import type { ZodIssue } from "zod";
-
 import classes from "./customer-info-form.module.css";
-import { checkName } from "@/lib/customer-form";
+import { checkEmail, checkName, checkPhone } from "@/lib/customer-form";
 
-function SubmitButton() {
+function SubmitButton(validation: {
+  firstName: boolean | undefined;
+  lastName: boolean | undefined;
+  phone: boolean | undefined;
+  email: boolean | undefined;
+}) {
   const { pending } = useFormStatus();
   return (
     <button
       className={classes.checkoutButton}
       type="submit"
       aria-disabled={pending}
+      disabled={
+        !validation.firstName ||
+        !validation.lastName ||
+        !validation.phone ||
+        !validation.email
+      }
     >
       Place Order
     </button>
   );
 }
 
-type Props = {
-  action: (
-    _prevState: any,
-    formData: FormData
-  ) => Promise<any | { errors: ZodIssue[] }>;
-};
+export default function CustomerInfoForm() {
+  const data = useFormStatus();
+  // const values = getValues();
 
-export default function CustomerInfoForm({ action }: Props) {
-  const [state, formAction] = useFormState(action, { errors: [] });
-  // export default function CustomerInfoForm({ action }: Props) {
-  //   const [state, formAction] = useFormState(action, { errors: [] });
+  const [firstNameValid, setFirstNameValid] = useState<boolean>();
+  const [lastNameValid, setLastNameValid] = useState<boolean>();
+  const [phoneValid, setPhoneValid] = useState<boolean>();
+  const [emailValid, setEmailValid] = useState<boolean>();
+  // const [formValid, setFormValid] = useState<boolean>();
+  // const [firstNameError, setFirstNameError] = useState(
+  //   "First Name must not be blank"
+  // );
 
-  // const findErrors = (fieldName: string, errors: ZodIssue[]) => {
-  //   return errors
-  //     .filter((item) => {
-  //       return item.path.includes(fieldName);
-  //     })
-  //     .map((item) => item.message);
+  const [errors, setErrors] = useState({
+    firstNameError: "First Name must not be blank",
+    lastNameError: "Last Name must not be blank",
+    phoneError: "Phone Number must not be blank",
+    emailError: "Email must not be blank",
+  });
+
+  // let firstNameReady = useRef<boolean>();
+  let lastNameReady = useRef<boolean>();
+  let phoneReady = useRef<boolean>();
+  let emailReady = useRef<boolean>();
+
+  let firstName = useRef("");
+  let lastName = useRef("");
+  let phoneNumber = useRef("");
+  let email = useRef("");
+
+  // const Errors = {
+  //   firstNameError: "First Name must not be blank",
+  //   lastNameError: "Last Name must not be blank",
+  //   phoneError: "Phone Number must not be blank",
+  //   emailError: "Email must not be blank",
   // };
 
-  const findErrors = useCallback(
-    (fieldName: string) => {
-      return state.errors
-        .filter((item: { path: string | string[] }) => {
-          return item.path.includes(fieldName);
-        })
+  // let errorsMessages = useRef(Errors);
 
-        .map((item: { message: any }) => item.message);
-    },
-    [state.errors]
-  );
+  //  set example for handle first name and then out source
+  function validateFirstName(event: React.ChangeEvent<HTMLInputElement>) {
+    firstName.current = event.target.value;
 
-  const firstNameErrors = findErrors("first_name");
-  // const firstNameErrors = findErrors("first_name", state.errors);
-  // const lastNameErrors = findErrors("last_name", state.errors);
-  const lastNameErrors = findErrors("last_name");
-  const phoneErrors = findErrors("phone");
-  // const phoneErrors = findErrors("phone", state.errors);
-  const emailErrors = findErrors("email");
-  // const emailErrors = findErrors("email", state.errors);
+    // if (event.target.value.trim().length === 0) {
+    //   setFirstNameError("hi");
+    //   console.log("hi");
+    // }
 
-  const ErrorMessages = ({ errors }: { errors: string[] }) => {
-    if (errors?.length === 0) return null;
+    if (
+      checkName(firstName.current) &&
+      firstName.current.length >= 2 &&
+      firstName.current.length <= 16
+    ) {
+      setFirstNameValid(true);
+    } else {
+      setFirstNameValid(false);
+    }
 
-    const text = errors.join(", ");
-    return <div className={classes.errorMessages}>{text}</div>;
-  };
+    if (event.target.value.trim().length === 0) {
+      // setFirstNameError("First Name must not be blank");
+      setErrors({
+        ...errors,
+        firstNameError: "First Name must not be blank",
+      });
+      // console.log("hi");
+    } else if (!checkName(firstName.current)) {
+      setErrors({
+        ...errors,
+        firstNameError: "Please use valid characters only",
+      });
+      // setFirstNameError("Please use valid characters only");
+    } else if (
+      (checkName(firstName.current) && firstName.current.length == 1) ||
+      (checkName(firstName.current) && firstName.current.length > 16)
+    ) {
+      setErrors({
+        ...errors,
+        firstNameError: "Name must be more than 1 and less than 16 characters",
+      });
+      // setFirstNameError("Name must be more than 1 and less than 16 characters");
+    }
+    // if (!checkName(firstName.current)) {
+    //   errorsMessages.current.firstNameError =
+    //     "Please use valid characters only";
+    // } else if (
+    //   (checkName(firstName.current) && firstName.current.length == 1) ||
+    //   (checkName(firstName.current) && firstName.current.length > 16)
+    // ) {
+    //   errorsMessages.current.firstNameError =
+    //     "Name must be more than 1 and less than 16 characters";
+    // }
 
-  const [firstName, setFirstName] = useState<boolean>();
+    // console.log(firstName.current.length);
+    // console.log(firstName.current);
+    // if (firstName.current.length == 0) {
+    //   errorsMessages.current.firstNameError = "First Name must not be blank";
+    // } else if (!checkName(firstName.current)) {
+    //   errorsMessages.current.firstNameError =
+    //     "Please use valid characters only";
+    // } else if (
+    //   (checkName(firstName.current) && firstName.current.length < 2) ||
+    //   (checkName(firstName.current) && firstName.current.length > 16)
+    // ) {
+    //   errorsMessages.current.firstNameError =
+    //     "Name must be more than 1 and less than 16 characters";
+    // }
 
-  setFirstName(checkName("first_name"));
+    // firstNameReady.current =
+    //   firstName.current.length >= 2 &&
+    //   firstName.current.length <= 16 &&
+    //   checkName(firstName.current);
+    // setFirstNameValid(firstNameReady.current);
+    // console.log(firstName.current);
+    // console.log(firstNameReady.current);
+    // console.log(firstNameValid);
+
+    // if (
+    //   !firstNameValid &&
+    //   firstName.current.length >= 2 &&
+    //   firstName.current.length <= 16
+    // ) {
+    //   errorsMessages.current.firstNameError = "Please use valid letters only";
+    // } else if (
+    //   (!firstNameValid && firstName.current.length < 2) ||
+    //   firstName.current.length > 16
+    // ) {
+    //   errorsMessages.current.firstNameError =
+    //     "Name must be more than 1 and less than 16 characters";
+    // }
+
+    // if (firstName.current.length < 2 || firstName.current.length < 16) {
+    //   errorsMessages.current.firstNameError = " test";
+    // }
+
+    // const formFirstName = event.target.value;
+    // firstName.current = formFirstName;
+    // const fieldValid = checkName(formFirstName);
+    // setFirstNameValid(fieldValid);
+    // firstNameReady.current = fieldValid;
+
+    // if (firstName.current.length < 2 || firstName.current.length > 15) {
+    //   // firstNameReady.current = false;
+    //   errorsMessages.current.firstNameError =
+    //     "Name must be more than 1 and less than 16";
+    // } else if (fieldValid === false) {
+    //   // firstNameReady.current = false;
+    //   errorsMessages.current.firstNameError = "Please only use letters";
+    // } else {
+    //   firstNameReady.current = true;
+    // }
+  }
+
+  function validateLastName(event: React.ChangeEvent<HTMLInputElement>) {
+    const formLastName = event.target.value;
+    lastName.current = formLastName;
+    const fieldValid = checkName(formLastName);
+    setLastNameValid(fieldValid);
+    lastNameReady.current = fieldValid;
+
+    if (lastName.current.length < 2 || formLastName.length > 15) {
+      lastNameReady.current = false;
+      errorsMessages.current.lastNameError =
+        "Name must be more than 1 and less than 16";
+    } else if (!fieldValid) {
+      lastNameReady.current = false;
+      errorsMessages.current.lastNameError = "Please only use letters";
+    } else {
+      lastNameReady.current = true;
+    }
+  }
+
+  function validatePhoneNumber(event: React.ChangeEvent<HTMLInputElement>) {
+    const formPhoneNumber = event.target.value;
+    phoneNumber.current = formPhoneNumber;
+    const fieldValue = checkPhone(phoneNumber.current);
+    setPhoneValid(fieldValue);
+    phoneReady.current = fieldValue;
+
+    console.log();
+
+    if (phoneNumber.current.length < 12 || phoneNumber.current.length > 12) {
+      errorsMessages.current.phoneError =
+        "Please ensure entered phone number matches the example 555.555.5555";
+    }
+  }
+
+  function validateEmail(event: React.ChangeEvent<HTMLInputElement>) {
+    const formEmail = event.target.value;
+    email.current = formEmail;
+    const fieldValue = checkEmail(email.current);
+    setEmailValid(fieldValue);
+    emailReady.current = fieldValue;
+
+    console.log(`${email.current} ": " + ${emailValid}`);
+
+    if (!emailValid) {
+      // errorsMessages.current.emailError =
+      //   "Please ensure e-mail is valid ex(johndoe@doe.doe)";
+    }
+  }
 
   return (
     <>
-      <form className={classes.form} action={formAction}>
-        {/* <p>
-          Please enter your information so that we can finalize your order and
-          let you know when it is ready.
-          </p> */}
-
+      <form className={classes.form}>
         <div>
-          <label>Name</label>
+          <label className={classes.name}>Name</label>
           <input
-            className={`
-              ${classes.firstName} ${firstName === true ? classes.valid : " "}
+            className={` 
+            ${firstNameValid ? classes.valid : classes.invalid}
+
               `}
             type="text"
             id="first_name"
             name="first_name"
             placeholder="Enter First Name"
-            required
+            // required
+            onChange={validateFirstName}
           />
           <input
-            className={classes.lastName}
+            className={` 
+                ${lastNameReady.current ? classes.valid : classes.invalid}
+                  `}
             type="text"
             id="last_name"
             name="last_name"
             placeholder="Enter Last Name"
             required
+            onChange={validateLastName}
           />
         </div>
-
-        <ErrorMessages errors={firstNameErrors} />
-        <ErrorMessages errors={lastNameErrors} />
-        <label>Phone</label>
+        <div className={classes.errors}>
+          {!firstNameValid && (
+            <p className={classes.errorMessages}>{errors.firstNameError}</p>
+          )}
+          {!lastNameValid && (
+            <p className={classes.errorMessages}>
+              {errorsMessages.current.lastNameError}
+            </p>
+          )}
+        </div>
+        {/* <div className={classes.errors}>
+          {!firstNameValid && (
+            <p className={classes.errorMessages}>{firstNameError}</p>
+          )}
+          {!lastNameValid && (
+            <p className={classes.errorMessages}>
+              {errorsMessages.current.lastNameError}
+            </p>
+          )}
+        </div> */}
         <div>
+          <label>Phone</label>
           <input
-            className={classes.phone}
+            className={`${classes.phone} ${
+              phoneReady.current ? classes.valid : classes.invalid
+            }`}
             type="text"
             id="phone"
             name="phone"
             placeholder="Enter Phone Number (ie 555.555.5555)"
             required
+            onChange={validatePhoneNumber}
           />
         </div>
-        <ErrorMessages errors={phoneErrors} />
+        <div className={classes.errors}>
+          {!phoneValid && (
+            <p className={classes.errorMessages}>
+              {errorsMessages.current.phoneError}
+            </p>
+          )}
+          {/* <ErrorMessages errors={phoneErrors} /> */}
+        </div>
         <div>
           <label>E-mail</label>
           <input
-            className={classes.email}
+            className={`${classes.email}
+            ${emailReady.current ? classes.valid : classes.invalid}
+              `}
             type="text"
             id="email"
             name="email"
             placeholder="Enter E-Mail Address"
             required
+            onChange={validateEmail}
           />
         </div>
-        <ErrorMessages errors={emailErrors} />
-        <SubmitButton />
+        <div className={classes.errors}>
+          {!emailValid && (
+            <p className={classes.errorMessages}>
+              {errorsMessages.current.emailError}
+            </p>
+          )}
+        </div>
+        {/* <ErrorMessages errors={emailErrors} /> */}
+        <SubmitButton
+          firstName={firstNameValid}
+          lastName={lastNameValid}
+          phone={phoneValid}
+          email={emailValid}
+        />
       </form>
     </>
   );
+}
+function useForm(): { getValues: any } {
+  throw new Error("Function not implemented.");
 }

@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import Cart from "@/components/cart/cart";
 import { useCartContext } from "@/context/cart-context";
 import { GetCart } from "@/lib/cart";
-import CustomerInfoForm from "../../forms/customer-info-form";
+// import CustomerInfoForm from "../../forms/customer-info-form";
 import CustomerInfoValidation from "@/lib/actions";
 
 export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
