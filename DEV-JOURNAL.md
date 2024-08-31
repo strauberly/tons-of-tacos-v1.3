@@ -10,6 +10,8 @@
 
 - Exported logic for name validation to customer form library.
 
+- Last name validation now makes use of checkName from the customer for library.
+
 ---
 
 -- 20 Aug 2024 --

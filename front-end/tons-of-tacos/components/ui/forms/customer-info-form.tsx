@@ -4,13 +4,7 @@ import React, { use, useCallback, useEffect, useRef, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 
 import classes from "./customer-info-form.module.css";
-import {
-  checkEmail,
-  checkName,
-  checkPhone,
-  useCheckName,
-  // useCheckName,
-} from "@/lib/customer-form";
+import { checkEmail, checkName, checkPhone } from "@/lib/customer-form";
 
 function SubmitButton(validation: {
   firstName: boolean | undefined;
@@ -44,14 +38,6 @@ export default function CustomerInfoForm() {
   const [lastNameValid, setLastNameValid] = useState<boolean>();
   const [phoneValid, setPhoneValid] = useState<boolean>();
   const [emailValid, setEmailValid] = useState<boolean>();
-
-  // const [checkName, setCheckName] = useState<NameValid>();
-
-  // const [formValid, setFormValid] = useState<boolean>();
-  // const [firstNameError, setFirstNameError] = useState(
-  //   "First Name must not be blank"
-  // );
-
   const [errors, setErrors] = useState({
     firstNameError: "First Name must not be blank",
     lastNameError: "Last Name must not be blank",
@@ -59,57 +45,29 @@ export default function CustomerInfoForm() {
     emailError: "Email must not be blank",
   });
 
-  // let firstNameReady = useRef<boolean>();
-  let lastNameReady = useRef<boolean>();
-  let phoneReady = useRef<boolean>();
-  let emailReady = useRef<boolean>();
-
   let firstName = useRef("");
   let lastName = useRef("");
   let phoneNumber = useRef("");
   let email = useRef("");
 
-  // const Errors = {
-  //   firstNameError: "First Name must not be blank",
-  //   lastNameError: "Last Name must not be blank",
-  //   phoneError: "Phone Number must not be blank",
-  //   emailError: "Email must not be blank",
-  // };
-
-  // let errorsMessages = useRef(Errors);
-
-  // setErrors({...errors, firstNameError: useCheckName(firstName.current)})
-
-  // ===
-  //   //  set example for handle name and then look to place logic in library
-  function useValidateName(event: React.ChangeEvent<HTMLInputElement>) {
+  function validateFirstName(event: React.ChangeEvent<HTMLInputElement>) {
     firstName.current = event.target.value;
 
-    setFirstNameValid(useCheckName(firstName.current).valid);
+    setFirstNameValid(checkName(firstName.current).valid);
     setErrors({
       ...errors,
-      firstNameError: useCheckName(firstName.current).message,
+      firstNameError: `${"First " + checkName(firstName.current).message}`,
     });
   }
 
-  // function validateLastName(event: React.ChangeEvent<HTMLInputElement>) {
-  //   const formLastName = event.target.value;
-  //   lastName.current = formLastName;
-  //   const fieldValid = checkName(formLastName);
-  //   setLastNameValid(fieldValid);
-  //   lastNameReady.current = fieldValid;
-
-  //   if (lastName.current.length < 2 || formLastName.length > 15) {
-  //     lastNameReady.current = false;
-  //     errorsMessages.current.lastNameError =
-  //       "Name must be more than 1 and less than 16";
-  //   } else if (!fieldValid) {
-  //     lastNameReady.current = false;
-  //     errorsMessages.current.lastNameError = "Please only use letters";
-  //   } else {
-  //     lastNameReady.current = true;
-  //   }
-  // }
+  function validateLastName(event: React.ChangeEvent<HTMLInputElement>) {
+    lastName.current = event.target.value;
+    setLastNameValid(checkName(lastName.current).valid);
+    setErrors({
+      ...errors,
+      lastNameError: `${"Last " + checkName(lastName.current).message}`,
+    });
+  }
 
   // function validatePhoneNumber(event: React.ChangeEvent<HTMLInputElement>) {
   //   const formPhoneNumber = event.target.value;
@@ -157,11 +115,11 @@ export default function CustomerInfoForm() {
             placeholder="Enter First Name"
             maxLength={17}
             required
-            onChange={useValidateName}
+            onChange={validateFirstName}
           />
           <input
             className={` 
-                ${lastNameReady.current ? classes.valid : classes.invalid}
+                ${lastNameValid ? classes.valid : classes.invalid}
                   `}
             type="text"
             id="last_name"
@@ -169,26 +127,23 @@ export default function CustomerInfoForm() {
             placeholder="Enter Last Name"
             maxLength={17}
             required
-            // onChange={validateLastName}
+            onChange={validateLastName}
           />
         </div>
         <div className={classes.errors}>
           {!firstNameValid && (
             <p className={classes.errorMessages}>{errors.firstNameError}</p>
-            // <p className={classes.errorMessages}>{}</p>
           )}
           {!lastNameValid && (
-            <p className={classes.errorMessages}>
-              {/* {errorsMessages.current.lastNameError} */}
-            </p>
+            <p className={classes.errorMessages}>{errors.lastNameError}</p>
           )}
         </div>
         <div>
           <label>Phone</label>
           <input
-            className={`${classes.phone} ${
-              phoneReady.current ? classes.valid : classes.invalid
-            }`}
+            // className={`${classes.phone} ${
+            //   phoneReady.current ? classes.valid : classes.invalid
+            // }`}
             type="text"
             id="phone"
             name="phone"
@@ -208,9 +163,9 @@ export default function CustomerInfoForm() {
         <div>
           <label>E-mail</label>
           <input
-            className={`${classes.email}
-            ${emailReady.current ? classes.valid : classes.invalid}
-              `}
+            // className={`${classes.email}
+            // ${emailReady.current ? classes.valid : classes.invalid}
+            //   `}
             type="text"
             id="email"
             name="email"
