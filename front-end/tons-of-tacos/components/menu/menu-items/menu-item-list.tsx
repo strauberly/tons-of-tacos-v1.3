@@ -12,6 +12,7 @@ export default async function MenuItemList(menuItems: {
     <ul className={classes.grid}>
       {items.map(
         (menuItem: {
+          id: string;
           itemName: string;
           category: string;
           imageUrl: string;
@@ -21,7 +22,8 @@ export default async function MenuItemList(menuItems: {
         }) => (
           <MenuItem
             key={`${menuItem.itemName}_${menuItem.itemSize}`}
-            id={`${menuItem.itemName}_${menuItem.itemSize}`}
+            id={`${menuItem.id}`}
+            // id={`${menuItem.itemName}_${menuItem.itemSize}`}
             itemName={menuItem.itemName}
             category={menuItem.category}
             imageUrl={menuItem.imageUrl}

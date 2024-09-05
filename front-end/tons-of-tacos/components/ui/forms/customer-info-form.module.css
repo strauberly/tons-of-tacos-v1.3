@@ -87,7 +87,7 @@
 }
 
 .checkoutButton {
-  margin-top: clamp(2rem, 1vw, 1.5vw);
+  /* margin-top: clamp(1rem, 0.5vw, 1.25vw); */
   margin-bottom: 2vw;
   font-family: "Quatl";
   color: var(--interactive-color);
@@ -129,7 +129,7 @@
     flex-direction: column;
     width: 100%;
     /* margin-bottom: 0.5vw; */
-    margin-top: 3vw;
+    /* margin-top: 2vw; */
   }
 
   .form input {
@@ -161,4 +161,3 @@
     font-size: clamp(1.15rem, 2vw, 1.5vw);
   }
 }
-

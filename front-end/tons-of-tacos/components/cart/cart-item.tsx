@@ -9,6 +9,7 @@ import { GetCart, RemoveCartItem } from "@/lib/cart";
 
 export default function CartItem(props: {
   id: string;
+  menuId: string;
   itemName: string;
   itemQuantity: number;
   size: string;

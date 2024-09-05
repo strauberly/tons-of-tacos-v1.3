@@ -2,6 +2,20 @@
 
 ---
 
+-- 5 Sep 2024 --
+
+- Cart now also utilizes a menu id from the menu items added to the cart. This will match the specs of the backend when creating an order.
+
+- Have begun work on building object to submit order in cart libray. Pausing work here so it can be continued on appropriate branch.
+
+---
+
+-- 4 Sep 2024 --
+
+- Discovered flaw in data set up. Backend requires the id of the menu item that is generated at database creation. Cart makes use of a separate id in order to have unique identifier. Easiest path forward might be to pass menu item id as part of object and store that as part of a cart item as well and then pass it forward while creating the id.
+
+---
+
 -- 31 Aug 2024 --
 
 - Have begun refactor of files and validation of customer form fields. Current code in validateName should serve as a template for further work.

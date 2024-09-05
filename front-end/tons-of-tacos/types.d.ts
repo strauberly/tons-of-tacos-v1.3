@@ -1,9 +1,11 @@
+// organize please
 type Category = {
   name: string;
   description: string;
 };
 
 type MenuItem = {
+  id: string;
   itemName: string;
   category: string;
   imageUrl: string;
@@ -14,6 +16,7 @@ type MenuItem = {
 
 type CartItem = {
   id: string;
+  menuId: string;
   itemName: string;
   quantity: number;
   size: string;
