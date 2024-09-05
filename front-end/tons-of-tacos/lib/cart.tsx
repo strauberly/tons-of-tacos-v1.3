@@ -1,4 +1,5 @@
 import cartItem from "@/components/cart/cart-item";
+import { FormEvent } from "react";
 
 export function CreateCart() {
   const cart: CartItem[] = [];
@@ -12,6 +13,7 @@ export function CreateCart() {
 
 export async function AddItemToCart(
   id: string,
+  menuId: string,
   itemName: string,
   quantity: number,
   size: string,
@@ -19,6 +21,7 @@ export async function AddItemToCart(
 ) {
   const cartItem: CartItem = {
     id: id,
+    menuId: menuId,
     itemName: itemName,
     quantity: quantity,
     size: size,
@@ -60,8 +63,79 @@ export function UpdateCart(cart: CartItem[]) {
   sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(cart));
 }
 
-export function SendOrder(formData: any) {
+// export function SendOrder(formData: FormData) {
+//   // get customer info and food order and combine into required object for backend
+//   let firstName = formData.get("first_name");
+//   alert({ firstName });
+// }
+
+export function SendOrder(event: FormEvent<HTMLFormElement>) {
   // get customer info and food order and combine into required object for backend
+  event.preventDefault();
+  const formData = new FormData(event.currentTarget);
   let firstName = formData.get("first_name");
-  alert({ firstName });
+  let lastName = formData.get("last_name");
+  let phone = formData.get("phone");
+  let email = formData.get("email");
+  const name = firstName + " " + lastName;
+  const customerData = JSON.stringify(Object.fromEntries(formData.entries()));
+  //   const customer = "customer: {
+
+  // }"
+
+  // alert(`${firstName} ` + `${lastName} ` + `${phone} ` + `${email} `);
+
+  //    {
+  //   "customer": {
+  //     "name": "billy billson",
+  //     "email": "billy@bolly.com",
+  //     "phoneNumber": "555.555.5959"
+  // },
+
+  //      {
+//     "customer": {
+//       "name": "billy billson",
+//       "email": "billy@bolly.com",
+//       "phoneNumber": "555.555.5959"
+//   },
+//   "order": {
+//       "orderItems": [
+//           {
+//               "item": {
+//                   "id": 7
+//               },
+//               "quantity": 2,
+//               "size": "l"
+//           },
+//           {
+//               "item": {
+//                   "id": 12
+//               },
+//               "quantity": 1,
+//               "size": " "
+//           },
+//           {
+//               "item": {
+//                   "id": 3
+//               },
+//               "quantity": 3,
+//               "size": " "
+//           }
+//       ]
+//   }
+// }
+
+  const order = {
+    customer: {
+      name: firstName + " " + lastName,
+      email: email,
+      phoneNumber: phone,
+    },
+    order: {
+      orderItems: 
+    }
+  };
+  // alert("{customer: " + customerData + "},");
+
+  alert(JSON.stringify(order));
 }

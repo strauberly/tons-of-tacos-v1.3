@@ -6,7 +6,7 @@ import { useCartContext } from "@/context/cart-context";
 import { useEffect } from "react";
 import Checkout from "../ui/buttons/checkout/checkout-button";
 import CustomerInfoForm from "../ui/forms/customer-info-form";
-import customerInfoValidation from "@/lib/actions";
+// import customerInfoValidation from "@/lib/actions";
 
 export default function Cart() {
   const { setShowCart } = useDisplayContext();
@@ -36,6 +36,7 @@ export default function Cart() {
         <ul>
           {cart.map(
             (cartItem: {
+              menuId: string;
               itemName: string;
               quantity: number;
               size: string;
@@ -44,6 +45,7 @@ export default function Cart() {
               <CartItem
                 key={`${cartItem.itemName}_${cartItem.size}`}
                 id={`${cartItem.itemName}_${cartItem.size}`}
+                menuId={cartItem.menuId}
                 itemName={cartItem.itemName}
                 itemQuantity={cartItem.quantity}
                 size={cartItem.size}

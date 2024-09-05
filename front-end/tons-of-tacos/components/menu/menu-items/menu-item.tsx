@@ -78,11 +78,6 @@ export default function MenuItem(props: {
   const price = calcPrice().toFixed(2);
 
   return (
-    /* 
-    conditionally style expanded card
-    clicking on more expands >> adds description and close button
-    clicking close button resets expand state to normal
-    */
     <Card expand={expand} any={undefined}>
       <li
         className={`${classes.card} ${expand === true ? classes.expand : " "}`}
@@ -96,7 +91,7 @@ export default function MenuItem(props: {
             X
           </button>
         )}
-
+        <p>{props.id}</p>
         <Image
           id={classes.itemImage}
           src={`/images/menu-items/${props.category}/${props.itemName}.jpg`}
@@ -124,6 +119,7 @@ export default function MenuItem(props: {
 
         <AddToCart
           id={`${props.itemName}_${size}`}
+          menuId={props.id}
           itemName={props.itemName}
           quantity={quantity}
           size={size}

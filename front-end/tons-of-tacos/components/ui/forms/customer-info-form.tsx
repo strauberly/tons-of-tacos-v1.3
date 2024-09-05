@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { useFormStatus } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 
 import classes from "./customer-info-form.module.css";
 import { checkEmail, checkName, checkPhone } from "@/lib/customer-form";
+// import SubmitButton from "../buttons/checkout/checkout-button";
+import { SendOrder } from "@/lib/cart";
 
 function SubmitButton(validation: {
   firstName: boolean | undefined;
@@ -12,17 +14,18 @@ function SubmitButton(validation: {
   phone: boolean | undefined;
   email: boolean | undefined;
 }) {
-  const { pending } = useFormStatus();
+  const status = useFormStatus();
   return (
     <button
       className={classes.checkoutButton}
       type="submit"
-      aria-disabled={pending}
+      // aria-disabled={pending}
       disabled={
         !validation.firstName ||
         !validation.lastName ||
         !validation.phone ||
-        !validation.email
+        !validation.email ||
+        status.pending
       }
     >
       Place Order
@@ -31,8 +34,8 @@ function SubmitButton(validation: {
 }
 
 export default function CustomerInfoForm() {
-  const data = useFormStatus();
-  // const values = getValues();
+  // const data = useFormStatus();
+  const data = new FormData();
 
   const [firstNameValid, setFirstNameValid] = useState<boolean>();
   const [lastNameValid, setLastNameValid] = useState<boolean>();
@@ -90,7 +93,7 @@ export default function CustomerInfoForm() {
 
   return (
     <>
-      <form className={classes.form}>
+      <form className={classes.form} onSubmit={SendOrder}>
         <div>
           <label className={classes.name}>Name</label>
           <input

@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 
 export default function AddToCart(props: {
   id: string;
+  menuId: string;
   itemName: string;
   quantity: number;
   size: string;
@@ -58,6 +59,7 @@ export default function AddToCart(props: {
       props.expander();
       AddItemToCart(
         props.id,
+        props.menuId,
         props.itemName,
         props.quantity,
         props.size,

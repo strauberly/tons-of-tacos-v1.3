@@ -9,8 +9,8 @@
   color: var(--interactive-color);
   font-size: 1.75rem;
   cursor: pointer;
-  margin-top: 2vw;
-  margin-bottom: 1vw;
+  margin-top: 1vw;
+  margin-bottom: 3rem;
 
   /* justify-content: center; */
 }
