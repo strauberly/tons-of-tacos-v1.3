@@ -1,3 +1,4 @@
+import CartItem from "@/components/cart/cart-item";
 import cartItem from "@/components/cart/cart-item";
 import { FormEvent } from "react";
 
@@ -69,7 +70,7 @@ export function UpdateCart(cart: CartItem[]) {
 //   alert({ firstName });
 // }
 
-export function SendOrder(event: FormEvent<HTMLFormElement>) {
+export async function SendOrder(event: FormEvent<HTMLFormElement>) {
   // get customer info and food order and combine into required object for backend
   event.preventDefault();
   const formData = new FormData(event.currentTarget);
@@ -77,53 +78,26 @@ export function SendOrder(event: FormEvent<HTMLFormElement>) {
   let lastName = formData.get("last_name");
   let phone = formData.get("phone");
   let email = formData.get("email");
-  const name = firstName + " " + lastName;
-  const customerData = JSON.stringify(Object.fromEntries(formData.entries()));
-  //   const customer = "customer: {
 
-  // }"
+  type item = {
+    item: {
+      id: string;
+    };
+    quantity: number;
+    size: string;
+  };
 
-  // alert(`${firstName} ` + `${lastName} ` + `${phone} ` + `${email} `);
+  let cartItems = GetCart();
 
-  //    {
-  //   "customer": {
-  //     "name": "billy billson",
-  //     "email": "billy@bolly.com",
-  //     "phoneNumber": "555.555.5959"
-  // },
-
-  //      {
-//     "customer": {
-//       "name": "billy billson",
-//       "email": "billy@bolly.com",
-//       "phoneNumber": "555.555.5959"
-//   },
-//   "order": {
-//       "orderItems": [
-//           {
-//               "item": {
-//                   "id": 7
-//               },
-//               "quantity": 2,
-//               "size": "l"
-//           },
-//           {
-//               "item": {
-//                   "id": 12
-//               },
-//               "quantity": 1,
-//               "size": " "
-//           },
-//           {
-//               "item": {
-//                   "id": 3
-//               },
-//               "quantity": 3,
-//               "size": " "
-//           }
-//       ]
-//   }
-// }
+  let orderItems: item[] = cartItems.map((i) => {
+    return {
+      item: {
+        id: i.menuId,
+      },
+      quantity: i.quantity,
+      size: i.size,
+    };
+  });
 
   const order = {
     customer: {
@@ -132,10 +106,21 @@ export function SendOrder(event: FormEvent<HTMLFormElement>) {
       phoneNumber: phone,
     },
     order: {
-      orderItems: 
-    }
+      orderItems: orderItems,
+    },
   };
-  // alert("{customer: " + customerData + "},");
 
+  // alert(JSON.stringify(order));
+
+  const response = await fetch("http://localhost:8080/api/order/checkout", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(order),
+  });
+
+  console.log(response.body);
+  // const result = response.status;
   alert(JSON.stringify(order));
 }
