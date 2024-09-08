@@ -2,6 +2,12 @@
 
 ---
 
+-- 7 Sep 2024 --
+
+- Order object created but does not transmit correctly to back end yet. Possibly malformed object. Notes submitted to backend development team (me) >\_<; .
+
+---
+
 -- 5 Sep 2024 --
 
 - Cart now also utilizes a menu id from the menu items added to the cart. This will match the specs of the backend when creating an order.

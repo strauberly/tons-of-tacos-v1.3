@@ -91,7 +91,7 @@ export default function MenuItem(props: {
             X
           </button>
         )}
-        <p>{props.id}</p>
+        {/* <p>{props.id}</p> */}
         <Image
           id={classes.itemImage}
           src={`/images/menu-items/${props.category}/${props.itemName}.jpg`}
