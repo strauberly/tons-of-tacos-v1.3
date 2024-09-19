@@ -57,8 +57,6 @@ export default function Cart() {
 
         <p className={classes.total}>Total: $ {calcTotal().toFixed(2)}</p>
         <CustomerInfoForm />
-        {/* <CustomerInfoForm action={customerInfoValidation} /> */}
-        {/* <Checkout /> */}
       </div>
     </>
   );

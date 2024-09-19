@@ -2,6 +2,17 @@
 
 ---
 
+-- Sep 19 2024 --
+
+- Had a nice chat with the backend team (myself), and after reviewing the backend realized the requirements for an order object were over complicated. Made adjustments that allow much easier development for front end team (also me.).
+- Front is now able to successfully transmit a customers order to the backend and receive a response.
+- From this exercise a few observations were made and the project issues will be updated.
+  - A need for an alert component that can be utilized application wide.
+  - Separate the submit button from the form to its own component in the UI.
+  - Create a new submit function that can capture the response from the back end when the order is created.
+
+---
+
 -- 7 Sep 2024 --
 
 - Order object created but does not transmit correctly to back end yet. Possibly malformed object. Notes submitted to backend development team (me) >\_<; .

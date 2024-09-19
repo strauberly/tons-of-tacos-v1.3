@@ -8,6 +8,8 @@ import { checkEmail, checkName, checkPhone } from "@/lib/customer-form";
 // import SubmitButton from "../buttons/checkout/checkout-button";
 import { SendOrder } from "@/lib/cart";
 
+let orderResponse: string;
+
 function SubmitButton(validation: {
   firstName: boolean | undefined;
   lastName: boolean | undefined;
@@ -163,6 +165,7 @@ export default function CustomerInfoForm() {
             onChange={validateEmail}
           />
         </div>
+
         <div className={classes.errors}>
           {!emailValid && (
             <p className={classes.errorMessages}>{errors.emailError}</p>
