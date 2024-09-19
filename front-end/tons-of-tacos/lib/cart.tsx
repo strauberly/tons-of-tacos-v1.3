@@ -1,6 +1,7 @@
 import CartItem from "@/components/cart/cart-item";
 import cartItem from "@/components/cart/cart-item";
 import { FormEvent } from "react";
+import { json } from "stream/consumers";
 
 export function CreateCart() {
   const cart: CartItem[] = [];
@@ -64,12 +65,6 @@ export function UpdateCart(cart: CartItem[]) {
   sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(cart));
 }
 
-// export function SendOrder(formData: FormData) {
-//   // get customer info and food order and combine into required object for backend
-//   let firstName = formData.get("first_name");
-//   alert({ firstName });
-// }
-
 export async function SendOrder(event: FormEvent<HTMLFormElement>) {
   // get customer info and food order and combine into required object for backend
   event.preventDefault();
@@ -80,9 +75,7 @@ export async function SendOrder(event: FormEvent<HTMLFormElement>) {
   let email = formData.get("email");
 
   type item = {
-    item: {
-      id: string;
-    };
+    menuId: string;
     quantity: number;
     size: string;
   };
@@ -91,26 +84,20 @@ export async function SendOrder(event: FormEvent<HTMLFormElement>) {
 
   let orderItems: item[] = cartItems.map((i) => {
     return {
-      item: {
-        id: i.menuId,
-      },
+      menuId: i.menuId,
       quantity: i.quantity,
-      size: i.size,
+      size: i.size.charAt(0),
     };
   });
 
   const order = {
     customer: {
       name: firstName + " " + lastName,
-      email: email,
       phoneNumber: phone,
+      email: email,
     },
-    order: {
-      orderItems: orderItems,
-    },
+    order: orderItems,
   };
-
-  // alert(JSON.stringify(order));
 
   const response = await fetch("http://localhost:8080/api/order/checkout", {
     method: "POST",
@@ -120,7 +107,9 @@ export async function SendOrder(event: FormEvent<HTMLFormElement>) {
     body: JSON.stringify(order),
   });
 
-  console.log(response.body);
-  // const result = response.status;
-  alert(JSON.stringify(order));
+  const data = await response.json();
+  const orderConfirmation = data.orderUid;
+  console.log(orderConfirmation);
+  alert(orderConfirmation);
+  return orderConfirmation;
 }

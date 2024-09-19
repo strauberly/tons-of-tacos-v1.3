@@ -20,7 +20,7 @@ export default function MenuItem(props: {
   let itemSizes = ["small", "medium", "large"];
   const [sizeAvailable, setSizeAvailable] = useState(false);
   const [quantity, setQuantity] = useState(defaultQuantity);
-  const [size, setSize] = useState("");
+  const [size, setSize] = useState(" ");
   const [expand, setExpand] = useState(false);
 
   const increment = () => {
