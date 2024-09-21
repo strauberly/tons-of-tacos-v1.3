@@ -2,6 +2,10 @@
 
 ---
 
+-- Sep 21 2024 --
+
+- Succeeded in capturing response into a string that will be able to be returned to the user. Little muddy and needs revision. Essentially using formState to store the value of the response as an object that is updated as the form action is executed. Feels a bit like lifting state earlier in the application build. If backend runs into exception return that response.
+
 -- Sep 19 2024 --
 
 - Had a nice chat with the backend team (myself), and after reviewing the backend realized the requirements for an order object were over complicated. Made adjustments that allow much easier development for front end team (also me.).
