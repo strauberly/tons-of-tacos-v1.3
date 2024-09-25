@@ -2,9 +2,17 @@
 
 ---
 
+-- Sep 24 2024 --
+
+- Initialization of alert components. Alert component and styling in components folder, show context, providers and layout files updated.
+
+---
+
 -- Sep 21 2024 --
 
 - Succeeded in capturing response into a string that will be able to be returned to the user. Little muddy and needs revision. Essentially using formState to store the value of the response as an object that is updated as the form action is executed. Feels a bit like lifting state earlier in the application build. If backend runs into exception return that response.
+
+---
 
 -- Sep 19 2024 --
 
