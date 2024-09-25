@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import MainHeader from "../components/main-header/main-header";
 import { inter } from "../components/ui/fonts/fonts";
-import { MenuContextProvider } from "@/context/menu-context";
+// import { MenuContextProvider } from "@/context/menu-context";
 import { Providers } from "@/context/providers";
+import Alert from "@/components/alert/alert";
 
 export const metadata: Metadata = {
   title: "Tons Of Tacos",
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en" className="html">
       <body className={`${inter.variable}`}>
         <Providers>
+          <Alert />
           <MainHeader />
           <div className="children">{children}</div>
         </Providers>
