@@ -5,6 +5,7 @@
 -- Sep 28 2024 --
 
 - Order confirmation is now correctly being captured and forwarded to our alert component. Time for some styling and formatting.
+- Files scrubbed for unused comments and code. Functionality remains.
 
 ---
 

@@ -1,21 +1,17 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import React, { useRef, useState } from "react";
+import { useFormState } from "react-dom";
 import SubmitButton from "../buttons/checkout/checkout-button";
 import classes from "./customer-info-form.module.css";
 import { checkEmail, checkName, checkPhone } from "@/lib/customer-form";
-import { resp, SendOrder } from "@/lib/cart";
-import { useDisplayContext } from "@/context/display-context";
+import { SendOrder } from "@/lib/cart";
 import { useAlertContext } from "@/context/alert-context";
 
-let orderResponse;
-
 export default function CustomerInfoForm() {
-  const { alert, setAlert } = useAlertContext();
+  const { setAlert } = useAlertContext();
   const initialState = { message: "" };
   const [state, formAction] = useFormState(SendOrder, initialState);
-  // const data = new FormData();
 
   const [firstNameValid, setFirstNameValid] = useState<boolean>(false);
   const [lastNameValid, setLastNameValid] = useState<boolean>(false);
@@ -70,22 +66,10 @@ export default function CustomerInfoForm() {
       emailError: checkEmail(email.current).message,
     });
   }
-  // const { setShowAlert } = useDisplayContext();
-  // const { setAlert } = useAlertContext();
-  // // useEffect(() => {
-  // setShowAlert(true);
-  // setAlert(state.type);
-  // });
-
-  // const { setShowAlert } = useDisplayContext();
-  // const ref = useRef<string>("");
-  // ref.current = state.type;
-  // setAlert(state.type);
 
   setAlert(state.message);
 
   return (
-    // <form className={classes.form} onSubmit={SendOrder}>
     <form className={classes.form} action={formAction}>
       <div>
         <label className={classes.name}>Name</label>
@@ -162,9 +146,6 @@ export default function CustomerInfoForm() {
           <p className={classes.errorMessages}>{errors.emailError}</p>
         )}
       </div>
-      {/* <p>{resp}</p> */}
-      {/* <p>{alert}</p> */}
-      {/* <p>{state.message}</p> */}
       <SubmitButton
         firstName={firstNameValid}
         lastName={lastNameValid}
