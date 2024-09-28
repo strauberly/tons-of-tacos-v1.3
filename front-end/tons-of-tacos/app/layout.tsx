@@ -5,6 +5,7 @@ import { inter } from "../components/ui/fonts/fonts";
 // import { MenuContextProvider } from "@/context/menu-context";
 import { Providers } from "@/context/providers";
 import Alert from "@/components/alert/alert";
+import { AlertContextProvider, useAlertContext } from "@/context/alert-context";
 
 export const metadata: Metadata = {
   title: "Tons Of Tacos",

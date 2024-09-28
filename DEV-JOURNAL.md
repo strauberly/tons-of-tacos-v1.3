@@ -2,6 +2,12 @@
 
 ---
 
+-- Sep 28 2024 --
+
+- Order confirmation is now correctly being captured and forwarded to our alert component. Time for some styling and formatting.
+
+---
+
 -- Sep 25 2024 --
 
 - Placed Alert component in layout. Created an alert context in order to pass the response messages from any request necessary. Hopefully may need to alter a bit to get desired result.
