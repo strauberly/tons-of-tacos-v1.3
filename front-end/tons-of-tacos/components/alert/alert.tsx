@@ -1,4 +1,13 @@
+"use client";
+
+import { useDisplayContext } from "@/context/display-context";
 import classes from "./alert.module.css";
 export default function Alert() {
-  return <div className={classes.alert}></div>;
+  const { showAlert } = useDisplayContext();
+
+  return (
+    <div>
+      <p>hi</p>
+    </div>
+  );
 }

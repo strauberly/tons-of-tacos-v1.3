@@ -2,6 +2,12 @@
 
 ---
 
+-- Sep 25 2024 --
+
+- Placed Alert component in layout. Created an alert context in order to pass the response messages from any request necessary. Hopefully may need to alter a bit to get desired result.
+
+---
+
 -- Sep 24 2024 --
 
 - Initialization of alert components. Alert component and styling in components folder, show context, providers and layout files updated.
