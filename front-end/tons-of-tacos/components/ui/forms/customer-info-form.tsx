@@ -1,16 +1,19 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 import SubmitButton from "../buttons/checkout/checkout-button";
 import classes from "./customer-info-form.module.css";
 import { checkEmail, checkName, checkPhone } from "@/lib/customer-form";
-import { responseMessage, SendOrder } from "@/lib/cart";
+import { resp, SendOrder } from "@/lib/cart";
+import { useDisplayContext } from "@/context/display-context";
+import { useAlertContext } from "@/context/alert-context";
 
 let orderResponse;
 
 export default function CustomerInfoForm() {
-  const initialState = { type: "no order" };
+  const { alert, setAlert } = useAlertContext();
+  const initialState = { message: "" };
   const [state, formAction] = useFormState(SendOrder, initialState);
   // const data = new FormData();
 
@@ -67,6 +70,19 @@ export default function CustomerInfoForm() {
       emailError: checkEmail(email.current).message,
     });
   }
+  // const { setShowAlert } = useDisplayContext();
+  // const { setAlert } = useAlertContext();
+  // // useEffect(() => {
+  // setShowAlert(true);
+  // setAlert(state.type);
+  // });
+
+  // const { setShowAlert } = useDisplayContext();
+  // const ref = useRef<string>("");
+  // ref.current = state.type;
+  // setAlert(state.type);
+
+  setAlert(state.message);
 
   return (
     // <form className={classes.form} onSubmit={SendOrder}>
@@ -146,12 +162,15 @@ export default function CustomerInfoForm() {
           <p className={classes.errorMessages}>{errors.emailError}</p>
         )}
       </div>
-      <p>{state.type}</p>
+      {/* <p>{resp}</p> */}
+      {/* <p>{alert}</p> */}
+      {/* <p>{state.message}</p> */}
       <SubmitButton
         firstName={firstNameValid}
         lastName={lastNameValid}
         phone={phoneValid}
         email={emailValid}
+        state={state.message}
       />
     </form>
   );

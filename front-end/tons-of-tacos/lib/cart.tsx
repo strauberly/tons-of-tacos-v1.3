@@ -119,7 +119,10 @@ export function UpdateCart(cart: CartItem[]) {
 //   return orderConfirmation;
 // }
 
-export type responseMessage = { type: "" };
+// export type responseMessage = { type: "" };
+export type responseMessage = { message: "" };
+
+export let resp: string = "";
 
 export async function SendOrder(
   previousState: responseMessage,
@@ -174,10 +177,12 @@ export async function SendOrder(
     data.orderUid + data.customerName + data.customerEmail + data.customerPhone;
   // console.log(orderConfirmation);
   // alert(orderConfirmation);
-  alert(status);
+  // alert(status);
+  // previousState = orderConfirmation;
   if (status === 201) {
-    return { type: orderConfirmation };
+    // resp = orderConfirmation;
+    return { message: orderConfirmation };
   } else {
-    return { type: data.message };
+    return { message: data.message };
   }
 }

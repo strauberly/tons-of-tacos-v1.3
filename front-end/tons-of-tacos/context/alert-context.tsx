@@ -19,7 +19,7 @@ const AlertContext = createContext<ContextProps>({
 });
 
 export const AlertContextProvider = ({ children }: { children: ReactNode }) => {
-  const [alert, setAlert] = useState("");
+  const [alert, setAlert] = useState<string>("");
   return (
     <AlertContext.Provider
       value={{
