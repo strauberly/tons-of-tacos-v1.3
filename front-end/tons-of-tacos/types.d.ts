@@ -36,3 +36,11 @@ type Valid = {
   valid: boolean;
   message: string;
 };
+
+type OrderItem = {
+  itemName: string;
+  unitPrice: number;
+  quantity: number;
+  size: string;
+  total: number;
+};

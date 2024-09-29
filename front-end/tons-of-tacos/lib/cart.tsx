@@ -109,8 +109,33 @@ export async function SendOrder(
   const data = await response.json();
   const status = response.status;
 
-  const orderConfirmation =
-    data.orderUid + data.customerName + data.customerEmail + data.customerPhone;
+  // console.log(JSON.stringify(data));
+
+  const orderNumber = data.orderUid;
+  const customerName = data.customerName;
+  const customerEmail = data.customerEmail;
+  const customerPhone = data.customerPhone;
+  const orderTotal = data.orderTotal;
+  let receivedOrderItems: string[] = data.orderItems.map(
+    (orderItem: OrderItem) =>
+      `\n${orderItem.quantity}  x  ${orderItem.itemName}:  size  (${
+        orderItem.size
+      })  =  $${orderItem.total.toFixed(2)} `
+  );
+
+  const orderConfirmation = `Hola, ${customerName}!
+
+Thank you for your order of: ${receivedOrderItems}
+
+$${orderTotal.toFixed(
+    2
+  )} is your total and we accept cash, credit, debit, and crypto.
+   
+Your confirmation is ready ${orderNumber}  and your food should be ready in about 15 minutes.
+   
+We'll try to contact you to let you know your order is at ${customerPhone} and ${customerEmail}.
+  
+See you at the truck!`;
 
   if (status === 201) {
     return { message: orderConfirmation };
