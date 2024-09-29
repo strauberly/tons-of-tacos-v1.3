@@ -1,13 +1,60 @@
 .alert {
   display: flex;
   position: fixed;
-  line-break: strict;
   margin: auto;
   margin-top: 15rem;
-  padding: 1rem;
-  z-index: 100;
-  background-color: blue;
-  width: fit-content;
   left: 0rem;
   right: 0rem;
+  padding: 0.25rem;
+  z-index: 98;
+  box-shadow: 0rem 0rem 5rem 50vh rgba(0, 0, 0, 0.5);
+  width: 80%;
+  border-color: transparent;
+  background: linear-gradient(
+      to bottom,
+      var(--border-color) 0%,
+      var(--background-color) 45%,
+      var(--background-color) 90%,
+      var(--border-color) 100%
+    )
+    100%;
+  border-radius: 10px;
+
+  border-style: solid;
+
+  transition: 2.5s ease;
+}
+
+.alertBackground {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background-color: #0c0424;
+  border-radius: 10px;
+}
+
+.alert p {
+  display: flex;
+  font-size: clamp(1.25rem, 2vw, 1.5vw);
+}
+
+.alert pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: clamp(1.25rem, 2vw, 1.5vw);
+}
+
+.close {
+  position: fixed;
+  z-index: 100;
+  font-size: clamp(2.5rem, 1vw, 1vw);
+  margin: auto;
+  margin-top: 17rem;
+  left: 70%;
+  right: 0rem;
+  padding-right: 2rem;
 }
