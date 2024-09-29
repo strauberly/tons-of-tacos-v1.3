@@ -5,6 +5,7 @@
 -- Sep 29 2024 --
 
 - Order confirmation text formatted. Ready to begin styling.
+- Styling is in place and functionality for closing the alert and redirecting to home page.
 
 ---
 

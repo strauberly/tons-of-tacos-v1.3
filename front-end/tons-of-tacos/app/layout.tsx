@@ -6,6 +6,7 @@ import { inter } from "../components/ui/fonts/fonts";
 import { Providers } from "@/context/providers";
 import Alert from "@/components/alert/alert";
 import { AlertContextProvider, useAlertContext } from "@/context/alert-context";
+import Card from "@/components/ui/cards/card";
 
 export const metadata: Metadata = {
   title: "Tons Of Tacos",

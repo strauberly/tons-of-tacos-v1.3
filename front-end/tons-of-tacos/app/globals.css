@@ -76,6 +76,10 @@ button:hover {
   background-color: var(--interactive-color);
 }
 
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
 input {
   background-color: none;
   border: none;
