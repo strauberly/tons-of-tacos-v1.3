@@ -1,5 +1,5 @@
 "use client";
-
+import classes from "./alert.module.css";
 import { useDisplayContext } from "@/context/display-context";
 import { useAlertContext } from "@/context/alert-context";
 export default function Alert() {
@@ -9,8 +9,10 @@ export default function Alert() {
   return (
     <>
       {showAlert && (
-        <div>
-          <p>{alert}</p>
+        <div className={classes.alert}>
+          <pre>
+            <p>{alert}</p>
+          </pre>
         </div>
       )}
     </>

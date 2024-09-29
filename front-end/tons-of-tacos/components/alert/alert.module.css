@@ -1,2 +1,13 @@
 .alert {
+  display: flex;
+  position: fixed;
+  line-break: strict;
+  margin: auto;
+  margin-top: 15rem;
+  padding: 1rem;
+  z-index: 100;
+  background-color: blue;
+  width: fit-content;
+  left: 0rem;
+  right: 0rem;
 }
