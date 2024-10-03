@@ -97,6 +97,13 @@
   }
 }
 
+/* cart resize */
+@media (max-width: 1005px) {
+  .cart {
+    width: 100%;
+  }
+}
+
 /* @media (max-width: 1010px) {
   .cart {
     width: 65%;
@@ -145,12 +152,5 @@
   .menu ul li {
     background-color: var(--border-color);
     padding: 4vw 100%;
-  }
-}
-
-/* cart resize */
-@media (max-width: 1005px) {
-  .cart {
-    width: 100%;
   }
 }

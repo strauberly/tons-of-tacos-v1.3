@@ -6,6 +6,8 @@ import { useCartContext } from "@/context/cart-context";
 import { useEffect } from "react";
 import Checkout from "../ui/buttons/checkout/checkout-button";
 import CustomerInfoForm from "../ui/forms/customer-info-form";
+import FadeOnLoad from "../ui/animations/fade-on-load";
+import Alert from "../alert/alert";
 // import customerInfoValidation from "@/lib/actions";
 
 export default function Cart() {
@@ -28,36 +30,41 @@ export default function Cart() {
 
   return (
     <>
-      <div
-        className={classes.cart}
-        onMouseEnter={() => [setShowCart(true)]}
-        onMouseLeave={() => setShowCart(false)}
-      >
-        <ul>
-          {cart.map(
-            (cartItem: {
-              menuId: string;
-              itemName: string;
-              quantity: number;
-              size: string;
-              price: string;
-            }) => (
-              <CartItem
-                key={`${cartItem.itemName}_${cartItem.size}`}
-                id={`${cartItem.itemName}_${cartItem.size}`}
-                menuId={cartItem.menuId}
-                itemName={cartItem.itemName}
-                itemQuantity={cartItem.quantity}
-                size={cartItem.size}
-                itemPrice={cartItem.price}
-              />
-            )
-          )}
-        </ul>
+      <>
+        <div
+          className={classes.cart}
+          onMouseEnter={() => [setShowCart(true)]}
+          onMouseLeave={() => setShowCart(false)}
+        >
+          <ul>
+            {cart.map(
+              (cartItem: {
+                menuId: string;
+                itemName: string;
+                quantity: number;
+                size: string;
+                price: string;
+              }) => (
+                <CartItem
+                  key={`${cartItem.itemName}_${cartItem.size}`}
+                  id={`${cartItem.itemName}_${cartItem.size}`}
+                  menuId={cartItem.menuId}
+                  itemName={cartItem.itemName}
+                  itemQuantity={cartItem.quantity}
+                  size={cartItem.size}
+                  itemPrice={cartItem.price}
+                />
+              )
+            )}
+          </ul>
 
-        <p className={classes.total}>Total: $ {calcTotal().toFixed(2)}</p>
-        <CustomerInfoForm />
-      </div>
+          <p className={classes.total}>Total: $ {calcTotal().toFixed(2)}</p>
+          <CustomerInfoForm />
+        </div>
+      </>
+      <FadeOnLoad>
+        <Alert />
+      </FadeOnLoad>
     </>
   );
 }
