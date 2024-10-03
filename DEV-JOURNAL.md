@@ -2,6 +2,12 @@
 
 ---
 
+-- Oct 3 2024 --
+
+- Styling adjustments for responsiveness.
+
+---
+
 -- Sep 29 2024 --
 
 - Order confirmation text formatted. Ready to begin styling.

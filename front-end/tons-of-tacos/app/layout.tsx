@@ -7,6 +7,7 @@ import { Providers } from "@/context/providers";
 import Alert from "@/components/alert/alert";
 import { AlertContextProvider, useAlertContext } from "@/context/alert-context";
 import Card from "@/components/ui/cards/card";
+import FadeOnLoad from "@/components/ui/animations/fade-on-load";
 
 export const metadata: Metadata = {
   title: "Tons Of Tacos",
@@ -22,9 +23,17 @@ export default function RootLayout({
     <html lang="en" className="html">
       <body className={`${inter.variable}`}>
         <Providers>
-          <Alert />
+          {/* <FadeOnLoad>
+            <Alert />
+          </FadeOnLoad> */}
           <MainHeader />
-          <div className="children">{children}</div>
+
+          <div className="children">
+            {children}
+            {/* <FadeOnLoad>
+              <Alert />
+            </FadeOnLoad> */}
+          </div>
         </Providers>
       </body>
     </html>

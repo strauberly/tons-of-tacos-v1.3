@@ -118,14 +118,14 @@ export async function SendOrder(
   const orderTotal = data.orderTotal;
   let receivedOrderItems: string[] = data.orderItems.map(
     (orderItem: OrderItem) =>
-      `\n${orderItem.quantity}  x  ${orderItem.itemName}:  size  (${
-        orderItem.size
-      })  =  $${orderItem.total.toFixed(2)} `
+      `\n${orderItem.quantity}  x  ${orderItem.itemName}:
+      size  (${orderItem.size})  =  $${orderItem.total.toFixed(2)}`
   );
 
   const orderConfirmation = `Hola, ${customerName}!
 
-Thank you for your order of: ${receivedOrderItems}
+Thank you for your order of: 
+${receivedOrderItems}
 
 $${orderTotal.toFixed(
     2

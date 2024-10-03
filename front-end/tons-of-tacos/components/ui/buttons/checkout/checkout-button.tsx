@@ -12,10 +12,10 @@ export default function SubmitButton(validation: {
   email: boolean | undefined;
   state: string;
 }) {
-  // const res = useRef();
   const status = useFormStatus();
   const { setShowAlert } = useDisplayContext();
   const { setAlert } = useAlertContext();
+  const { setShowCart } = useDisplayContext();
 
   return (
     <button
@@ -29,8 +29,8 @@ export default function SubmitButton(validation: {
         status.pending
       }
       onClick={() => {
-        setShowAlert(true);
         setAlert(validation.state);
+        setShowAlert(true);
       }}
     >
       {status.pending ? "Sending Order... " : "Submit Order"}
