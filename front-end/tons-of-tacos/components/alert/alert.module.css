@@ -3,19 +3,19 @@
   /* flex-direction: row; */
   position: fixed;
   /* overflow-y: scroll; */
-  /* margin: auto; */
+  margin: auto;
   /* margin-top: -15rem; */
   top: 10%;
-  bottom: 40%;
+  /* bottom: 30%; */
   /* margin-right: -3rem; */
-  left: -40%;
-  right: -40%;
+  left: 0;
+  right: 0;
   padding: 0.25rem;
 
   /* padding-right: 0rem; */
-  /* z-index: 99; */
+  z-index: 99;
   /* box-shadow: 0rem 0rem 5rem 50vh rgba(0, 0, 0, 0.5); */
-  width: 80%;
+  width: 40%;
   height: 80%;
   border-color: transparent;
   background: linear-gradient(
@@ -46,6 +46,14 @@
   /* padding-right: -10rem; */
   background-color: #0c0424;
   border-radius: 10px;
+}
+
+.alertBackdrop {
+  position: fixed;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .alert p {

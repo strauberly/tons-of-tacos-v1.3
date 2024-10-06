@@ -116,6 +116,7 @@ export async function SendOrder(
   const customerEmail = data.customerEmail;
   const customerPhone = data.customerPhone;
   const orderTotal = data.orderTotal;
+
   let receivedOrderItems: string[] = data.orderItems.map(
     (orderItem: OrderItem) =>
       `\n${orderItem.quantity}  x  ${orderItem.itemName}:

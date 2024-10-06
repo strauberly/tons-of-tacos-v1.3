@@ -6,6 +6,8 @@
 
 - Shifted alert/modal out of cart and into the layout. This should allow for a proper modal after styling and prevent it from vanishing when mouse leaves cart.
 
+- Witnessed bug caused by alert being made visible before being able to capture and set response as alert. Resolved with timeout.
+
 ---
 
 -- Oct 3 2024 --
