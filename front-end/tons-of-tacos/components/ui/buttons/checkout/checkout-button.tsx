@@ -28,7 +28,7 @@ export default function SubmitButton(validation: {
         !validation.email ||
         status.pending
       }
-      onClick={() => {
+      onClick={async () => {
         setAlert(validation.state);
         setShowAlert(true);
       }}

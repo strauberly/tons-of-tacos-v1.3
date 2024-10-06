@@ -62,9 +62,9 @@ export default function Cart() {
           <CustomerInfoForm />
         </div>
       </>
-      <FadeOnLoad>
+      {/* <FadeOnLoad>
         <Alert />
-      </FadeOnLoad>
+      </FadeOnLoad> */}
     </>
   );
 }
