@@ -2,6 +2,12 @@
 
 ---
 
+-- Oct 6 2024 --
+
+- Shifted alert/modal out of cart and into the layout. This should allow for a proper modal after styling and prevent it from vanishing when mouse leaves cart.
+
+---
+
 -- Oct 3 2024 --
 
 - Styling adjustments for responsiveness.

@@ -23,9 +23,9 @@ export default function RootLayout({
     <html lang="en" className="html">
       <body className={`${inter.variable}`}>
         <Providers>
-          {/* <FadeOnLoad>
-            <Alert />
-          </FadeOnLoad> */}
+          {/* <FadeOnLoad> */}
+          <Alert />
+          {/* </FadeOnLoad> */}
           <MainHeader />
 
           <div className="children">
