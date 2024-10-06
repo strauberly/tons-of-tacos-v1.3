@@ -10,13 +10,13 @@ import { AlertContextProvider } from "./alert-context";
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <AlertContextProvider>
-      <CartContextProvider>
-        <MenuCategoryContextProvider>
-          <DisplayContextProvider>
+      <DisplayContextProvider>
+        <CartContextProvider>
+          <MenuCategoryContextProvider>
             <MenuContextProvider>{children}</MenuContextProvider>
-          </DisplayContextProvider>
-        </MenuCategoryContextProvider>
-      </CartContextProvider>
+          </MenuCategoryContextProvider>
+        </CartContextProvider>
+      </DisplayContextProvider>
     </AlertContextProvider>
   );
 }

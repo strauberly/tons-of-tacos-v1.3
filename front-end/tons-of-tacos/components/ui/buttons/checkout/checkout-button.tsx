@@ -4,6 +4,7 @@ import { useDisplayContext } from "@/context/display-context";
 import classes from "./checkout-button.module.css";
 import { useFormStatus } from "react-dom";
 import { useAlertContext } from "@/context/alert-context";
+import { useEffect } from "react";
 
 export default function SubmitButton(validation: {
   firstName: boolean | undefined;
@@ -12,10 +13,15 @@ export default function SubmitButton(validation: {
   email: boolean | undefined;
   state: string;
 }) {
+  // new Promise((resolve) => setTimeout(resolve, 1000));
   const status = useFormStatus();
   const { setShowAlert } = useDisplayContext();
   const { setAlert } = useAlertContext();
   const { setShowCart } = useDisplayContext();
+
+  useEffect(() => {
+    setAlert(validation.state);
+  }, [setAlert, validation.state]);
 
   return (
     <button
@@ -30,6 +36,7 @@ export default function SubmitButton(validation: {
       }
       onClick={async () => {
         setAlert(validation.state);
+        await new Promise((resolve) => setTimeout(resolve, 250));
         setShowAlert(true);
       }}
     >

@@ -8,6 +8,7 @@ import Alert from "@/components/alert/alert";
 import { AlertContextProvider, useAlertContext } from "@/context/alert-context";
 import Card from "@/components/ui/cards/card";
 import FadeOnLoad from "@/components/ui/animations/fade-on-load";
+import { useDisplayContext } from "@/context/display-context";
 
 export const metadata: Metadata = {
   title: "Tons Of Tacos",
