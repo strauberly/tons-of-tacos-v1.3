@@ -1,20 +1,12 @@
 .alert {
   display: flex;
-  /* flex-direction: row; */
   position: fixed;
-  /* overflow-y: scroll; */
   margin: auto;
-  /* margin-top: -15rem; */
   top: 10%;
-  /* bottom: 30%; */
-  /* margin-right: -3rem; */
   left: 0;
   right: 0;
   padding: 0.25rem;
-
-  /* padding-right: 0rem; */
   z-index: 99;
-  /* box-shadow: 0rem 0rem 5rem 50vh rgba(0, 0, 0, 0.5); */
   width: 40%;
   height: 80%;
   border-color: transparent;
@@ -37,13 +29,10 @@
   height: 100%;
   width: 100%;
   margin: auto;
-  /* justify-content: center; */
   overflow-y: scroll;
-  /* margin-right: 1rem; */
   top: 0;
   bottom: 0;
   padding: 2rem;
-  /* padding-right: -10rem; */
   background-color: #0c0424;
   border-radius: 10px;
 }
@@ -70,13 +59,11 @@
 
 .close {
   position: relative;
-  /* z-index: 100; */
   font-size: clamp(2.5rem, 1vw, 1vw);
   margin: auto;
   margin-top: 5%;
   left: 40%;
   right: 40%;
-  /* padding-right: 2rem; */
 }
 
 @media (max-width: 1005px) {
