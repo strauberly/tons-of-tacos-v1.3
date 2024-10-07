@@ -109,8 +109,6 @@ export async function SendOrder(
   const data = await response.json();
   const status = response.status;
 
-  // console.log(JSON.stringify(data));
-
   const orderNumber = data.orderUid;
   const customerName = data.customerName;
   const customerEmail = data.customerEmail;

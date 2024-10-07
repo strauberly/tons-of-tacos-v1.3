@@ -13,11 +13,9 @@ export default function SubmitButton(validation: {
   email: boolean | undefined;
   state: string;
 }) {
-  // new Promise((resolve) => setTimeout(resolve, 1000));
   const status = useFormStatus();
   const { setShowAlert } = useDisplayContext();
   const { setAlert } = useAlertContext();
-  const { setShowCart } = useDisplayContext();
 
   useEffect(() => {
     setAlert(validation.state);

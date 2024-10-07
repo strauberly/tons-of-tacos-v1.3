@@ -8,6 +8,8 @@
 
 - Witnessed bug caused by alert being made visible before being able to capture and set response as alert. Resolved with timeout.
 
+- Components relating to modal work scrubbed for unused code and comments.
+
 ---
 
 -- Oct 3 2024 --
