@@ -14,40 +14,39 @@
 
 .quantityBadge {
   animation: change 0.5s 3;
-  position: absolute;
+  position: fixed;
   z-index: 100;
-  font-size: clamp(0.5rem, 0.75vw, 1vw);
-  font-weight: 900;
+  font-size: clamp(1vw, 0.75vw, 1vw);
+  font-weight: bolder;
   background-color: var(--user-selected-color);
   border-radius: 50%;
   border: solid 2px;
   border-color: rgb(36, 157, 159);
-  height: clamp(1rem, 1vw, 1vw);
-  width: clamp(1rem, 1vw, 1vw);
+  height: clamp(1.5vw, 1vw, 1vw);
+  width: clamp(1.5vw, 1vw, 1vw);
   pointer-events: none;
-  right: 4%;
-  top: 25%;
+  right: 5.75vw;
+  top: 0.75vw;
 }
 
 /* medium devices */
 @media (max-width: 1400px) {
   .quantityBadge {
-    font-size: clamp(1rem, 1.5vw, 1.5vw);
-    height: clamp(1rem, 2vw, 2vw);
-    width: clamp(1rem, 2vw, 2vw);
-    right: 5%;
-    top: 20%;
+    font-size: clamp(1.5vw, 1.5vw, 1.5vw);
+    height: clamp(1.5vw, 2vw, 2vw);
+    width: clamp(1.5vw, 2vw, 2vw);
+    right: 7vw;
   }
 }
 
 /* medium devices */
 @media (max-width: 800px) {
   .quantityBadge {
-    font-size: clamp(1rem, 1vw, 1vw);
-    height: clamp(1rem, 1vw, 1vw);
-    width: clamp(1rem, 1vw, 1vw);
-    right: 5.5%;
-    top: 25%;
+    font-size: clamp(2vw, 3vw, 2.5vw);
+    height: clamp(3vw, 3vw, 3vw);
+    width: clamp(3vw, 3vw, 3vw);
+    right: 7vw;
+    top: 1.5vw;
   }
 }
 
@@ -57,6 +56,6 @@
     font-size: clamp(0.75rem, 1vw, 1vw);
     height: clamp(1rem, 1vw, 1vw);
     width: clamp(1rem, 1vw, 1vw);
-    right: 5%;
+    right: 7vw;
   }
 }

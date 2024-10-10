@@ -2,7 +2,26 @@
 
 ---
 
--- Oct 6 2024 --
+-- Oct 9 2024 --
+
+- Moved menu nav styling to menu nav style sheet from main header style sheet.
+- Restyled menu nav elements to correspond with new placement of components.
+
+---
+
+-- Oct 8 2024 --
+
+- Moved nav buttons styling into its own style sheet next to nav buttons component.
+
+- Transferred Cart styling from main header style sheet to cart stylesheet.
+
+- Adjusted styling for cart badge.
+
+- Created menu nav style sheet module.
+
+---
+
+- -- Oct 6 2024 --
 
 - Shifted alert/modal out of cart and into the layout. This should allow for a proper modal after styling and prevent it from vanishing when mouse leaves cart.
 

@@ -1,5 +1,6 @@
 "use client";
-import classes from "@/components/main-header/main-header.module.css";
+import classes from "./menu-nav.module.css";
+// import classes from "@/components/main-header/main-header.module.css";
 import MenuCategories from "./menu-category-list";
 import { useDisplayContext } from "@/context/display-context";
 

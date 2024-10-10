@@ -1,0 +1,62 @@
+.menu {
+  background-color: var(--border-color);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 3.55vw;
+  left: 7vw;
+  font-family: "Quatl";
+}
+
+
+.menu ul li {
+  list-style-type: none;
+  padding: 2vw;
+}
+
+.menu a {
+  font-size: 2vw;
+  display: flex;
+  justify-content: center;
+  color: var(--interactive-color);
+  text-decoration: none;
+  transition: 1s ease;
+}
+
+.menu a:hover {
+  color: var(--attention-color);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+/* medium devices */
+@media (max-width: 1400px) {
+  .menu {
+    top: 6.15vw;
+    left: 11vw;
+  }
+
+  .menu a {
+    font-size: 4vw;
+  }
+
+  .menu ul li {
+    padding: 4vw;
+  }
+}
+
+/* small devices */
+@media (max-width: 800px) {
+  .menu {
+    top: 8vw;
+    width: 96vw;
+  }
+
+  .menu a {
+    font-size: 6vw;
+  }
+
+  .menu ul li {
+    padding: 6.5vw;
+  }
+}

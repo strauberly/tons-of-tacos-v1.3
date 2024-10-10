@@ -1,3 +1,11 @@
+.navButtons {
+  position: fixed;
+  display: flex;
+  gap: 4vw;
+  right: 5%;
+  margin-top: 0.25rem;
+}
+
 .icon {
   height: 2vw;
   color: var(--interactive-color);
@@ -16,7 +24,11 @@
   .icon {
     height: 4vw;
     margin-bottom: 1.5vw;
-    /* margin: 0 0.75vw 1.1vw; */
+  }
+
+  .navButtons {
+    /* margin-top: 0.5%; */
+    gap: 8vw;
   }
 }
 
@@ -26,4 +38,10 @@
     height: 5vw;
     margin-bottom: 2vw;
   }
+
+  .navButtons {
+    margin-top: 1vw;
+    gap: 8vw;
+  }
 }
+

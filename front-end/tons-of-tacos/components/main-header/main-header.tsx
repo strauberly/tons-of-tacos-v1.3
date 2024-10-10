@@ -2,7 +2,6 @@ import classes from "./main-header.module.css";
 import Link from "next/link";
 import useCategoriesSource from "@/lib/menu";
 import NavButtons from "@/components/ui/buttons/nav-buttons/nav-buttons";
-import Alert from "../alert/alert";
 
 export default async function MainHeader() {
   let categories;
