@@ -1,11 +1,11 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, transform } from "framer-motion";
 import React, { ReactNode } from "react";
 
 const animation = {
-  initial: { scaleY: 0, translateY: "2.3vw" },
-  animate: { scaleY: 1, translateY: 0 },
+  initial: { scaleY: 0, originY: "4rem" },
+  animate: { scaleY: 1 },
   exit: { scaleY: 0 },
 };
 

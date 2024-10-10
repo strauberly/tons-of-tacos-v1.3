@@ -1,14 +1,18 @@
 .cart {
-  /* z-index: 80; */
-  display: flex;
+  position: relative;
   flex-direction: column;
+  background-color: var(--background-color);
   border: var(--border-color) solid 2px;
+  width: max-content;
+  top: 3.55vw;
+  left: 3vw;
   height: 90vh;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .cart ul li {
+  position: relative;
   list-style-type: none;
   display: grid;
   row-gap: 2vw;
@@ -27,6 +31,21 @@
   font-size: clamp(1.25rem, 2vw, 1.5vw);
   margin-top: 0.5vw;
   margin-bottom: 1.25vw;
+}
+
+/* medium devices */
+@media (max-width: 1400px) {
+  .cart {
+    top: 6.15vw;
+  }
+}
+
+/* small devices */
+@media (max-width: 800px) {
+  .cart {
+    top: 8vw;
+    width: 96vw;
+  }
 }
 
 @media (max-width: 1000px) {
