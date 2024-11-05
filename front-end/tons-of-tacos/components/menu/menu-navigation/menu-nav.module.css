@@ -1,13 +1,12 @@
 .menu {
-  background-color: var(--border-color);
   position: relative;
   display: flex;
   justify-content: center;
-  top: 3.55vw;
-  left: 7vw;
+  top: 3.525vw;
+  right: clamp(5rem, 28%, 6rem);
   font-family: "Quatl";
+  background-color: var(--border-color);
 }
-
 
 .menu ul li {
   list-style-type: none;
@@ -15,7 +14,7 @@
 }
 
 .menu a {
-  font-size: 2vw;
+  font-size: 3vw;
   display: flex;
   justify-content: center;
   color: var(--interactive-color);
@@ -32,8 +31,8 @@
 /* medium devices */
 @media (max-width: 1400px) {
   .menu {
-    top: 6.15vw;
-    left: 11vw;
+    top: 6.2vw;
+    left: -8vw;
   }
 
   .menu a {
@@ -45,11 +44,28 @@
   }
 }
 
+@media (max-width: 1240px) {
+  .menu {
+    left: -8.55vw;
+  }
+}
+
+@media (max-width: 975px) {
+  .menu {
+    width: 94vw;
+    left: 14%;
+    transform: translateX(-92%);
+    top: 6vw;
+  }
+}
+
 /* small devices */
 @media (max-width: 800px) {
   .menu {
     top: 8vw;
-    width: 96vw;
+    width: 94vw;
+    left: 13%;
+    transform: translateX(-86.5%);
   }
 
   .menu a {

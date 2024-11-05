@@ -13,7 +13,7 @@ body {
   background-color: var(--background-color);
   font-family: "Quatl";
   letter-spacing: 0.5px;
-  height: 100vh;
+  /* height: 100%; */
   overflow-y: scroll;
   overflow-x: hidden;
   --background-color: #0c0424;

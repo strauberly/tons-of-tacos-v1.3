@@ -23,10 +23,12 @@
 }
 
 .decrement {
+  z-index: 1;
   rotate: 90deg;
 }
 
 .increment {
+  z-index: 1;
   rotate: -90deg;
 }
 

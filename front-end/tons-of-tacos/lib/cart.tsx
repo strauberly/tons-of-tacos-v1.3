@@ -60,6 +60,10 @@ export function UpdateCart(cart: CartItem[]) {
   sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(cart));
 }
 
+export function ResetCart() {
+  sessionStorage.removeItem("tons-of-tacos-cart");
+}
+
 export type responseMessage = { message: "" };
 
 export let resp: string = "";
@@ -106,6 +110,8 @@ export async function SendOrder(
     body: JSON.stringify(order),
   });
 
+  // try catch block
+
   const data = await response.json();
   const status = response.status;
 
@@ -121,7 +127,7 @@ export async function SendOrder(
       size  (${orderItem.size})  =  $${orderItem.total.toFixed(2)}`
   );
 
-  const orderConfirmation = `Hola, ${customerName}!
+  let orderConfirmation = `Hola, ${customerName}!
 
 Thank you for your order of: 
 ${receivedOrderItems}
