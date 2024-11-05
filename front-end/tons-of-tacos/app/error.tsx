@@ -7,8 +7,8 @@ export default function Error({ error }: { error: Error }) {
     <div className={classes.error}>
       <h1>Whoops! {error.message}.</h1>
       <p>
-        An error has occurred. Give us a shout and we'll get it worked out.
-        Thanks!
+        An error has occurred. Give us a shout and we`&apos;`ll get it worked
+        out. Thanks!
       </p>
       <p className={classes.errorContact}>Tons Of Tacos Phone and Email</p>
     </div>

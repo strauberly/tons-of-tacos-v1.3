@@ -24,15 +24,10 @@
 }
 .form label {
   color: var(--interactive-color);
-  /* width: 4vw; */
   justify-content: left;
   padding-right: 1vw;
   padding-left: 0.5vw;
 }
-
-/* .form input {
-  padding-left: 1vw;
-} */
 
 .form input,
 .form textarea {
@@ -57,11 +52,6 @@
   font-size: clamp(1rem, 1.5vw, 1.25vw);
 }
 
-.name {
-  /* margin-right: 1vw; */
-  /* justify-content: left; */
-}
-
 .invalid {
   width: 40%;
   border: 2px solid var(--attention-color);
@@ -74,10 +64,6 @@
   border-radius: 3px;
 }
 
-.lastName {
-  /* width: 30%; */
-}
-
 .phone {
   width: 81%;
 }
@@ -87,13 +73,11 @@
 }
 
 .checkoutButton {
-  /* margin-top: clamp(1rem, 0.5vw, 1.25vw); */
   margin-bottom: 2vw;
   font-family: "Quatl";
   color: var(--interactive-color);
   font-size: 1.75rem;
   cursor: pointer;
-
   justify-content: center;
 }
 
@@ -106,7 +90,6 @@
 .errorMessages {
   color: var(--attention-color);
   font-family: var(--inter-font);
-  font-size: 1vw;
   justify-content: center;
   margin-bottom: 1vw;
   align-items: center;
@@ -117,42 +100,6 @@
   flex: 1vw;
   justify-content: space-around;
   align-items: center;
-}
-
-@media (max-width: 1000px) {
-  .form {
-    /* gap: 2vw; */
-    justify-content: space-between;
-  }
-
-  .form div {
-    flex-direction: column;
-    width: 100%;
-    /* margin-bottom: 0.5vw; */
-    /* margin-top: 2vw; */
-  }
-
-  .form input {
-    width: 90%;
-    margin-left: 3vw;
-    margin-bottom: 5vw;
-  }
-
-  .form label {
-    margin-bottom: 4vw;
-  }
-
-  .form p {
-    font-size: 3.5vw;
-  }
-
-  .errorMessages {
-    margin-bottom: 3vw;
-  }
-
-  .total {
-    margin-top: 8vw;
-  }
 }
 
 @media (max-width: 450px) {

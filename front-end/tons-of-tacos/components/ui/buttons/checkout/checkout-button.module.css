@@ -1,18 +1,10 @@
-.checkout {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* margin-top: 5vw; */
-  /* margin-bottom: 1vw; */
-}
 .checkout_button {
   font-family: "Quatl";
   color: var(--interactive-color);
   font-size: 1.75rem;
   cursor: pointer;
   margin-top: 1vw;
-  margin-bottom: 3rem;
-
-  /* justify-content: center; */
+  margin-bottom: 2vw;
 }
 
 .checkout_button:active {

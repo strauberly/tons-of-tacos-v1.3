@@ -25,7 +25,7 @@
   height: clamp(1.5vw, 1vw, 1vw);
   width: clamp(1.5vw, 1vw, 1vw);
   pointer-events: none;
-  right: 5.75vw;
+  right: 4vw;
   top: 0.75vw;
 }
 
@@ -35,7 +35,7 @@
     font-size: clamp(1.5vw, 1.5vw, 1.5vw);
     height: clamp(1.5vw, 2vw, 2vw);
     width: clamp(1.5vw, 2vw, 2vw);
-    right: 7vw;
+    right: 5vw;
   }
 }
 
@@ -45,17 +45,7 @@
     font-size: clamp(2vw, 3vw, 2.5vw);
     height: clamp(3vw, 3vw, 3vw);
     width: clamp(3vw, 3vw, 3vw);
-    right: 7vw;
+    right: 6vw;
     top: 1.5vw;
-  }
-}
-
-/* medium devices */
-@media (max-width: 500px) {
-  .quantityBadge {
-    font-size: clamp(0.75rem, 1vw, 1vw);
-    height: clamp(1rem, 1vw, 1vw);
-    width: clamp(1rem, 1vw, 1vw);
-    right: 7vw;
   }
 }

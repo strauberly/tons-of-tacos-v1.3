@@ -2,14 +2,44 @@
 
 ---
 
--- Oct 9 2024 --
+-- 5 Nov 2024 --
+
+- Closing order confirmation now resets the cart. Ran into error where backend is preserving last customer instead of resetting the data to start new order. Will address this next.
+
+- Menu nav adjusted for lower width resolution.
+- Media request styling for 1000px width in form styling eliminated.
+- Adjusted 1400 media request for cart.
+- Adjustments to nav buttons at less than 800
+- Adjusted 800 media request for cart.
+- Adjusted cart badge for 800 media query.
+- Removed cart badge styling at 500.
+- Drop down animation moved from nav buttons into individual menu nav and cart components.
+- Animation placement updated to be dynamic based on display size.
+- Styling refactored for menu nav and cart in order to facilitate updated file schema.
+- Program scrubbed for outdated code and comments.
+
+---
+
+-- 17 Oct 2024 --
+
+- Styling updated to accommodate file organization for cart component.
+
+---
+
+-- 10 Oct 2024 --
+
+- Increased padding around nav buttons and restyled to accomodate.
+
+---
+
+-- 9 Oct 2024 --
 
 - Moved menu nav styling to menu nav style sheet from main header style sheet.
 - Restyled menu nav elements to correspond with new placement of components.
 
 ---
 
--- Oct 8 2024 --
+-- 8 Oct 2024 --
 
 - Moved nav buttons styling into its own style sheet next to nav buttons component.
 
@@ -21,7 +51,7 @@
 
 ---
 
-- -- Oct 6 2024 --
+- -- 6 Oct 2024 --
 
 - Shifted alert/modal out of cart and into the layout. This should allow for a proper modal after styling and prevent it from vanishing when mouse leaves cart.
 
@@ -31,45 +61,45 @@
 
 ---
 
--- Oct 3 2024 --
+-- 3 Oct 2024 --
 
 - Styling adjustments for responsiveness.
 
 ---
 
--- Sep 29 2024 --
+-- 29 Sep 2024 --
 
 - Order confirmation text formatted. Ready to begin styling.
 - Styling is in place and functionality for closing the alert and redirecting to home page.
 
 ---
 
--- Sep 28 2024 --
+-- 28 Sep 2024 --
 
 - Order confirmation is now correctly being captured and forwarded to our alert component. Time for some styling and formatting.
 - Files scrubbed for unused comments and code. Functionality remains.
 
 ---
 
--- Sep 25 2024 --
+-- 25 Sep 2024 --
 
 - Placed Alert component in layout. Created an alert context in order to pass the response messages from any request necessary. Hopefully may need to alter a bit to get desired result.
 
 ---
 
--- Sep 24 2024 --
+-- 24 Sep 2024 --
 
 - Initialization of alert components. Alert component and styling in components folder, show context, providers and layout files updated.
 
 ---
 
--- Sep 21 2024 --
+-- 21 Sep 2024 --
 
 - Succeeded in capturing response into a string that will be able to be returned to the user. Little muddy and needs revision. Essentially using formState to store the value of the response as an object that is updated as the form action is executed. Feels a bit like lifting state earlier in the application build. If backend runs into exception return that response.
 
 ---
 
--- Sep 19 2024 --
+-- 19 Sep 2024 --
 
 - Had a nice chat with the backend team (myself), and after reviewing the backend realized the requirements for an order object were over complicated. Made adjustments that allow much easier development for front end team (also me.).
 - Front is now able to successfully transmit a customers order to the backend and receive a response.

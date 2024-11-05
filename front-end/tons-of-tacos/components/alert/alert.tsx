@@ -3,12 +3,12 @@ import classes from "./alert.module.css";
 import { useDisplayContext } from "@/context/display-context";
 import { useAlertContext } from "@/context/alert-context";
 import { useRouter } from "next/navigation";
+import { CreateCart, ResetCart } from "@/lib/cart";
 
 export default function Alert() {
   const { showAlert, setShowAlert } = useDisplayContext();
   const { alert } = useAlertContext();
   const router = useRouter();
-  console.log(alert);
 
   return (
     <>
@@ -23,6 +23,8 @@ export default function Alert() {
                 className={classes.close}
                 onClick={() => {
                   setShowAlert(false);
+                  ResetCart();
+                  CreateCart();
                   router.push("/");
                 }}
               >

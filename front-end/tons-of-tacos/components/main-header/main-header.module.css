@@ -2,7 +2,7 @@
   border-bottom: solid var(--border-color) 2px;
   position: fixed;
   display: flex;
-  z-index: 75;
+  z-index: 90;
   width: 96%;
   background-color: var(--background-color);
   padding: 1%;
