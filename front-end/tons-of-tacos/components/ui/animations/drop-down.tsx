@@ -17,7 +17,7 @@ const DropDown = ({ children }: { children: ReactNode }) => {
     let roof;
     switch (true) {
       case windowSize > 1400:
-        roof = "3.51vw";
+        roof = "3.525vw";
         break;
       case windowSize < 1400 && windowSize > 800:
         roof = "6vw";
@@ -26,7 +26,6 @@ const DropDown = ({ children }: { children: ReactNode }) => {
         roof = "8vw";
         break;
     }
-    console.log(roof);
     return roof;
   }
 

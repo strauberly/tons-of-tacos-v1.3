@@ -2,6 +2,14 @@
 
 ---
 
+-- 12 Nov 2024 --
+
+- Backend team rectified previously mentioned issue and we are back to work.
+- Improved the ux by changing the nav buttons to work of on click instead of on enter. The issue seemed to stem from the component not quite yet loaded before a user moved the mouse cursor away creating an unwelcome jitter. Will observe over time.
+- Improved on submit building styling for cart form.
+
+---
+
 -- 5 Nov 2024 --
 
 - Closing order confirmation now resets the cart. Ran into error where backend is preserving last customer instead of resetting the data to start new order. Will address this next.

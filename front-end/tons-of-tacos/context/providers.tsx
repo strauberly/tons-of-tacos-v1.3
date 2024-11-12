@@ -6,6 +6,7 @@ import { DisplayContextProvider } from "./display-context";
 import { CartContextProvider } from "./cart-context";
 import { MenuContextProvider } from "./menu-context";
 import { AlertContextProvider } from "./alert-context";
+import { CartConfirmationContextProvider } from "./cart-confirmation-context";
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
