@@ -25,7 +25,6 @@ export default function RootLayout({
       <body className={`${inter.variable}`}>
         <Providers>
           <Alert />
-          <MainHeader />
           <div className="children">{children}</div>
         </Providers>
       </body>

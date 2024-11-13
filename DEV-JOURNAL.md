@@ -2,11 +2,18 @@
 
 ---
 
+-- 13 Nov 2024 --
+
+- Began work on improving error handling for system tasks like checking if connection can be made to database.
+  - Main header was in layout but outside of error boundary I believe and would be why our error page wasn't loading when server was down. Will research further down the road.
+
+---
+
 -- 12 Nov 2024 --
 
 - Backend team rectified previously mentioned issue and we are back to work.
 - Improved the ux by changing the nav buttons to work of on click instead of on enter. The issue seemed to stem from the component not quite yet loaded before a user moved the mouse cursor away creating an unwelcome jitter. Will observe over time.
-- Improved on submit building styling for cart form.
+- Improved on submit button styling for cart form.
 
 ---
 
