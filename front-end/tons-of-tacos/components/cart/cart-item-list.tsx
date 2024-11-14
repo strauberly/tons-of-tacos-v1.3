@@ -2,7 +2,6 @@ import { useCartContext } from "@/context/cart-context";
 import { GetCart } from "@/lib/cart";
 import { useEffect } from "react";
 import CartItem from "./cart-item";
-import classes from "./cart.module.css";
 
 export default function CartItems() {
   const { cart, setCart } = useCartContext();

@@ -40,8 +40,14 @@ export function RemoveCartItem(id: string) {
 
 export function GetCart() {
   let oldCart: CartItem[] = [];
-  if (typeof window !== "undefined") {
-    oldCart = JSON.parse(sessionStorage.getItem("tons-of-tacos-cart") || "{}");
+  try {
+    if (typeof window !== "undefined") {
+      oldCart = JSON.parse(
+        sessionStorage.getItem("tons-of-tacos-cart") || "{}"
+      );
+    }
+  } catch (error) {
+    throw new Error("Cant get cart right now");
   }
   return oldCart;
 }
@@ -50,8 +56,12 @@ export async function GetCartQuantity() {
   const cart: CartItem[] = await GetCart();
   let cartQuantity: number[] = [];
   let quantity: number = 0;
-  cartQuantity = cart.map((cartItem) => cartItem.quantity);
-  cartQuantity.forEach((num) => (quantity += num));
+  try {
+    cartQuantity = cart.map((cartItem) => cartItem.quantity);
+    cartQuantity.forEach((num) => (quantity += num));
+  } catch (error) {
+    throw new Error("Can't update cart right now");
+  }
   return quantity;
 }
 

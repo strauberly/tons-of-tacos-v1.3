@@ -2,10 +2,18 @@
 
 ---
 
+-- 14 Nov 2024 --
+
+- While continuing with error handling have come to realize, this work often leads to refactoring also. Therefore, will push the current changes and continue work from the refactoring branch.
+
+---
+
 -- 13 Nov 2024 --
 
 - Began work on improving error handling for system tasks like checking if connection can be made to database.
   - Main header was in layout but outside of error boundary I believe and would be why our error page wasn't loading when server was down. Will research further down the road.
+  - After much fiddling about found the tiny line in next.js docs next page of error handling that reads "global-error.js is only enabled in production. In development, our error overlay will show instead." Please put the unique circumstance highlighted up front as soon as you start talking about the topic so people aren't pulling their hair out trying to figure what is going on.
+    - If we move the main header out of the root layout the error handling functions as intended. I may try creating a layout in that route, throwing the header in there and seeing how that plays out. Will actually want a different header between customer interface and owner interface so that might work. Anyway continuing on with error handling to see where else we can make improvements.
 
 ---
 
