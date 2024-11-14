@@ -1,17 +1,31 @@
 // import error from "next/error";
 
 export default async function useCategoriesSource() {
-  const response = await fetch("http://localhost:8080/api/utility/categories");
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch(
+      "http://localhost:8080/api/utility/categories"
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(
+      "Sorry, we're currently having issues bringing you our menu"
+    );
+  }
 }
 
 export async function useMenuItemsForCategory(category: string) {
-  const response = await fetch(
-    `http://localhost:8080/api/menu/category?category=${category}`
-  );
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch(
+      `http://localhost:8080/api/menu/category?category=${category}`
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(
+      "Sorry, we're currently having issues bringing you our menu items"
+    );
+  }
 }
 
 export const MenuItems = (category: string) => {

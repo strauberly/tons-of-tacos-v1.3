@@ -5,6 +5,8 @@
 -- 14 Nov 2024 --
 
 - While continuing with error handling have come to realize, this work often leads to refactoring also. Therefore, will push the current changes and continue work from the refactoring branch.
+- Try catch blocks added to cart library.
+- Try catch blocks added to menu library.
 
 ---
 

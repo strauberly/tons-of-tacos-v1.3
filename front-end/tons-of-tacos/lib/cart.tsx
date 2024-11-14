@@ -66,12 +66,20 @@ export async function GetCartQuantity() {
 }
 
 export function UpdateCart(cart: CartItem[]) {
-  sessionStorage.removeItem("tons-of-tacos-cart");
-  sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(cart));
+  try {
+    sessionStorage.removeItem("tons-of-tacos-cart");
+    sessionStorage.setItem("tons-of-tacos-cart", JSON.stringify(cart));
+  } catch (error) {
+    throw new Error("Cant update cart");
+  }
 }
 
 export function ResetCart() {
-  sessionStorage.removeItem("tons-of-tacos-cart");
+  try {
+    sessionStorage.removeItem("tons-of-tacos-cart");
+  } catch (error) {
+    throw new Error("Problem with resetting the cart");
+  }
 }
 
 export type responseMessage = { message: "" };
@@ -112,6 +120,7 @@ export async function SendOrder(
     order: orderItems,
   };
 
+  // try catch block
   const response = await fetch("http://localhost:8080/api/order/checkout", {
     method: "POST",
     headers: {
@@ -121,40 +130,43 @@ export async function SendOrder(
   });
 
   // try catch block
+  try {
+    const data = await response.json();
+    const status = response.status;
 
-  const data = await response.json();
-  const status = response.status;
+    const orderNumber = data.orderUid;
+    const customerName = data.customerName;
+    const customerEmail = data.customerEmail;
+    const customerPhone = data.customerPhone;
+    const orderTotal = data.orderTotal;
 
-  const orderNumber = data.orderUid;
-  const customerName = data.customerName;
-  const customerEmail = data.customerEmail;
-  const customerPhone = data.customerPhone;
-  const orderTotal = data.orderTotal;
+    let receivedOrderItems: string[] = data.orderItems.map(
+      (orderItem: OrderItem) =>
+        `\n${orderItem.quantity}  x  ${orderItem.itemName}:
+    size  (${orderItem.size})  =  $${orderItem.total.toFixed(2)}`
+    );
 
-  let receivedOrderItems: string[] = data.orderItems.map(
-    (orderItem: OrderItem) =>
-      `\n${orderItem.quantity}  x  ${orderItem.itemName}:
-      size  (${orderItem.size})  =  $${orderItem.total.toFixed(2)}`
-  );
-
-  let orderConfirmation = `Hola, ${customerName}!
-
-Thank you for your order of: 
-${receivedOrderItems}
-
-$${orderTotal.toFixed(
+    let orderConfirmation = `Hola, ${customerName}!
+  
+  Thank you for your order of: 
+  ${receivedOrderItems}
+  
+  $${orderTotal.toFixed(
     2
   )} is your total and we accept cash, credit, debit, and crypto.
-   
-Your confirmation is ${orderNumber}  and your food should be ready in about 15 minutes.
-   
-We'll try to contact you to let you know your order is ready at ${customerPhone} and ${customerEmail}.
   
-See you at the truck!`;
+  Your confirmation is ${orderNumber}  and your food should be ready in about 15 minutes.
+  
+  We'll try to contact you to let you know your order is ready at ${customerPhone} and ${customerEmail}.
+  
+  See you at the truck!`;
 
-  if (status === 201) {
-    return { message: orderConfirmation };
-  } else {
-    return { message: data.message };
+    if (status === 201) {
+      return { message: orderConfirmation };
+    } else {
+      return { message: data.message };
+    }
+  } catch (error) {
+    throw new Error("Sorry we cant process your order right now.");
   }
 }
