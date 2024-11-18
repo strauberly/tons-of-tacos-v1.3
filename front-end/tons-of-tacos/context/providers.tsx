@@ -6,17 +6,19 @@ import { DisplayContextProvider } from "./display-context";
 import { CartContextProvider } from "./cart-context";
 import { MenuContextProvider } from "./menu-context";
 import { AlertContextProvider } from "./alert-context";
-import { CartConfirmationContextProvider } from "./cart-confirmation-context";
+import { OrderConfirmationContextProvider } from "./order-confirmation-context";
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <AlertContextProvider>
       <DisplayContextProvider>
-        <CartContextProvider>
-          <MenuCategoryContextProvider>
-            <MenuContextProvider>{children}</MenuContextProvider>
-          </MenuCategoryContextProvider>
-        </CartContextProvider>
+        <OrderConfirmationContextProvider>
+          <CartContextProvider>
+            <MenuCategoryContextProvider>
+              <MenuContextProvider>{children}</MenuContextProvider>
+            </MenuCategoryContextProvider>
+          </CartContextProvider>
+        </OrderConfirmationContextProvider>
       </DisplayContextProvider>
     </AlertContextProvider>
   );

@@ -18,6 +18,8 @@ interface ContextProps {
   setShowCustomerInfoForm: Dispatch<SetStateAction<boolean>>;
   showAlert: boolean;
   setShowAlert: Dispatch<SetStateAction<boolean>>;
+  showOrderConfirmation: boolean;
+  setShowOrderConfirmation: Dispatch<SetStateAction<boolean>>;
 }
 
 const DisplayContext = createContext<ContextProps>({
@@ -29,6 +31,8 @@ const DisplayContext = createContext<ContextProps>({
   setShowCustomerInfoForm: () => {},
   showAlert: false,
   setShowAlert: () => {},
+  showOrderConfirmation: false,
+  setShowOrderConfirmation: () => {},
 });
 
 export const DisplayContextProvider = ({
@@ -40,6 +44,7 @@ export const DisplayContextProvider = ({
   const [showCart, setShowCart] = useState(false);
   const [showCustomerInfoForm, setShowCustomerInfoForm] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [showOrderConfirmation, setShowOrderConfirmation] = useState(false);
 
   return (
     <DisplayContext.Provider
@@ -52,6 +57,8 @@ export const DisplayContextProvider = ({
         setShowCustomerInfoForm,
         showAlert,
         setShowAlert,
+        showOrderConfirmation,
+        setShowOrderConfirmation,
       }}
     >
       {children}

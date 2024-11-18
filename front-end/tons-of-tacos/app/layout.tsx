@@ -4,6 +4,7 @@ import MainHeader from "../components/main-header/main-header";
 import { inter } from "../components/ui/fonts/fonts";
 import { Providers } from "@/context/providers";
 import Alert from "@/components/alert/alert";
+import OrderConfirmation from "@/components/cart/order-confirmation";
 
 export const metadata: Metadata = {
   title: "Tons Of Tacos",
@@ -21,6 +22,7 @@ export default function RootLayout({
         <Providers>
           <Alert />
           <MainHeader />
+          <OrderConfirmation />
           <div className="children">{children}</div>
         </Providers>
       </body>

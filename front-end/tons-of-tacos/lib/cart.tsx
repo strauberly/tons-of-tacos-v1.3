@@ -120,7 +120,7 @@ export async function SendOrder(
     order: orderItems,
   };
 
-  // try catch block
+  // try catch block here
   const response = await fetch("http://localhost:8080/api/order/checkout", {
     method: "POST",
     headers: {
@@ -167,6 +167,6 @@ export async function SendOrder(
       return { message: data.message };
     }
   } catch (error) {
-    throw new Error("Sorry we cant process your order right now.");
+    throw new Error("Sorry we can't process your order right now.");
   }
 }

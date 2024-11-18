@@ -25,10 +25,6 @@ export default function Alert() {
                 className={classes.close}
                 onClick={() => {
                   setShowAlert(false);
-                  ResetCart();
-                  CreateCart();
-                  setCartQuantity(0);
-                  router.push("/");
                 }}
               >
                 Close
