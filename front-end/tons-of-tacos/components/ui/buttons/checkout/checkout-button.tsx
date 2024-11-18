@@ -5,6 +5,7 @@ import classes from "./checkout-button.module.css";
 import { useFormStatus } from "react-dom";
 import { useAlertContext } from "@/context/alert-context";
 import { useEffect } from "react";
+import { useOrderConfirmationContext } from "@/context/order-confirmation-context";
 
 export default function SubmitButton(validation: {
   firstName: boolean | undefined;
@@ -14,12 +15,13 @@ export default function SubmitButton(validation: {
   state: string;
 }) {
   const status = useFormStatus();
-  const { setShowAlert } = useDisplayContext();
+  const { setShowOrderConfirmation } = useDisplayContext();
   const { setAlert } = useAlertContext();
+  const { setOrderConfirmation } = useOrderConfirmationContext();
 
   useEffect(() => {
-    setAlert(validation.state);
-  }, [setAlert, validation.state]);
+    setOrderConfirmation(validation.state);
+  }, [setOrderConfirmation, validation.state]);
 
   return (
     <button
@@ -33,9 +35,9 @@ export default function SubmitButton(validation: {
         status.pending
       }
       onClick={async () => {
-        setAlert(validation.state);
+        setOrderConfirmation(validation.state);
         await new Promise((resolve) => setTimeout(resolve, 250));
-        setShowAlert(true);
+        setShowOrderConfirmation(true);
       }}
     >
       {status.pending ? "Sending Order... " : "Submit Order"}

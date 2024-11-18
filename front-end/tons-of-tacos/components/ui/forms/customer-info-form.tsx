@@ -6,10 +6,11 @@ import SubmitButton from "../buttons/checkout/checkout-button";
 import classes from "./customer-info-form.module.css";
 import { checkEmail, checkName, checkPhone } from "@/lib/customer-form";
 import { SendOrder } from "@/lib/cart";
-import { useAlertContext } from "@/context/alert-context";
+import { useOrderConfirmationContext } from "@/context/order-confirmation-context";
 
 export default function CustomerInfoForm() {
-  const { setAlert } = useAlertContext();
+  const { setOrderConfirmation } = useOrderConfirmationContext();
+  // const { setAlert } = useAlertContext();
   const initialState = { message: "" };
   const [state, formAction] = useFormState(SendOrder, initialState);
 
@@ -67,7 +68,8 @@ export default function CustomerInfoForm() {
     });
   }
 
-  setAlert(state.message);
+  setOrderConfirmation(state.message);
+  // setAlert(state.message);
 
   return (
     <form className={classes.form} action={formAction}>

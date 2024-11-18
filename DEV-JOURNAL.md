@@ -2,11 +2,18 @@
 
 ---
 
+-- 18 Nov 2024 --
+
+While testing user experience witnessed frustration with cart disappearing if user was moving quickly as they were sliding off the cart triggering the close. Created even listener that would instead leave the cart open until the user clicked another element. Implemented similar in menu.
+
+---
+
 -- 14 Nov 2024 --
 
 - While continuing with error handling have come to realize, this work often leads to refactoring also. Therefore, will push the current changes and continue work from the refactoring branch.
 - Try catch blocks added to cart library.
 - Try catch blocks added to menu library.
+- Refactored so that we have an order confirmation and an alert modal separated from each other.
 
 ---
 

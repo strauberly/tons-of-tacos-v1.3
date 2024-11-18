@@ -1,31 +1,32 @@
 "use client";
-import classes from "./cart-confirmation.module.css";
+import classes from "./order-confirmation.module.css";
 import { useDisplayContext } from "@/context/display-context";
 import { useRouter } from "next/navigation";
 import { CreateCart, ResetCart } from "@/lib/cart";
 import { useCartContext } from "@/context/cart-context";
-import { useCartConfirmationContext } from "@/context/cart-confirmation-context";
+import { useOrderConfirmationContext } from "@/context/order-confirmation-context";
 
-export default function CartConfirmation() {
-  const { showCartConfirmation, setShowCartConfirmation } = useDisplayContext();
+export default function OrderConfirmation() {
+  const { showOrderConfirmation, setShowOrderConfirmation } =
+    useDisplayContext();
   const { setCartQuantity } = useCartContext();
-  const { cartConfirmation } = useCartConfirmationContext();
+  const { orderConfirmation } = useOrderConfirmationContext();
   const router = useRouter();
 
-  console.log(cartConfirmation);
+  console.log(orderConfirmation);
   return (
     <>
-      {showCartConfirmation && (
+      {showOrderConfirmation && (
         <div className={classes.alertBackdrop}>
           <div className={classes.alert}>
             <div className={classes.alertBackground}>
               <pre>
-                <p>{cartConfirmation}</p>
+                <p>{orderConfirmation}</p>
               </pre>
               <button
                 className={classes.close}
                 onClick={() => {
-                  setShowCartConfirmation(false);
+                  setShowOrderConfirmation(false);
                   ResetCart();
                   CreateCart();
                   setCartQuantity(0);
