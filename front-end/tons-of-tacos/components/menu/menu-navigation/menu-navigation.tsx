@@ -17,6 +17,7 @@ export default function MenuNav() {
       }
     }
     window.addEventListener("click", clickHandler, true);
+    setShowMenu(true);
     return () => window.removeEventListener("click", clickHandler, true);
   }, [menuRef, setShowMenu]);
 
