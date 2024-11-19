@@ -2,9 +2,15 @@
 
 ---
 
+-- 19 Nov 2024 --
+
+- Appear to have found a means for changing the sate of menu and cart without rerender which would essentially provide the same state as before. Solution implemented into menu, will try in cart next.
+
+---
+
 -- 18 Nov 2024 --
 
-While testing user experience witnessed frustration with cart disappearing if user was moving quickly as they were sliding off the cart triggering the close. Created even listener that would instead leave the cart open until the user clicked another element. Implemented similar in menu.
+While testing user experience witnessed frustration with cart disappearing if user was moving quickly as they were sliding off the cart triggering the close. Created event listener that would instead leave the cart open until the user clicked another element. Implemented similar in menu. Also opted for on click instead of entered. On entered would also create odd jitters. Perhaps more from rerender.
 
 ---
 

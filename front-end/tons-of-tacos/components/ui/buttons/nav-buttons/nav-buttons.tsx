@@ -6,7 +6,7 @@ import MenuNav from "../../../menu/menu-navigation/menu-navigation";
 import CartIcon from "./cart-icon";
 import CartQuantity from "../../badges/cart-quantity";
 import { useDisplayContext } from "@/context/display-context";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Cart from "@/components/cart/cart";
 import { useCartContext } from "@/context/cart-context";
 import { GetCart } from "@/lib/cart";
@@ -16,13 +16,20 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { showMenu, setShowMenu, showCart, setShowCart } = useDisplayContext();
   const { setCart, cartQuantity } = useCartContext();
 
+  const menuRef = useRef<boolean>(false);
+
+  // men.current = showMenu;
   function toggleMenu() {
     setShowCart(false);
-    if (!showMenu) {
-      setShowMenu(true);
+    if (menuRef.current == false) {
+      menuRef.current = true;
     } else {
-      setShowMenu(false);
+      menuRef.current = false;
     }
+    setShowMenu(menuRef.current);
+    // setShowMenu(!showMenu);
+    // setShowMenu(!showMenu);
+    // men.current = showMenu;
   }
 
   function toggleCart() {
@@ -35,6 +42,8 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   }
 
   useEffect(() => {
+    // men.current = showMenu;
+    // men.current = showMenu;
     setMenuCategories(menuOptions.menuOptions);
     setCart(GetCart());
 
@@ -47,6 +56,8 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
     setCart,
     setMenuCategories,
     setShowCart,
+    showCart,
+    showMenu,
   ]);
 
   return (
