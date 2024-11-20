@@ -16,13 +16,15 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const { showMenu, setShowMenu, showCart, setShowCart } = useDisplayContext();
   const { setCart, cartQuantity } = useCartContext();
 
-  const menuRef = useRef<boolean>(false);
+  const menuRef = useRef<boolean>(showMenu);
+  const cartRef = useRef<boolean>(showCart);
 
-  // men.current = showMenu;
+  // menuRef.current = showMenu;
   function toggleMenu() {
     setShowCart(false);
     if (menuRef.current == false) {
       menuRef.current = true;
+      // setShowMenu(menuRef.current);
     } else {
       menuRef.current = false;
     }
@@ -34,11 +36,13 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
 
   function toggleCart() {
     setShowMenu(false);
-    if (!showCart && cartQuantity > 0) {
-      setShowCart(true);
+    if (cartRef.current == false) {
+      cartRef.current = true;
+      // setShowCart(true);
     } else {
-      setShowCart(false);
+      cartRef.current = false;
     }
+    setShowCart(cartRef.current);
   }
 
   useEffect(() => {
@@ -46,10 +50,6 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
     // men.current = showMenu;
     setMenuCategories(menuOptions.menuOptions);
     setCart(GetCart());
-
-    if (cartQuantity <= 0) {
-      setShowCart(false);
-    }
   }, [
     cartQuantity,
     menuOptions.menuOptions,
@@ -57,8 +57,10 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
     setMenuCategories,
     setShowCart,
     showCart,
-    showMenu,
   ]);
+  if (cartQuantity <= 0) {
+    setShowCart(false);
+  }
 
   return (
     <>
