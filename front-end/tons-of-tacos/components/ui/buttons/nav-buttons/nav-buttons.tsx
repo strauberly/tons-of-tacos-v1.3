@@ -19,26 +19,20 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const menuRef = useRef<boolean>(showMenu);
   const cartRef = useRef<boolean>(showCart);
 
-  // menuRef.current = showMenu;
   function toggleMenu() {
     setShowCart(false);
     if (menuRef.current == false) {
       menuRef.current = true;
-      // setShowMenu(menuRef.current);
     } else {
       menuRef.current = false;
     }
     setShowMenu(menuRef.current);
-    // setShowMenu(!showMenu);
-    // setShowMenu(!showMenu);
-    // men.current = showMenu;
   }
 
   function toggleCart() {
     setShowMenu(false);
     if (cartRef.current == false) {
       cartRef.current = true;
-      // setShowCart(true);
     } else {
       cartRef.current = false;
     }
@@ -46,8 +40,6 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   }
 
   useEffect(() => {
-    // men.current = showMenu;
-    // men.current = showMenu;
     setMenuCategories(menuOptions.menuOptions);
     setCart(GetCart());
   }, [

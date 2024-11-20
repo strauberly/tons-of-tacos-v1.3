@@ -6,6 +6,7 @@
 
 - Implemented solution into cartToggle as well. Result is somewhat mixed.
   - Appears we are getting the nav options without an animation rerender bringing us to original state, but there is lag requiring a double click in most instances to activate the desired behavior. Will be seeing if I can address this next.
+  - File scrubbed of unnecessary code.
 
 ---
 
