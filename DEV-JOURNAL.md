@@ -6,6 +6,10 @@
 
 - Improvements to handling conditional display of menu. Created a click handler that listens for clicks outside of the menu component and closes the menu if click comes from outside the target.
 
+- Scrubbed files for unused code.
+
+-
+
 ---
 
 -- 20 Nov 2024 --
