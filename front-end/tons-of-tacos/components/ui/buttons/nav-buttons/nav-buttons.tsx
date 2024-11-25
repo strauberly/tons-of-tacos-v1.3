@@ -20,13 +20,18 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const cartRef = useRef<boolean>(showCart);
 
   function toggleMenu() {
-    setShowCart(false);
+    // setShowCart(false);
+    // setShowMenu(true);
+    console.log("menu show start: " + showMenu);
+    console.log("menu ref start: " + menuRef.current);
     if (menuRef.current == false) {
       menuRef.current = true;
     } else {
       menuRef.current = false;
     }
+    console.log("menu ref end: " + menuRef.current);
     setShowMenu(menuRef.current);
+    console.log("menu show end: " + showMenu);
   }
 
   function toggleCart() {
@@ -42,6 +47,7 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   useEffect(() => {
     setMenuCategories(menuOptions.menuOptions);
     setCart(GetCart());
+    // menuRef.current = !showMenu;
   }, [
     cartQuantity,
     menuOptions.menuOptions,
@@ -59,7 +65,10 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
       <div className={classes.navButtons}>
         <CartQuantity />
         <nav className={classes.navButtons}>
-          <button className={classes.menuButton} onClick={() => toggleMenu()}>
+          <button
+            className={classes.menuButton}
+            onClick={() => [toggleMenu(), setShowMenu(!showMenu)]}
+          >
             <MenuIcon />
           </button>
 
@@ -67,7 +76,7 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
             <CartIcon />
           </button>
         </nav>
-        <div className={classes.menu}>{showMenu && <MenuNav />}</div>
+        <div className={classes.menu}>{menuRef.current && <MenuNav />}</div>
         <div>{showCart && <Cart />}</div>
       </div>
     </>
