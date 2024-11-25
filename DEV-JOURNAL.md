@@ -2,6 +2,12 @@
 
 ---
 
+-- 25 Nov 2024 --
+
+- Improvements to handling conditional display of menu. Created a click handler that listens for clicks outside of the menu component and closes the menu if click comes from outside the target.
+
+---
+
 -- 20 Nov 2024 --
 
 - Implemented solution into cartToggle as well. Result is somewhat mixed.

@@ -13,7 +13,7 @@ export default function OrderConfirmation() {
   const { orderConfirmation } = useOrderConfirmationContext();
   const router = useRouter();
 
-  console.log(orderConfirmation);
+  // console.log(orderConfirmation);
   return (
     <>
       {showOrderConfirmation && (
