@@ -16,7 +16,6 @@ export default function SubmitButton(validation: {
 }) {
   const status = useFormStatus();
   const { setShowOrderConfirmation } = useDisplayContext();
-  const { setAlert } = useAlertContext();
   const { setOrderConfirmation } = useOrderConfirmationContext();
 
   useEffect(() => {

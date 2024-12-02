@@ -6,6 +6,8 @@ import QuantitySelector from "./quantity-selector/quantity-selector";
 import { useEffect, useState } from "react";
 import MoreIcon from "@/components/ui/icons/more-icon";
 import AddToCart from "../../ui/buttons/add-to-cart/add-to-cart";
+import { useDisplayContext } from "@/context/display-context";
+import { useAlertContext } from "@/context/alert-context";
 
 export default function MenuItem(props: {
   id: string;
@@ -22,14 +24,17 @@ export default function MenuItem(props: {
   const [quantity, setQuantity] = useState(defaultQuantity);
   const [size, setSize] = useState(" ");
   const [expand, setExpand] = useState(false);
+  const { setAlert } = useAlertContext();
+  const { setShowAlert } = useDisplayContext();
 
   const increment = () => {
     setQuantity(quantity + 1);
     if (quantity >= 10) {
       setQuantity(10);
-      alert(
+      setAlert(
         "The limit for this item is 10. If you need more please give us a call so we can try to accommodate your order. Thanks!"
       );
+      setShowAlert(true);
     }
   };
 

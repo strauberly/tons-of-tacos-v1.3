@@ -20,7 +20,7 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   const cartRef = useRef<boolean>(showCart);
 
   function toggleMenu() {
-    // setShowCart(false);
+    setShowCart(false);
     if (menuRef.current == false) {
       menuRef.current = true;
     } else {

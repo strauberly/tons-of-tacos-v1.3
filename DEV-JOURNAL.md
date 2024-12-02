@@ -2,13 +2,19 @@
 
 ---
 
+-- 2 Dec 2024 --
+
+- Update to cart item so that if cart item quantity exceeds given amount then customer is alerted via our alert modal component instead of browser alert.
+
+---
+
 -- 25 Nov 2024 --
 
 - Improvements to handling conditional display of menu. Created a click handler that listens for clicks outside of the menu component and closes the menu if click comes from outside the target.
 
 - Scrubbed files for unused code.
 
--
+- Updated quantity selector and add to cart to utilize our alert modal instead of alert();
 
 ---
 

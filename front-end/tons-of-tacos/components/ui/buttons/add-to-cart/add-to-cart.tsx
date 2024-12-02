@@ -1,8 +1,10 @@
 "use client";
+import { useAlertContext } from "@/context/alert-context";
 import classes from "./add-to-cart.module.css";
 import { useCartContext } from "@/context/cart-context";
 import { AddItemToCart, GetCart } from "@/lib/cart";
 import { useCallback, useEffect, useState } from "react";
+import { useDisplayContext } from "@/context/display-context";
 
 export default function AddToCart(props: {
   id: string;
@@ -16,6 +18,8 @@ export default function AddToCart(props: {
 }) {
   const [largeOrder, setLargeOrder] = useState(false);
   const [itemInCart, setItemInCart] = useState(false);
+  const { setAlert } = useAlertContext();
+  const { setShowAlert } = useDisplayContext();
 
   const {
     cartQuantity,
@@ -32,9 +36,10 @@ export default function AddToCart(props: {
   const quantity = () => {
     newQuantity = cartQuantity + props.quantity;
     if (newQuantity > 30) {
-      alert(
-        "Your order has grown to a fair size. The current maximum is 30 items. Please contact us before adding anything else. This will ensure we can make your order happen today. You can also remove items from your cart. Thank you!"
+      setAlert(
+        "Your order has grown to a fair size. The current maximum is 30 items. Please contact us before adding anything else. This will ensure we can make your order happen today. You can also remove other items from your cart. Thank you!"
       );
+      setShowAlert(true);
       setLargeOrder(true);
     } else {
       setCartQuantity(cartQuantity + props.quantity);
@@ -67,9 +72,11 @@ export default function AddToCart(props: {
       );
       setCart(GetCart());
     } else {
-      alert(
+      // use your alert
+      setAlert(
         `${props.itemName} is already in your cart. Select the cart icon to view your order and change quantities.`
       );
+      setShowAlert(true);
     }
   };
 
