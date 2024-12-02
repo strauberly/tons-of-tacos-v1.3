@@ -5,6 +5,7 @@
 -- 2 Dec 2024 --
 
 - Update to cart item so that if cart item quantity exceeds given amount then customer is alerted via our alert modal component instead of browser alert.
+- Updated phone number validation in form library, checkPhone(), to match validation created on back end.
 
 ---
 
