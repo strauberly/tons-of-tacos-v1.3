@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import QuantitySelector from "../menu/menu-items/quantity-selector/quantity-selector";
 
 import classes from "./cart-item.module.css";
@@ -6,6 +6,8 @@ import RemoveFromCart from "../ui/buttons/remove-from-cart/remove-from-cart";
 import Update from "../ui/buttons/update-cart-item/update-cart-item";
 import { useCartContext } from "@/context/cart-context";
 import { GetCart, RemoveCartItem } from "@/lib/cart";
+import { useAlertContext } from "@/context/alert-context";
+import { useDisplayContext } from "@/context/display-context";
 
 export default function CartItem(props: {
   id: string;
@@ -18,12 +20,15 @@ export default function CartItem(props: {
   const [quantity, setQuantity] = useState(props.itemQuantity);
   const { setCart, cartQuantity, setCartQuantity, setItemRemoved } =
     useCartContext();
+  const { setAlert } = useAlertContext();
+  const { setShowAlert } = useDisplayContext();
 
   const increment = () => {
     if (quantity >= 10) {
-      alert(
+      setAlert(
         "The limit for this item is 10. If you need more please give us a call so we can try to accommodate your order. Thanks!"
       );
+      setShowAlert(true);
     } else {
       setQuantity(quantity + 1);
     }

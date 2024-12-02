@@ -64,6 +64,7 @@
   margin-top: 5%;
   left: 40%;
   right: 40%;
+  cursor: pointer;
 }
 
 @media (max-width: 1005px) {
