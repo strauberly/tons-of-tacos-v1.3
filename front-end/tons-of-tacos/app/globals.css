@@ -39,6 +39,8 @@ p {
 }
 
 h1 {
+  display: flex;
+  justify-content: center;
   color: var(--attention-color);
   font-size: clamp(1rem, 2vw, 2vw);
 }

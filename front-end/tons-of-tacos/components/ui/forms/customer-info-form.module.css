@@ -88,6 +88,7 @@
 }
 
 .errorMessages {
+  display: block;
   color: var(--attention-color);
   font-family: var(--inter-font);
   justify-content: center;
@@ -95,11 +96,34 @@
   align-items: center;
 }
 
-.errors {
-  flex-direction: column;
-  flex: 1vw;
-  justify-content: space-around;
+.firstNameError {
+  display: block;
+  color: var(--attention-color);
+  font-family: var(--inter-font);
+  justify-content: center;
+  margin-bottom: 1vw;
   align-items: center;
+  margin-left: 5vw;
+}
+
+.lastNameError {
+  display: block;
+  color: var(--attention-color);
+  font-family: var(--inter-font);
+  justify-content: center;
+  margin-bottom: 1vw;
+  align-items: center;
+  margin-left: 2vw;
+}
+
+.phoneError {
+  color: var(--attention-color);
+  margin-left: 5vw;
+}
+
+.emailError {
+  color: var(--attention-color);
+  margin-left: 5vw;
 }
 
 @media (max-width: 450px) {

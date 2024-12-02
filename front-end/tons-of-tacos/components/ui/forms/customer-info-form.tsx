@@ -10,7 +10,6 @@ import { useOrderConfirmationContext } from "@/context/order-confirmation-contex
 
 export default function CustomerInfoForm() {
   const { setOrderConfirmation } = useOrderConfirmationContext();
-  // const { setAlert } = useAlertContext();
   const initialState = { message: "" };
   const [state, formAction] = useFormState(SendOrder, initialState);
 
@@ -69,7 +68,6 @@ export default function CustomerInfoForm() {
   }
 
   setOrderConfirmation(state.message);
-  // setAlert(state.message);
 
   return (
     <form className={classes.form} action={formAction}>
@@ -101,12 +99,12 @@ export default function CustomerInfoForm() {
           onChange={validateLastName}
         />
       </div>
-      <div className={classes.errors}>
+      <div>
         {!firstNameValid && (
-          <p className={classes.errorMessages}>{errors.firstNameError}</p>
+          <p className={classes.firstNameError}>{errors.firstNameError}</p>
         )}
         {!lastNameValid && (
-          <p className={classes.errorMessages}>{errors.lastNameError}</p>
+          <p className={classes.lastNameError}>{errors.lastNameError}</p>
         )}
       </div>
       <div>
@@ -125,7 +123,7 @@ export default function CustomerInfoForm() {
       </div>
       <div className={classes.errors}>
         {!phoneValid && (
-          <p className={classes.errorMessages}>{errors.phoneError}</p>
+          <p className={classes.phoneError}>{errors.phoneError}</p>
         )}
       </div>
       <div>
@@ -143,9 +141,9 @@ export default function CustomerInfoForm() {
         />
       </div>
 
-      <div className={classes.errors}>
+      <div>
         {!emailValid && (
-          <p className={classes.errorMessages}>{errors.emailError}</p>
+          <p className={classes.emailError}>{errors.emailError}</p>
         )}
       </div>
       <SubmitButton
