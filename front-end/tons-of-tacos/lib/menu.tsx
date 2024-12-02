@@ -8,9 +8,7 @@ export default async function useCategoriesSource() {
     const data = await response.json();
     return data;
   } catch (error) {
-    throw new Error(
-      "Sorry, we're currently having issues bringing you our menu"
-    );
+    throw new Error("Sorry, we're having issues bringing you our menu");
   }
 }
 
@@ -22,9 +20,7 @@ export async function useMenuItemsForCategory(category: string) {
     const data = await response.json();
     return data;
   } catch (error) {
-    throw new Error(
-      "Sorry, we're currently having issues bringing you our menu items"
-    );
+    throw new Error("Sorry, we're having issues bringing you our menu");
   }
 }
 
