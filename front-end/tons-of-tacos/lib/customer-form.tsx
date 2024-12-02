@@ -29,7 +29,11 @@ export function checkPhone(phone: string) {
 
   if (phone.length === 0) {
     phoneValid.message = "Phone Number must not be blank";
-  } else if (!/^[0-9.]{12}$/.test(phone)) {
+  } else if (
+    !/^[0-9.]{12}$/.test(phone) ||
+    phone.charAt(3) != "." ||
+    phone.charAt(7) != "."
+  ) {
     phoneValid.message =
       "Ensure entered phone number matches the example: 555.555.5555";
   } else {
