@@ -1,13 +1,6 @@
-import { useId } from "react";
 import MenuItem from "./menu-item";
 import classes from "./menu-item-list.module.css";
 import { MenuItems } from "@/lib/menu";
-
-// export default async function MenuItemList(menuItems: {
-//   menuItems: MenuItem[];
-// }) {
-//   const items = menuItems.menuItems;
-//   await new Promise((resolve) => setTimeout(resolve, 3000));
 
 export default async function MenuItemListCopy(itemsCategory: {
   category: string;
