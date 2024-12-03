@@ -2,6 +2,12 @@
 
 ---
 
+-- 3 Dec 2024 --
+
+- Refactor of menu item list, menu item, and dynamic menu category page(app/[menuCategory]/page.tsx), removes issues with menu items page refreshes. Page.tsx was a client component in order to make use of various hooks, appears unnecessary for the desired result. This appears to allow for the elimination of much code in the component. Will finish changes, test and evaluate.
+
+---
+
 -- 2 Dec 2024 --
 
 - Update to cart item so that if cart item quantity exceeds given amount then customer is alerted via our alert modal component instead of browser alert.
