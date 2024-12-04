@@ -8,6 +8,11 @@ import CartItems from "./cart-item-list";
 import { AnimatePresence } from "framer-motion";
 import DropDown from "../ui/animations/drop-down";
 
+//  Do this in use effect
+// if (cartQuantity <= 0) {
+//   setShowCart(false);
+// }
+
 export default function Cart() {
   const { setShowCart } = useDisplayContext();
   const { cart, setCart } = useCartContext();
