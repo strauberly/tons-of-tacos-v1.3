@@ -11,7 +11,7 @@ import Cart from "@/components/cart/cart";
 import { useCartContext } from "@/context/cart-context";
 import { GetCart } from "@/lib/cart";
 
-export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
+export default function NavButtons() {
   const { setMenuCategories } = useMenuCategoryContext();
   const { showMenu, setShowMenu, showCart, setShowCart } = useDisplayContext();
   const { setCart, cartQuantity } = useCartContext();
@@ -40,20 +40,18 @@ export default function NavButtons(menuOptions: { menuOptions: Category[] }) {
   }
 
   useEffect(() => {
-    setMenuCategories(menuOptions.menuOptions);
     setCart(GetCart());
+    if (cartQuantity <= 0) {
+      setShowCart(false);
+    }
   }, [
     cartQuantity,
-    menuOptions.menuOptions,
     setCart,
     setMenuCategories,
     setShowCart,
     showCart,
     showMenu,
   ]);
-  if (cartQuantity <= 0) {
-    setShowCart(false);
-  }
 
   return (
     <>

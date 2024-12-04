@@ -2,6 +2,16 @@
 
 ---
 
+-- 4 Dec 2024 --
+
+- Moved logic for whether to show cart based on if cart has items added to it or not into use effect in NavButtons alleviating an update error.
+
+- Removed test components for proposed changes. Am finding creating a copy of the component in question and then altering a way to make development a little less confusing while altering code. Allows for preserving integrity while experimenting by just plugging in the test component and then removing after testing.
+
+- Files cleaned for unused code.
+
+---
+
 -- 3 Dec 2024 --
 
 - Refactor of menu item list, menu item, and dynamic menu category page(app/[menuCategory]/page.tsx), removes issues with menu items page refreshes. Page.tsx was a client component in order to make use of various hooks, appears unnecessary for the desired result. This appears to allow for the elimination of much code in the component. Will finish changes, test and evaluate.
