@@ -4,6 +4,7 @@
 
 -- 4 Dec 2024 --
 
+- In attempting to correct errors noticed other issues being created. Reset before this work began to analyze closer. In the process did create solution for if server is down by implementing custom alert modal created earlier.
 - Moved logic for whether to show cart based on if cart has items added to it or not into use effect in NavButtons alleviating an update error.
 
 - Removed test components for proposed changes. Am finding creating a copy of the component in question and then altering a way to make development a little less confusing while altering code. Allows for preserving integrity while experimenting by just plugging in the test component and then removing after testing.
@@ -23,6 +24,7 @@
 - Began work rectifying client vs server components and context updating an additional component needlessly.
 
 - Also noticed some styling bugs to be addressed in alert and order confirmation.
+  > > > > > > > be7f1130ee48695d2f04ec1ea33d9d275e6e1c37
 
 ---
 
