@@ -8,6 +8,12 @@
 
 - Code scrubbed for outdated work.
 
+- Set order confirmation now happens in use effect of customer order form.
+
+- Began work rectifying client vs server components and context updating an additional component needlessly.
+
+- Also noticed some styling bugs to be addressed in alert and order confirmation.
+
 ---
 
 -- 2 Dec 2024 --

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useFormState } from "react-dom";
 import SubmitButton from "../buttons/checkout/checkout-button";
 import classes from "./customer-info-form.module.css";
@@ -67,7 +67,9 @@ export default function CustomerInfoForm() {
     });
   }
 
-  setOrderConfirmation(state.message);
+  useEffect(() => {
+    setOrderConfirmation(state.message);
+  });
 
   return (
     <form className={classes.form} action={formAction}>
