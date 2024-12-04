@@ -2,6 +2,12 @@
 
 ---
 
+-- 4 Dec 2024 --
+
+- In attempting to correct errors noticed other issues being created. Reset before this work began to analyze closer. In the process did create solution for if server is down by implementing custom alert modal created earlier.
+
+---
+
 -- 2 Dec 2024 --
 
 - Update to cart item so that if cart item quantity exceeds given amount then customer is alerted via our alert modal component instead of browser alert.

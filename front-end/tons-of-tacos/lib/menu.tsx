@@ -1,6 +1,6 @@
 // import error from "next/error";
 
-export default async function useCategoriesSource() {
+export default async function CategoriesSource() {
   try {
     const response = await fetch(
       "http://localhost:8080/api/utility/categories"
