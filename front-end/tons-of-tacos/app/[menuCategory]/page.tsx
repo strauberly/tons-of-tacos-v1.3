@@ -1,51 +1,20 @@
-"use client";
-
 import classes from "./page.module.css";
 import MenuItemList from "@/components/menu/menu-items/menu-item-list";
-import { notFound } from "next/navigation";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense } from "react";
 import FadeOnLoad from "@/components/ui/animations/fade-on-load";
-import { useMenuContext } from "@/context/menu-context";
 import Loading from "../loading";
-import { MenuItems } from "@/lib/menu";
-import { useMenuCategoryContext } from "@/context/menu-category-context";
+import useCategoriesSource from "@/lib/menu";
 
-export default function MenuItemsByCategory({
+export default async function MenuItemsByCategory({
   params,
 }: {
   params: { menuCategory: string };
 }) {
-  const { setMenuItems } = useMenuContext();
-  const { menuCategories } = useMenuCategoryContext();
-  const menuItems = useRef<MenuItem[]>([]);
-  const menuOptions: string[] = menuCategories.map(
-    (category: { name: string }) => category.name
-  );
   let category = params.menuCategory;
+  let categories = await useCategoriesSource();
 
-  if (!menuOptions.includes(category)) {
-    notFound();
-  }
-
-  const [, setError] = useState();
-
-  useEffect(() => {
-    async function DisplayMenuItems() {
-      try {
-        menuItems.current = await MenuItems(category);
-      } catch (error) {
-        setError(() => {
-          throw error;
-        });
-      }
-      setMenuItems(menuItems.current);
-    }
-    DisplayMenuItems();
-  }, [category, menuCategories, setMenuItems]);
-
-  // set menu category description
-  let description: string | undefined = menuCategories
-    .find(function (mc) {
+  let description: string | undefined = categories
+    .find(function (mc: { name: string }) {
       return mc.name === `${category}`;
     })
     ?.description.toString();
@@ -58,7 +27,7 @@ export default function MenuItemsByCategory({
             <h1>{category + ":"}</h1>
             <p className={classes.description}>{description}</p>
           </div>
-          <div>{<MenuItemList menuItems={menuItems.current} />}</div>
+          <MenuItemList category={category} />
         </FadeOnLoad>
       </Suspense>
     </main>

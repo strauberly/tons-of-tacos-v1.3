@@ -1,12 +1,12 @@
-import { useId } from "react";
 import MenuItem from "./menu-item";
 import classes from "./menu-item-list.module.css";
+import { MenuItems } from "@/lib/menu";
 
-export default async function MenuItemList(menuItems: {
-  menuItems: MenuItem[];
+export default async function MenuItemListCopy(itemsCategory: {
+  category: string;
 }) {
-  const items = menuItems.menuItems;
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  const items = await MenuItems(itemsCategory.category);
+  await new Promise((resolve) => setTimeout(resolve, 2000));
 
   return (
     <ul className={classes.grid}>

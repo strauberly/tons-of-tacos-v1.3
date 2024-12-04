@@ -3,6 +3,7 @@ import classes from "./main-header.module.css";
 import Link from "next/link";
 import CategoriesSource from "@/lib/menu";
 import NavButtons from "@/components/ui/buttons/nav-buttons/nav-buttons";
+
 import { useAlertContext } from "@/context/alert-context";
 import { useDisplayContext } from "@/context/display-context";
 import { useEffect, useRef } from "react";
@@ -37,7 +38,7 @@ export default function MainHeader() {
           <Link className={classes.home} href="/">
             Tons Of Tacos
           </Link>
-          <NavButtons menuOptions={menuOptions} />
+          <NavButtons />
         </header>
       </div>
     </>

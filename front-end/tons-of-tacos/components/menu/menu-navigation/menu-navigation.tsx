@@ -5,6 +5,7 @@ import { useDisplayContext } from "@/context/display-context";
 import { AnimatePresence } from "framer-motion";
 import DropDown from "@/components/ui/animations/drop-down";
 import { useRef, useEffect } from "react";
+import MenuCategoriesCopy from "./menu-category-list-copy";
 
 export default function MenuNav() {
   const { setShowMenu, showMenu } = useDisplayContext();
@@ -25,7 +26,7 @@ export default function MenuNav() {
       <AnimatePresence>
         <DropDown>
           <div ref={menuRef} className={classes.menu}>
-            <MenuCategories />
+            <MenuCategoriesCopy />
           </div>
         </DropDown>
       </AnimatePresence>
